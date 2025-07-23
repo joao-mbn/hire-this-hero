@@ -25,8 +25,8 @@ export function Inventory({ inventory }: InventoryProps) {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {[...inventory.weapons, ...inventory.tools].map((item, idx) => (
-            <InventoryWeapon item={item} id={idx} />
+          {[...inventory.weapons, ...inventory.tools].map((item) => (
+            <InventoryWeapon item={item} key={item.name} />
           ))}
         </CardContent>
       </Card>
@@ -39,8 +39,8 @@ export function Inventory({ inventory }: InventoryProps) {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {[...inventory.armor, ...inventory.consumables].map((item, idx) => (
-            <InventoryArmor item={item} id={idx} />
+          {[...inventory.armor, ...inventory.consumables].map((item) => (
+            <InventoryArmor item={item} key={item.name} />
           ))}
         </CardContent>
       </Card>
@@ -50,11 +50,10 @@ export function Inventory({ inventory }: InventoryProps) {
 
 interface InventoryWeaponProps {
   item: WeaponItem | Item;
-  id: number;
 }
 
-const InventoryWeapon = ({ item, id }: InventoryWeaponProps) => (
-  <div key={id} className="rounded border border-border p-3">
+const InventoryWeapon = ({ item }: InventoryWeaponProps) => (
+  <div className="rounded border border-border p-3">
     <div className="mb-2 flex items-center gap-2">
       <h4 className="font-cinzel font-semibold">{item.name}</h4>
       {"rarity" in item && (
@@ -73,11 +72,10 @@ const InventoryWeapon = ({ item, id }: InventoryWeaponProps) => (
 
 interface InventoryArmorProps {
   item: ArmorItem | ConsumableItem;
-  id: number;
 }
 
-const InventoryArmor = ({ item, id }: InventoryArmorProps) => (
-  <div key={id} className="rounded border border-border p-3">
+const InventoryArmor = ({ item }: InventoryArmorProps) => (
+  <div className="rounded border border-border p-3">
     <div className="mb-2 flex items-center gap-2">
       <h4 className="font-cinzel font-semibold">{item.name}</h4>
       {"rarity" in item && (
