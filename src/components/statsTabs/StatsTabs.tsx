@@ -36,28 +36,28 @@ export function StatsTabs({ character }: StatsTabsProps) {
       </TabsList>
 
       <TabsContent value="skills">
-        <SkillTree />
+        <SkillTree skillTree={character.skillTree} />
       </TabsContent>
 
       {/* Inventory Tab */}
       <TabsContent value="inventory">
-        <Inventory character={character} />
+        <Inventory inventory={character.inventory} />
       </TabsContent>
 
       <TabsContent value="achievements">
-        <Achievements character={character} />
+        <Achievements achievements={character.achievements} />
       </TabsContent>
 
       <TabsContent value="quests">
-        <Quests character={character} />
+        <Quests quests={character.questLog} />
       </TabsContent>
 
       <TabsContent value="background">
-        <Background character={character} />
+        <Background background={character.background} />
       </TabsContent>
 
       <TabsContent value="traits">
-        <Traits character={character} />
+        <Traits traits={character.background} />
       </TabsContent>
     </Tabs>
   );

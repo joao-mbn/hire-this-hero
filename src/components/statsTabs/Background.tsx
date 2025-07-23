@@ -2,10 +2,10 @@ import type { Character } from "@/data/types";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 interface BackgroundProps {
-  character: Character;
+  background: Character["background"];
 }
 
-export function Background({ character }: BackgroundProps) {
+export function Background({ background }: BackgroundProps) {
   return (
     <Card className="parchment-card">
       <CardHeader>
@@ -15,7 +15,7 @@ export function Background({ character }: BackgroundProps) {
       </CardHeader>
       <CardContent>
         <p className="mb-6 font-cinzel leading-relaxed text-muted-foreground">
-          {character.background.story}
+          {background.story}
         </p>
       </CardContent>
     </Card>

@@ -4,13 +4,13 @@ import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
 
 interface AchievementsProps {
-  character: Character;
+  achievements: Character["achievements"];
 }
 
-export function Achievements({ character }: AchievementsProps) {
+export function Achievements({ achievements }: AchievementsProps) {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {character.achievements.map((achievement, idx) => (
+      {achievements.map((achievement, idx) => (
         <Card key={idx} className="parchment-card">
           <CardContent className="p-4">
             <div className="text-center">

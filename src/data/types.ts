@@ -21,6 +21,29 @@ export interface ConsumableItem extends Item {
   effect: string;
 }
 
+export interface SkillConnection {
+  from: string;
+  to: string;
+}
+
+export interface SkillNode {
+  id: string;
+  name: string;
+  description: string;
+  level: number;
+  maxLevel: number;
+  unlocked: boolean;
+  prerequisites: string[];
+  x: number;
+  y: number;
+  category: "foundation" | "specialization" | "advanced" | "mastery";
+}
+
+export interface SkillTree {
+  nodes: SkillNode[];
+  connections: SkillConnection[];
+}
+
 export interface Character {
   name: string;
   title: string;
@@ -41,15 +64,7 @@ export interface Character {
     wisdom: number;
     charisma: number;
   };
-  skills: Record<
-    string,
-    {
-      level: number;
-      experience: number;
-      maxLevel: number;
-      subskills: Array<{ name: string; level: number }>;
-    }
-  >;
+  skillTree: SkillTree;
   inventory: {
     weapons: WeaponItem[];
     armor: ArmorItem[];

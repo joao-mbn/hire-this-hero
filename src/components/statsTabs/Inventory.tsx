@@ -11,13 +11,12 @@ import { Badge } from "../ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 interface InventoryProps {
-  character: Character;
+  inventory: Character["inventory"];
 }
 
-export function Inventory({ character }: InventoryProps) {
+export function Inventory({ inventory }: InventoryProps) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      {/* Weapons */}
       <Card className="parchment-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 font-cinzel">
@@ -26,15 +25,12 @@ export function Inventory({ character }: InventoryProps) {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {[...character.inventory.weapons, ...character.inventory.tools].map(
-            (item, idx) => (
-              <InventoryWeapon item={item} id={idx} />
-            ),
-          )}
+          {[...inventory.weapons, ...inventory.tools].map((item, idx) => (
+            <InventoryWeapon item={item} id={idx} />
+          ))}
         </CardContent>
       </Card>
 
-      {/* Armor & Consumables */}
       <Card className="parchment-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 font-cinzel">
@@ -43,10 +39,7 @@ export function Inventory({ character }: InventoryProps) {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {[
-            ...character.inventory.armor,
-            ...character.inventory.consumables,
-          ].map((item, idx) => (
+          {[...inventory.armor, ...inventory.consumables].map((item, idx) => (
             <InventoryArmor item={item} id={idx} />
           ))}
         </CardContent>

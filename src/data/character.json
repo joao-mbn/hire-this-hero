@@ -30,52 +30,6 @@
     "wisdom": 88,
     "charisma": 78
   },
-  "skills": {
-    "Frontend Magic": {
-      "level": 9,
-      "experience": 85,
-      "maxLevel": 10,
-      "subskills": [
-        { "name": "React Mastery", "level": 9 },
-        { "name": "TypeScript Sorcery", "level": 8 },
-        { "name": "CSS Wizardry", "level": 8 },
-        { "name": "Vue.js Enchantment", "level": 7 }
-      ]
-    },
-    "Backend Sorcery": {
-      "level": 8,
-      "experience": 70,
-      "maxLevel": 10,
-      "subskills": [
-        { "name": "Node.js Mastery", "level": 8 },
-        { "name": "Python Conjuring", "level": 7 },
-        { "name": "Database Necromancy", "level": 8 },
-        { "name": "API Summoning", "level": 9 }
-      ]
-    },
-    "DevOps Alchemy": {
-      "level": 7,
-      "experience": 45,
-      "maxLevel": 10,
-      "subskills": [
-        { "name": "AWS Cloud Magic", "level": 7 },
-        { "name": "Docker Containerization", "level": 8 },
-        { "name": "CI/CD Automation", "level": 7 },
-        { "name": "Kubernetes Orchestration", "level": 6 }
-      ]
-    },
-    "Leadership Arts": {
-      "level": 6,
-      "experience": 60,
-      "maxLevel": 10,
-      "subskills": [
-        { "name": "Team Coordination", "level": 7 },
-        { "name": "Project Management", "level": 6 },
-        { "name": "Mentoring", "level": 8 },
-        { "name": "Strategic Planning", "level": 5 }
-      ]
-    }
-  },
   "inventory": {
     "weapons": [
       {
@@ -208,5 +162,348 @@
     "linkedin": "/in/alexandra-codeweaver",
     "github": "/alexandra-codeweaver",
     "portfolio": "https://alexandra-portfolio.dev"
+  },
+  "skillTree": {
+    "nodes": [
+      {
+        "id": "programming-fundamentals",
+        "name": "Programming Fundamentals",
+        "description": "Learn basic programming concepts and first language",
+        "level": 10,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": [],
+        "x": 400,
+        "y": 50,
+        "category": "foundation"
+      },
+
+      {
+        "id": "javascript",
+        "name": "JavaScript",
+        "description": "Master the language of the web",
+        "level": 9,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["programming-fundamentals"],
+        "x": 200,
+        "y": 150,
+        "category": "specialization"
+      },
+      {
+        "id": "python",
+        "name": "Python",
+        "description": "Versatile language for web, AI, and data",
+        "level": 7,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["programming-fundamentals"],
+        "x": 400,
+        "y": 150,
+        "category": "specialization"
+      },
+      {
+        "id": "typescript",
+        "name": "TypeScript",
+        "description": "Type-safe JavaScript superset",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["javascript"],
+        "x": 200,
+        "y": 250,
+        "category": "specialization"
+      },
+
+      {
+        "id": "html-css",
+        "name": "HTML & CSS",
+        "description": "Foundation of web presentation",
+        "level": 10,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["javascript"],
+        "x": 50,
+        "y": 250,
+        "category": "specialization"
+      },
+      {
+        "id": "react",
+        "name": "React",
+        "description": "Component-based UI library",
+        "level": 9,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["javascript", "html-css"],
+        "x": 50,
+        "y": 350,
+        "category": "advanced"
+      },
+      {
+        "id": "vue",
+        "name": "Vue.js",
+        "description": "Progressive frontend framework",
+        "level": 7,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["javascript", "html-css"],
+        "x": 150,
+        "y": 350,
+        "category": "advanced"
+      },
+      {
+        "id": "angular",
+        "name": "Angular",
+        "description": "Full-featured frontend framework",
+        "level": 5,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["typescript", "html-css"],
+        "x": 250,
+        "y": 350,
+        "category": "advanced"
+      },
+      {
+        "id": "svelte",
+        "name": "Svelte",
+        "description": "Compile-time optimized framework",
+        "level": 3,
+        "maxLevel": 10,
+        "unlocked": false,
+        "prerequisites": ["javascript", "html-css"],
+        "x": 350,
+        "y": 350,
+        "category": "advanced"
+      },
+
+      {
+        "id": "tailwindcss",
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS framework",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["react"],
+        "x": 50,
+        "y": 450,
+        "category": "advanced"
+      },
+      {
+        "id": "sass",
+        "name": "Sass/SCSS",
+        "description": "Advanced CSS preprocessing",
+        "level": 6,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["html-css"],
+        "x": 150,
+        "y": 450,
+        "category": "advanced"
+      },
+
+      {
+        "id": "redux",
+        "name": "Redux",
+        "description": "Predictable state container",
+        "level": 7,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["react"],
+        "x": 50,
+        "y": 550,
+        "category": "mastery"
+      },
+      {
+        "id": "zustand",
+        "name": "Zustand",
+        "description": "Lightweight state management",
+        "level": 5,
+        "maxLevel": 10,
+        "unlocked": false,
+        "prerequisites": ["react"],
+        "x": 150,
+        "y": 550,
+        "category": "mastery"
+      },
+
+      {
+        "id": "nodejs",
+        "name": "Node.js",
+        "description": "JavaScript runtime for backend",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["javascript"],
+        "x": 500,
+        "y": 250,
+        "category": "specialization"
+      },
+      {
+        "id": "express",
+        "name": "Express.js",
+        "description": "Minimal web framework for Node.js",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["nodejs"],
+        "x": 500,
+        "y": 350,
+        "category": "advanced"
+      },
+      {
+        "id": "fastapi",
+        "name": "FastAPI",
+        "description": "Modern Python web framework",
+        "level": 6,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["python"],
+        "x": 600,
+        "y": 350,
+        "category": "advanced"
+      },
+      {
+        "id": "django",
+        "name": "Django",
+        "description": "Full-featured Python web framework",
+        "level": 4,
+        "maxLevel": 10,
+        "unlocked": false,
+        "prerequisites": ["python"],
+        "x": 700,
+        "y": 350,
+        "category": "advanced"
+      },
+
+      {
+        "id": "sql",
+        "name": "SQL",
+        "description": "Database query language mastery",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["nodejs"],
+        "x": 500,
+        "y": 450,
+        "category": "advanced"
+      },
+      {
+        "id": "mongodb",
+        "name": "MongoDB",
+        "description": "NoSQL document database",
+        "level": 7,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["nodejs"],
+        "x": 600,
+        "y": 450,
+        "category": "advanced"
+      },
+      {
+        "id": "postgresql",
+        "name": "PostgreSQL",
+        "description": "Advanced relational database",
+        "level": 6,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["sql"],
+        "x": 500,
+        "y": 550,
+        "category": "mastery"
+      },
+
+      {
+        "id": "git",
+        "name": "Git",
+        "description": "Version control mastery",
+        "level": 9,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["programming-fundamentals"],
+        "x": 600,
+        "y": 150,
+        "category": "specialization"
+      },
+      {
+        "id": "docker",
+        "name": "Docker",
+        "description": "Containerization technology",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["git"],
+        "x": 600,
+        "y": 250,
+        "category": "advanced"
+      },
+      {
+        "id": "kubernetes",
+        "name": "Kubernetes",
+        "description": "Container orchestration",
+        "level": 6,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["docker"],
+        "x": 600,
+        "y": 350,
+        "category": "mastery"
+      },
+      {
+        "id": "aws",
+        "name": "AWS",
+        "description": "Cloud platform services",
+        "level": 7,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["docker"],
+        "x": 700,
+        "y": 250,
+        "category": "mastery"
+      },
+      {
+        "id": "cicd",
+        "name": "CI/CD",
+        "description": "Continuous integration and deployment",
+        "level": 7,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["git", "docker"],
+        "x": 650,
+        "y": 450,
+        "category": "mastery"
+      }
+    ],
+    "connections": [
+      { "from": "programming-fundamentals", "to": "javascript" },
+      { "from": "programming-fundamentals", "to": "python" },
+      { "from": "programming-fundamentals", "to": "git" },
+
+      { "from": "javascript", "to": "typescript" },
+      { "from": "javascript", "to": "html-css" },
+      { "from": "javascript", "to": "nodejs" },
+
+      { "from": "html-css", "to": "react" },
+      { "from": "html-css", "to": "vue" },
+      { "from": "html-css", "to": "svelte" },
+      { "from": "typescript", "to": "angular" },
+
+      { "from": "react", "to": "tailwindcss" },
+      { "from": "react", "to": "redux" },
+      { "from": "react", "to": "zustand" },
+      { "from": "html-css", "to": "sass" },
+
+      { "from": "nodejs", "to": "express" },
+      { "from": "nodejs", "to": "sql" },
+      { "from": "nodejs", "to": "mongodb" },
+      { "from": "python", "to": "fastapi" },
+      { "from": "python", "to": "django" },
+      { "from": "sql", "to": "postgresql" },
+
+      { "from": "git", "to": "docker" },
+      { "from": "docker", "to": "kubernetes" },
+      { "from": "docker", "to": "aws" },
+      { "from": "git", "to": "cicd" },
+      { "from": "docker", "to": "cicd" }
+    ]
   }
 }

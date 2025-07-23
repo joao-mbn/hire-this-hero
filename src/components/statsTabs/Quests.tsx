@@ -6,10 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Progress } from "../ui/progress";
 
 interface QuestsProps {
-  character: Character;
+  quests: Character["questLog"];
 }
 
-export function Quests({ character }: QuestsProps) {
+export function Quests({ quests }: QuestsProps) {
   return (
     <div className="space-y-6">
       <Card className="parchment-card">
@@ -20,7 +20,7 @@ export function Quests({ character }: QuestsProps) {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {character.questLog.completed.map((quest, idx) => (
+          {quests.completed.map((quest, idx) => (
             <div key={idx} className="rounded border border-border p-4">
               <div className="mb-2 flex items-center gap-2">
                 <h3 className="font-cinzel font-bold">{quest.name}</h3>
@@ -52,7 +52,7 @@ export function Quests({ character }: QuestsProps) {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {character.questLog.inProgress.map((quest, idx) => (
+          {quests.inProgress.map((quest, idx) => (
             <div key={idx} className="rounded border border-border p-4">
               <div className="mb-2 flex items-center gap-2">
                 <h3 className="font-cinzel font-bold">{quest.name}</h3>

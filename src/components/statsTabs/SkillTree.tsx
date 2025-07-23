@@ -1,385 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import type {
+  SkillConnection,
+  SkillNode,
+  SkillTree as SkillTreeType,
+} from "@/data/types";
 import { CheckCircle, Lock, Star } from "lucide-react";
 import { useState } from "react";
 
-interface SkillNode {
-  id: string;
-  name: string;
-  description: string;
-  level: number;
-  maxLevel: number;
-  unlocked: boolean;
-  prerequisites: string[];
-  x: number;
-  y: number;
-  category: "foundation" | "specialization" | "advanced" | "mastery";
-}
-
-interface SkillConnection {
-  from: string;
-  to: string;
-}
-
-const skillTreeData: { nodes: SkillNode[]; connections: SkillConnection[] } = {
-  nodes: [
-    // Foundation
-    {
-      id: "programming-fundamentals",
-      name: "Programming Fundamentals",
-      description: "Learn basic programming concepts and first language",
-      level: 10,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: [],
-      x: 400,
-      y: 50,
-      category: "foundation",
-    },
-
-    // Language Paths
-    {
-      id: "javascript",
-      name: "JavaScript",
-      description: "Master the language of the web",
-      level: 9,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["programming-fundamentals"],
-      x: 200,
-      y: 150,
-      category: "specialization",
-    },
-    {
-      id: "python",
-      name: "Python",
-      description: "Versatile language for web, AI, and data",
-      level: 7,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["programming-fundamentals"],
-      x: 400,
-      y: 150,
-      category: "specialization",
-    },
-    {
-      id: "typescript",
-      name: "TypeScript",
-      description: "Type-safe JavaScript superset",
-      level: 8,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["javascript"],
-      x: 200,
-      y: 250,
-      category: "specialization",
-    },
-
-    // Frontend Path
-    {
-      id: "html-css",
-      name: "HTML & CSS",
-      description: "Foundation of web presentation",
-      level: 10,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["javascript"],
-      x: 50,
-      y: 250,
-      category: "specialization",
-    },
-    {
-      id: "react",
-      name: "React",
-      description: "Component-based UI library",
-      level: 9,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["javascript", "html-css"],
-      x: 50,
-      y: 350,
-      category: "advanced",
-    },
-    {
-      id: "vue",
-      name: "Vue.js",
-      description: "Progressive frontend framework",
-      level: 7,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["javascript", "html-css"],
-      x: 150,
-      y: 350,
-      category: "advanced",
-    },
-    {
-      id: "angular",
-      name: "Angular",
-      description: "Full-featured frontend framework",
-      level: 5,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["typescript", "html-css"],
-      x: 250,
-      y: 350,
-      category: "advanced",
-    },
-    {
-      id: "svelte",
-      name: "Svelte",
-      description: "Compile-time optimized framework",
-      level: 3,
-      maxLevel: 10,
-      unlocked: false,
-      prerequisites: ["javascript", "html-css"],
-      x: 350,
-      y: 350,
-      category: "advanced",
-    },
-
-    // Styling & Tools
-    {
-      id: "tailwindcss",
-      name: "Tailwind CSS",
-      description: "Utility-first CSS framework",
-      level: 8,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["react"],
-      x: 50,
-      y: 450,
-      category: "advanced",
-    },
-    {
-      id: "sass",
-      name: "Sass/SCSS",
-      description: "Advanced CSS preprocessing",
-      level: 6,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["html-css"],
-      x: 150,
-      y: 450,
-      category: "advanced",
-    },
-
-    // State Management
-    {
-      id: "redux",
-      name: "Redux",
-      description: "Predictable state container",
-      level: 7,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["react"],
-      x: 50,
-      y: 550,
-      category: "mastery",
-    },
-    {
-      id: "zustand",
-      name: "Zustand",
-      description: "Lightweight state management",
-      level: 5,
-      maxLevel: 10,
-      unlocked: false,
-      prerequisites: ["react"],
-      x: 150,
-      y: 550,
-      category: "mastery",
-    },
-
-    // Backend Path
-    {
-      id: "nodejs",
-      name: "Node.js",
-      description: "JavaScript runtime for backend",
-      level: 8,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["javascript"],
-      x: 500,
-      y: 250,
-      category: "specialization",
-    },
-    {
-      id: "express",
-      name: "Express.js",
-      description: "Minimal web framework for Node.js",
-      level: 8,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["nodejs"],
-      x: 500,
-      y: 350,
-      category: "advanced",
-    },
-    {
-      id: "fastapi",
-      name: "FastAPI",
-      description: "Modern Python web framework",
-      level: 6,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["python"],
-      x: 600,
-      y: 350,
-      category: "advanced",
-    },
-    {
-      id: "django",
-      name: "Django",
-      description: "Full-featured Python web framework",
-      level: 4,
-      maxLevel: 10,
-      unlocked: false,
-      prerequisites: ["python"],
-      x: 700,
-      y: 350,
-      category: "advanced",
-    },
-
-    // Database
-    {
-      id: "sql",
-      name: "SQL",
-      description: "Database query language mastery",
-      level: 8,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["nodejs"],
-      x: 500,
-      y: 450,
-      category: "advanced",
-    },
-    {
-      id: "mongodb",
-      name: "MongoDB",
-      description: "NoSQL document database",
-      level: 7,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["nodejs"],
-      x: 600,
-      y: 450,
-      category: "advanced",
-    },
-    {
-      id: "postgresql",
-      name: "PostgreSQL",
-      description: "Advanced relational database",
-      level: 6,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["sql"],
-      x: 500,
-      y: 550,
-      category: "mastery",
-    },
-
-    // DevOps Path
-    {
-      id: "git",
-      name: "Git",
-      description: "Version control mastery",
-      level: 9,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["programming-fundamentals"],
-      x: 600,
-      y: 150,
-      category: "specialization",
-    },
-    {
-      id: "docker",
-      name: "Docker",
-      description: "Containerization technology",
-      level: 8,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["git"],
-      x: 600,
-      y: 250,
-      category: "advanced",
-    },
-    {
-      id: "kubernetes",
-      name: "Kubernetes",
-      description: "Container orchestration",
-      level: 6,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["docker"],
-      x: 600,
-      y: 350,
-      category: "mastery",
-    },
-    {
-      id: "aws",
-      name: "AWS",
-      description: "Cloud platform services",
-      level: 7,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["docker"],
-      x: 700,
-      y: 250,
-      category: "mastery",
-    },
-    {
-      id: "cicd",
-      name: "CI/CD",
-      description: "Continuous integration and deployment",
-      level: 7,
-      maxLevel: 10,
-      unlocked: true,
-      prerequisites: ["git", "docker"],
-      x: 650,
-      y: 450,
-      category: "mastery",
-    },
-  ],
-  connections: [
-    // Foundation to languages
-    { from: "programming-fundamentals", to: "javascript" },
-    { from: "programming-fundamentals", to: "python" },
-    { from: "programming-fundamentals", to: "git" },
-
-    // JavaScript path
-    { from: "javascript", to: "typescript" },
-    { from: "javascript", to: "html-css" },
-    { from: "javascript", to: "nodejs" },
-
-    // Frontend frameworks
-    { from: "html-css", to: "react" },
-    { from: "html-css", to: "vue" },
-    { from: "html-css", to: "svelte" },
-    { from: "typescript", to: "angular" },
-
-    // Frontend tools
-    { from: "react", to: "tailwindcss" },
-    { from: "react", to: "redux" },
-    { from: "react", to: "zustand" },
-    { from: "html-css", to: "sass" },
-
-    // Backend path
-    { from: "nodejs", to: "express" },
-    { from: "nodejs", to: "sql" },
-    { from: "nodejs", to: "mongodb" },
-    { from: "python", to: "fastapi" },
-    { from: "python", to: "django" },
-    { from: "sql", to: "postgresql" },
-
-    // DevOps path
-    { from: "git", to: "docker" },
-    { from: "docker", to: "kubernetes" },
-    { from: "docker", to: "aws" },
-    { from: "git", to: "cicd" },
-    { from: "docker", to: "cicd" },
-  ],
-};
-
-export const SkillTree = () => {
+export const SkillTree = ({ skillTree }: { skillTree: SkillTreeType }) => {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
 
   const getCategoryColor = (category: string) => {
@@ -407,14 +36,14 @@ export const SkillTree = () => {
   const isSkillUnlockable = (skill: SkillNode) => {
     if (skill.unlocked) return true;
     return skill.prerequisites.every((prereqId) => {
-      const prereq = skillTreeData.nodes.find((n) => n.id === prereqId);
+      const prereq = skillTree.nodes.find((n) => n.id === prereqId);
       return prereq && prereq.unlocked && prereq.level >= 5;
     });
   };
 
   const renderConnection = (connection: SkillConnection) => {
-    const fromNode = skillTreeData.nodes.find((n) => n.id === connection.from);
-    const toNode = skillTreeData.nodes.find((n) => n.id === connection.to);
+    const fromNode = skillTree.nodes.find((n) => n.id === connection.from);
+    const toNode = skillTree.nodes.find((n) => n.id === connection.to);
 
     if (!fromNode || !toNode) return null;
 
@@ -437,7 +66,7 @@ export const SkillTree = () => {
   };
 
   const selectedNode = selectedSkill
-    ? skillTreeData.nodes.find((n) => n.id === selectedSkill)
+    ? skillTree.nodes.find((n) => n.id === selectedSkill)
     : null;
 
   return (
@@ -452,11 +81,11 @@ export const SkillTree = () => {
             >
               <svg width="800" height="600" className="absolute inset-0">
                 {/* Render connections first (behind nodes) */}
-                {skillTreeData.connections.map(renderConnection)}
+                {skillTree.connections.map(renderConnection)}
               </svg>
 
               {/* Render skill nodes */}
-              {skillTreeData.nodes.map((skill) => {
+              {skillTree.nodes.map((skill) => {
                 const unlockable = isSkillUnlockable(skill);
                 const isSelected = selectedSkill === skill.id;
 
@@ -489,7 +118,7 @@ export const SkillTree = () => {
                           Lvl {skill.level}
                         </span>
                       </div>
-                      <span className="font-cinzel text-xs font-semibold leading-tight">
+                      <span className="font-cinzel text-xs leading-tight font-semibold">
                         {skill.name}
                       </span>
                     </div>
@@ -551,7 +180,7 @@ export const SkillTree = () => {
                           Category
                         </h4>
                         <Badge
-                          className={`bg-gradient-to-r ${getCategoryColor(selectedNode.category)} capitalize text-white`}
+                          className={`bg-gradient-to-r ${getCategoryColor(selectedNode.category)} text-white capitalize`}
                         >
                           {selectedNode.category}
                         </Badge>
@@ -564,7 +193,7 @@ export const SkillTree = () => {
                           </h4>
                           <div className="space-y-1">
                             {selectedNode.prerequisites.map((prereqId) => {
-                              const prereq = skillTreeData.nodes.find(
+                              const prereq = skillTree.nodes.find(
                                 (n) => n.id === prereqId,
                               );
                               if (!prereq) return null;
