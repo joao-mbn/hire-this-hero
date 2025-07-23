@@ -1,0 +1,110 @@
+import type {
+  ArmorItem,
+  Character,
+  ConsumableItem,
+  Item,
+  WeaponItem,
+} from "@/data/types";
+import { rarityColor } from "@/lib/utils";
+import { Shield, Sword } from "lucide-react";
+import { Badge } from "../ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+
+interface InventoryProps {
+  character: Character;
+}
+
+export function Inventory({ character }: InventoryProps) {
+  return (
+    <div className="grid gap-6 md:grid-cols-2">
+      {/* Weapons */}
+      <Card className="parchment-card">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 font-cinzel">
+            <Sword className="h-5 w-5 text-primary" />
+            Weapons & Tools
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {[...character.inventory.weapons, ...character.inventory.tools].map(
+            (item, idx) => (
+              <InventoryWeapon item={item} id={idx} />
+            ),
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Armor & Consumables */}
+      <Card className="parchment-card">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 font-cinzel">
+            <Shield className="h-5 w-5 text-primary" />
+            Armor & Consumables
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {[
+            ...character.inventory.armor,
+            ...character.inventory.consumables,
+          ].map((item, idx) => (
+            <InventoryArmor item={item} id={idx} />
+          ))}
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+interface InventoryWeaponProps {
+  item: WeaponItem | Item;
+  id: number;
+}
+
+const InventoryWeapon = ({ item, id }: InventoryWeaponProps) => (
+  <div key={id} className="rounded border border-border p-3">
+    <div className="mb-2 flex items-center gap-2">
+      <h4 className="font-cinzel font-semibold">{item.name}</h4>
+      {"rarity" in item && (
+        <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
+          {item.rarity}
+        </Badge>
+      )}
+    </div>
+    <p className="mb-1 text-xs text-muted-foreground">{item.type}</p>
+    {"stats" in item && (
+      <p className="text-xs font-semibold text-accent">{item.stats}</p>
+    )}
+    <p className="text-xs italic">{item.description}</p>
+  </div>
+);
+
+interface InventoryArmorProps {
+  item: ArmorItem | ConsumableItem;
+  id: number;
+}
+
+const InventoryArmor = ({ item, id }: InventoryArmorProps) => (
+  <div key={id} className="rounded border border-border p-3">
+    <div className="mb-2 flex items-center gap-2">
+      <h4 className="font-cinzel font-semibold">{item.name}</h4>
+      {"rarity" in item && (
+        <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
+          {item.rarity}
+        </Badge>
+      )}
+      {"quantity" in item && (
+        <Badge variant="secondary" className="text-xs">
+          {item.quantity}
+        </Badge>
+      )}
+    </div>
+    <p className="mb-1 text-xs text-muted-foreground">{item.type}</p>
+    {"stats" in item && (
+      <p className="text-xs font-semibold text-accent">{item.stats}</p>
+    )}
+    {"effect" in item && (
+      <p className="text-xs font-semibold text-accent">{item.effect}</p>
+    )}
+    <p className="text-xs italic">{item.description}</p>
+  </div>
+);

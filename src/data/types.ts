@@ -1,32 +1,24 @@
-export interface WeaponItem {
+export type Rarity = "common" | "uncommon" | "rare" | "epic" | "legendary";
+export type ItemType = "weapon" | "armor" | "consumable" | "tool";
+
+export interface Item {
   name: string;
-  type: string;
-  rarity: string;
+  type: ItemType;
   stats: string;
   description: string;
 }
 
-export interface ArmorItem {
-  name: string;
-  type: string;
-  rarity: string;
-  stats: string;
-  description: string;
+export interface WeaponItem extends Item {
+  rarity: Rarity;
 }
 
-export interface ConsumableItem {
-  name: string;
-  type: string;
-  quantity: string;
+export interface ArmorItem extends Item {
+  rarity: Rarity;
+}
+
+export interface ConsumableItem extends Item {
+  quantity: number;
   effect: string;
-  description: string;
-}
-
-export interface ToolItem {
-  name: string;
-  type: string;
-  rarity: string;
-  description: string;
 }
 
 export interface Character {
@@ -62,7 +54,7 @@ export interface Character {
     weapons: WeaponItem[];
     armor: ArmorItem[];
     consumables: ConsumableItem[];
-    tools: ToolItem[];
+    tools: Item[];
   };
   achievements: Array<{
     name: string;
