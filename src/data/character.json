@@ -1,214 +1,212 @@
 {
-  "character": {
-    "name": "Alexandra the Code Weaver",
-    "title": "Senior Full Stack Developer",
-    "level": 28,
-    "class": "Software Architect",
-    "alignment": "Lawful Good",
-    "portrait": "/placeholder.svg",
-    "background": {
-      "story": "Born in the mystical realm of Silicon Valley, Alexandra discovered her affinity for the arcane arts of programming at the tender age of 12. Through years of dedicated study in the ancient universities and countless battles against bugs in the depths of production servers, she has risen to become a renowned Code Weaver, capable of bending digital realities to her will.",
-      "ideals": [
-        "Clean code is the foundation of all magical endeavors",
-        "Knowledge shared is knowledge multiplied",
-        "The user's experience is sacred above all"
-      ],
-      "bonds": [
-        "Mentors the next generation of code apprentices",
-        "Guardian of the company's architectural integrity",
-        "Sworn protector of production environments"
-      ],
-      "flaws": [
-        "Sometimes gets lost in perfectionism",
-        "Cannot resist refactoring legacy code",
-        "Weak against imposter syndrome attacks"
+  "name": "Alexandra the Code Weaver",
+  "title": "Senior Full Stack Developer",
+  "level": 28,
+  "_class": "Software Architect",
+  "alignment": "Lawful Good",
+  "portrait": "/placeholder.svg",
+  "background": {
+    "story": "Born in the mystical realm of Silicon Valley, Alexandra discovered her affinity for the arcane arts of programming at the tender age of 12. Through years of dedicated study in the ancient universities and countless battles against bugs in the depths of production servers, she has risen to become a renowned Code Weaver, capable of bending digital realities to her will.",
+    "ideals": [
+      "Clean code is the foundation of all magical endeavors",
+      "Knowledge shared is knowledge multiplied",
+      "The user's experience is sacred above all"
+    ],
+    "bonds": [
+      "Mentors the next generation of code apprentices",
+      "Guardian of the company's architectural integrity",
+      "Sworn protector of production environments"
+    ],
+    "flaws": [
+      "Sometimes gets lost in perfectionism",
+      "Cannot resist refactoring legacy code",
+      "Weak against imposter syndrome attacks"
+    ]
+  },
+  "attributes": {
+    "strength": 85,
+    "dexterity": 92,
+    "intelligence": 96,
+    "wisdom": 88,
+    "charisma": 78
+  },
+  "skills": {
+    "Frontend Magic": {
+      "level": 9,
+      "experience": 85,
+      "maxLevel": 10,
+      "subskills": [
+        { "name": "React Mastery", "level": 9 },
+        { "name": "TypeScript Sorcery", "level": 8 },
+        { "name": "CSS Wizardry", "level": 8 },
+        { "name": "Vue.js Enchantment", "level": 7 }
       ]
     },
-    "attributes": {
-      "strength": 85,
-      "dexterity": 92,
-      "intelligence": 96,
-      "wisdom": 88,
-      "charisma": 78
-    },
-    "skills": {
-      "Frontend Magic": {
-        "level": 9,
-        "experience": 85,
-        "maxLevel": 10,
-        "subskills": [
-          { "name": "React Mastery", "level": 9 },
-          { "name": "TypeScript Sorcery", "level": 8 },
-          { "name": "CSS Wizardry", "level": 8 },
-          { "name": "Vue.js Enchantment", "level": 7 }
-        ]
-      },
-      "Backend Sorcery": {
-        "level": 8,
-        "experience": 70,
-        "maxLevel": 10,
-        "subskills": [
-          { "name": "Node.js Mastery", "level": 8 },
-          { "name": "Python Conjuring", "level": 7 },
-          { "name": "Database Necromancy", "level": 8 },
-          { "name": "API Summoning", "level": 9 }
-        ]
-      },
-      "DevOps Alchemy": {
-        "level": 7,
-        "experience": 45,
-        "maxLevel": 10,
-        "subskills": [
-          { "name": "AWS Cloud Magic", "level": 7 },
-          { "name": "Docker Containerization", "level": 8 },
-          { "name": "CI/CD Automation", "level": 7 },
-          { "name": "Kubernetes Orchestration", "level": 6 }
-        ]
-      },
-      "Leadership Arts": {
-        "level": 6,
-        "experience": 60,
-        "maxLevel": 10,
-        "subskills": [
-          { "name": "Team Coordination", "level": 7 },
-          { "name": "Project Management", "level": 6 },
-          { "name": "Mentoring", "level": 8 },
-          { "name": "Strategic Planning", "level": 5 }
-        ]
-      }
-    },
-    "inventory": {
-      "weapons": [
-        {
-          "name": "Legendary MacBook Pro",
-          "type": "Primary Weapon",
-          "rarity": "Legendary",
-          "stats": "+15 Coding Speed, +10 Performance",
-          "description": "A mystical device forged in the fires of Cupertino"
-        },
-        {
-          "name": "Mechanical Keyboard of Swift Typing",
-          "type": "Weapon Enhancement",
-          "rarity": "Epic",
-          "stats": "+20 Typing Speed, +5 Satisfaction",
-          "description": "Each keypress resonates with the power of a thousand clicks"
-        }
-      ],
-      "armor": [
-        {
-          "name": "Noise-Cancelling Headphones of Focus",
-          "type": "Head Armor",
-          "rarity": "Rare",
-          "stats": "+25 Concentration, -90% Distractions",
-          "description": "Blocks out the chaos of the outside world"
-        },
-        {
-          "name": "Blue Light Blocking Glasses of Endurance",
-          "type": "Eye Protection",
-          "rarity": "Uncommon",
-          "stats": "+10 Late Night Coding, -50% Eye Strain",
-          "description": "Protects against the harmful rays of multiple monitors"
-        }
-      ],
-      "consumables": [
-        {
-          "name": "Artisan Coffee Elixir",
-          "type": "Consumable",
-          "quantity": "∞",
-          "effect": "+50 Energy, +25 Focus for 4 hours",
-          "description": "The lifeblood of all developers"
-        },
-        {
-          "name": "Stack Overflow Scroll",
-          "type": "Knowledge Item",
-          "quantity": "∞",
-          "effect": "Instantly provides solution to any coding problem",
-          "description": "Ancient wisdom passed down through generations"
-        }
-      ],
-      "tools": [
-        {
-          "name": "VS Code of Infinite Extensions",
-          "type": "IDE",
-          "rarity": "Legendary",
-          "description": "The ultimate weapon for code manipulation"
-        },
-        {
-          "name": "Git Repository of Time Travel",
-          "type": "Version Control",
-          "rarity": "Epic",
-          "description": "Allows traversal through the timeline of code"
-        },
-        {
-          "name": "Docker Container of Isolation",
-          "type": "Environment Tool",
-          "rarity": "Rare",
-          "description": "Creates pocket dimensions for applications"
-        }
+    "Backend Sorcery": {
+      "level": 8,
+      "experience": 70,
+      "maxLevel": 10,
+      "subskills": [
+        { "name": "Node.js Mastery", "level": 8 },
+        { "name": "Python Conjuring", "level": 7 },
+        { "name": "Database Necromancy", "level": 8 },
+        { "name": "API Summoning", "level": 9 }
       ]
     },
-    "achievements": [
+    "DevOps Alchemy": {
+      "level": 7,
+      "experience": 45,
+      "maxLevel": 10,
+      "subskills": [
+        { "name": "AWS Cloud Magic", "level": 7 },
+        { "name": "Docker Containerization", "level": 8 },
+        { "name": "CI/CD Automation", "level": 7 },
+        { "name": "Kubernetes Orchestration", "level": 6 }
+      ]
+    },
+    "Leadership Arts": {
+      "level": 6,
+      "experience": 60,
+      "maxLevel": 10,
+      "subskills": [
+        { "name": "Team Coordination", "level": 7 },
+        { "name": "Project Management", "level": 6 },
+        { "name": "Mentoring", "level": 8 },
+        { "name": "Strategic Planning", "level": 5 }
+      ]
+    }
+  },
+  "inventory": {
+    "weapons": [
       {
-        "name": "Bug Slayer",
-        "description": "Defeated over 1000 bugs in production",
-        "icon": "⚔️",
-        "rarity": "Epic",
-        "dateEarned": "2023-06-15"
-      },
-      {
-        "name": "Performance Optimizer",
-        "description": "Improved application performance by 300%",
-        "icon": "⚡",
+        "name": "Legendary MacBook Pro",
+        "type": "Primary Weapon",
         "rarity": "Legendary",
-        "dateEarned": "2023-09-22"
+        "stats": "+15 Coding Speed, +10 Performance",
+        "description": "A mystical device forged in the fires of Cupertino"
       },
       {
-        "name": "Team Builder",
-        "description": "Successfully led a team of 8 developers",
-        "icon": "👥",
-        "rarity": "Rare",
-        "dateEarned": "2023-12-01"
-      },
-      {
-        "name": "Code Reviewer Extraordinaire",
-        "description": "Reviewed over 500 pull requests",
-        "icon": "📋",
-        "rarity": "Uncommon",
-        "dateEarned": "2023-08-10"
+        "name": "Mechanical Keyboard of Swift Typing",
+        "type": "Weapon Enhancement",
+        "rarity": "Epic",
+        "stats": "+20 Typing Speed, +5 Satisfaction",
+        "description": "Each keypress resonates with the power of a thousand clicks"
       }
     ],
-    "questLog": {
-      "completed": [
-        {
-          "name": "The Migration of Legacy Systems",
-          "difficulty": "Legendary",
-          "description": "Successfully migrated a 10-year-old monolith to microservices",
-          "reward": "+500 XP, +2 Architecture Skill",
-          "company": "TechCorp Industries"
-        },
-        {
-          "name": "The Great Performance Optimization",
-          "difficulty": "Epic",
-          "description": "Reduced page load time from 8s to 1.2s",
-          "reward": "+300 XP, Performance Optimizer Achievement",
-          "company": "SpeedTech Solutions"
-        }
-      ],
-      "inProgress": [
-        {
-          "name": "The AI Integration Project",
-          "difficulty": "Epic",
-          "description": "Implementing machine learning features into the core platform",
-          "progress": 65,
-          "estimatedCompletion": "Q2 2024"
-        }
-      ]
+    "armor": [
+      {
+        "name": "Noise-Cancelling Headphones of Focus",
+        "type": "Head Armor",
+        "rarity": "Rare",
+        "stats": "+25 Concentration, -90% Distractions",
+        "description": "Blocks out the chaos of the outside world"
+      },
+      {
+        "name": "Blue Light Blocking Glasses of Endurance",
+        "type": "Eye Protection",
+        "rarity": "Uncommon",
+        "stats": "+10 Late Night Coding, -50% Eye Strain",
+        "description": "Protects against the harmful rays of multiple monitors"
+      }
+    ],
+    "consumables": [
+      {
+        "name": "Artisan Coffee Elixir",
+        "type": "Consumable",
+        "quantity": "∞",
+        "effect": "+50 Energy, +25 Focus for 4 hours",
+        "description": "The lifeblood of all developers"
+      },
+      {
+        "name": "Stack Overflow Scroll",
+        "type": "Knowledge Item",
+        "quantity": "∞",
+        "effect": "Instantly provides solution to any coding problem",
+        "description": "Ancient wisdom passed down through generations"
+      }
+    ],
+    "tools": [
+      {
+        "name": "VS Code of Infinite Extensions",
+        "type": "IDE",
+        "rarity": "Legendary",
+        "description": "The ultimate weapon for code manipulation"
+      },
+      {
+        "name": "Git Repository of Time Travel",
+        "type": "Version Control",
+        "rarity": "Epic",
+        "description": "Allows traversal through the timeline of code"
+      },
+      {
+        "name": "Docker Container of Isolation",
+        "type": "Environment Tool",
+        "rarity": "Rare",
+        "description": "Creates pocket dimensions for applications"
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "name": "Bug Slayer",
+      "description": "Defeated over 1000 bugs in production",
+      "icon": "⚔️",
+      "rarity": "Epic",
+      "dateEarned": "2023-06-15"
     },
-    "contact": {
-      "email": "alexandra@codeweaver.dev",
-      "linkedin": "/in/alexandra-codeweaver",
-      "github": "/alexandra-codeweaver",
-      "portfolio": "https://alexandra-portfolio.dev"
+    {
+      "name": "Performance Optimizer",
+      "description": "Improved application performance by 300%",
+      "icon": "⚡",
+      "rarity": "Legendary",
+      "dateEarned": "2023-09-22"
+    },
+    {
+      "name": "Team Builder",
+      "description": "Successfully led a team of 8 developers",
+      "icon": "👥",
+      "rarity": "Rare",
+      "dateEarned": "2023-12-01"
+    },
+    {
+      "name": "Code Reviewer Extraordinaire",
+      "description": "Reviewed over 500 pull requests",
+      "icon": "📋",
+      "rarity": "Uncommon",
+      "dateEarned": "2023-08-10"
     }
+  ],
+  "questLog": {
+    "completed": [
+      {
+        "name": "The Migration of Legacy Systems",
+        "difficulty": "Legendary",
+        "description": "Successfully migrated a 10-year-old monolith to microservices",
+        "reward": "+500 XP, +2 Architecture Skill",
+        "company": "TechCorp Industries"
+      },
+      {
+        "name": "The Great Performance Optimization",
+        "difficulty": "Epic",
+        "description": "Reduced page load time from 8s to 1.2s",
+        "reward": "+300 XP, Performance Optimizer Achievement",
+        "company": "SpeedTech Solutions"
+      }
+    ],
+    "inProgress": [
+      {
+        "name": "The AI Integration Project",
+        "difficulty": "Epic",
+        "description": "Implementing machine learning features into the core platform",
+        "progress": 65,
+        "estimatedCompletion": "Q2 2024"
+      }
+    ]
+  },
+  "contact": {
+    "email": "alexandra@codeweaver.dev",
+    "linkedin": "/in/alexandra-codeweaver",
+    "github": "/alexandra-codeweaver",
+    "portfolio": "https://alexandra-portfolio.dev"
   }
 }
