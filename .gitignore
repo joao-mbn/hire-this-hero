@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+TODO.md
+src/assets/aiGenerated
 
 # Editor directories and files
 .vscode/*

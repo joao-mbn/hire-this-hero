@@ -86,6 +86,13 @@ export type Race = Record<
   }
 >;
 
+export interface Background {
+  story: string;
+  ideals: string[];
+  bonds: string[];
+  flaws: string[];
+}
+
 export interface Character {
   name: string;
   race: Race;
@@ -104,12 +111,7 @@ export interface Character {
   weaponProficiencies: string[];
   armorProficiencies: string[];
   skills: Skill[];
-  background: {
-    story: string;
-    ideals: string[];
-    bonds: string[];
-    flaws: string[];
-  };
+  background: Background;
   attributes: {
     strength: number;
     dexterity: number;

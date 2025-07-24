@@ -1,8 +1,8 @@
 import { useCharacter } from "@/hooks/useCharacter";
-import { Attributes } from "./Attributes";
 import { Header } from "./header/Header";
 import { Loading } from "./Loading";
 import { NoCharacterData } from "./NoCharacterData";
+import { SideContainer } from "./SideContainer";
 import { StatsTabs } from "./statsTabs/StatsTabs";
 
 export const CharacterSheet = () => {
@@ -19,8 +19,16 @@ export const CharacterSheet = () => {
   return (
     <div className="mx-auto min-h-screen max-w-7xl p-6">
       <Header character={character} />
-      <Attributes character={character} />
-      <StatsTabs character={character} />
+
+      <div className="flex gap-6">
+        <div className="w-1/3">
+          <SideContainer character={character} />
+        </div>
+
+        <div className="w-2/3">
+          <StatsTabs character={character} />
+        </div>
+      </div>
     </div>
   );
 };
