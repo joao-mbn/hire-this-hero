@@ -93,6 +93,14 @@
   "weaknesses": ["Cold Damage"],
   "weaponProficiencies": ["Laptops", "Desktop PCs"],
   "armorProficiencies": ["Gym Outfits", "Casual Clothes"],
+  "appearance": {
+    "sex": "Male",
+    "hair": "Black and wavy, extending up to the shoulders",
+    "eyes": "Black",
+    "skin": "Light brown",
+    "height": "1.66m",
+    "weight": "64kg"
+  },
   "skills": [
     {
       "name": "Perception",
