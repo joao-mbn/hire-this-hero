@@ -17,6 +17,14 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Quintessential", "cursive"],
+        serif: ["Quintessential", "cursive"],
+        cinzel: ["Cinzel", "serif"],
+        quintessential: ["Quintessential", "cursive"],
+        uncial: ["Uncial Antiqua", "cursive"],
+        medieval: ["MedievalSharp", "cursive"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -61,11 +69,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-      },
-      fontFamily: {
-        cinzel: ["Cinzel", "serif"],
-        uncial: ["Uncial Antiqua", "cursive"],
-        medieval: ["MedievalSharp", "cursive"],
       },
       borderRadius: {
         lg: "var(--radius)",

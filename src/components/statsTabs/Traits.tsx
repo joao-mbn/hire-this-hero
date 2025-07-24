@@ -10,9 +10,7 @@ export function Traits({ traits }: TraitsProps) {
     <div className="grid gap-6 md:grid-cols-3">
       <Card className="parchment-card">
         <CardHeader>
-          <CardTitle className="font-cinzel text-lg text-primary">
-            ⭐ Ideals
-          </CardTitle>
+          <CardTitle className="text-lg text-primary">⭐ Ideals</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
@@ -27,9 +25,7 @@ export function Traits({ traits }: TraitsProps) {
 
       <Card className="parchment-card">
         <CardHeader>
-          <CardTitle className="font-cinzel text-lg text-primary">
-            🤝 Bonds
-          </CardTitle>
+          <CardTitle className="text-lg text-primary">🤝 Bonds</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
@@ -44,9 +40,7 @@ export function Traits({ traits }: TraitsProps) {
 
       <Card className="parchment-card">
         <CardHeader>
-          <CardTitle className="font-cinzel text-lg text-primary">
-            ⚡ Flaws
-          </CardTitle>
+          <CardTitle className="text-lg text-primary">⚡ Flaws</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">

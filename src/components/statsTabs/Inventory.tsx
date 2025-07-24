@@ -19,7 +19,7 @@ export function Inventory({ inventory }: InventoryProps) {
     <div className="grid gap-6 md:grid-cols-2">
       <Card className="parchment-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 font-cinzel">
+          <CardTitle className="flex items-center gap-2">
             <Sword className="h-5 w-5 text-primary" />
             Weapons & Tools
           </CardTitle>
@@ -33,7 +33,7 @@ export function Inventory({ inventory }: InventoryProps) {
 
       <Card className="parchment-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 font-cinzel">
+          <CardTitle className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
             Armor & Consumables
           </CardTitle>
@@ -55,7 +55,7 @@ interface InventoryWeaponProps {
 const InventoryWeapon = ({ item }: InventoryWeaponProps) => (
   <div className="rounded border border-border p-3">
     <div className="mb-2 flex items-center gap-2">
-      <h4 className="font-cinzel font-semibold">{item.name}</h4>
+      <h4 className="font-semibold">{item.name}</h4>
       {"rarity" in item && (
         <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
           {item.rarity}
@@ -77,7 +77,7 @@ interface InventoryArmorProps {
 const InventoryArmor = ({ item }: InventoryArmorProps) => (
   <div className="rounded border border-border p-3">
     <div className="mb-2 flex items-center gap-2">
-      <h4 className="font-cinzel font-semibold">{item.name}</h4>
+      <h4 className="font-semibold">{item.name}</h4>
       {"rarity" in item && (
         <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
           {item.rarity}

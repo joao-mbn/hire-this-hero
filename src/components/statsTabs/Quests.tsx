@@ -14,7 +14,7 @@ export function Quests({ quests }: QuestsProps) {
     <div className="space-y-6">
       <Card className="parchment-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 font-cinzel">
+          <CardTitle className="flex items-center gap-2">
             <Trophy className="h-5 w-5 text-primary" />
             Completed Quests
           </CardTitle>
@@ -23,7 +23,7 @@ export function Quests({ quests }: QuestsProps) {
           {quests.completed.map((quest, idx) => (
             <div key={idx} className="rounded border border-border p-4">
               <div className="mb-2 flex items-center gap-2">
-                <h3 className="font-cinzel font-bold">{quest.name}</h3>
+                <h3 className="font-bold">{quest.name}</h3>
                 <Badge
                   className={`${rarityColor(quest.difficulty)} text-white`}
                 >
@@ -46,7 +46,7 @@ export function Quests({ quests }: QuestsProps) {
 
       <Card className="parchment-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 font-cinzel">
+          <CardTitle className="flex items-center gap-2">
             <Scroll className="h-5 w-5 text-primary" />
             Current Quests
           </CardTitle>
@@ -55,7 +55,7 @@ export function Quests({ quests }: QuestsProps) {
           {quests.inProgress.map((quest, idx) => (
             <div key={idx} className="rounded border border-border p-4">
               <div className="mb-2 flex items-center gap-2">
-                <h3 className="font-cinzel font-bold">{quest.name}</h3>
+                <h3 className="font-bold">{quest.name}</h3>
                 <Badge
                   className={`${rarityColor(quest.difficulty)} text-white`}
                 >

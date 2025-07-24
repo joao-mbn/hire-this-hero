@@ -15,9 +15,7 @@ export function Achievements({ achievements }: AchievementsProps) {
           <CardContent className="p-4">
             <div className="text-center">
               <div className="mb-2 text-4xl">{achievement.icon}</div>
-              <h3 className="mb-2 font-cinzel text-lg font-bold">
-                {achievement.name}
-              </h3>
+              <h3 className="mb-2 text-lg font-bold">{achievement.name}</h3>
               <Badge
                 className={`mb-2 ${rarityColor(achievement.rarity)} text-white`}
               >

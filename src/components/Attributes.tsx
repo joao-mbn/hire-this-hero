@@ -10,7 +10,7 @@ export function Attributes({ character }: AttributesProps) {
       <h2 className="rune-text mb-6 text-center font-uncial text-2xl text-primary">
         Core Attributes
       </h2>
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-5">
+      <div className="grid grid-cols-2 gap-6 font-cinzel md:grid-cols-5">
         <AttributeGem
           name="Strength"
           value={character.attributes.strength}
@@ -53,7 +53,7 @@ function AttributeGem({ name, value, type }: AttributeGemProps) {
       <div className={`attribute-gem ${type.toLowerCase()} mx-auto mb-2`}>
         {value}
       </div>
-      <p className="font-cinzel text-sm font-bold">{name}</p>
+      <p className="text-sm font-bold">{name}</p>
     </div>
   );
 }

@@ -118,7 +118,7 @@ export const SkillTree = ({ skillTree }: { skillTree: SkillTreeType }) => {
                           Lvl {skill.level}
                         </span>
                       </div>
-                      <span className="font-cinzel text-xs leading-tight font-semibold">
+                      <span className="text-xs leading-tight font-semibold">
                         {skill.name}
                       </span>
                     </div>
@@ -139,26 +139,20 @@ export const SkillTree = ({ skillTree }: { skillTree: SkillTreeType }) => {
                         className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r px-3 py-1 ${getCategoryColor(selectedNode.category)} mb-3 text-white`}
                       >
                         {getSkillIcon(selectedNode)}
-                        <span className="font-cinzel font-bold">
-                          {selectedNode.name}
-                        </span>
+                        <span className="font-bold">{selectedNode.name}</span>
                       </div>
                     </div>
 
                     <div className="space-y-3">
                       <div>
-                        <h4 className="mb-1 font-cinzel font-semibold">
-                          Description
-                        </h4>
+                        <h4 className="mb-1 font-semibold">Description</h4>
                         <p className="text-sm text-muted-foreground">
                           {selectedNode.description}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="mb-2 font-cinzel font-semibold">
-                          Progress
-                        </h4>
+                        <h4 className="mb-2 font-semibold">Progress</h4>
                         <div className="mb-1 flex justify-between text-sm">
                           <span>Level {selectedNode.level}</span>
                           <span>
@@ -176,9 +170,7 @@ export const SkillTree = ({ skillTree }: { skillTree: SkillTreeType }) => {
                       </div>
 
                       <div>
-                        <h4 className="mb-2 font-cinzel font-semibold">
-                          Category
-                        </h4>
+                        <h4 className="mb-2 font-semibold">Category</h4>
                         <Badge
                           className={`bg-gradient-to-r ${getCategoryColor(selectedNode.category)} text-white capitalize`}
                         >
@@ -188,9 +180,7 @@ export const SkillTree = ({ skillTree }: { skillTree: SkillTreeType }) => {
 
                       {selectedNode.prerequisites.length > 0 && (
                         <div>
-                          <h4 className="mb-2 font-cinzel font-semibold">
-                            Prerequisites
-                          </h4>
+                          <h4 className="mb-2 font-semibold">Prerequisites</h4>
                           <div className="space-y-1">
                             {selectedNode.prerequisites.map((prereqId) => {
                               const prereq = skillTree.nodes.find(
@@ -236,9 +226,7 @@ export const SkillTree = ({ skillTree }: { skillTree: SkillTreeType }) => {
                 ) : (
                   <div className="text-center text-muted-foreground">
                     <Star className="mx-auto mb-4 h-12 w-12 opacity-50" />
-                    <p className="font-cinzel">
-                      Select a skill to view details
-                    </p>
+                    <p className="">Select a skill to view details</p>
                     <p className="mt-2 text-sm">
                       Click on any skill node to explore your development path
                     </p>
@@ -253,31 +241,31 @@ export const SkillTree = ({ skillTree }: { skillTree: SkillTreeType }) => {
       {/* Legend */}
       <Card className="parchment-card">
         <CardContent className="p-4">
-          <h3 className="mb-3 font-cinzel font-semibold">Skill Categories</h3>
+          <h3 className="mb-3 font-semibold">Skill Categories</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             <div className="flex items-center gap-2">
               <div
                 className={`h-4 w-4 rounded bg-gradient-to-r from-amber-500 to-yellow-500`}
               />
-              <span className="font-cinzel text-sm">Foundation</span>
+              <span className="text-sm">Foundation</span>
             </div>
             <div className="flex items-center gap-2">
               <div
                 className={`h-4 w-4 rounded bg-gradient-to-r from-blue-500 to-indigo-500`}
               />
-              <span className="font-cinzel text-sm">Specialization</span>
+              <span className="text-sm">Specialization</span>
             </div>
             <div className="flex items-center gap-2">
               <div
                 className={`h-4 w-4 rounded bg-gradient-to-r from-purple-500 to-pink-500`}
               />
-              <span className="font-cinzel text-sm">Advanced</span>
+              <span className="text-sm">Advanced</span>
             </div>
             <div className="flex items-center gap-2">
               <div
                 className={`h-4 w-4 rounded bg-gradient-to-r from-orange-500 to-red-500`}
               />
-              <span className="font-cinzel text-sm">Mastery</span>
+              <span className="text-sm">Mastery</span>
             </div>
           </div>
         </CardContent>

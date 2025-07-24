@@ -14,7 +14,7 @@ export function Background({ background }: BackgroundProps) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="mb-6 font-cinzel leading-relaxed text-muted-foreground">
+        <p className="mb-6 leading-relaxed text-muted-foreground">
           {background.story}
         </p>
       </CardContent>

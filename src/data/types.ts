@@ -1,23 +1,29 @@
 export type Rarity = "common" | "uncommon" | "rare" | "epic" | "legendary";
 export type ItemType = "weapon" | "armor" | "consumable" | "tool";
+export type SkillCategory =
+  | "foundation"
+  | "specialization"
+  | "advanced"
+  | "mastery";
 
 export interface Item {
   name: string;
   type: ItemType;
-  stats: string;
   description: string;
 }
 
 export interface WeaponItem extends Item {
   rarity: Rarity;
+  stats: string;
 }
 
 export interface ArmorItem extends Item {
   rarity: Rarity;
+  stats: string;
 }
 
 export interface ConsumableItem extends Item {
-  quantity: number;
+  quantity: number | string;
   effect: string;
 }
 
@@ -36,7 +42,7 @@ export interface SkillNode {
   prerequisites: string[];
   x: number;
   y: number;
-  category: "foundation" | "specialization" | "advanced" | "mastery";
+  category: SkillCategory;
 }
 
 export interface SkillTree {
@@ -44,9 +50,18 @@ export interface SkillTree {
   connections: SkillConnection[];
 }
 
+export type Race = Record<
+  string,
+  {
+    primary: string;
+    effects: string[];
+    description: string;
+  }
+>;
+
 export interface Character {
   name: string;
-  title: string;
+  race: Race;
   level: number;
   class: string;
   alignment: string;

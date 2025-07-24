@@ -1,6 +1,6 @@
 import { useCharacter } from "@/hooks/useCharacter";
 import { Attributes } from "./Attributes";
-import { Header } from "./Header";
+import { Header } from "./header/Header";
 import { Loading } from "./Loading";
 import { NoCharacterData } from "./NoCharacterData";
 import { StatsTabs } from "./statsTabs/StatsTabs";

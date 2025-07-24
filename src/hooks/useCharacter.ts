@@ -1,4 +1,4 @@
-import type { Character } from "@/data/types";
+import type { Character, ItemType, Rarity, SkillCategory } from "@/data/types";
 import { useEffect, useState } from "react";
 
 export function useCharacter() {
@@ -10,7 +10,39 @@ export function useCharacter() {
     import("../data/character.json")
       .then((data) => {
         /* class is a reserved word and cannot be used as a key */
-        setCharacter({ ...data, class: data._class });
+        setCharacter({
+          ...data,
+          class: data._class,
+          skillTree: {
+            ...data.skillTree,
+            nodes: data.skillTree.nodes.map((node) => ({
+              ...node,
+              category: node.category as SkillCategory,
+            })),
+          },
+          inventory: {
+            ...data.inventory,
+            weapons: data.inventory.weapons.map((weapon) => ({
+              ...weapon,
+              rarity: weapon.rarity as Rarity,
+              type: weapon.type as ItemType,
+            })),
+            armor: data.inventory.armor.map((armor) => ({
+              ...armor,
+              rarity: armor.rarity as Rarity,
+              type: armor.type as ItemType,
+            })),
+            consumables: data.inventory.consumables.map((consumable) => ({
+              ...consumable,
+              type: consumable.type as ItemType,
+            })),
+            tools: data.inventory.tools.map((tool) => ({
+              ...tool,
+              rarity: tool.rarity as Rarity,
+              type: tool.type as ItemType,
+            })),
+          },
+        });
       })
       .catch((error) => {
         console.error("Error loading character data:", error);

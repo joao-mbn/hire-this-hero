@@ -15,22 +15,22 @@ export function StatsTabs({ character }: StatsTabsProps) {
   return (
     <Tabs defaultValue="skills" className="space-y-6">
       <TabsList className="grid w-full grid-cols-4 bg-card/50 md:grid-cols-6">
-        <TabsTrigger value="skills" className="font-cinzel">
+        <TabsTrigger value="skills" className="">
           Skills
         </TabsTrigger>
-        <TabsTrigger value="inventory" className="font-cinzel">
+        <TabsTrigger value="inventory" className="">
           Inventory
         </TabsTrigger>
-        <TabsTrigger value="achievements" className="font-cinzel">
+        <TabsTrigger value="achievements" className="">
           Achievements
         </TabsTrigger>
-        <TabsTrigger value="quests" className="font-cinzel">
+        <TabsTrigger value="quests" className="">
           Quests
         </TabsTrigger>
-        <TabsTrigger value="background" className="font-cinzel">
+        <TabsTrigger value="background" className="">
           Background
         </TabsTrigger>
-        <TabsTrigger value="traits" className="font-cinzel">
+        <TabsTrigger value="traits" className="">
           Traits
         </TabsTrigger>
       </TabsList>

@@ -1,82 +1,108 @@
 {
-  "name": "Alexandra the Code Weaver",
-  "title": "Senior Full Stack Developer",
-  "level": 28,
-  "_class": "Software Architect",
-  "alignment": "Lawful Good",
+  "name": "João Nascimento",
+  "race": {
+    "species": {
+      "primary": "Human",
+      "effects": ["+1 to all Attributes"],
+      "description": "Humans are a blank slate, they can be anything they want to be."
+    },
+    "ethnicity": {
+      "primary": "Brazilian",
+      "effects": [
+        "Advantage on Wisdom Saving Throws involving Bureaucracy",
+        "+1 Charisma",
+        "You max the Portuguese language",
+        "You gain 3 points in Spanish"
+      ],
+      "description": "Dealing with overbearing bureaucracy is a daily challenge in Brazil, so that navigating it becomes a skill.\n\nNaturally easy-going, Brazilians have no trouble in making acquaintances and building relationships."
+    },
+    "archetype": {
+      "primary": "Carioca",
+      "effects": [
+        "Proficiency in Persuasion and Perception",
+        "+1 Dexterity",
+        "Resistance to Fire Damage",
+        "Weakness to Cold Damage"
+      ],
+      "description": "Rio's violence creates almost a paranoid awareness of your surroundings, granting enhanced agility and defense reflexes.\n\nThe scorching heat builds natural resistance to fire damage, while the lack of cold exposure makes you vulnerable to freezing temperatures."
+    }
+  },
+  "level": 10,
+  "_class": "Software Engineer",
+  "alignment": "True Neutral",
   "portrait": "/placeholder.svg",
   "background": {
-    "story": "Born in the mystical realm of Silicon Valley, Alexandra discovered her affinity for the arcane arts of programming at the tender age of 12. Through years of dedicated study in the ancient universities and countless battles against bugs in the depths of production servers, she has risen to become a renowned Code Weaver, capable of bending digital realities to her will.",
+    "story": "Born with an innate ability to question everything and learn at lightning speed, João discovered his calling as a natural problem solver and Devil's Advocate. With 4 years mastering the arcane arts of web development, he has risen from a self-taught developer to a formidable Software Engineer. His journey began in the mystical realm of Radix Engineering, where he learned web development technologies from scratch and completed his internship six months ahead of schedule. Now, he wields the power of multiple programming languages and frameworks, capable of optimizing performance by 95% and leading teams to achieve 50-100% productivity increases.",
     "ideals": [
-      "Clean code is the foundation of all magical endeavors",
-      "Knowledge shared is knowledge multiplied",
-      "The user's experience is sacred above all"
+      "Question everything - the best solutions come from challenging assumptions",
+      "Learn fast, adapt faster - knowledge is the ultimate weapon",
+      "Optimize relentlessly - every second and byte matters"
     ],
     "bonds": [
-      "Mentors the next generation of code apprentices",
-      "Guardian of the company's architectural integrity",
-      "Sworn protector of production environments"
+      "Mentor to newer engineers, helping them navigate the codebase labyrinth",
+      "Guardian of performance optimization and deployment efficiency",
+      "Sworn protector of clean, maintainable code"
     ],
     "flaws": [
-      "Sometimes gets lost in perfectionism",
-      "Cannot resist refactoring legacy code",
-      "Weak against imposter syndrome attacks"
+      "Cannot resist playing Devil's Advocate, even when it's not needed",
+      "Sometimes gets lost in the pursuit of perfect optimization",
+      "Weak against legacy systems that resist modernization"
     ]
   },
   "attributes": {
-    "strength": 85,
-    "dexterity": 92,
-    "intelligence": 96,
-    "wisdom": 88,
-    "charisma": 78
+    "strength": 75,
+    "dexterity": 88,
+    "intelligence": 95,
+    "wisdom": 92,
+    "charisma": 85
   },
   "inventory": {
     "weapons": [
       {
-        "name": "Legendary MacBook Pro",
+        "name": "Legendary MacBook Pro of Swift Development",
         "type": "Primary Weapon",
         "rarity": "Legendary",
-        "stats": "+15 Coding Speed, +10 Performance",
-        "description": "A mystical device forged in the fires of Cupertino"
+        "stats": "+20 Coding Speed, +15 Problem Solving",
+        "description": "A mystical device that responds to João's natural problem-solving instincts"
       },
       {
-        "name": "Mechanical Keyboard of Swift Typing",
+        "name": "Mechanical Keyboard of Devil's Advocacy",
         "type": "Weapon Enhancement",
         "rarity": "Epic",
-        "stats": "+20 Typing Speed, +5 Satisfaction",
-        "description": "Each keypress resonates with the power of a thousand clicks"
+        "stats": "+25 Critical Thinking, +10 Debate Power",
+        "description": "Each keystroke echoes with the power of challenging assumptions"
       }
     ],
     "armor": [
       {
-        "name": "Noise-Cancelling Headphones of Focus",
+        "name": "Fast Learning Helm of Adaptation",
         "type": "Head Armor",
         "rarity": "Rare",
-        "stats": "+25 Concentration, -90% Distractions",
-        "description": "Blocks out the chaos of the outside world"
+        "stats": "+30 Learning Speed, +20 Problem Solving",
+        "description": "Forged from years of rapid knowledge absorption and adaptation"
       },
       {
-        "name": "Blue Light Blocking Glasses of Endurance",
-        "type": "Eye Protection",
-        "rarity": "Uncommon",
-        "stats": "+10 Late Night Coding, -50% Eye Strain",
-        "description": "Protects against the harmful rays of multiple monitors"
+        "name": "Performance Optimization Gauntlets",
+        "type": "Hand Protection",
+        "rarity": "Epic",
+        "stats": "+40 Memory Optimization, +25 Speed Enhancement",
+        "description": "Reduces app memory consumption from 1.6GB to 150MB"
       }
     ],
     "consumables": [
       {
-        "name": "Artisan Coffee Elixir",
+        "name": "Fast Learning Elixir",
         "type": "Consumable",
         "quantity": "∞",
-        "effect": "+50 Energy, +25 Focus for 4 hours",
-        "description": "The lifeblood of all developers"
+        "effect": "+50 Learning Speed, +25 Adaptation for 8 hours",
+        "description": "The essence of João's most powerful ability - rapid knowledge absorption"
       },
       {
-        "name": "Stack Overflow Scroll",
+        "name": "Devil's Advocate Scroll",
         "type": "Knowledge Item",
         "quantity": "∞",
-        "effect": "Instantly provides solution to any coding problem",
-        "description": "Ancient wisdom passed down through generations"
+        "effect": "Instantly identifies flaws in any argument or system design",
+        "description": "Ancient wisdom passed down through generations of critical thinkers"
       }
     ],
     "tools": [
@@ -84,91 +110,139 @@
         "name": "VS Code of Infinite Extensions",
         "type": "IDE",
         "rarity": "Legendary",
-        "description": "The ultimate weapon for code manipulation"
+        "description": "The ultimate weapon for code manipulation and rapid development"
       },
       {
         "name": "Git Repository of Time Travel",
         "type": "Version Control",
         "rarity": "Epic",
-        "description": "Allows traversal through the timeline of code"
+        "description": "Allows traversal through the timeline of code with deployment pipelines"
       },
       {
         "name": "Docker Container of Isolation",
         "type": "Environment Tool",
         "rarity": "Rare",
-        "description": "Creates pocket dimensions for applications"
+        "description": "Creates pocket dimensions for applications and deployment efficiency"
+      },
+      {
+        "name": "Three.js Staff of 3D Visualization",
+        "type": "Specialized Tool",
+        "rarity": "Epic",
+        "description": "Wields the power of interactive 3D visualization for industrial data"
       }
     ]
   },
   "achievements": [
     {
-      "name": "Bug Slayer",
-      "description": "Defeated over 1000 bugs in production",
-      "icon": "⚔️",
-      "rarity": "Epic",
-      "dateEarned": "2023-06-15"
-    },
-    {
       "name": "Performance Optimizer",
-      "description": "Improved application performance by 300%",
+      "description": "Reduced app memory consumption from 1.6GB to 150MB and request durations by 95%",
       "icon": "⚡",
       "rarity": "Legendary",
-      "dateEarned": "2023-09-22"
+      "dateEarned": "2024-10-15"
     },
     {
-      "name": "Team Builder",
-      "description": "Successfully led a team of 8 developers",
+      "name": "Deployment Master",
+      "description": "Reduced deployment time by 80% from 20 minutes to 4 minutes",
+      "icon": "🚀",
+      "rarity": "Epic",
+      "dateEarned": "2023-08-15"
+    },
+    {
+      "name": "Team Leader",
+      "description": "Led team of four developers to 50-100% productivity increase",
       "icon": "👥",
       "rarity": "Rare",
-      "dateEarned": "2023-12-01"
+      "dateEarned": "2024-09-01"
     },
     {
-      "name": "Code Reviewer Extraordinaire",
-      "description": "Reviewed over 500 pull requests",
-      "icon": "📋",
+      "name": "Cost Saver",
+      "description": "Saved USD 10,000 by reimplementing Excel-like spreadsheet solution",
+      "icon": "💰",
+      "rarity": "Epic",
+      "dateEarned": "2023-06-20"
+    },
+    {
+      "name": "Fast Learner",
+      "description": "Completed internship 6 months early, bypassing entry-level position",
+      "icon": "📚",
+      "rarity": "Rare",
+      "dateEarned": "2022-08-01"
+    },
+    {
+      "name": "Bug Slayer",
+      "description": "Earned recognition for resolving issues and bugs swiftly during internship",
+      "icon": "⚔️",
       "rarity": "Uncommon",
-      "dateEarned": "2023-08-10"
+      "dateEarned": "2022-06-01"
     }
   ],
   "questLog": {
     "completed": [
       {
-        "name": "The Migration of Legacy Systems",
+        "name": "The Great Performance Optimization",
         "difficulty": "Legendary",
-        "description": "Successfully migrated a 10-year-old monolith to microservices",
-        "reward": "+500 XP, +2 Architecture Skill",
-        "company": "TechCorp Industries"
+        "description": "Optimized Dashboard performance with multiple charts containing hundreds of thousands of points and WebGL 3D view, reducing memory consumption by 75% and request durations by 95%",
+        "reward": "+500 XP, Performance Optimizer Achievement",
+        "company": "Radix Engineering and Software"
       },
       {
-        "name": "The Great Performance Optimization",
+        "name": "The 3D Visualization Quest",
         "difficulty": "Epic",
-        "description": "Reduced page load time from 8s to 1.2s",
-        "reward": "+300 XP, Performance Optimizer Achievement",
-        "company": "SpeedTech Solutions"
+        "description": "Led implementation of interactive 3D visualization of oil refinery plant, impressing stakeholders and expanding features",
+        "reward": "+400 XP, Team Leader Achievement",
+        "company": "Radix Engineering and Software"
+      },
+      {
+        "name": "The Deployment Pipeline Saga",
+        "difficulty": "Epic",
+        "description": "Created deployment pipelines reducing deployment time by 80% from 20 minutes to 4 minutes on multiple on-premises VMs",
+        "reward": "+350 XP, Deployment Master Achievement",
+        "company": "Radix Engineering and Software"
+      },
+      {
+        "name": "The Spreadsheet Revolution",
+        "difficulty": "Rare",
+        "description": "Reimplemented Excel-like spreadsheet solution with more feature-rich library, saving USD 10,000 in development time",
+        "reward": "+300 XP, Cost Saver Achievement",
+        "company": "Radix Engineering and Software"
+      },
+      {
+        "name": "The Internship Acceleration",
+        "difficulty": "Rare",
+        "description": "Completed software development internship 6 months ahead of schedule, securing Developer II position",
+        "reward": "+250 XP, Fast Learner Achievement",
+        "company": "Radix Engineering and Software"
       }
     ],
     "inProgress": [
       {
-        "name": "The AI Integration Project",
+        "name": "The API Integration Epic",
         "difficulty": "Epic",
-        "description": "Implementing machine learning features into the core platform",
-        "progress": 65,
-        "estimatedCompletion": "Q2 2024"
+        "description": "Planning, designing, implementing and testing API integrations with multiple 3rd party systems (Salesforce, Hubspot, Netsuite, QBO)",
+        "progress": 75,
+        "estimatedCompletion": "Q1 2025"
+      },
+      {
+        "name": "The Technical Interview Mastery",
+        "difficulty": "Rare",
+        "description": "Conducting technical interviews, creating and reviewing interview projects, evaluating candidates",
+        "progress": 90,
+        "estimatedCompletion": "Q4 2024"
       }
     ]
   },
   "contact": {
-    "email": "alexandra@codeweaver.dev",
-    "linkedin": "/in/alexandra-codeweaver",
-    "github": "/alexandra-codeweaver",
-    "portfolio": "https://alexandra-portfolio.dev"
+    "email": "joao@example.com",
+    "linkedin": "/in/joaomarcosbatistanascimento",
+    "github": "/joao-mbn",
+    "portfolio": "https://joao-mbn.github.io"
   },
   "skillTree": {
     "nodes": [
       {
-        "id": "programming-fundamentals",
-        "name": "Programming Fundamentals",
-        "description": "Learn basic programming concepts and first language",
+        "id": "problem-solving",
+        "name": "Natural Problem Solving",
+        "description": "Innate ability to question everything and find optimal solutions",
         "level": 10,
         "maxLevel": 10,
         "unlocked": true,
@@ -177,333 +251,231 @@
         "y": 50,
         "category": "foundation"
       },
-
       {
-        "id": "javascript",
-        "name": "JavaScript",
-        "description": "Master the language of the web",
-        "level": 9,
+        "id": "fast-learning",
+        "name": "Fast Learning",
+        "description": "Mastery of rapid knowledge absorption and adaptation",
+        "level": 10,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["programming-fundamentals"],
-        "x": 200,
-        "y": 150,
-        "category": "specialization"
+        "prerequisites": [],
+        "x": 600,
+        "y": 50,
+        "category": "foundation"
       },
       {
-        "id": "python",
-        "name": "Python",
-        "description": "Versatile language for web, AI, and data",
-        "level": 7,
+        "id": "web-development",
+        "name": "Web Development",
+        "description": "4 years of experience in modern web technologies",
+        "level": 8,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["programming-fundamentals"],
-        "x": 400,
+        "prerequisites": ["fast-learning"],
+        "x": 600,
         "y": 150,
         "category": "specialization"
       },
       {
         "id": "typescript",
         "name": "TypeScript",
-        "description": "Type-safe JavaScript superset",
+        "description": "Type-safe development across multiple frameworks",
         "level": 8,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["javascript"],
-        "x": 200,
-        "y": 250,
-        "category": "specialization"
-      },
-
-      {
-        "id": "html-css",
-        "name": "HTML & CSS",
-        "description": "Foundation of web presentation",
-        "level": 10,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["javascript"],
-        "x": 50,
+        "prerequisites": ["web-development"],
+        "x": 600,
         "y": 250,
         "category": "specialization"
       },
       {
         "id": "react",
         "name": "React",
-        "description": "Component-based UI library",
-        "level": 9,
+        "description": "Component-based UI development and optimization",
+        "level": 8,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["javascript", "html-css"],
-        "x": 50,
+        "prerequisites": ["typescript"],
+        "x": 500,
         "y": 350,
         "category": "advanced"
       },
       {
         "id": "vue",
-        "name": "Vue.js",
-        "description": "Progressive frontend framework",
+        "name": "Vue",
+        "description": "Progressive frontend framework mastery",
         "level": 7,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["javascript", "html-css"],
-        "x": 150,
+        "prerequisites": ["typescript"],
+        "x": 700,
         "y": 350,
         "category": "advanced"
       },
       {
         "id": "angular",
         "name": "Angular",
-        "description": "Full-featured frontend framework",
-        "level": 5,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["typescript", "html-css"],
-        "x": 250,
-        "y": 350,
-        "category": "advanced"
-      },
-      {
-        "id": "svelte",
-        "name": "Svelte",
-        "description": "Compile-time optimized framework",
-        "level": 3,
-        "maxLevel": 10,
-        "unlocked": false,
-        "prerequisites": ["javascript", "html-css"],
-        "x": 350,
-        "y": 350,
-        "category": "advanced"
-      },
-
-      {
-        "id": "tailwindcss",
-        "name": "Tailwind CSS",
-        "description": "Utility-first CSS framework",
-        "level": 8,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["react"],
-        "x": 50,
-        "y": 450,
-        "category": "advanced"
-      },
-      {
-        "id": "sass",
-        "name": "Sass/SCSS",
-        "description": "Advanced CSS preprocessing",
+        "description": "Full-featured frontend framework experience",
         "level": 6,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["html-css"],
-        "x": 150,
-        "y": 450,
+        "prerequisites": ["typescript"],
+        "x": 300,
+        "y": 350,
         "category": "advanced"
       },
-
       {
-        "id": "redux",
-        "name": "Redux",
-        "description": "Predictable state container",
-        "level": 7,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["react"],
-        "x": 50,
-        "y": 550,
-        "category": "mastery"
-      },
-      {
-        "id": "zustand",
-        "name": "Zustand",
-        "description": "Lightweight state management",
-        "level": 5,
-        "maxLevel": 10,
-        "unlocked": false,
-        "prerequisites": ["react"],
-        "x": 150,
-        "y": 550,
-        "category": "mastery"
-      },
-
-      {
-        "id": "nodejs",
-        "name": "Node.js",
-        "description": "JavaScript runtime for backend",
+        "id": "nextjs",
+        "name": "Next.js",
+        "description": "React framework for production applications",
         "level": 8,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["javascript"],
+        "prerequisites": ["react"],
         "x": 500,
+        "y": 450,
+        "category": "advanced"
+      },
+      {
+        "id": "threejs",
+        "name": "Three.js",
+        "description": "3D visualization and WebGL mastery",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["react"],
+        "x": 400,
+        "y": 550,
+        "category": "mastery"
+      },
+      {
+        "id": "golang",
+        "name": "Golang",
+        "description": "Backend development and API integration",
+        "level": 7,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["web-development"],
+        "x": 800,
         "y": 250,
         "category": "specialization"
       },
       {
-        "id": "express",
-        "name": "Express.js",
-        "description": "Minimal web framework for Node.js",
-        "level": 8,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["nodejs"],
-        "x": 500,
-        "y": 350,
-        "category": "advanced"
-      },
-      {
-        "id": "fastapi",
-        "name": "FastAPI",
-        "description": "Modern Python web framework",
+        "id": "n8n",
+        "name": "n8n",
+        "description": "Workflow automation and integration",
         "level": 6,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["python"],
-        "x": 600,
+        "prerequisites": ["golang"],
+        "x": 800,
         "y": 350,
         "category": "advanced"
-      },
-      {
-        "id": "django",
-        "name": "Django",
-        "description": "Full-featured Python web framework",
-        "level": 4,
-        "maxLevel": 10,
-        "unlocked": false,
-        "prerequisites": ["python"],
-        "x": 700,
-        "y": 350,
-        "category": "advanced"
-      },
-
-      {
-        "id": "sql",
-        "name": "SQL",
-        "description": "Database query language mastery",
-        "level": 8,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["nodejs"],
-        "x": 500,
-        "y": 450,
-        "category": "advanced"
-      },
-      {
-        "id": "mongodb",
-        "name": "MongoDB",
-        "description": "NoSQL document database",
-        "level": 7,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["nodejs"],
-        "x": 600,
-        "y": 450,
-        "category": "advanced"
-      },
-      {
-        "id": "postgresql",
-        "name": "PostgreSQL",
-        "description": "Advanced relational database",
-        "level": 6,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["sql"],
-        "x": 500,
-        "y": 550,
-        "category": "mastery"
-      },
-
-      {
-        "id": "git",
-        "name": "Git",
-        "description": "Version control mastery",
-        "level": 9,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["programming-fundamentals"],
-        "x": 600,
-        "y": 150,
-        "category": "specialization"
-      },
-      {
-        "id": "docker",
-        "name": "Docker",
-        "description": "Containerization technology",
-        "level": 8,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["git"],
-        "x": 600,
-        "y": 250,
-        "category": "advanced"
-      },
-      {
-        "id": "kubernetes",
-        "name": "Kubernetes",
-        "description": "Container orchestration",
-        "level": 6,
-        "maxLevel": 10,
-        "unlocked": true,
-        "prerequisites": ["docker"],
-        "x": 600,
-        "y": 350,
-        "category": "mastery"
       },
       {
         "id": "aws",
         "name": "AWS",
-        "description": "Cloud platform services",
+        "description": "Cloud platform services and deployment",
         "level": 7,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["docker"],
-        "x": 700,
+        "prerequisites": ["web-development"],
+        "x": 900,
         "y": 250,
+        "category": "mastery"
+      },
+      {
+        "id": "ai",
+        "name": "AI Integration",
+        "description": "Machine learning and AI system integration",
+        "level": 6,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["web-development"],
+        "x": 200,
+        "y": 250,
+        "category": "advanced"
+      },
+      {
+        "id": "sql",
+        "name": "SQL",
+        "description": "Database query language and optimization",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["web-development"],
+        "x": 700,
+        "y": 450,
+        "category": "advanced"
+      },
+      {
+        "id": "git",
+        "name": "Git",
+        "description": "Version control and collaboration",
+        "level": 9,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["web-development"],
+        "x": 600,
+        "y": 550,
         "category": "mastery"
       },
       {
         "id": "cicd",
         "name": "CI/CD",
-        "description": "Continuous integration and deployment",
+        "description": "Continuous integration and deployment pipelines",
+        "level": 8,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["git"],
+        "x": 700,
+        "y": 550,
+        "category": "mastery"
+      },
+      {
+        "id": "team-leadership",
+        "name": "Team Leadership",
+        "description": "Leading teams and mentoring developers",
         "level": 7,
         "maxLevel": 10,
         "unlocked": true,
-        "prerequisites": ["git", "docker"],
-        "x": 650,
+        "prerequisites": ["problem-solving"],
+        "x": 100,
+        "y": 350,
+        "category": "mastery"
+      },
+      {
+        "id": "technical-interviews",
+        "name": "Technical Interviews",
+        "description": "Conducting interviews and evaluating candidates",
+        "level": 6,
+        "maxLevel": 10,
+        "unlocked": true,
+        "prerequisites": ["team-leadership"],
+        "x": 100,
         "y": 450,
         "category": "mastery"
       }
     ],
     "connections": [
-      { "from": "programming-fundamentals", "to": "javascript" },
-      { "from": "programming-fundamentals", "to": "python" },
-      { "from": "programming-fundamentals", "to": "git" },
+      { "from": "problem-solving", "to": "team-leadership" },
+      { "from": "fast-learning", "to": "web-development" },
 
-      { "from": "javascript", "to": "typescript" },
-      { "from": "javascript", "to": "html-css" },
-      { "from": "javascript", "to": "nodejs" },
+      { "from": "web-development", "to": "typescript" },
+      { "from": "web-development", "to": "golang" },
+      { "from": "web-development", "to": "aws" },
+      { "from": "web-development", "to": "sql" },
+      { "from": "web-development", "to": "git" },
+      { "from": "web-development", "to": "ai" },
 
-      { "from": "html-css", "to": "react" },
-      { "from": "html-css", "to": "vue" },
-      { "from": "html-css", "to": "svelte" },
+      { "from": "typescript", "to": "react" },
+      { "from": "typescript", "to": "vue" },
       { "from": "typescript", "to": "angular" },
+      { "from": "golang", "to": "n8n" },
 
-      { "from": "react", "to": "tailwindcss" },
-      { "from": "react", "to": "redux" },
-      { "from": "react", "to": "zustand" },
-      { "from": "html-css", "to": "sass" },
-
-      { "from": "nodejs", "to": "express" },
-      { "from": "nodejs", "to": "sql" },
-      { "from": "nodejs", "to": "mongodb" },
-      { "from": "python", "to": "fastapi" },
-      { "from": "python", "to": "django" },
-      { "from": "sql", "to": "postgresql" },
-
-      { "from": "git", "to": "docker" },
-      { "from": "docker", "to": "kubernetes" },
-      { "from": "docker", "to": "aws" },
+      { "from": "react", "to": "nextjs" },
+      { "from": "react", "to": "threejs" },
       { "from": "git", "to": "cicd" },
-      { "from": "docker", "to": "cicd" }
+      { "from": "team-leadership", "to": "technical-interviews" }
     ]
   }
 }
