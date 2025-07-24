@@ -32,7 +32,7 @@ export function Header({ character }: HeaderProps) {
             <div className="mb-4 flex flex-wrap justify-center gap-2 font-cinzel lg:justify-start">
               <Badge variant="secondary" className="">
                 <Shield className="mr-1 h-3 w-3" />
-                {character.class}
+                {character.class.name}
               </Badge>
               <Badge variant="outline" className="">
                 {character.alignment}

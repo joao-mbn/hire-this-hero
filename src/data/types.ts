@@ -5,6 +5,33 @@ export type SkillCategory =
   | "specialization"
   | "advanced"
   | "mastery";
+export type Attribute =
+  | "Strength"
+  | "Dexterity"
+  | "Constitution"
+  | "Intelligence"
+  | "Wisdom"
+  | "Charisma";
+
+export interface UnderusageDebuff {
+  active: boolean;
+  description: string;
+}
+
+export interface Skill {
+  name: string;
+  description: string;
+  attribute: Attribute;
+  proficient: boolean;
+}
+
+export interface Language {
+  name: string;
+  level: number; // 1-10 scale based on CEFR
+  cefrLevel: string; // A1, A2, B1, B2, C1, C2
+  description: string;
+  underusageDebuff?: UnderusageDebuff;
+}
 
 export interface Item {
   name: string;
@@ -63,9 +90,20 @@ export interface Character {
   name: string;
   race: Race;
   level: number;
-  class: string;
+  class: {
+    name: string;
+    description: string;
+    effects: string[];
+  };
   alignment: string;
   portrait: string;
+  languages: Language[];
+  immunities: string[];
+  resistances: string[];
+  weaknesses: string[];
+  weaponProficiencies: string[];
+  armorProficiencies: string[];
+  skills: Skill[];
   background: {
     story: string;
     ideals: string[];
@@ -75,9 +113,14 @@ export interface Character {
   attributes: {
     strength: number;
     dexterity: number;
+    constitution: number;
     intelligence: number;
     wisdom: number;
     charisma: number;
+  };
+  health: {
+    max: number;
+    current: number;
   };
   skillTree: SkillTree;
   inventory: {

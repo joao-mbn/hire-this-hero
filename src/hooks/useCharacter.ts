@@ -1,4 +1,10 @@
-import type { Character, ItemType, Rarity, SkillCategory } from "@/data/types";
+import type {
+  Attribute,
+  Character,
+  ItemType,
+  Rarity,
+  SkillCategory,
+} from "@/data/types";
 import { useEffect, useState } from "react";
 
 export function useCharacter() {
@@ -9,10 +15,13 @@ export function useCharacter() {
     // Simulating loading character data from JSON
     import("../data/character.json")
       .then((data) => {
-        /* class is a reserved word and cannot be used as a key */
         setCharacter({
           ...data,
-          class: data._class,
+          skills: data.skills.map((skill) => ({
+            ...skill,
+            attribute: skill.attribute as Attribute,
+          })),
+          class: data._class, // class is a reserved word and cannot be used as a key
           skillTree: {
             ...data.skillTree,
             nodes: data.skillTree.nodes.map((node) => ({
