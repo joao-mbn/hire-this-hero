@@ -23,12 +23,12 @@
     "archetype": {
       "primary": "Carioca",
       "effects": [
-        "Proficiency in Persuasion and Perception",
+        "Proficiency in Perception",
         "+1 Dexterity",
         "Resistance to Fire Damage",
         "Weakness to Cold Damage"
       ],
-      "description": "Rio's violence creates almost a paranoid awareness of your surroundings, granting enhanced agility and defense reflexes.\n\nThe scorching heat builds natural resistance to fire damage, while the lack of cold exposure makes you vulnerable to freezing temperatures."
+      "description": "Rio's violence creates almost a paranoid awareness of your surroundings, granting enhanced agility and defense reflexes.\n\nThe scorching heat of the city builds natural resistance to fire damage, while the lack of cold exposure makes you vulnerable to freezing temperatures."
     }
   },
   "level": 10,
@@ -116,7 +116,7 @@
       "name": "Persuasion",
       "description": "Ability to influence others through logical arguments, emotional appeals, and negotiation",
       "attribute": "Charisma",
-      "proficient": true
+      "proficient": false
     },
     {
       "name": "Social Reading",
