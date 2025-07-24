@@ -1,11 +1,11 @@
 import type { Character } from "@/data/types";
+import { Attributes } from "../Attributes";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Achievements } from "./Achievements";
-import { Background } from "./Background";
+import { Biography } from "./Biography";
 import { Inventory } from "./Inventory";
 import { Quests } from "./Quests";
 import { SkillTree } from "./SkillTree";
-import { Traits } from "./Traits";
 
 interface StatsTabsProps {
   character: Character;
@@ -27,11 +27,11 @@ export function StatsTabs({ character }: StatsTabsProps) {
         <TabsTrigger value="quests" className="">
           Quests
         </TabsTrigger>
-        <TabsTrigger value="background" className="">
-          Background
+        <TabsTrigger value="biography" className="">
+          Biography
         </TabsTrigger>
-        <TabsTrigger value="traits" className="">
-          Traits
+        <TabsTrigger value="attributes" className="">
+          Attributes
         </TabsTrigger>
       </TabsList>
 
@@ -52,12 +52,12 @@ export function StatsTabs({ character }: StatsTabsProps) {
         <Quests quests={character.questLog} />
       </TabsContent>
 
-      <TabsContent value="background">
-        <Background background={character.background} />
+      <TabsContent value="biography">
+        <Biography background={character.background} />
       </TabsContent>
 
-      <TabsContent value="traits">
-        <Traits traits={character.background} />
+      <TabsContent value="attributes">
+        <Attributes character={character} />
       </TabsContent>
     </Tabs>
   );

@@ -6,7 +6,7 @@ interface AttributesProps {
 
 export function Attributes({ character }: AttributesProps) {
   return (
-    <div className="parchment-card mb-6 p-6">
+    <div className="p-6">
       <h2 className="rune-text mb-6 text-center font-uncial text-2xl text-primary">
         Attributes
       </h2>
