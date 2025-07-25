@@ -2,7 +2,7 @@ import { useCharacter } from "@/hooks/useCharacter";
 import { Header } from "./header/Header";
 import { Loading } from "./Loading";
 import { NoCharacterData } from "./NoCharacterData";
-import { SideContainer } from "./SideContainer";
+import { SideContainer } from "./sideMenu/SideContainer";
 import { StatsTabs } from "./statsTabs/StatsTabs";
 
 export const CharacterSheet = () => {
@@ -17,7 +17,10 @@ export const CharacterSheet = () => {
   }
 
   return (
-    <div className="mx-auto min-h-screen max-w-7xl p-6">
+    <div
+      className="mx-auto my-6 max-w-7xl rounded-lg border-2 border-amber-800 p-6 shadow-2xl"
+      style={{ backgroundColor: "hsl(var(--sheet-background))" }}
+    >
       <Header character={character} />
 
       <div className="flex gap-6">

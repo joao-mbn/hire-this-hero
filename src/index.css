@@ -6,8 +6,11 @@
 @layer base {
   :root {
     /* Parchment and mystical color palette */
-    --background: 35 25% 92%;
+    --sheet-background: 35 25% 92%;
     --foreground: 25 30% 15%;
+
+    /* Website background */
+    --background: 25 35% 18%;
 
     --card: 35 35% 88%;
     --card-foreground: 25 30% 15%;
@@ -88,23 +91,9 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-background text-foreground;
-    background-image:
-      radial-gradient(
-        circle at 25% 25%,
-        hsla(var(--ancient-gold), 0.05) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 75% 75%,
-        hsla(var(--mystical-blue), 0.05) 0%,
-        transparent 50%
-      );
+    @apply text-foreground;
+    background-color: hsl(var(--background));
   }
 }
 
@@ -124,29 +113,6 @@
         transparent 50%
       );
     box-shadow: var(--shadow-parchment);
-  }
-
-  .ornate-border {
-    @apply relative rounded-lg border-2 border-primary/30;
-    background: linear-gradient(
-      45deg,
-      transparent 49%,
-      hsl(var(--primary) / 0.2) 50%,
-      transparent 51%
-    );
-  }
-
-  .ornate-border::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: var(--gradient-gold);
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0.6;
   }
 
   .skill-bar {
