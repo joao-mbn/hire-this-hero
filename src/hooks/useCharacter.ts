@@ -1,5 +1,8 @@
 import type {
   Attribute,
+  AttributeKey,
+  AttributeName,
+  AttributeShortName,
   Character,
   ItemType,
   Rarity,
@@ -23,9 +26,20 @@ export function useCharacter() {
             data.experience.attributeLeveling,
             data.experience.proficiencyBonus,
           ),
+          attributes: Object.entries(data.attributes).reduce(
+            (acc, [key, value]) => ({
+              ...acc,
+              [key as AttributeKey]: {
+                ...value,
+                label: value.label as AttributeName,
+                shortLabel: value.shortLabel as AttributeShortName,
+              },
+            }),
+            {} as Record<AttributeKey, Attribute>,
+          ),
           skills: data.skills.map((skill) => ({
             ...skill,
-            attribute: skill.attribute as Attribute,
+            attribute: skill.attribute as AttributeName,
           })),
           skillTree: {
             ...data.skillTree,

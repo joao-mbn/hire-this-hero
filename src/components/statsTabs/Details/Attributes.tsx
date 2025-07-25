@@ -1,4 +1,13 @@
-import type { Character } from "@/data/types";
+import {
+  Effects,
+  TooltipContentResultDescription,
+} from "@/components/TooltipContentResultDescription";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import type { Attribute, AttributeKey, Character } from "@/data/types";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 
 interface AttributesProps {
@@ -14,37 +23,10 @@ export function Attributes({ character }: AttributesProps) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-2 gap-6 font-cinzel md:grid-cols-6">
-          <AttributeGem
-            name="Strength"
-            value={character.attributes.strength}
-            type="strength"
-          />
-          <AttributeGem
-            name="Constitution"
-            value={character.attributes.constitution}
-            type="constitution"
-          />
-          <AttributeGem
-            name="Dexterity"
-            value={character.attributes.dexterity}
-            type="dexterity"
-          />
-          <AttributeGem
-            name="Intelligence"
-            value={character.attributes.intelligence}
-            type="intelligence"
-          />
-          <AttributeGem
-            name="Wisdom"
-            value={character.attributes.wisdom}
-            type="wisdom"
-          />
-          <AttributeGem
-            name="Charisma"
-            value={character.attributes.charisma}
-            type="charisma"
-          />
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-6">
+          {Object.entries(character.attributes).map(([key, value]) => (
+            <AttributeGem value={value} type={key as AttributeKey} />
+          ))}
         </div>
       </CardContent>
     </Card>
@@ -52,18 +34,36 @@ export function Attributes({ character }: AttributesProps) {
 }
 
 interface AttributeGemProps {
-  name: string;
-  value: number;
-  type: string;
+  value: Attribute;
+  type: AttributeKey;
 }
 
-function AttributeGem({ name, value, type }: AttributeGemProps) {
+function AttributeGem({ value, type }: AttributeGemProps) {
+  const total = Object.values(value.composition).reduce(
+    (acc, curr) => acc + curr,
+    0,
+  );
+
   return (
-    <div className="text-center">
-      <div className={`attribute-gem ${type.toLowerCase()} mx-auto mb-2`}>
-        {value}
-      </div>
-      <p className="text-sm font-bold">{name}</p>
-    </div>
+    <Tooltip>
+      <TooltipTrigger>
+        <div className="text-center font-cinzel">
+          <div className={`attribute-gem ${type} mx-auto mb-2`}>{total}</div>
+          <p className="text-sm font-bold">{value.label}</p>
+        </div>
+      </TooltipTrigger>
+      <TooltipContent>
+        <TooltipContentResultDescription
+          results={
+            <Effects
+              effects={Object.entries(value.composition).map(
+                ([key, value]) => `${key}: +${value}`,
+              )}
+            />
+          }
+          title={value.label}
+        />
+      </TooltipContent>
+    </Tooltip>
   );
 }

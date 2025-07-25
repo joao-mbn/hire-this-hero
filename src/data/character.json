@@ -220,12 +220,54 @@
     }
   ],
   "attributes": {
-    "strength": 10,
-    "dexterity": 13,
-    "constitution": 14,
-    "intelligence": 18,
-    "wisdom": 14,
-    "charisma": 11
+    "strength": {
+      "label": "Strength",
+      "shortLabel": "STR",
+      "composition": {
+        "Base": 8,
+        "Attribute Leveling": 2
+      }
+    },
+    "dexterity": {
+      "label": "Dexterity",
+      "shortLabel": "DEX",
+      "composition": {
+        "Base": 12,
+        "Race Modifier - Carioca": 1
+      }
+    },
+    "constitution": {
+      "label": "Constitution",
+      "shortLabel": "CON",
+      "composition": {
+        "Base": 14
+      }
+    },
+    "intelligence": {
+      "label": "Intelligence",
+      "shortLabel": "INT",
+      "composition": {
+        "Base": 15,
+        "Attribute Leveling": 2,
+        "Race Modifier - Human": 1
+      }
+    },
+    "wisdom": {
+      "label": "Wisdom",
+      "shortLabel": "WIS",
+      "composition": {
+        "Base": 13,
+        "Race Modifier - Human": 1
+      }
+    },
+    "charisma": {
+      "label": "Charisma",
+      "shortLabel": "CHA",
+      "composition": {
+        "Base": 10,
+        "Race Modifier - Brazilian": 1
+      }
+    }
   },
   "health": {
     "max": 68,

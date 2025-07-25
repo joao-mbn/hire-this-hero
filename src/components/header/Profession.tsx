@@ -1,11 +1,11 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Shield } from "lucide-react";
-import { Badge } from "../ui/badge";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import {
   Effects,
   TooltipContentResultDescription,
-} from "./TooltipContentResultDescription";
+} from "../TooltipContentResultDescription";
+import { Badge } from "../ui/badge";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export function Profession() {
   const character = useCharacterContext();

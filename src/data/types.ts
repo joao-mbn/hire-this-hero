@@ -5,13 +5,21 @@ export type SkillCategory =
   | "specialization"
   | "advanced"
   | "mastery";
-export type Attribute =
+export type AttributeKey =
+  | "strength"
+  | "dexterity"
+  | "constitution"
+  | "intelligence"
+  | "wisdom"
+  | "charisma";
+export type AttributeName =
   | "Strength"
   | "Dexterity"
   | "Constitution"
   | "Intelligence"
   | "Wisdom"
   | "Charisma";
+export type AttributeShortName = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
 
 export interface UnderusageDebuff {
   active: boolean;
@@ -21,7 +29,7 @@ export interface UnderusageDebuff {
 export interface Skill {
   name: string;
   description: string;
-  attribute: Attribute;
+  attribute: AttributeName;
   proficient: boolean;
 }
 
@@ -114,6 +122,12 @@ export interface Experience {
   attributeLeveling: number[];
 }
 
+export interface Attribute {
+  label: AttributeName;
+  shortLabel: AttributeShortName;
+  composition: Record<string, number>;
+}
+
 export interface Character {
   name: string;
   race: Race;
@@ -130,14 +144,7 @@ export interface Character {
   armorProficiencies: string[];
   skills: Skill[];
   background: Background;
-  attributes: {
-    strength: number;
-    dexterity: number;
-    constitution: number;
-    intelligence: number;
-    wisdom: number;
-    charisma: number;
-  };
+  attributes: Record<AttributeKey, Attribute>;
   health: {
     max: number;
     current: number;

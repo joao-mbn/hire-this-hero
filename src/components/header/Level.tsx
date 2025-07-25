@@ -1,12 +1,12 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Ruler } from "lucide-react";
-import { Badge } from "../ui/badge";
-import { Progress } from "../ui/progress";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import {
   Effects,
   TooltipContentResultDescription,
-} from "./TooltipContentResultDescription";
+} from "../TooltipContentResultDescription";
+import { Badge } from "../ui/badge";
+import { Progress } from "../ui/progress";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export function Level() {
   const character = useCharacterContext();
