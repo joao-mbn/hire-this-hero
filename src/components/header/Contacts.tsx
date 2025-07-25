@@ -1,14 +1,12 @@
-import type { Contact } from "@/data/types";
+import { useCharacterContext } from "@/contexts/CharacterContext";
 import { getIcon } from "@/lib/utils";
 
-interface ContactsProps {
-  contact: Contact;
-}
+export function Contacts() {
+  const character = useCharacterContext();
 
-export function Contacts({ contact }: ContactsProps) {
   return (
     <div className="flex justify-center gap-4 lg:justify-start">
-      {Object.values(contact).map(({ iconName, link }) => {
+      {Object.values(character.contact).map(({ iconName, link }) => {
         if (!iconName || !link) return null;
 
         const Icon = getIcon(iconName);

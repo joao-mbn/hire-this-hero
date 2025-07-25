@@ -12,7 +12,6 @@ export function useCharacter() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulating loading character data from JSON
     import("../data/character.json")
       .then((data) => {
         setCharacter({
@@ -21,7 +20,6 @@ export function useCharacter() {
             ...skill,
             attribute: skill.attribute as Attribute,
           })),
-          class: data._class, // class is a reserved word and cannot be used as a key
           skillTree: {
             ...data.skillTree,
             nodes: data.skillTree.nodes.map((node) => ({

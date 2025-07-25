@@ -98,15 +98,17 @@ export type Contact = Record<
   { label: string; link: string; iconName: string }
 >;
 
+export interface Profession {
+  name: string;
+  description: string;
+  effects: string[];
+}
+
 export interface Character {
   name: string;
   race: Race;
   level: number;
-  class: {
-    name: string;
-    description: string;
-    effects: string[];
-  };
+  profession: Profession;
   contact: Contact;
   alignment: string;
   portrait: string;
