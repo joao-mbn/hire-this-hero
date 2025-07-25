@@ -1,7 +1,8 @@
 import type { Character } from "@/data/types";
-import { Github, Globe, Linkedin, Mail, Ruler, Shield } from "lucide-react";
+import { Ruler, Shield } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { TooltipProvider } from "../ui/tooltip";
+import { Contacts } from "./Contacts";
 import { Race } from "./Race";
 
 interface HeaderProps {
@@ -31,32 +32,7 @@ export function Header({ character }: HeaderProps) {
               </Badge>
             </div>
 
-            <div className="flex justify-center gap-4 lg:justify-start">
-              <a
-                href={`mailto:${character.contact.email}`}
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-              <a
-                href={character.contact.linkedin}
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href={character.contact.github}
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href={character.contact.portfolio}
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Globe className="h-5 w-5" />
-              </a>
-            </div>
+            <Contacts contact={character.contact} />
           </div>
         </div>
       </div>

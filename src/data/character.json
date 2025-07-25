@@ -31,6 +31,8 @@
       "description": "Rio's violence creates almost a paranoid awareness of your surroundings, granting enhanced agility and defense reflexes.\n\nThe scorching heat of the city builds natural resistance to fire damage, while the lack of cold exposure makes you vulnerable to freezing temperatures."
     }
   },
+  "birthDate": "1997-02-17",
+  "campaignStartDate": "2021-05-10",
   "level": 10,
   "_class": {
     "name": "Software Engineer",
@@ -411,10 +413,21 @@
     ]
   },
   "contact": {
-    "email": "joao@example.com",
-    "linkedin": "/in/joaomarcosbatistanascimento",
-    "github": "/joao-mbn",
-    "portfolio": "https://joao-mbn.github.io"
+    "email": {
+      "label": "Email",
+      "link": "mailto:joaombn97@gmail.com",
+      "iconName": "Mail"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "link": "https://www.linkedin.com/in/joaomarcosbatistanascimento",
+      "iconName": "Linkedin"
+    },
+    "github": {
+      "label": "GitHub",
+      "link": "https://github.com/joao-mbn",
+      "iconName": "Github"
+    }
   },
   "skillTree": {
     "nodes": [

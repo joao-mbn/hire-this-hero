@@ -93,6 +93,11 @@ export interface Background {
   flaws: string[];
 }
 
+export type Contact = Record<
+  string,
+  { label: string; link: string; iconName: string }
+>;
+
 export interface Character {
   name: string;
   race: Race;
@@ -102,6 +107,7 @@ export interface Character {
     description: string;
     effects: string[];
   };
+  contact: Contact;
   alignment: string;
   portrait: string;
   languages: Language[];
@@ -153,11 +159,5 @@ export interface Character {
       progress: number;
       estimatedCompletion: string;
     }>;
-  };
-  contact: {
-    email: string;
-    linkedin: string;
-    github: string;
-    portfolio: string;
   };
 }

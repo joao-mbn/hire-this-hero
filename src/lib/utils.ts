@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -14,3 +15,16 @@ export const rarityColor = (rarity: string) => {
 
   return "rarity-common";
 };
+
+export function getIcon(iconName: string) {
+  switch (iconName) {
+    case "Mail":
+      return Mail;
+    case "Linkedin":
+      return Linkedin;
+    case "Github":
+      return Github;
+    default:
+      return null;
+  }
+}
