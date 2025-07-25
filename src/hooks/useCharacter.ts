@@ -5,6 +5,7 @@ import type {
   Rarity,
   SkillCategory,
 } from "@/data/types";
+import { getExperience } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 export function useCharacter() {
@@ -16,6 +17,12 @@ export function useCharacter() {
       .then((data) => {
         setCharacter({
           ...data,
+          experience: getExperience(
+            data.experience.campaignStartDate,
+            data.experience.experienceDescriptions,
+            data.experience.attributeLeveling,
+            data.experience.proficiencyBonus,
+          ),
           skills: data.skills.map((skill) => ({
             ...skill,
             attribute: skill.attribute as Attribute,

@@ -32,8 +32,20 @@
     }
   },
   "birthDate": "1997-02-17",
-  "campaignStartDate": "2021-05-10",
-  "level": 10,
+  "experience": {
+    "campaignStartDate": "2021-05-10",
+    "experienceDescriptions": {
+      "1": "A fledgling Code Initiate, you have just begun your journey into the arcane arts of programming. You still need guidance in all but the simplest of rituals, but your potential is boundless.",
+      "5": "An Acolyte of the arcane arts of programming. You have the autonomy operate on others' rituals mostly unguided, but you still lack the ability to concoct your own. You excel best as a cog in the machine.",
+      "10": "A Code Adept with considerable power at your fingertips. You can craft sophisticated applications, solve problems creatively and guide the younger in their rituals. Your runes are a thing of beauty, but you still lack the ability to create impact at scale.",
+      "15": "An Archengineer whose mastery of the programming arts abounds and overflows. You can architect entire systems, lead teams of fellow casters, and your debugging prowess borders on divination. At this level you can masterly and effortlessly mimic, improve and create rituals of your own.",
+      "20": "You're truly a legend. You can not only create entire systems, but acquire the wisdom to know which systems to create and why. You command entire armies of casters and have the influence the very runes with which to write."
+    },
+    "attributeLeveling": [4, 8, 12, 16],
+    "proficiencyBonus": [
+      2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6
+    ]
+  },
   "profession": {
     "name": "Software Engineer",
     "subclass": "Full Stack",

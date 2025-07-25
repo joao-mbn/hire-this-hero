@@ -2,7 +2,10 @@ import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Shield } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-import { TooltipContentEffectDescription } from "./TooltipContentEffectDescription";
+import {
+  Effects,
+  TooltipContentResultDescription,
+} from "./TooltipContentResultDescription";
 
 export function Profession() {
   const character = useCharacterContext();
@@ -16,9 +19,10 @@ export function Profession() {
         </Badge>
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentEffectDescription
-          effects={character.profession.effects}
+        <TooltipContentResultDescription
+          results={<Effects effects={character.profession.effects} />}
           description={character.profession.description}
+          title="Effects"
         />
       </TooltipContent>
     </Tooltip>

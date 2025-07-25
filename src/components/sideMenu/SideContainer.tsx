@@ -22,7 +22,11 @@ export function SideContainer({ character }: SideContainerProps) {
           className="h-auto w-full object-cover mix-blend-normal"
         />
       </div>
-      <HealthBar current={30} max={character.health.max} className="mt-4" />
+      <HealthBar
+        current={character.health.current}
+        max={character.health.max}
+        className="mt-4"
+      />
     </div>
   );
 }

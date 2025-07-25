@@ -104,10 +104,20 @@ export interface Profession {
   effects: string[];
 }
 
+export interface Experience {
+  campaignStartDate: Date;
+  level: number;
+  percentageToNextLevel: number;
+  description: string;
+  yearsOfExperience: number;
+  proficiencyBonus: number;
+  attributeLeveling: number[];
+}
+
 export interface Character {
   name: string;
   race: Race;
-  level: number;
+  experience: Experience;
   profession: Profession;
   contact: Contact;
   alignment: string;

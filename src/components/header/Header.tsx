@@ -1,7 +1,6 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { Ruler } from "lucide-react";
-import { Badge } from "../ui/badge";
 import { Contacts } from "./Contacts";
+import { Level } from "./Level";
 import { Profession } from "./Profession";
 import { Race } from "./Race";
 
@@ -20,11 +19,7 @@ export function Header() {
 
           <div className="mb-4 flex flex-wrap justify-center gap-2 lg:justify-start">
             <Profession />
-
-            <Badge variant="default" className="font-cinzel">
-              <Ruler className="mr-1 h-3 w-3" />
-              Level {character.level}
-            </Badge>
+            <Level />
           </div>
 
           <Contacts />
