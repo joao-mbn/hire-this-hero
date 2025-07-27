@@ -8,12 +8,12 @@ import { Skills } from "./Skills";
 export function Details({ character }: { character: Character }) {
   return (
     <div className="flex flex-col gap-6">
-      <Attributes character={character} />
+      <Attributes />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <Skills character={character} />
+        <Skills />
 
         <div className="space-y-6">
-          <Languages character={character} />
+          <Languages />
 
           <Card className="parchment-card">
             <CardHeader>

@@ -4,8 +4,10 @@ import type {
   AttributeName,
   AttributeShortName,
   Character,
+  Experience,
   ItemType,
   Rarity,
+  Skill,
   SkillCategory,
 } from "@/data/types";
 import { getExperience } from "@/lib/utils";
@@ -18,29 +20,50 @@ export function useCharacter() {
   useEffect(() => {
     import("../data/character.json")
       .then((data) => {
-        setCharacter({
-          ...data,
-          experience: getExperience(
-            data.experience.campaignStartDate,
-            data.experience.experienceDescriptions,
-            data.experience.attributeLeveling,
-            data.experience.proficiencyBonus,
-          ),
-          attributes: Object.entries(data.attributes).reduce(
-            (acc, [key, value]) => ({
+        const attributes: Record<AttributeKey, Attribute> = Object.entries(
+          data.attributes,
+        ).reduce(
+          (acc, [key, value]) => {
+            const total = Object.values(value.composition).reduce(
+              (acc, curr) => acc + curr,
+              0,
+            );
+            const bonus = Math.floor((total - 10) / 2);
+            return {
               ...acc,
               [key as AttributeKey]: {
                 ...value,
+                total,
+                bonus,
                 label: value.label as AttributeName,
                 shortLabel: value.shortLabel as AttributeShortName,
               },
-            }),
-            {} as Record<AttributeKey, Attribute>,
-          ),
-          skills: data.skills.map((skill) => ({
-            ...skill,
-            attribute: skill.attribute as AttributeName,
-          })),
+            };
+          },
+          {} as Record<AttributeKey, Attribute>,
+        );
+
+        const experience: Experience = getExperience(
+          data.experience.campaignStartDate,
+          data.experience.experienceDescriptions,
+          data.experience.attributeLeveling,
+          data.experience.proficiencyBonus,
+        );
+
+        const skills: Skill[] = data.skills.map((skill) => ({
+          ...skill,
+          attribute: skill.attribute as AttributeKey,
+          bonus: skill.proficient
+            ? attributes[skill.attribute as AttributeKey].bonus +
+              experience.proficiencyBonus
+            : attributes[skill.attribute as AttributeKey].bonus,
+        }));
+
+        const character: Character = {
+          ...data,
+          experience,
+          attributes,
+          skills,
           skillTree: {
             ...data.skillTree,
             nodes: data.skillTree.nodes.map((node) => ({
@@ -70,7 +93,8 @@ export function useCharacter() {
               type: tool.type as ItemType,
             })),
           },
-        });
+        };
+        setCharacter(character);
       })
       .catch((error) => {
         console.error("Error loading character data:", error);

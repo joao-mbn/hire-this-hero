@@ -1,12 +1,14 @@
-import type { Character } from "@/data/types";
-import { Badge } from "../../ui/badge";
+import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
+import { Badge } from "@/components/ui/badge";
+import { useCharacterContext } from "@/contexts/CharacterContext";
+import { AttributeKeyToName, AttributeKeyToShortName } from "@/data/types";
+import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 
-interface SkillsProps {
-  character: Character;
-}
+export function Skills() {
+  const character = useCharacterContext();
 
-export function Skills({ character }: SkillsProps) {
   return (
     <Card className="parchment-card">
       <CardHeader>
@@ -15,33 +17,66 @@ export function Skills({ character }: SkillsProps) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
-          {character.skills.map((skill, index) => (
+        {character.skills
+          .sort((a, b) => a.attribute.localeCompare(b.attribute))
+          .map((skill, index) => (
             <div
               key={index}
-              className="flex items-center justify-between rounded-lg border border-border/50 bg-card/50 p-3"
+              className="flex gap-3 border-b border-border/30 px-3 py-2 text-muted-foreground"
             >
-              <div className="flex-1">
-                <h4 className="font-cinzel font-semibold text-foreground">
-                  {skill.name}
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  {skill.description}
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Badge variant="outline" className="text-xs">
-                  {skill.attribute}
-                </Badge>
-                {skill.proficient && (
-                  <Badge variant="default" className="text-xs">
-                    Proficient
-                  </Badge>
-                )}
-              </div>
+              <Tooltip>
+                <TooltipTrigger>
+                  <div
+                    className={cn(
+                      "h-3 w-3 rounded-full border-2 border-amber-400",
+                      skill.proficient ? "bg-amber-400" : "bg-transparent",
+                    )}
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  {skill.proficient ? "Proficient" : "Not Proficient"}
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="flex flex-1 items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="min-w-[2.5rem] text-xs">
+                        {AttributeKeyToShortName[skill.attribute]}
+                      </span>
+                      <span className="text-foreground">{skill.name}</span>
+                    </div>
+                    <span className="text-sm">
+                      {skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}
+                    </span>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <TooltipContentResultDescription
+                    results={
+                      <div className="flex justify-between gap-2">
+                        <span className="text-muted-foreground">
+                          Bonus:{" "}
+                          {skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}
+                        </span>
+                        <div className="flex gap-2">
+                          <Badge variant="default">
+                            {AttributeKeyToName[skill.attribute]}
+                          </Badge>
+                          {skill.proficient && (
+                            <Badge variant="default">Proficient</Badge>
+                          )}
+                        </div>
+                      </div>
+                    }
+                    title={skill.name}
+                    description={skill.description}
+                  />
+                </TooltipContent>
+              </Tooltip>
             </div>
           ))}
-        </div>
       </CardContent>
     </Card>
   );

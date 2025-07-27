@@ -21,6 +21,25 @@ export type AttributeName =
   | "Charisma";
 export type AttributeShortName = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
 
+export const AttributeKeyToShortName: Record<AttributeKey, AttributeShortName> =
+  {
+    strength: "STR",
+    dexterity: "DEX",
+    constitution: "CON",
+    intelligence: "INT",
+    wisdom: "WIS",
+    charisma: "CHA",
+  };
+
+export const AttributeKeyToName: Record<AttributeKey, AttributeName> = {
+  strength: "Strength",
+  dexterity: "Dexterity",
+  constitution: "Constitution",
+  intelligence: "Intelligence",
+  wisdom: "Wisdom",
+  charisma: "Charisma",
+};
+
 export interface UnderusageDebuff {
   active: boolean;
   description: string;
@@ -29,8 +48,9 @@ export interface UnderusageDebuff {
 export interface Skill {
   name: string;
   description: string;
-  attribute: AttributeName;
+  attribute: AttributeKey;
   proficient: boolean;
+  bonus: number;
 }
 
 export interface Language {
@@ -125,6 +145,8 @@ export interface Experience {
 export interface Attribute {
   label: AttributeName;
   shortLabel: AttributeShortName;
+  total: number;
+  bonus: number;
   composition: Record<string, number>;
 }
 

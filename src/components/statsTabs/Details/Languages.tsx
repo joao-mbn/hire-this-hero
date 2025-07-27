@@ -1,12 +1,10 @@
-import type { Character } from "@/data/types";
+import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Badge } from "../../ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 
-interface LanguagesProps {
-  character: Character;
-}
+export function Languages() {
+  const character = useCharacterContext();
 
-export function Languages({ character }: LanguagesProps) {
   return (
     <Card className="parchment-card">
       <CardHeader>

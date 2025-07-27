@@ -119,103 +119,103 @@
     {
       "name": "Perception",
       "description": "Quickly noticing patterns, detecting changes in environment, and identifying what differs from the usual",
-      "attribute": "Wisdom",
+      "attribute": "wisdom",
       "proficient": true
     },
     {
       "name": "Intuition",
       "description": "Trusting gut instincts, making decisions with incomplete information, and suspending disbelief when facing the unknown",
-      "attribute": "Wisdom",
+      "attribute": "wisdom",
       "proficient": false
     },
     {
       "name": "Analytical Reasoning",
       "description": "Gathering information, analyzing data, questioning assumptions, and solving complex problems through research and logical thinking",
-      "attribute": "Intelligence",
+      "attribute": "intelligence",
       "proficient": true
     },
     {
       "name": "Persuasion",
       "description": "Ability to influence others through logical arguments, emotional appeals, and negotiation",
-      "attribute": "Charisma",
+      "attribute": "charisma",
       "proficient": false
     },
     {
       "name": "Social Reading",
       "description": "Understanding people's motives, communicating effectively, and building meaningful relationships",
-      "attribute": "Charisma",
+      "attribute": "charisma",
       "proficient": false
     },
     {
       "name": "Continuous Learning",
       "description": "Staying current with technology trends, learning new tools and frameworks, and adapting to industry changes",
-      "attribute": "Intelligence",
+      "attribute": "intelligence",
       "proficient": true
     },
     {
       "name": "Artistic Expression",
       "description": "Creating beauty, expressing ideas through art, and appreciating aesthetic value in various forms",
-      "attribute": "Intelligence",
+      "attribute": "intelligence",
       "proficient": false
     },
     {
       "name": "Risk Taking",
       "description": "Embracing uncertainty, making bold decisions, and pursuing opportunities despite potential failure",
-      "attribute": "Charisma",
+      "attribute": "charisma",
       "proficient": false
     },
     {
       "name": "Strategic Planning",
       "description": "Creating long-term plans, designing systems, and managing complex projects with foresight",
-      "attribute": "Intelligence",
+      "attribute": "intelligence",
       "proficient": false
     },
     {
       "name": "Leadership",
       "description": "Inspiring and guiding others, making decisions, and taking responsibility for outcomes",
-      "attribute": "Charisma",
+      "attribute": "charisma",
       "proficient": false
     },
     {
       "name": "Empathy",
       "description": "Understanding and sharing the feelings of others, building rapport and trust",
-      "attribute": "Charisma",
+      "attribute": "charisma",
       "proficient": false
     },
     {
       "name": "Attention to Detail",
       "description": "Noticing small errors, maintaining quality standards, and ensuring accuracy",
-      "attribute": "Dexterity",
+      "attribute": "dexterity",
       "proficient": true
     },
     {
       "name": "Physical Endurance",
       "description": "Maintaining energy and focus during long work sessions, handling physical demands",
-      "attribute": "Strength",
+      "attribute": "strength",
       "proficient": false
     },
     {
       "name": "Manual Precision",
       "description": "Performing precise physical tasks, fine motor control, and delicate operations",
-      "attribute": "Dexterity",
+      "attribute": "dexterity",
       "proficient": false
     },
     {
       "name": "Physical Coordination",
       "description": "Moving efficiently in workspace, handling equipment, and maintaining good posture",
-      "attribute": "Dexterity",
+      "attribute": "dexterity",
       "proficient": false
     },
     {
       "name": "Stress Management",
       "description": "Maintaining composure under pressure, managing emotions, and staying focused",
-      "attribute": "Wisdom",
+      "attribute": "wisdom",
       "proficient": false
     },
     {
       "name": "Networking",
       "description": "Building professional relationships, expanding contacts, and leveraging connections",
-      "attribute": "Charisma",
+      "attribute": "charisma",
       "proficient": false
     }
   ],

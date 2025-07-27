@@ -7,14 +7,14 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import type { Attribute, AttributeKey, Character } from "@/data/types";
+import { useCharacterContext } from "@/contexts/CharacterContext";
+import type { Attribute, AttributeKey } from "@/data/types";
+import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 
-interface AttributesProps {
-  character: Character;
-}
+export function Attributes() {
+  const character = useCharacterContext();
 
-export function Attributes({ character }: AttributesProps) {
   return (
     <Card className="parchment-card">
       <CardHeader>
@@ -39,17 +39,23 @@ interface AttributeGemProps {
 }
 
 function AttributeGem({ value, type }: AttributeGemProps) {
-  const total = Object.values(value.composition).reduce(
-    (acc, curr) => acc + curr,
-    0,
-  );
-
   return (
     <Tooltip>
       <TooltipTrigger>
-        <div className="text-center font-cinzel">
-          <div className={`attribute-gem ${type} mx-auto mb-2`}>{total}</div>
-          <p className="text-sm font-bold">{value.label}</p>
+        <div className="flex flex-col items-center gap-2 font-cinzel">
+          <div className="mb-2 flex translate-x-2 items-end">
+            <div className={cn("attribute-gem", type)}>{value.total}</div>
+            <div
+              className={cn(
+                "attribute-gem",
+                type,
+                "h-6 w-6 -translate-x-4 translate-y-2 text-sm shadow-md",
+              )}
+            >
+              {value.bonus >= 0 ? `+${value.bonus}` : value.bonus}
+            </div>
+          </div>
+          <p className="text-sm font-bold">{value.shortLabel}</p>
         </div>
       </TooltipTrigger>
       <TooltipContent>
@@ -62,6 +68,7 @@ function AttributeGem({ value, type }: AttributeGemProps) {
             />
           }
           title={value.label}
+          description={`Attribute Bonus: ${value.bonus >= 0 ? `+${value.bonus}` : value.bonus}`}
         />
       </TooltipContent>
     </Tooltip>
