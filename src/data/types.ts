@@ -21,24 +21,7 @@ export type AttributeName =
   | "Charisma";
 export type AttributeShortName = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
 
-export const AttributeKeyToShortName: Record<AttributeKey, AttributeShortName> =
-  {
-    strength: "STR",
-    dexterity: "DEX",
-    constitution: "CON",
-    intelligence: "INT",
-    wisdom: "WIS",
-    charisma: "CHA",
-  };
-
-export const AttributeKeyToName: Record<AttributeKey, AttributeName> = {
-  strength: "Strength",
-  dexterity: "Dexterity",
-  constitution: "Constitution",
-  intelligence: "Intelligence",
-  wisdom: "Wisdom",
-  charisma: "Charisma",
-};
+export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 
 export interface UnderusageDebuff {
   active: boolean;
@@ -55,9 +38,9 @@ export interface Skill {
 
 export interface Language {
   name: string;
-  level: number; // 1-10 scale based on CEFR
-  cefrLevel: string; // A1, A2, B1, B2, C1, C2
-  description: string;
+  level: number;
+  cefrLevel: CefrLevel;
+  description?: string;
   underusageDebuff?: UnderusageDebuff;
 }
 

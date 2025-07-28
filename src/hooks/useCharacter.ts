@@ -3,6 +3,7 @@ import type {
   AttributeKey,
   AttributeName,
   AttributeShortName,
+  CefrLevel,
   Character,
   Experience,
   ItemType,
@@ -64,6 +65,10 @@ export function useCharacter() {
           experience,
           attributes,
           skills,
+          languages: data.languages.map((language) => ({
+            ...language,
+            cefrLevel: language.cefrLevel as CefrLevel,
+          })),
           skillTree: {
             ...data.skillTree,
             nodes: data.skillTree.nodes.map((node) => ({

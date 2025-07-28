@@ -16,7 +16,7 @@
         "Advantage on Wisdom Saving Throws",
         "+1 Charisma",
         "You max the Portuguese language",
-        "You gain 3 points in Spanish"
+        "You gain 2 points in the Spanish language"
       ],
       "description": "In living in a country full of chaos, inefficiencies and conflicting ideas, Brazilians have developed a resilient mind and a way to carry on with their lives with humor and a good laugh in the face of adversity."
     },
@@ -65,40 +65,38 @@
   "languages": [
     {
       "name": "Portuguese",
-      "level": 10,
-      "cefrLevel": "Native",
-      "description": "Native language, perfect fluency in all aspects"
+      "level": 7,
+      "cefrLevel": "Native"
     },
     {
       "name": "English",
-      "level": 9,
+      "level": 6,
       "cefrLevel": "C2",
       "description": "Certified by the Imperial League of English Testing Scholars (IELTS) - Band 8.5 | CEFR C2 equivalent, credential 23BR000122BATJ705G"
     },
     {
       "name": "French",
-      "level": 7,
+      "level": 5,
       "cefrLevel": "C1",
       "description": "Certified by the Tribunal de Compétence Française (TCF) - CEFR C1, CREDENTIAL ID: 8D2CAB511C9D"
     },
     {
       "name": "German",
-      "level": 6,
+      "level": 4,
       "cefrLevel": "B2",
-      "description": "Intermediate level, requires practice to maintain fluency",
       "underusageDebuff": {
         "active": true,
-        "description": "Underusage causes a 3 level penalty on instant usage of the language for hearing and speaking. Needs to spend some time in the language to regain level."
+        "description": "Underusage puts the user under a proficiency below its current, until he spends some time in the language to regain level."
       }
     },
     {
       "name": "Spanish",
-      "level": 3,
+      "level": 2,
       "cefrLevel": "A2",
-      "description": "Basic conversational level, limited vocabulary",
+      "description": "Can read basic and intermediate texts due to similarity with Portuguese.",
       "underusageDebuff": {
         "active": true,
-        "description": "Underusage causes a 3 level penalty on instant usage of the language for hearing and speaking. Needs to spend some time in the language to regain level."
+        "description": "Underusage puts the user under a proficiency below its current, until he spends some time in the language to regain level."
       }
     }
   ],
@@ -161,7 +159,7 @@
     {
       "name": "Risk Taking",
       "description": "Embracing uncertainty, making bold decisions, and pursuing opportunities despite potential failure",
-      "attribute": "charisma",
+      "attribute": "wisdom",
       "proficient": false
     },
     {
@@ -185,7 +183,7 @@
     {
       "name": "Attention to Detail",
       "description": "Noticing small errors, maintaining quality standards, and ensuring accuracy",
-      "attribute": "dexterity",
+      "attribute": "wisdom",
       "proficient": true
     },
     {

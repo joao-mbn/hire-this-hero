@@ -1,5 +1,15 @@
+import { BrokenSkull } from "@/components/icons/BrokenSkull";
+import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
+import { Progress, ProgressIndicator } from "@/components/ui/progress";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { Badge } from "../../ui/badge";
+import { CefrLevelToDescription } from "@/data/maps";
+import type { Language } from "@/data/types";
+import { cn, LANGUAGE_DEBUFF_REGRESS, MAX_LANGUAGE_LEVEL } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 
 export function Languages() {
@@ -13,32 +23,153 @@ export function Languages() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="space-y-3">
-          {character.languages.map((language, index) => (
+        {character.languages
+          .sort((a, b) => b.level - a.level)
+          .map((language, index) => (
             <div
               key={index}
-              className="flex items-center justify-between rounded-lg border border-border/50 bg-card/50 p-3"
+              className="flex items-center gap-3 border-b border-border/30 px-3 py-2 text-muted-foreground"
             >
-              <div>
-                <h4 className="font-cinzel font-semibold text-foreground">
-                  {language.name}
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  {language.description}
-                </p>
-              </div>
-              <div className="flex flex-col items-end gap-1">
-                <Badge variant="outline" className="text-xs">
-                  {language.cefrLevel}
-                </Badge>
-                <span className="text-xs text-muted-foreground">
-                  Level {language.level}/10
-                </span>
-              </div>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="flex flex-1 items-center gap-3">
+                    <span className="min-w-24 text-foreground">
+                      {language.name}
+                    </span>
+                    <LanguageLevelProgress language={language} />
+                  </div>
+                </TooltipTrigger>
+
+                <LanguageContent language={language} />
+              </Tooltip>
+
+              <UnderusageDebuffTooltip language={language} />
             </div>
           ))}
-        </div>
       </CardContent>
     </Card>
+  );
+}
+
+interface LanguageLevelProgressProps {
+  language: Language;
+  className?: string;
+}
+
+function LanguageLevelProgress({
+  language,
+  className,
+}: LanguageLevelProgressProps) {
+  const debuffRegress = Math.min(language.level, LANGUAGE_DEBUFF_REGRESS);
+
+  const levelBarWidth = Math.round((language.level * 100) / MAX_LANGUAGE_LEVEL);
+  const debuffBarWidth = Math.round((debuffRegress * 100) / MAX_LANGUAGE_LEVEL);
+
+  /**
+   * TranslateX necessary to put the right-end of debuff indicator starting at the right end of the level indicator.
+   */
+  const debuffBarTranslation =
+    ((levelBarWidth - debuffBarWidth) / debuffBarWidth) * 100;
+
+  return (
+    <Progress
+      value={language.level}
+      max={MAX_LANGUAGE_LEVEL}
+      className={cn("h-2 w-full", className)}
+    >
+      <ProgressIndicator
+        className={cn(
+          "h-full bg-primary transition-all",
+          language.level === MAX_LANGUAGE_LEVEL && "gradient-flow maxed-out",
+        )}
+        style={{ width: `${levelBarWidth}%` }}
+      />
+      {language.underusageDebuff?.active && (
+        <ProgressIndicator
+          className="h-full -translate-y-2"
+          style={{
+            transform: `translateX(${debuffBarTranslation}%)`,
+            width: `${debuffBarWidth}%`,
+            background: `repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgb(239 68 68) 2px,
+                rgb(239 68 68) 4px
+              )`,
+          }}
+        />
+      )}
+    </Progress>
+  );
+}
+
+interface LanguageContentProps {
+  language: Language;
+}
+
+function LanguageContent({ language }: LanguageContentProps) {
+  return (
+    <TooltipContent>
+      <TooltipContentResultDescription
+        results={
+          <div className="flex w-xs flex-col gap-1 pb-2">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-muted-foreground">
+                Level: {language.level}/{MAX_LANGUAGE_LEVEL}
+                {language.cefrLevel && language.cefrLevel === "Native"
+                  ? ` • Native`
+                  : ` • CEFR: ${language.cefrLevel}`}
+              </span>
+              {language.underusageDebuff?.active && (
+                <BrokenSkull
+                  svgProps={{ className: "h-4 w-4 ml-auto" }}
+                  pathsProps={[{ className: "fill-muted-foreground" }]}
+                />
+              )}
+            </div>
+            <LanguageLevelProgress className="min-w-48" language={language} />
+          </div>
+        }
+        title={language.name}
+        description={
+          language.cefrLevel
+            ? `${CefrLevelToDescription[language.cefrLevel]}` +
+              (language.description ? `\n\n${language.description}` : "")
+            : language.description || ""
+        }
+      />
+    </TooltipContent>
+  );
+}
+
+interface UnderusageDebuffTooltipProps {
+  language: Language;
+}
+
+function UnderusageDebuffTooltip({ language }: UnderusageDebuffTooltipProps) {
+  if (!language.underusageDebuff?.active) {
+    return <div className="h-4 w-4" />;
+  }
+
+  return (
+    <>
+      <Tooltip>
+        <TooltipTrigger>
+          <BrokenSkull
+            svgProps={{ className: "h-4 w-4" }}
+            pathsProps={[{ className: "fill-muted-foreground" }]}
+          />
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className="max-w-xs">
+            <p className="mb-2 font-semibold">Underusage debuff:</p>
+            <p className="mt-2 text-sm whitespace-pre-line text-muted-foreground">
+              {language.underusageDebuff.description}
+            </p>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+    </>
   );
 }

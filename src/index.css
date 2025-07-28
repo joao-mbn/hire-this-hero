@@ -192,6 +192,10 @@
     @apply bg-gradient-to-r from-gray-500 to-slate-500;
   }
 
+  .maxed-out {
+    @apply bg-gradient-to-r from-green-500 to-cyan-500;
+  }
+
   @keyframes shimmer {
     0% {
       background-position: -20px 0;
@@ -213,5 +217,20 @@
 
   .floating {
     animation: float 3s ease-in-out infinite;
+  }
+
+  .gradient-flow {
+    @apply bg-[length:200%_100%];
+    animation: gradient-flow 1.5s ease-in-out infinite;
+  }
+
+  @keyframes gradient-flow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 }

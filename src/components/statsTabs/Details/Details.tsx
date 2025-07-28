@@ -14,7 +14,6 @@ export function Details({ character }: { character: Character }) {
 
         <div className="space-y-6">
           <Languages />
-
           <Card className="parchment-card">
             <CardHeader>
               <CardTitle className="rune-text font-uncial text-xl text-primary">
