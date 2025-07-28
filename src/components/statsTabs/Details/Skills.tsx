@@ -1,7 +1,7 @@
 import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
 import { Badge } from "@/components/ui/badge";
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { AttributeKeyToName, AttributeKeyToShortName } from "@/data/types";
+import { AttributeKeyToName, AttributeKeyToShortName } from "@/data/maps";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
@@ -18,14 +18,14 @@ export function Skills() {
       </CardHeader>
       <CardContent>
         {character.skills
-          .sort((a, b) => a.attribute.localeCompare(b.attribute))
+          .sort((a, b) => a.name.localeCompare(b.name))
           .map((skill, index) => (
             <div
               key={index}
-              className="flex gap-3 border-b border-border/30 px-3 py-2 text-muted-foreground"
+              className="flex items-center gap-3 border-b border-border/30 px-3 py-2 text-muted-foreground"
             >
               <Tooltip>
-                <TooltipTrigger>
+                <TooltipTrigger asChild>
                   <div
                     className={cn(
                       "h-3 w-3 rounded-full border-2 border-amber-400",
@@ -42,7 +42,7 @@ export function Skills() {
                 <TooltipTrigger asChild>
                   <div className="flex flex-1 items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="min-w-[2.5rem] text-xs">
+                      <span className="min-w-10 text-xs">
                         {AttributeKeyToShortName[skill.attribute]}
                       </span>
                       <span className="text-foreground">{skill.name}</span>
