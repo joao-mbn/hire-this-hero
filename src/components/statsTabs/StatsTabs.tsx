@@ -36,7 +36,7 @@ export function StatsTabs({ character }: StatsTabsProps) {
       </TabsList>
 
       <TabsContent value="details">
-        <Details character={character} />
+        <Details />
       </TabsContent>
 
       <TabsContent value="skills">

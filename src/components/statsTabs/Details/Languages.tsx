@@ -28,7 +28,7 @@ export function Languages() {
           .map((language, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 border-b border-border/30 px-3 py-2 text-muted-foreground"
+              className="flex items-center gap-3 border-border/30 px-3 pt-2 text-muted-foreground not-last:border-b not-last:pb-2"
             >
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -153,23 +153,21 @@ function UnderusageDebuffTooltip({ language }: UnderusageDebuffTooltipProps) {
   }
 
   return (
-    <>
-      <Tooltip>
-        <TooltipTrigger>
-          <BrokenSkull
-            svgProps={{ className: "h-4 w-4" }}
-            pathsProps={[{ className: "fill-muted-foreground" }]}
-          />
-        </TooltipTrigger>
-        <TooltipContent>
-          <div className="max-w-xs">
-            <p className="mb-2 font-semibold">Underusage debuff:</p>
-            <p className="mt-2 text-sm whitespace-pre-line text-muted-foreground">
-              {language.underusageDebuff.description}
-            </p>
-          </div>
-        </TooltipContent>
-      </Tooltip>
-    </>
+    <Tooltip>
+      <TooltipTrigger>
+        <BrokenSkull
+          svgProps={{ className: "h-4 w-4" }}
+          pathsProps={[{ className: "fill-muted-foreground" }]}
+        />
+      </TooltipTrigger>
+      <TooltipContent>
+        <div className="max-w-xs">
+          <p className="mb-2 font-semibold">Underusage debuff:</p>
+          <p className="mt-2 text-sm whitespace-pre-line text-muted-foreground">
+            {language.underusageDebuff.description}
+          </p>
+        </div>
+      </TooltipContent>
+    </Tooltip>
   );
 }

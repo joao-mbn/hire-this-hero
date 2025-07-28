@@ -12,7 +12,7 @@ export function Skills() {
   return (
     <Card className="parchment-card">
       <CardHeader>
-        <CardTitle className="rune-text font-uncial text-2xl text-primary">
+        <CardTitle className="rune-text font-uncial text-xl text-primary">
           Skills
         </CardTitle>
       </CardHeader>
@@ -22,7 +22,7 @@ export function Skills() {
           .map((skill, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 border-b border-border/30 px-3 py-2 text-muted-foreground"
+              className="flex items-center gap-3 border-border/30 px-3 pt-2 text-muted-foreground not-last:border-b not-last:pb-2"
             >
               <Tooltip>
                 <TooltipTrigger asChild>
