@@ -15,6 +15,7 @@ export function Contacts() {
         return (
           <a
             href={link}
+            key={iconName}
             className="text-muted-foreground transition-colors hover:text-primary"
           >
             <Icon className="h-5 w-5" />
