@@ -6,45 +6,51 @@ import { Languages } from "./Languages";
 import { Skills } from "./Skills";
 
 export function Details() {
+  const character = useCharacterContext();
+  const conditions = [
+    { title: "Immunities", value: character.immunities },
+    { title: "Resistances", value: character.resistances },
+    { title: "Weaknesses", value: character.weaknesses },
+  ];
+  const equipmentProficiencies = [
+    { title: "Weapons", value: character.weaponProficiencies },
+    { title: "Armors", value: character.armorProficiencies },
+  ];
+
   return (
     <div className="flex flex-col gap-6">
       <Attributes />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Skills />
-
         <div className="space-y-6">
           <Languages />
-
-          <Conditions />
+          <MultiSectionCard sections={conditions} />
+          <MultiSectionCard sections={equipmentProficiencies} />
         </div>
       </div>
     </div>
   );
 }
 
-function Conditions() {
-  const character = useCharacterContext();
+interface MultiSectionCardProps {
+  sections: { title: string; value: string[] }[];
+}
 
-  const conditions = [
-    { name: "Immunities", value: character.immunities },
-    { name: "Resistances", value: character.resistances },
-    { name: "Weaknesses", value: character.weaknesses },
-  ];
-
+function MultiSectionCard({ sections }: MultiSectionCardProps) {
   return (
     <Card className="parchment-card">
       <CardContent className="flex flex-col gap-4 pt-6">
-        {conditions
-          .filter((condition) => condition.value.length > 0)
-          .map((condition) => (
+        {sections
+          .filter((section) => section.value.length > 0)
+          .map((section) => (
             <div className="flex flex-col gap-3 border-border/30 not-last:border-b not-last:pb-6">
               <span className="rune-text font-uncial text-xl text-primary">
-                {condition.name}
+                {section.title}
               </span>
               <div className="flex flex-wrap gap-2">
-                {condition.value.map((immunity, index) => (
+                {section.value.map((proficiency, index) => (
                   <Badge key={index} variant="outline">
-                    {immunity}
+                    {proficiency}
                   </Badge>
                 ))}
               </div>
