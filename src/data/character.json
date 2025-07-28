@@ -86,7 +86,7 @@
       "cefrLevel": "B2",
       "underusageDebuff": {
         "active": true,
-        "description": "Underusage puts the user under a proficiency below its current, until he spends some time in the language to regain level."
+        "description": "Underusage puts the user two levels of proficiency below its current, until he spends some time in the language to regain level."
       }
     },
     {
@@ -96,7 +96,7 @@
       "description": "Can read basic and intermediate texts due to similarity with Portuguese.",
       "underusageDebuff": {
         "active": true,
-        "description": "Underusage puts the user under a proficiency below its current, until he spends some time in the language to regain level."
+        "description": "Underusage puts the user two levels of proficiency below its current, until he spends some time in the language to regain level."
       }
     }
   ],
