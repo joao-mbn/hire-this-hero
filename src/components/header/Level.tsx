@@ -1,4 +1,5 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
+import { MAX_LEVEL } from "@/lib/utils";
 import { Ruler } from "lucide-react";
 import {
   Effects,
@@ -25,14 +26,13 @@ export function Level() {
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-1 border-b pb-2">
                 <span className="font-semibold text-muted-foreground">
-                  Level {character.experience.level} •{" "}
+                  Level {character.experience.level}/{MAX_LEVEL} •{" "}
                   {character.experience.yearsOfExperience} years of experience •{" "}
                   {character.experience.percentageToNextLevel}% to next level
                 </span>
                 <Progress
                   className="h-2"
                   value={character.experience.percentageToNextLevel}
-                  max={100}
                 />
               </div>
               <Effects
