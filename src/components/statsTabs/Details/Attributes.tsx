@@ -25,7 +25,7 @@ export function Attributes() {
       <CardContent>
         <div className="grid grid-cols-2 gap-6 md:grid-cols-6">
           {Object.entries(character.attributes).map(([key, value]) => (
-            <AttributeGem value={value} type={key as AttributeKey} />
+            <AttributeGem value={value} type={key as AttributeKey} key={key} />
           ))}
         </div>
       </CardContent>
