@@ -4,6 +4,7 @@ import type {
   AttributeShortName,
   CefrLevel,
   ItemType,
+  MoralStandingType,
   Rarity,
 } from "./types";
 
@@ -66,4 +67,10 @@ export const RarityToName: Record<Rarity, string> = {
   rare: "Rare",
   epic: "Epic",
   legendary: "Legendary",
+};
+
+export const MoralStandingTypeToName: Record<MoralStandingType, string> = {
+  bonds: "Bonds",
+  flaws: "Flaws",
+  ideals: "Ideals",
 };

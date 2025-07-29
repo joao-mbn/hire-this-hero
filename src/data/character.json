@@ -66,7 +66,6 @@
       "Subclass: Choose at Level 3 - Frontend, Backend, Full Stack, DevOps, Mobile, Embedded Systems, OS Development, Game Development, ML/AI or Engineering Management"
     ]
   },
-  "alignment": "True Neutral",
   "portrait": "/placeholder.svg",
   "languages": [
     {
@@ -111,13 +110,40 @@
   "weaknesses": ["Cold Damage"],
   "weaponProficiencies": ["Laptops", "Desktop PCs"],
   "equipmentProficiencies": ["Light Armor"],
-  "appearance": {
-    "sex": "Male",
-    "hair": "Black and wavy, extending up to the shoulders",
-    "eyes": "Black",
-    "skin": "Light brown",
-    "height": "1.66m",
-    "weight": "64kg"
+  "biography": {
+    "appearance": {
+      "sex": "Male",
+      "hair": "Black and wavy, shoulder-length",
+      "eyes": "Black",
+      "skin": "Light brown",
+      "height": "1.66m",
+      "weight": "64kg",
+      "age": "28 years"
+    },
+    "alignment": {
+      "type": "True Neutral",
+      "description": "You have no firm convictions, you're skeptical of any strong idealogies, and you're wary of the classifications like good and evil. You're a pragmatist, balancing your deeds according to the circumstances."
+    },
+    "faith": {
+      "name": "Atheism",
+      "description": "You don't believe in deities, afterlife or any supernatural forces."
+    },
+    "personalityTraits": ["Curious", "Organized", "Independent", "Sarcastic"],
+    "moralStandings": {
+      "ideals": [
+        "The only thing better than writing code is deleting it",
+        "I don't deal in absolutes, everything is circumstantial"
+      ],
+      "bonds": [
+        "Spending time onboarding new people and helping juniors pays compounding interest",
+        "Code is to be written with empathy, it must make someone's life better"
+      ],
+      "flaws": [
+        "Sometimes I get lost in the details that are not so relevant to the problem at hand",
+        "The more I have to do, the more I'm likely to procrastinate"
+      ]
+    },
+    "lore": "To me, writing code is not only a income source or a means to solve problems, but an exertion of my will to create, and to contemplate the beauty an idea in its most reduced form."
   },
   "skills": [
     {
@@ -405,24 +431,6 @@
       "dateEarned": "2022-06-01"
     }
   ],
-  "background": {
-    "story": "Born with an innate ability to question everything and learn at lightning speed, João discovered his calling as a natural problem solver and Devil's Advocate. With 4 years mastering the arcane arts of web development, he has risen from a self-taught developer to a formidable Software Engineer. His journey began in the mystical realm of Radix Engineering, where he learned web development technologies from scratch and completed his internship six months ahead of schedule. Now, he wields the power of multiple programming languages and frameworks, capable of optimizing performance by 95% and leading teams to achieve 50-100% productivity increases.",
-    "ideals": [
-      "Question everything - the best solutions come from challenging assumptions",
-      "Learn fast, adapt faster - knowledge is the ultimate weapon",
-      "Optimize relentlessly - every second and byte matters"
-    ],
-    "bonds": [
-      "Mentor to newer engineers, helping them navigate the codebase labyrinth",
-      "Guardian of performance optimization and deployment efficiency",
-      "Sworn protector of clean, maintainable code"
-    ],
-    "flaws": [
-      "Cannot resist playing Devil's Advocate, even when it's not needed",
-      "Sometimes gets lost in the pursuit of perfect optimization",
-      "Weak against legacy systems that resist modernization"
-    ]
-  },
   "questLog": {
     "completed": [
       {

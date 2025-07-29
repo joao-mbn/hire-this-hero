@@ -1,8 +1,8 @@
 import type { Character } from "@/data/types";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Achievements } from "./Achievements";
-import { Biography } from "./Biography";
-import { Details } from "./Details/Details";
+import { Biography } from "./biography/Biography";
+import { Details } from "./details/Details";
 import { Inventory } from "./Inventory";
 import { Quests } from "./Quests";
 import { SkillTree } from "./SkillTree";
@@ -56,7 +56,7 @@ export function StatsTabs({ character }: StatsTabsProps) {
       </TabsContent>
 
       <TabsContent value="biography">
-        <Biography background={character.background} />
+        <Biography />
       </TabsContent>
     </Tabs>
   );

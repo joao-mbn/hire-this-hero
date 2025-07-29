@@ -35,7 +35,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
+      "text-2xl leading-none font-semibold tracking-tight",
       className,
     )}
     {...props}
@@ -83,3 +83,37 @@ export {
   CardHeader,
   CardTitle,
 };
+
+interface MultiSectionCardProps<T> {
+  sections: T[];
+  sectionItemComponent: (section: T, index: number) => React.ReactNode;
+}
+
+export function MultiSectionCard<T>({
+  sections,
+  sectionItemComponent,
+}: MultiSectionCardProps<T>) {
+  return (
+    <Card className="parchment-card">
+      <CardContent className="flex flex-col gap-4 pt-6">
+        {sections.map(sectionItemComponent)}
+      </CardContent>
+    </Card>
+  );
+}
+
+interface SectionItemProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+export function SectionItem({ title, children }: SectionItemProps) {
+  return (
+    <div className="flex flex-col gap-3 border-border/30 not-last:border-b not-last:pb-6">
+      <span className="rune-text font-uncial text-xl text-primary">
+        {title}
+      </span>
+      {children}
+    </div>
+  );
+}

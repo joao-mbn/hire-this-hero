@@ -20,8 +20,8 @@ export type AttributeName =
   | "Wisdom"
   | "Charisma";
 export type AttributeShortName = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
-
 export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
+export type MoralStandingType = "ideals" | "bonds" | "flaws";
 
 export interface UnderusageDebuff {
   active: boolean;
@@ -135,13 +135,35 @@ export interface SavingThrow {
   attribute: AttributeKey;
 }
 
+export interface Appearance {
+  sex: string;
+  hair: string;
+  eyes: string;
+  skin: string;
+  height: string;
+  weight: string;
+}
+export interface Biography {
+  alignment: {
+    type: string;
+    description: string;
+  };
+  faith: {
+    name: string;
+    description: string;
+  };
+  personalityTraits: string[];
+  moralStandings: Record<MoralStandingType, string[]>;
+  lore: string;
+  appearance: Appearance;
+}
+
 export interface Character {
   name: string;
   race: Race;
   experience: Experience;
   profession: Profession;
   contact: Contact;
-  alignment: string;
   portrait: string;
   languages: Language[];
   immunities: string[];
@@ -150,7 +172,7 @@ export interface Character {
   weaponProficiencies: string[];
   equipmentProficiencies: string[];
   skills: Skill[];
-  background: Background;
+  biography: Biography;
   attributes: Record<AttributeKey, Attribute>;
   savingThrows: SavingThrow[];
   health: {
