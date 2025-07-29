@@ -5,15 +5,14 @@
       "primary": "Human",
       "effects": [
         "+1 to two Attributes of your choice",
-        "You gain proficiency in one skill of your choice",
-        "You gain one Feat of your choice"
+        "You gain Proficiency in one skill of your choice"
       ],
       "description": "Humans are a blank slate, they can be anything they want to be."
     },
     "ethnicity": {
       "primary": "Brazilian",
       "effects": [
-        "Advantage on Wisdom Saving Throws",
+        "You gain Proficiency on Wisdom Saving Throws",
         "+1 Charisma",
         "You max the Portuguese language",
         "You gain 2 points in the Spanish language"
@@ -23,7 +22,7 @@
     "archetype": {
       "primary": "Carioca",
       "effects": [
-        "Proficiency in Perception",
+        "You gain Proficiency in Perception",
         "+1 Dexterity",
         "Resistance to Fire Damage",
         "Weakness to Cold Damage"
@@ -60,9 +59,9 @@
     "effects": [
       "Hit Die: d8",
       "Immunity to Caffeine",
-      "Advantage on Intelligence Saving Throws",
-      "Armor Proficiencies: Gym Outfits, Casual Clothes",
-      "Weapon Proficiencies: Laptops, Desktop PCs",
+      "You gain Proficiency on Intelligence Saving Throws",
+      "You gain Proficiency in Light Armor",
+      "You gain Proficiency in Laptops and Desktop PCs",
       "Choose 3 skill proficiencies between: Analytical Reasoning, Continuous Learning, Leadership, Attention to Detail, Artistic Expression and Strategic Planning.",
       "Subclass: Choose at Level 3 - Frontend, Backend, Full Stack, DevOps, Mobile, Embedded Systems, OS Development, Game Development, ML/AI or Engineering Management"
     ]
@@ -111,7 +110,7 @@
   "resistances": ["Fire Damage"],
   "weaknesses": ["Cold Damage"],
   "weaponProficiencies": ["Laptops", "Desktop PCs"],
-  "armorProficiencies": ["Gym Outfits", "Casual Clothes"],
+  "armorProficiencies": ["Light Armor"],
   "appearance": {
     "sex": "Male",
     "hair": "Black and wavy, extending up to the shoulders",
@@ -224,6 +223,32 @@
       "proficient": false
     }
   ],
+  "savingThrows": {
+    "wisdom": {
+      "description": "Example: Keeping focus and maintaining yourself rational at attempts of manipulation, or under stressful situations, pressure and even abusive environments.",
+      "proficient": true
+    },
+    "intelligence": {
+      "description": "Example: Resisting confusion from poorly documented legacy code, and debugging production errors.",
+      "proficient": true
+    },
+    "charisma": {
+      "description": "Example: Resisting peer pressure to adopt trendy but unsuitable technologies, maintaining composure during code reviews, and avoiding the charm of technical debt disguised as 'quick fixes'.",
+      "proficient": false
+    },
+    "constitution": {
+      "description": "Example: Keeping body flexibility, resisting back pain and tendonitis.",
+      "proficient": false
+    },
+    "strength": {
+      "description": "Example: Maintaining a good posture, after hours of sitting.",
+      "proficient": false
+    },
+    "dexterity": {
+      "description": "Example: Keeping a quick hand-eye coordination, when having to multitask through tabs of IDEs, test apps, logs, DBs, and the endless threads of people asking for different things.",
+      "proficient": false
+    }
+  },
   "attributes": {
     "strength": {
       "label": "Strength",
@@ -275,8 +300,8 @@
     }
   },
   "health": {
-    "max": 68,
-    "current": 68
+    "max": 58,
+    "current": 58
   },
   "inventory": {
     "weapons": [

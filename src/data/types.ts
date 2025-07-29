@@ -138,6 +138,13 @@ export interface Attribute {
   composition: Record<string, number>;
 }
 
+export interface SavingThrow {
+  description: string;
+  proficient: boolean;
+  bonus: number;
+  attribute: AttributeKey;
+}
+
 export interface Character {
   name: string;
   race: Race;
@@ -155,6 +162,7 @@ export interface Character {
   skills: Skill[];
   background: Background;
   attributes: Record<AttributeKey, Attribute>;
+  savingThrows: SavingThrow[];
   health: {
     max: number;
     current: number;

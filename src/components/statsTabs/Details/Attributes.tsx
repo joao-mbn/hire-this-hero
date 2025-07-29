@@ -8,6 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useCharacterContext } from "@/contexts/CharacterContext";
+import { AttributeOrder } from "@/data/maps";
 import type { Attribute, AttributeKey } from "@/data/types";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
@@ -18,15 +19,25 @@ export function Attributes() {
   return (
     <Card className="parchment-card">
       <CardHeader>
-        <CardTitle className="rune-text font-uncial text-2xl text-primary">
+        <CardTitle className="rune-text font-uncial text-xl text-primary">
           Attributes
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-6 md:grid-cols-6">
-          {Object.entries(character.attributes).map(([key, value]) => (
-            <AttributeGem value={value} type={key as AttributeKey} key={key} />
-          ))}
+          {Object.entries(character.attributes)
+            .sort(
+              (a, b) =>
+                AttributeOrder.indexOf(a[0] as AttributeKey) -
+                AttributeOrder.indexOf(b[0] as AttributeKey),
+            )
+            .map(([key, value]) => (
+              <AttributeGem
+                value={value}
+                type={key as AttributeKey}
+                key={key}
+              />
+            ))}
         </div>
       </CardContent>
     </Card>

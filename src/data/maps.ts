@@ -24,6 +24,15 @@ export const AttributeKeyToName: Record<AttributeKey, AttributeName> = {
   charisma: "Charisma",
 };
 
+export const AttributeOrder: AttributeKey[] = [
+  "strength",
+  "dexterity",
+  "constitution",
+  "intelligence",
+  "wisdom",
+  "charisma",
+];
+
 export const CefrLevelToLongLevel: Record<CefrLevel, string> = {
   A1: "Basic User",
   A2: "Upper Basic User",

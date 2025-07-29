@@ -8,6 +8,7 @@ import type {
   Experience,
   ItemType,
   Rarity,
+  SavingThrow,
   Skill,
   SkillCategory,
 } from "@/data/types";
@@ -60,11 +61,28 @@ export function useCharacter() {
             : attributes[skill.attribute as AttributeKey].bonus,
         }));
 
+        const savingThrows: SavingThrow[] = Object.entries(
+          data.savingThrows,
+        ).map(([attributeKey, { proficient, description }]) => {
+          const attributeBonus = attributes[attributeKey as AttributeKey].bonus;
+          const bonus = proficient
+            ? attributeBonus + experience.proficiencyBonus
+            : attributeBonus;
+
+          return {
+            description,
+            proficient,
+            bonus,
+            attribute: attributeKey as AttributeKey,
+          };
+        });
+
         const character: Character = {
           ...data,
           experience,
           attributes,
           skills,
+          savingThrows,
           languages: data.languages.map((language) => ({
             ...language,
             cefrLevel: language.cefrLevel as CefrLevel,
