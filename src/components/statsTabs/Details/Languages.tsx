@@ -72,14 +72,10 @@ function LanguageLevelProgress({
     ((levelBarWidth - debuffBarWidth) / debuffBarWidth) * 100;
 
   return (
-    <Progress
-      value={language.level}
-      max={MAX_LANGUAGE_LEVEL}
-      className={cn("h-2 w-full", className)}
-    >
+    <Progress className={cn("h-2 w-full", className)}>
       <ProgressIndicator
         className={cn(
-          "h-full bg-primary transition-all",
+          "h-full",
           language.level === MAX_LANGUAGE_LEVEL && "gradient-flow maxed-out",
         )}
         style={{ width: `${levelBarWidth}%` }}

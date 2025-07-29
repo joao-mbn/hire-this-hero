@@ -101,17 +101,7 @@
   /* Fantasy UI Components */
   .parchment-card {
     @apply rounded-lg border-2 border-border bg-gradient-to-br from-card to-card/80;
-    background-image:
-      radial-gradient(
-        circle at 20% 80%,
-        hsla(var(--ancient-bronze), 0.1) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 20%,
-        hsla(var(--ancient-gold), 0.1) 0%,
-        transparent 50%
-      );
+
     box-shadow: var(--shadow-parchment);
   }
 

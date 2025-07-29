@@ -10,7 +10,7 @@ export function Race() {
   const character = useCharacterContext();
 
   return (
-    <div className="mb-2 text-left text-xl text-muted-foreground">
+    <div className="mb-2 text-xl text-muted-foreground lg:text-left">
       {Object.entries(character.race).map(([key, value], index) => (
         <Fragment key={key}>
           <Tooltip delayDuration={0}>
