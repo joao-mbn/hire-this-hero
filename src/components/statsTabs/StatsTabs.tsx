@@ -43,9 +43,8 @@ export function StatsTabs({ character }: StatsTabsProps) {
         <SkillTree skillTree={character.skillTree} />
       </TabsContent>
 
-      {/* Inventory Tab */}
       <TabsContent value="inventory">
-        <Inventory inventory={character.inventory} />
+        <Inventory />
       </TabsContent>
 
       <TabsContent value="achievements">

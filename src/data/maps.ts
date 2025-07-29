@@ -3,6 +3,8 @@ import type {
   AttributeName,
   AttributeShortName,
   CefrLevel,
+  ItemType,
+  Rarity,
 } from "./types";
 
 export const AttributeKeyToShortName: Record<AttributeKey, AttributeShortName> =
@@ -51,4 +53,17 @@ export const CefrLevelToDescription: Record<CefrLevel, string> = {
   C1: "Can understand a wide range of demanding, longer texts, and recognise implicit meaning. Can express him/herself fluently and spontaneously without much obvious searching for expressions. Can use language flexibly and effectively for social, academic and professional purposes. Can produce clear, well-structured, detailed text on complex subjects, showing controlled use of organisational patterns, connectors and cohesive devices.",
   C2: "Can understand with ease virtually everything heard or read. Can summarise information from different spoken and written sources, reconstructing arguments and accounts in a coherent presentation. Can express him/herself spontaneously, very fluently and precisely, differentiating finer shades of meaning even in more complex situations.",
   Native: "Perfect fluency in all aspects",
+};
+
+export const ItemTypeToName: Record<ItemType, string> = {
+  weapons: "Weapons",
+  equipments: "Equipments",
+};
+
+export const RarityToName: Record<Rarity, string> = {
+  common: "Common",
+  uncommon: "Uncommon",
+  rare: "Rare",
+  epic: "Epic",
+  legendary: "Legendary",
 };

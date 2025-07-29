@@ -28,12 +28,9 @@ interface EffectsProps {
 
 export function Effects({ effects }: EffectsProps) {
   return (
-    <ul className="text-sm">
+    <ul className="text-sm text-accent">
       {effects.map((effect, index) => (
-        <li
-          key={index}
-          className="flex items-start gap-2 text-muted-foreground"
-        >
+        <li key={index} className="flex items-start gap-2">
           <span>•</span>
           <span>{effect}</span>
         </li>

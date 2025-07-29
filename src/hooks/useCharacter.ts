@@ -6,7 +6,6 @@ import type {
   CefrLevel,
   Character,
   Experience,
-  ItemType,
   Rarity,
   SavingThrow,
   Skill,
@@ -99,21 +98,10 @@ export function useCharacter() {
             weapons: data.inventory.weapons.map((weapon) => ({
               ...weapon,
               rarity: weapon.rarity as Rarity,
-              type: weapon.type as ItemType,
             })),
-            armor: data.inventory.armor.map((armor) => ({
-              ...armor,
-              rarity: armor.rarity as Rarity,
-              type: armor.type as ItemType,
-            })),
-            consumables: data.inventory.consumables.map((consumable) => ({
-              ...consumable,
-              type: consumable.type as ItemType,
-            })),
-            tools: data.inventory.tools.map((tool) => ({
-              ...tool,
-              rarity: tool.rarity as Rarity,
-              type: tool.type as ItemType,
+            equipments: data.inventory.equipments.map((equipment) => ({
+              ...equipment,
+              rarity: equipment.rarity as Rarity,
             })),
           },
         };

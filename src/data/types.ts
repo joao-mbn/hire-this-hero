@@ -1,5 +1,5 @@
 export type Rarity = "common" | "uncommon" | "rare" | "epic" | "legendary";
-export type ItemType = "weapon" | "armor" | "consumable" | "tool";
+export type ItemType = "weapons" | "equipments";
 export type SkillCategory =
   | "foundation"
   | "specialization"
@@ -44,25 +44,15 @@ export interface Language {
   underusageDebuff?: UnderusageDebuff;
 }
 
+export type Inventory = Record<ItemType, Item[]>;
+
 export interface Item {
   name: string;
-  type: ItemType;
+  subtype: string;
   description: string;
-}
-
-export interface WeaponItem extends Item {
+  stats: string[];
+  equipped: boolean;
   rarity: Rarity;
-  stats: string;
-}
-
-export interface ArmorItem extends Item {
-  rarity: Rarity;
-  stats: string;
-}
-
-export interface ConsumableItem extends Item {
-  quantity: number | string;
-  effect: string;
 }
 
 export interface SkillConnection {
@@ -158,7 +148,7 @@ export interface Character {
   resistances: string[];
   weaknesses: string[];
   weaponProficiencies: string[];
-  armorProficiencies: string[];
+  equipmentProficiencies: string[];
   skills: Skill[];
   background: Background;
   attributes: Record<AttributeKey, Attribute>;
@@ -168,12 +158,7 @@ export interface Character {
     current: number;
   };
   skillTree: SkillTree;
-  inventory: {
-    weapons: WeaponItem[];
-    armor: ArmorItem[];
-    consumables: ConsumableItem[];
-    tools: Item[];
-  };
+  inventory: Inventory;
   achievements: Array<{
     name: string;
     description: string;

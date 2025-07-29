@@ -106,11 +106,11 @@
       }
     }
   ],
-  "immunities": ["Caffeine"],
+  "immunities": ["Caffeine", "Short-Sightedness"],
   "resistances": ["Fire Damage"],
   "weaknesses": ["Cold Damage"],
   "weaponProficiencies": ["Laptops", "Desktop PCs"],
-  "armorProficiencies": ["Light Armor"],
+  "equipmentProficiencies": ["Light Armor"],
   "appearance": {
     "sex": "Male",
     "hair": "Black and wavy, extending up to the shoulders",
@@ -206,7 +206,7 @@
     },
     {
       "name": "Physical Coordination",
-      "description": "Moving efficiently in workspace, handling equipment, and maintaining good posture",
+      "description": "Moving efficiently in workspace and handling equipment",
       "attribute": "dexterity",
       "proficient": false
     },
@@ -225,7 +225,7 @@
   ],
   "savingThrows": {
     "wisdom": {
-      "description": "Example: Keeping focus and maintaining yourself rational at attempts of manipulation, or under stressful situations, pressure and even abusive environments.",
+      "description": "Example: Holding focus and maintaining yourself rational under stressful situations.",
       "proficient": true
     },
     "intelligence": {
@@ -233,7 +233,7 @@
       "proficient": true
     },
     "charisma": {
-      "description": "Example: Resisting peer pressure to adopt trendy but unsuitable technologies, maintaining composure during code reviews, and avoiding the charm of technical debt disguised as 'quick fixes'.",
+      "description": "Example: Resisting the PO sweet talking you to underestimate the time to build a feature.",
       "proficient": false
     },
     "constitution": {
@@ -306,76 +306,58 @@
   "inventory": {
     "weapons": [
       {
-        "name": "Legendary MacBook Pro of Swift Development",
-        "type": "Primary Weapon",
-        "rarity": "Legendary",
-        "stats": "+20 Coding Speed, +15 Problem Solving",
-        "description": "A mystical device that responds to João's natural problem-solving instincts"
+        "name": "Dell Inspiron 15 of Infinite Debugging",
+        "subtype": "Laptop",
+        "rarity": "uncommon",
+        "stats": [
+          "+20 Coding Speed",
+          "+1 Bonus in Continuous Learning Skill",
+          "-1 Bonus in Stress Management Skill"
+        ],
+        "description": "A unpromising laptop for web development activities that has been modified with the Ubuntu 20.04 set of OS runes.\n\nThis modification tortures its yielder into learning OS rituals he otherwise wouldn't have to, in order to solve issues that otherwise wouldn't happen.",
+        "equipped": true
       },
       {
-        "name": "Mechanical Keyboard of Devil's Advocacy",
-        "type": "Weapon Enhancement",
-        "rarity": "Epic",
-        "stats": "+25 Critical Thinking, +10 Debate Power",
-        "description": "Each keystroke echoes with the power of challenging assumptions"
+        "name": "Arzopa Portable Screen of Enhanced Awareness",
+        "subtype": "Portable Screen",
+        "rarity": "common",
+        "stats": ["+10 Coding Speed", "+1 Bonus in Perception Skill"],
+        "description": "A light portable screen, handy for a nomadic Software Engineer. Increases Perception and reduces the chance of getting lost in tabs.",
+        "equipped": true
       }
     ],
-    "armor": [
+    "equipments": [
       {
-        "name": "Fast Learning Helm of Adaptation",
-        "type": "Head Armor",
-        "rarity": "Rare",
-        "stats": "+30 Learning Speed, +20 Problem Solving",
-        "description": "Forged from years of rapid knowledge absorption and adaptation"
+        "name": "Casual Clothes of Comfort",
+        "subtype": "Light Armor",
+        "rarity": "common",
+        "stats": ["+20 Comfort", "-10 Style"],
+        "description": "A comfortable set of clothes ideal for long rituals at home. It's usage in social settings can be frowned upon.",
+        "equipped": true
       },
       {
-        "name": "Performance Optimization Gauntlets",
-        "type": "Hand Protection",
-        "rarity": "Epic",
-        "stats": "+40 Memory Optimization, +25 Speed Enhancement",
-        "description": "Reduces app memory consumption from 1.6GB to 150MB"
-      }
-    ],
-    "consumables": [
-      {
-        "name": "Fast Learning Elixir",
-        "type": "Consumable",
-        "quantity": "∞",
-        "effect": "+50 Learning Speed, +25 Adaptation for 8 hours",
-        "description": "The essence of João's most powerful ability - rapid knowledge absorption"
+        "name": "Minimalistic Social Garment of Fire Resistance",
+        "subtype": "Light Armor",
+        "rarity": "common",
+        "stats": ["+10 Style", "+5 Comfort", "Reduces Fire Damage by 1d4"],
+        "description": "The default armor for a non-formal office environment, made of breathable fabrics.",
+        "equipped": false
       },
       {
-        "name": "Devil's Advocate Scroll",
-        "type": "Knowledge Item",
-        "quantity": "∞",
-        "effect": "Instantly identifies flaws in any argument or system design",
-        "description": "Ancient wisdom passed down through generations of critical thinkers"
-      }
-    ],
-    "tools": [
-      {
-        "name": "VS Code of Infinite Extensions",
-        "type": "IDE",
-        "rarity": "Legendary",
-        "description": "The ultimate weapon for code manipulation and rapid development"
+        "name": "Minimalistic Social Garment of Cold Resistance",
+        "subtype": "Light Armor",
+        "rarity": "common",
+        "stats": ["+15 Style", "Reduces Cold Damage by 1d4"],
+        "description": "The default armor for a non-formal office environment, made of heavy fabrics.",
+        "equipped": false
       },
       {
-        "name": "Git Repository of Time Travel",
-        "type": "Version Control",
-        "rarity": "Epic",
-        "description": "Allows traversal through the timeline of code with deployment pipelines"
-      },
-      {
-        "name": "Docker Container of Isolation",
-        "type": "Environment Tool",
-        "rarity": "Rare",
-        "description": "Creates pocket dimensions for applications and deployment efficiency"
-      },
-      {
-        "name": "Three.js Staff of 3D Visualization",
-        "type": "Specialized Tool",
-        "rarity": "Epic",
-        "description": "Wields the power of interactive 3D visualization for industrial data"
+        "name": "Superior Glasses of Miopia Suppression",
+        "subtype": "Helmet",
+        "rarity": "uncommon",
+        "stats": ["+5 Style", "Immunity to Short-Sightedness"],
+        "description": "It's made with a metal frame that that molds to the wearer's head shape, and its lenses are aspherical for reduced weight and removing eye-size distortions.\n\nPerfect glasses for someone born with the short-sightedness curse, can be used for long periods of time without sacrifing neither comfort nor style.",
+        "equipped": true
       }
     ]
   },

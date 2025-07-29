@@ -15,7 +15,7 @@ export function Details() {
   ];
   const equipmentProficiencies = [
     { title: "Weapons", value: character.weaponProficiencies },
-    { title: "Armors", value: character.armorProficiencies },
+    { title: "Equipments", value: character.equipmentProficiencies },
   ];
 
   return (

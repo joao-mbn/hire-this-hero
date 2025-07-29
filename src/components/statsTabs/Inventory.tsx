@@ -1,101 +1,87 @@
-import type {
-  ArmorItem,
-  Character,
-  ConsumableItem,
-  Item,
-  WeaponItem,
-} from "@/data/types";
-import { rarityColor } from "@/lib/utils";
+import { useCharacterContext } from "@/contexts/CharacterContext";
+import { ItemTypeToName, RarityToName } from "@/data/maps";
+import type { Item, ItemType } from "@/data/types";
+import { cn, rarityColor } from "@/lib/utils";
 import { Shield, Sword } from "lucide-react";
+import { Effects } from "../TooltipContentResultDescription";
 import { Badge } from "../ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
-interface InventoryProps {
-  inventory: Character["inventory"];
-}
+export function Inventory() {
+  const character = useCharacterContext();
+  const inventoryItemTypeToDisplay: Record<
+    ItemType,
+    { icon: React.ReactNode; title: string; items: Item[] }
+  > = {
+    weapons: {
+      icon: <Sword className="h-5 w-5 text-primary" />,
+      title: ItemTypeToName["weapons"],
+      items: character.inventory.weapons,
+    },
+    equipments: {
+      icon: <Shield className="h-5 w-5 text-primary" />,
+      title: ItemTypeToName["equipments"],
+      items: character.inventory.equipments,
+    },
+  };
 
-export function Inventory({ inventory }: InventoryProps) {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      <Card className="parchment-card">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Sword className="h-5 w-5 text-primary" />
-            Weapons & Tools
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {[...inventory.weapons, ...inventory.tools].map((item) => (
-            <InventoryWeapon item={item} key={item.name} />
-          ))}
-        </CardContent>
-      </Card>
-
-      <Card className="parchment-card">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary" />
-            Armor & Consumables
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {[...inventory.armor, ...inventory.consumables].map((item) => (
-            <InventoryArmor item={item} key={item.name} />
-          ))}
-        </CardContent>
-      </Card>
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      {Object.entries(inventoryItemTypeToDisplay).map(
+        ([itemType, { icon, title, items }]) => (
+          <div key={itemType}>
+            <Card className="parchment-card">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  {icon}
+                  {title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {items.map((item) => (
+                  <InventoryItem item={item} key={item.name} />
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+        ),
+      )}
     </div>
   );
 }
 
-interface InventoryWeaponProps {
-  item: WeaponItem | Item;
+interface InventoryItemProps {
+  item: Item;
 }
 
-const InventoryWeapon = ({ item }: InventoryWeaponProps) => (
-  <div className="rounded border border-border p-3">
-    <div className="mb-2 flex items-center gap-2">
+const InventoryItem = ({ item }: InventoryItemProps) => (
+  <div className="flex flex-col gap-2 rounded border border-border p-3">
+    <div className="flex justify-between">
       <h4 className="font-semibold">{item.name}</h4>
-      {"rarity" in item && (
-        <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
-          {item.rarity}
-        </Badge>
-      )}
+      <Tooltip>
+        <TooltipTrigger>
+          <Shield
+            className={cn(
+              "h-5 w-5 text-primary",
+              item.equipped && "fill-primary",
+            )}
+          />
+        </TooltipTrigger>
+        <TooltipContent>
+          {item.equipped ? "Equipped" : "Unequipped"}
+        </TooltipContent>
+      </Tooltip>
     </div>
-    <p className="mb-1 text-xs text-muted-foreground">{item.type}</p>
-    {"stats" in item && (
-      <p className="text-xs font-semibold text-accent">{item.stats}</p>
-    )}
-    <p className="text-xs italic">{item.description}</p>
-  </div>
-);
-
-interface InventoryArmorProps {
-  item: ArmorItem | ConsumableItem;
-}
-
-const InventoryArmor = ({ item }: InventoryArmorProps) => (
-  <div className="rounded border border-border p-3">
-    <div className="mb-2 flex items-center gap-2">
-      <h4 className="font-semibold">{item.name}</h4>
-      {"rarity" in item && (
-        <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
-          {item.rarity}
-        </Badge>
-      )}
-      {"quantity" in item && (
-        <Badge variant="secondary" className="text-xs">
-          {item.quantity}
-        </Badge>
-      )}
+    <div className="flex gap-1">
+      <Badge variant="default">{item.subtype}</Badge>
+      <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
+        {RarityToName[item.rarity]}
+      </Badge>
     </div>
-    <p className="mb-1 text-xs text-muted-foreground">{item.type}</p>
-    {"stats" in item && (
-      <p className="text-xs font-semibold text-accent">{item.stats}</p>
-    )}
-    {"effect" in item && (
-      <p className="text-xs font-semibold text-accent">{item.effect}</p>
-    )}
-    <p className="text-xs italic">{item.description}</p>
+    <Effects effects={item.stats} />
+    <p className="border-t border-border/30 pt-2 text-sm whitespace-pre-line">
+      {item.description}
+    </p>
   </div>
 );
