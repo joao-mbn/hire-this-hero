@@ -3,7 +3,6 @@ import { useCharacter } from "@/hooks/useCharacter";
 import { Header } from "./header/Header";
 import { Loading } from "./Loading";
 import { NoCharacterData } from "./NoCharacterData";
-import { SideContainer } from "./sideMenu/SideContainer";
 import { StatsTabs } from "./statsTabs/StatsTabs";
 
 export const CharacterSheet = () => {
@@ -24,16 +23,7 @@ export const CharacterSheet = () => {
         style={{ backgroundColor: "hsl(var(--sheet-background))" }}
       >
         <Header />
-
-        <div className="flex gap-6">
-          <div className="w-1/3">
-            <SideContainer character={character} />
-          </div>
-
-          <div className="w-2/3">
-            <StatsTabs character={character} />
-          </div>
-        </div>
+        <StatsTabs character={character} />
       </div>
     </CharacterContext.Provider>
   );

@@ -1,5 +1,9 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
+import { Card } from "../ui/card";
+import { Avatar } from "./Avatar";
 import { Contacts } from "./Contacts";
+import { ExperienceBar } from "./ExperienceBar";
+import { HealthBar } from "./HealthBar";
 import { Level } from "./Level";
 import { Profession } from "./Profession";
 import { Race } from "./Race";
@@ -8,23 +12,24 @@ export function Header() {
   const character = useCharacterContext();
 
   return (
-    <div className="parchment-card mb-6 p-8">
-      <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start">
-        <div className="flex-1 text-center lg:text-left">
-          <h1 className="rune-text mb-2 font-uncial text-4xl text-primary lg:text-5xl">
-            {character.name}
-          </h1>
+    <Card className="parchment-card mb-6 flex flex-col items-center gap-6 p-6 lg:flex-row lg:items-start">
+      <Avatar />
 
-          <Race />
-
-          <div className="mb-4 flex flex-wrap justify-center gap-2 lg:justify-start">
-            <Profession />
-            <Level />
-          </div>
-
-          <Contacts />
+      <div className="flex-1 text-center lg:text-left">
+        <h1 className="rune-text mb-2 font-uncial text-4xl text-primary lg:text-5xl">
+          {character.name}
+        </h1>
+        <Race />
+        <div className="mb-2 flex flex-wrap justify-center gap-2 lg:justify-start">
+          <Profession />
+          <Level />
+        </div>
+        <Contacts />
+        <div className="flex flex-col gap-1 pt-6">
+          <HealthBar />
+          <ExperienceBar />
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
