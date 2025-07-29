@@ -7,6 +7,7 @@ import { HealthBar } from "./HealthBar";
 import { Level } from "./Level";
 import { Profession } from "./Profession";
 import { Race } from "./Race";
+import { Subclass } from "./Subclass";
 
 export function Header() {
   const character = useCharacterContext();
@@ -22,6 +23,7 @@ export function Header() {
         <Race />
         <div className="mb-2 flex flex-wrap justify-center gap-2 lg:justify-start">
           <Profession />
+          <Subclass />
           <Level />
         </div>
         <Contacts />

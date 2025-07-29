@@ -48,16 +48,23 @@
   },
   "profession": {
     "name": "Software Engineer",
-    "subclass": "Full Stack",
+    "subclass": {
+      "name": "Full Stack",
+      "description": "Full Stack Software Engineers are the most versatile and well-rounded of all Software Engineers, knowledgeable in many of the different arcane arts of Software Development. \n\nHowever, their abilities fall short when it comes to design full-fledged complex systems operating at scale.\n\nThey're an excellent choice for small teams or teams that work on many different projects of lower complexity.",
+      "effects": [
+        "Choose 1 skill proficiency between: Continuous Learning, Intuition and Effective Communication",
+        "For all these features, you can go up to level 3, if you haven't reached that level already: Backend Programming Language, Frontend Programming Language, SQL Fundamentals, Git, Cloud Platform."
+      ]
+    },
     "description": "Software Engineers bend reality by writing runes in a strange language over electrified rocks.\n\nTheir drink of choice for these long rituals is coffee, that has potentially dangerous effects on the uninitiated, but a fuel in the mouth of these conjurers. Their minds are forged by endless debugging and their bodies are hardened by prolonged sitting sessions.\n\nThis class gives little attention to armor and use little more than the most basic they can get away with. They generally wield Laptops as their weapon of choice, opting for Desktop PCs for bulkier builds. Inumerous builds are possible, leveraging a wide range of skills, from analytical, to creative and interpersonal.",
     "effects": [
       "Hit Die: d8",
       "Immunity to Caffeine",
-      "Advantages on Constitution and Intelligence saving throws",
+      "Advantage on Intelligence Saving Throws",
       "Armor Proficiencies: Gym Outfits, Casual Clothes",
       "Weapon Proficiencies: Laptops, Desktop PCs",
       "Choose 3 skill proficiencies between: Analytical Reasoning, Continuous Learning, Leadership, Attention to Detail, Artistic Expression and Strategic Planning.",
-      "Subclass: Choose at Level 3 - Frontend, Backend, Full Stack, DevOps, Mobile, Embedded Systems, OS Development, Game Development or Engineering Management"
+      "Subclass: Choose at Level 3 - Frontend, Backend, Full Stack, DevOps, Mobile, Embedded Systems, OS Development, Game Development, ML/AI or Engineering Management"
     ]
   },
   "alignment": "True Neutral",
@@ -139,10 +146,10 @@
       "proficient": false
     },
     {
-      "name": "Social Reading",
+      "name": "Effective Communication",
       "description": "Understanding people's motives, communicating effectively, and building meaningful relationships",
       "attribute": "charisma",
-      "proficient": false
+      "proficient": true
     },
     {
       "name": "Continuous Learning",
@@ -166,7 +173,7 @@
       "name": "Strategic Planning",
       "description": "Creating long-term plans, designing systems, and managing complex projects with foresight",
       "attribute": "intelligence",
-      "proficient": false
+      "proficient": true
     },
     {
       "name": "Leadership",

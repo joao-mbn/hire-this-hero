@@ -113,6 +113,11 @@ export interface Profession {
   name: string;
   description: string;
   effects: string[];
+  subclass: {
+    name: string;
+    description: string;
+    effects: string[];
+  };
 }
 
 export interface Experience {
