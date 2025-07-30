@@ -7,6 +7,7 @@ import type {
   ItemType,
   MoralStandingType,
   Rarity,
+  Recovery,
 } from "./types";
 
 export const AttributeKeyToShortName: Record<AttributeKey, AttributeShortName> =
@@ -81,4 +82,9 @@ export const DifficultyToName: Record<Difficulty, string> = {
   medium: "Medium",
   hard: "Hard",
   expert: "Expert",
+};
+
+export const RecoveryToName: Record<Recovery, string> = {
+  LR: "Long Rest",
+  SR: "Short Rest",
 };

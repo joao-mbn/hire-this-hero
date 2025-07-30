@@ -8,6 +8,7 @@ import type {
   Difficulty,
   Experience,
   Rarity,
+  Recovery,
   SavingThrow,
   Skill,
   SkillCategory,
@@ -97,6 +98,10 @@ export function useCharacter() {
           languages: data.languages.map((language) => ({
             ...language,
             cefrLevel: language.cefrLevel as CefrLevel,
+          })),
+          spells: data.spells.map((spell) => ({
+            ...spell,
+            recovery: spell.recovery as Recovery,
           })),
           skillTree: {
             ...data.skillTree,

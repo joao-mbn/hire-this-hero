@@ -5,6 +5,7 @@ import { Details } from "./details/Details";
 import { Inventory } from "./Inventory";
 import { Quests } from "./quests/Quests";
 import { SkillTree } from "./SkillTree";
+import { Spells } from "./spells/Spells";
 
 interface StatsTabsProps {
   character: Character;
@@ -13,15 +14,18 @@ interface StatsTabsProps {
 export function StatsTabs({ character }: StatsTabsProps) {
   return (
     <Tabs defaultValue="details" className="space-y-6">
-      <TabsList className="grid w-full grid-cols-4 bg-card/50 md:grid-cols-5">
+      <TabsList className="grid w-full grid-cols-4 bg-card/50 md:grid-cols-5 lg:grid-cols-6">
         <TabsTrigger value="details" className="">
           Details
+        </TabsTrigger>
+        <TabsTrigger value="inventory" className="">
+          Inventory
         </TabsTrigger>
         <TabsTrigger value="skills" className="">
           Skills
         </TabsTrigger>
-        <TabsTrigger value="inventory" className="">
-          Inventory
+        <TabsTrigger value="spells" className="">
+          Spells
         </TabsTrigger>
         <TabsTrigger value="quests" className="">
           Quests
@@ -35,12 +39,16 @@ export function StatsTabs({ character }: StatsTabsProps) {
         <Details />
       </TabsContent>
 
+      <TabsContent value="inventory">
+        <Inventory />
+      </TabsContent>
+
       <TabsContent value="skills">
         <SkillTree skillTree={character.skillTree} />
       </TabsContent>
 
-      <TabsContent value="inventory">
-        <Inventory />
+      <TabsContent value="spells">
+        <Spells />
       </TabsContent>
 
       <TabsContent value="quests">

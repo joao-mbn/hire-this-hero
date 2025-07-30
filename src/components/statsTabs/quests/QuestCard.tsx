@@ -8,7 +8,7 @@ import { Badge } from "../../ui/badge";
 import { BlockCard, CardContent } from "../../ui/card";
 import { Progress } from "../../ui/progress";
 
-export function CurrentQuestCard() {
+export function CurrentQuestBlock() {
   const character = useCharacterContext();
   const { questLog } = character;
 
@@ -17,7 +17,7 @@ export function CurrentQuestCard() {
       title="Current Quests"
       icon={<Scroll className="h-5 w-5 text-primary" />}
     >
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-6">
         {questLog.inProgress.map((quest, idx) => (
           <QuestCard quest={quest} key={idx}>
             <div className="mt-2 text-sm text-muted-foreground">
@@ -38,7 +38,7 @@ export function CurrentQuestCard() {
   );
 }
 
-export function CompletedQuestCard() {
+export function CompletedQuestBlock() {
   const character = useCharacterContext();
   const { questLog } = character;
 
@@ -47,7 +47,7 @@ export function CompletedQuestCard() {
       title="Completed Quests"
       icon={<Trophy className="h-5 w-5 text-primary" />}
     >
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-6">
         {questLog.completed.map((quest, idx) => (
           <QuestCard quest={quest} key={idx}>
             <p className="text-sm text-muted-foreground">

@@ -58,7 +58,7 @@
     "description": "Software Engineers bend reality by writing runes in a strange language over electrified rocks.\n\nTheir drink of choice for these long rituals is coffee, that has potentially dangerous effects on the uninitiated, but a fuel in the mouth of these conjurers. Their minds are forged by endless debugging and their bodies are hardened by prolonged sitting sessions.\n\nThis class gives little attention to armor and use little more than the most basic they can get away with. They generally wield Laptops as their weapon of choice, opting for Desktop PCs for bulkier builds. Inumerous builds are possible, leveraging a wide range of skills, from analytical, to creative and interpersonal.",
     "effects": [
       "Hit Die: d8",
-      "Immunity to Caffeine",
+      "You gain the Feature: Caffeine Pool",
       "You gain Proficiency on Intelligence Saving Throws",
       "You gain Proficiency in Light Armor",
       "You gain Proficiency in Laptops and Desktop PCs",
@@ -105,7 +105,7 @@
       }
     }
   ],
-  "immunities": ["Caffeine", "Short-Sightedness"],
+  "immunities": ["Short-Sightedness"],
   "resistances": ["Fire Damage"],
   "weaknesses": ["Cold Damage"],
   "weaponProficiencies": ["Laptops", "Desktop PCs"],
@@ -256,6 +256,73 @@
       "description": "Building professional relationships, expanding contacts, and leveraging connections",
       "attribute": "charisma",
       "proficient": false
+    }
+  ],
+  "spells": [
+    {
+      "name": "Obsession",
+      "description": "You become hyperfocused on a single problem or task, entering a state of deep concentration where time seems to slow and distractions fade away.",
+      "recovery": "LR",
+      "charges": {
+        "max": 1,
+        "current": 1
+      },
+      "icon": "🤯",
+      "components": ["Social Isolation", "3 Mugs of Coffee"],
+      "effects": [
+        "@int_proficiency * 2 on Intelligence Skill checks and Saving Throws",
+        "Perception checks are made with disadvantage",
+        "@int_modifier * 2 on Intelligence modifier on attacks",
+        "At the end of the spell, you must make a Wisdom Saving Throw (DC 13) or suffer one level of exhaustion. If over the course of week you fail the Saving Throw 3 times, you gain the Burnout debuff."
+      ],
+      "duration": "6 hours"
+    },
+    {
+      "name": "Caffeine Rush",
+      "description": "A transmutation spell that channels the raw energy of caffeine into your bloodstream, temporarily enhancing your reflexes, mental acuity, and coding speed. Your fingers tap the keyboard with supernatural precision, and your mind processes information at a blazing fast speed. The effect is inversely proportional to the amount of coffee you already had this day.",
+      "recovery": "LR",
+      "charges": {
+        "max": 3,
+        "current": 3
+      },
+      "icon": "⚡",
+      "components": ["1 Mug of Coffee"],
+      "effects": [
+        "@dex_proficiency + (3 - @coffee_drunk) to Dexterity",
+        "@int_proficiency + (5 - @coffee_drunk) to Intelligence",
+        "@coding_speed + (10 * (6 - @coffee_drunk)) to Coding Speed"
+      ],
+      "duration": "1 hour"
+    },
+    {
+      "name": "Eagle Eyes",
+      "description": "A divination spell that enhances your visual perception to superhuman levels, allowing you to spot bugs, inconsistencies, and optimization opportunities that would be invisible to the naked eye. Your eyes glow with a faint blue light as you scan through lines of code, skim through PRDs, review PRs and read Feature Requests.",
+      "recovery": "SR",
+      "charges": {
+        "max": 2,
+        "current": 2
+      },
+      "icon": "🦅",
+      "effects": [
+        "+5 to Perception checks",
+        "+5 to Attention to Detail checks",
+        "Bug-type monsters attack you with disadvantage"
+      ],
+      "duration": "1 hour",
+      "components": ["Social Isolation", "1 Mug of Coffee"]
+    }
+  ],
+  "features": [
+    {
+      "name": "Caffeine Reservoir",
+      "description": "You have drunk so much Coffee that your body has adapted to its effects, and even learned use it to power up its working, to the point that you've gained the ability to use this black brew to fuel your spells. You have a Coffee Reservoir from which you can drink throughout the day and is restored after a good night of sleep. Drinking too much before going to sleep will harm your sleep quality.",
+      "effects": [
+        "You gain a Reservoir of Coffee equal to \"2 + @constitution_bonus + @level_bonus\" Mugs of Coffee per day",
+        "You gain a level bonus to your Coffee Reservoir at levels 3, 7, 11, 15 and 19",
+        "Drinking Coffee within 6 hours of a Long Rest will make it count as a Short Rest",
+        "Your Coffee Reservoir is fully restored at a Long Rest"
+      ],
+      "icon": "☕"
     }
   ],
   "savingThrows": {

@@ -1,5 +1,5 @@
 import { Achievements } from "./Achievements";
-import { CompletedQuestCard, CurrentQuestCard } from "./QuestCard";
+import { CompletedQuestBlock, CurrentQuestBlock } from "./QuestCard";
 
 export function Quests() {
   return (
@@ -7,8 +7,8 @@ export function Quests() {
       <Achievements />
 
       <div className="space-y-6">
-        <CurrentQuestCard />
-        <CompletedQuestCard />
+        <CurrentQuestBlock />
+        <CompletedQuestBlock />
       </div>
     </div>
   );

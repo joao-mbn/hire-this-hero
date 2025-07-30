@@ -23,6 +23,7 @@ export type AttributeName =
 export type AttributeShortName = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
 export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 export type MoralStandingType = "ideals" | "bonds" | "flaws";
+export type Recovery = "LR" | "SR";
 
 export interface UnderusageDebuff {
   active: boolean;
@@ -36,6 +37,20 @@ export interface Skill {
   proficient: boolean;
   bonus: number;
   otherBonusSources?: Record<string, number>;
+}
+
+export interface Spell {
+  name: string;
+  description: string;
+  recovery: Recovery;
+  charges: {
+    max: number;
+    current: number;
+  };
+  effects: string[];
+  duration: string;
+  icon: string;
+  components: string[];
 }
 
 export interface Language {
@@ -199,6 +214,7 @@ export interface Character {
   weaponProficiencies: string[];
   equipmentProficiencies: string[];
   skills: Skill[];
+  spells: Spell[];
   biography: Biography;
   attributes: Record<AttributeKey, Attribute>;
   savingThrows: SavingThrow[];
