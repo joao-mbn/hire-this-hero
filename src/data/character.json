@@ -150,7 +150,10 @@
       "name": "Perception",
       "description": "Quickly noticing patterns, detecting changes in environment, and identifying what differs from the usual",
       "attribute": "wisdom",
-      "proficient": true
+      "proficient": true,
+      "otherBonusSources": {
+        "Weapon": 1
+      }
     },
     {
       "name": "Intuition",
@@ -180,7 +183,10 @@
       "name": "Continuous Learning",
       "description": "Staying current with technology trends, learning new tools and frameworks, and adapting to industry changes",
       "attribute": "intelligence",
-      "proficient": true
+      "proficient": true,
+      "otherBonusSources": {
+        "Weapon": 1
+      }
     },
     {
       "name": "Artistic Expression",
@@ -240,7 +246,10 @@
       "name": "Stress Management",
       "description": "Maintaining composure under pressure, managing emotions, and staying focused",
       "attribute": "wisdom",
-      "proficient": false
+      "proficient": false,
+      "otherBonusSources": {
+        "Weapon": -1
+      }
     },
     {
       "name": "Networking",

@@ -55,6 +55,16 @@ export function Skills() {
                           {skill.proficient && (
                             <Badge variant="default">Proficient</Badge>
                           )}
+                          {Object.entries(skill.otherBonusSources || {})
+                            ?.filter(([, bonus]) => bonus !== 0)
+                            .map(([source, bonus]) => (
+                              <Badge
+                                variant={bonus >= 0 ? "default" : "destructive"}
+                                key={source}
+                              >
+                                {source}
+                              </Badge>
+                            ))}
                         </div>
                       </div>
                     }

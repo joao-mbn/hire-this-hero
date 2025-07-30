@@ -52,14 +52,25 @@ export function useCharacter() {
           data.experience.proficiencyBonus,
         );
 
-        const skills: Skill[] = data.skills.map((skill) => ({
-          ...skill,
-          attribute: skill.attribute as AttributeKey,
-          bonus: skill.proficient
-            ? attributes[skill.attribute as AttributeKey].bonus +
-              experience.proficiencyBonus
-            : attributes[skill.attribute as AttributeKey].bonus,
-        }));
+        const skills: Skill[] = data.skills.map((skill) => {
+          const otherBonusSourcesBonus =
+            Object.entries(
+              skill.otherBonusSources || ({} as Record<string, number>),
+            )?.reduce((acc, [, bonus]) => acc + bonus, 0) || 0;
+          const attributeBonus =
+            attributes[skill.attribute as AttributeKey].bonus;
+          const proficiencyBonus = skill.proficient
+            ? experience.proficiencyBonus
+            : 0;
+          const bonus =
+            attributeBonus + proficiencyBonus + otherBonusSourcesBonus;
+
+          return {
+            ...skill,
+            attribute: skill.attribute as AttributeKey,
+            bonus,
+          };
+        });
 
         const savingThrows: SavingThrow[] = Object.entries(
           data.savingThrows,

@@ -35,6 +35,7 @@ export interface Skill {
   attribute: AttributeKey;
   proficient: boolean;
   bonus: number;
+  otherBonusSources?: Record<string, number>;
 }
 
 export interface Language {
