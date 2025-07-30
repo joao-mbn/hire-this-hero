@@ -1,4 +1,5 @@
 export type Rarity = "common" | "uncommon" | "rare" | "epic" | "legendary";
+export type Difficulty = "easy" | "medium" | "hard" | "expert";
 export type ItemType = "weapons" | "equipments";
 export type SkillCategory =
   | "foundation"
@@ -158,6 +159,31 @@ export interface Biography {
   appearance: Appearance;
 }
 
+export interface Achievement {
+  name: string;
+  description: string;
+  icon: string;
+  difficulty: Rarity;
+  dateEarned: string;
+}
+
+export interface Quest {
+  name: string;
+  difficulty: Difficulty;
+  description: string;
+  rewards: string[];
+  icon: string;
+}
+
+export interface CompletedQuest extends Quest {
+  completionDate: Date;
+}
+
+export interface InProgressQuest extends Quest {
+  progress: number;
+  estimatedCompletion: Date;
+}
+
 export interface Character {
   name: string;
   race: Race;
@@ -181,27 +207,9 @@ export interface Character {
   };
   skillTree: SkillTree;
   inventory: Inventory;
-  achievements: Array<{
-    name: string;
-    description: string;
-    icon: string;
-    rarity: string;
-    dateEarned: string;
-  }>;
+  achievements: Achievement[];
   questLog: {
-    completed: Array<{
-      name: string;
-      difficulty: string;
-      description: string;
-      reward: string;
-      company: string;
-    }>;
-    inProgress: Array<{
-      name: string;
-      difficulty: string;
-      description: string;
-      progress: number;
-      estimatedCompletion: string;
-    }>;
+    completed: CompletedQuest[];
+    inProgress: InProgressQuest[];
   };
 }

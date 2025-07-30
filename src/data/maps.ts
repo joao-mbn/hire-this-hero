@@ -3,6 +3,7 @@ import type {
   AttributeName,
   AttributeShortName,
   CefrLevel,
+  Difficulty,
   ItemType,
   MoralStandingType,
   Rarity,
@@ -73,4 +74,11 @@ export const MoralStandingTypeToName: Record<MoralStandingType, string> = {
   bonds: "Bonds",
   flaws: "Flaws",
   ideals: "Ideals",
+};
+
+export const DifficultyToName: Record<Difficulty, string> = {
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
+  expert: "Expert",
 };

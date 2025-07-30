@@ -1,4 +1,4 @@
-import type { Experience, Rarity } from "@/data/types";
+import type { Difficulty, Experience, Rarity } from "@/data/types";
 import { clsx, type ClassValue } from "clsx";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { twMerge } from "tailwind-merge";
@@ -12,6 +12,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const rarityColor = (rarity: Rarity) => `rarity-${rarity}`;
+export const difficultyColor = (difficulty: Difficulty) =>
+  `difficulty-${difficulty}`;
 
 export function getIcon(iconName: string) {
   switch (iconName) {

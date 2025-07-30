@@ -1,10 +1,9 @@
 import type { Character } from "@/data/types";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { Achievements } from "./Achievements";
 import { Biography } from "./biography/Biography";
 import { Details } from "./details/Details";
 import { Inventory } from "./Inventory";
-import { Quests } from "./Quests";
+import { Quests } from "./quests/Quests";
 import { SkillTree } from "./SkillTree";
 
 interface StatsTabsProps {
@@ -14,7 +13,7 @@ interface StatsTabsProps {
 export function StatsTabs({ character }: StatsTabsProps) {
   return (
     <Tabs defaultValue="details" className="space-y-6">
-      <TabsList className="grid w-full grid-cols-4 bg-card/50 md:grid-cols-6">
+      <TabsList className="grid w-full grid-cols-4 bg-card/50 md:grid-cols-5">
         <TabsTrigger value="details" className="">
           Details
         </TabsTrigger>
@@ -23,9 +22,6 @@ export function StatsTabs({ character }: StatsTabsProps) {
         </TabsTrigger>
         <TabsTrigger value="inventory" className="">
           Inventory
-        </TabsTrigger>
-        <TabsTrigger value="achievements" className="">
-          Achievements
         </TabsTrigger>
         <TabsTrigger value="quests" className="">
           Quests
@@ -47,12 +43,8 @@ export function StatsTabs({ character }: StatsTabsProps) {
         <Inventory />
       </TabsContent>
 
-      <TabsContent value="achievements">
-        <Achievements achievements={character.achievements} />
-      </TabsContent>
-
       <TabsContent value="quests">
-        <Quests quests={character.questLog} />
+        <Quests />
       </TabsContent>
 
       <TabsContent value="biography">

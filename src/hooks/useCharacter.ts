@@ -5,6 +5,7 @@ import type {
   AttributeShortName,
   CefrLevel,
   Character,
+  Difficulty,
   Experience,
   Rarity,
   SavingThrow,
@@ -102,6 +103,22 @@ export function useCharacter() {
             equipments: data.inventory.equipments.map((equipment) => ({
               ...equipment,
               rarity: equipment.rarity as Rarity,
+            })),
+          },
+          achievements: data.achievements.map((achievement) => ({
+            ...achievement,
+            difficulty: achievement.difficulty as Rarity,
+          })),
+          questLog: {
+            completed: data.questLog.completed.map((quest) => ({
+              ...quest,
+              difficulty: quest.difficulty as Difficulty,
+              completionDate: new Date(quest.completionDate),
+            })),
+            inProgress: data.questLog.inProgress.map((quest) => ({
+              ...quest,
+              difficulty: quest.difficulty as Difficulty,
+              estimatedCompletion: new Date(quest.estimatedCompletion),
             })),
           },
         };
