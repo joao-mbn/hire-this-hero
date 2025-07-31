@@ -26,7 +26,7 @@ export function Features() {
         title="Other Features"
         icon={<Star className="h-5 w-5 text-primary" />}
       >
-        <CardContent className="space-y-6">
+        <CardContent className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {features
             .filter((feature) => feature.origin === "others")
             .map((feature, i) => (

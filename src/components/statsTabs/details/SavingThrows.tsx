@@ -12,7 +12,7 @@ export function SavingThrows() {
   return (
     <Card className="parchment-card">
       <CardHeader>
-        <CardTitle className="rune-text font-uncial text-xl text-primary">
+        <CardTitle className="font-uncial text-xl text-primary">
           Saving Throws
         </CardTitle>
       </CardHeader>

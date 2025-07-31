@@ -110,9 +110,7 @@ interface SectionItemProps {
 export function SectionItem({ title, children }: SectionItemProps) {
   return (
     <div className="flex flex-col gap-3 border-border/30 not-last:border-b not-last:pb-6">
-      <span className="rune-text font-uncial text-xl text-primary">
-        {title}
-      </span>
+      <span className="font-uncial text-xl text-primary">{title}</span>
       {children}
     </div>
   );

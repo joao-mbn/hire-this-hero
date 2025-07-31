@@ -18,10 +18,7 @@ export const CharacterSheet = () => {
 
   return (
     <CharacterContext.Provider value={character}>
-      <div
-        className="mx-auto my-6 max-w-7xl rounded-lg border-2 border-amber-800 p-6 shadow-2xl"
-        style={{ backgroundColor: "hsl(var(--sheet-background))" }}
-      >
+      <div className="mx-auto my-6 max-w-7xl rounded-lg border-2 border-amber-800 bg-sheet-background p-6 shadow-2xl">
         <Header />
         <StatsTabs />
       </div>

@@ -7,7 +7,7 @@ export function Appearance() {
   return (
     <Card className="parchment-card">
       <CardHeader>
-        <CardTitle className="rune-text font-uncial text-xl text-primary">
+        <CardTitle className="font-uncial text-xl text-primary">
           Appearance
         </CardTitle>
       </CardHeader>

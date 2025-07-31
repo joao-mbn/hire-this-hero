@@ -10,7 +10,7 @@ export function HealthBar() {
   return (
     <Progress className="h-6 max-w-64">
       <ProgressIndicator
-        className="h-full bg-[hsl(var(--ruby))]"
+        className="h-full bg-ruby"
         style={{ width: `${healthPercentage}%` }}
       >
         <span className="p-2 font-bold text-white">

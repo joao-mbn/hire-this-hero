@@ -6,9 +6,7 @@ export function Lore() {
   return (
     <Card className="parchment-card">
       <CardHeader>
-        <CardTitle className="rune-text font-uncial text-xl text-primary">
-          Lore
-        </CardTitle>
+        <CardTitle className="font-uncial text-xl text-primary">Lore</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="whitespace-pre-wrap text-muted-foreground">

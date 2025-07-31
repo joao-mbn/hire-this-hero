@@ -1,104 +1,69 @@
 @import "tailwindcss";
-@config "../tailwind.config.ts";
 
-/* Fantasy RPG Character Sheet Design System */
+@theme {
+  --color-background: hsl(25 35% 18%);
+  --color-sheet-background: hsl(35 25% 92%);
+  --color-foreground: hsl(25 30% 15%);
+  --color-card: hsl(35 35% 88%);
+  --color-card-foreground: hsl(25 30% 15%);
+  --color-popover: hsl(35 35% 88%);
+  --color-popover-foreground: hsl(25 30% 15%);
+  --color-border: hsl(25 25% 60%);
+  --color-primary: hsl(45 85% 35%);
+  --color-primary-foreground: hsl(35 25% 92%);
+  --color-secondary: hsl(25 40% 65%);
+  --color-secondary-foreground: hsl(25 30% 15%);
+  --color-muted: hsl(35 20% 75%);
+  --color-muted-foreground: hsl(25 25% 45%);
+  --color-accent: hsl(220 70% 45%);
+  --color-accent-foreground: hsl(35 25% 92%);
+  --color-destructive: hsl(0 70% 50%);
+  --color-destructive-foreground: hsl(35 25% 92%);
+  --color-parchment: hsl(35 25% 92%);
+  --color-parchment-dark: hsl(35 20% 85%);
+  --color-ancient-gold: hsl(45 85% 35%);
+  --color-ancient-bronze: hsl(25 40% 45%);
+  --color-mystical-blue: hsl(220 70% 45%);
+  --color-emerald: hsl(140 60% 40%);
+  --color-ruby: hsl(0 70% 50%);
+  --color-amethyst: hsl(270 50% 50%);
 
-@layer base {
-  :root {
-    /* Parchment and mystical color palette */
-    --sheet-background: 35 25% 92%;
-    --foreground: 25 30% 15%;
+  --gradient-gold: linear-gradient(
+    135deg,
+    var(--color-ancient-gold),
+    var(--color-ancient-bronze)
+  );
+  --gradient-mystical: linear-gradient(
+    135deg,
+    var(--color-mystical-blue),
+    var(--color-amethyst)
+  );
 
-    /* Website background */
-    --background: 25 35% 18%;
+  --shadow-foreground: 1px 1px 2px hsla(25, 30%, 15%, 0.5);
+  --shadow-mystical: 0 4px 20px hsla(220, 70%, 45%, 0.3);
+  --shadow-parchment: 0 2px 8px hsla(25, 25%, 35%, 0.2);
+  --glow-gold: 0 0 20px hsla(45, 85%, 35%, 0.5);
 
-    --card: 35 35% 88%;
-    --card-foreground: 25 30% 15%;
+  --font-sans: "Quintessential", cursive;
+  --font-serif: "Quintessential", cursive;
+  --font-cinzel: "Cinzel", serif;
+  --font-quintessential: "Quintessential", cursive;
+  --font-uncial: "Uncial Antiqua", cursive;
+  --font-medieval: "MedievalSharp", cursive;
 
-    --popover: 35 35% 88%;
-    --popover-foreground: 25 30% 15%;
-
-    /* Ancient gold and bronze accents */
-    --primary: 45 85% 35%;
-    --primary-foreground: 35 25% 92%;
-
-    --secondary: 25 40% 65%;
-    --secondary-foreground: 25 30% 15%;
-
-    --muted: 35 20% 75%;
-    --muted-foreground: 25 25% 45%;
-
-    --accent: 220 70% 45%;
-    --accent-foreground: 35 25% 92%;
-
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 35 25% 92%;
-
-    --border: 25 25% 60%;
-    --input: 35 30% 80%;
-    --ring: 45 85% 35%;
-
-    /* Fantasy aesthetic variables */
-    --parchment: 35 25% 92%;
-    --parchment-dark: 35 20% 85%;
-    --ancient-gold: 45 85% 35%;
-    --ancient-bronze: 25 40% 45%;
-    --mystical-blue: 220 70% 45%;
-    --emerald: 140 60% 40%;
-    --ruby: 0 70% 50%;
-    --amethyst: 270 50% 50%;
-
-    /* Gradients */
-    --gradient-parchment: linear-gradient(
-      135deg,
-      hsl(var(--parchment)),
-      hsl(var(--parchment-dark))
-    );
-    --gradient-gold: linear-gradient(
-      135deg,
-      hsl(var(--ancient-gold)),
-      hsl(var(--ancient-bronze))
-    );
-    --gradient-mystical: linear-gradient(
-      135deg,
-      hsl(var(--mystical-blue)),
-      hsl(var(--amethyst))
-    );
-
-    /* Shadows and effects */
-    --shadow-mystical: 0 4px 20px hsla(var(--mystical-blue), 0.3);
-    --shadow-parchment: 0 2px 8px hsla(25, 25%, 35%, 0.2);
-    --glow-gold: 0 0 20px hsla(var(--ancient-gold), 0.5);
-
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  --radius: 0.75rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
 @layer base {
   body {
-    @apply text-foreground;
-    background-color: hsl(var(--background));
+    @apply bg-background text-foreground;
   }
 }
 
 @layer components {
-  /* Fantasy UI Components */
   .parchment-card {
     @apply rounded-lg border-2 border-border bg-gradient-to-br from-card to-card/80;
 
@@ -120,50 +85,27 @@
     filter: drop-shadow(var(--glow-gold));
   }
 
-  .rune-text {
-    @apply font-bold tracking-wider;
-    text-shadow: 1px 1px 2px hsla(var(--foreground), 0.5);
-  }
-
-  /* Attribute gem styles */
   .attribute-gem {
-    @apply flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white;
-    background: var(--gradient-mystical);
-    box-shadow:
-      0 0 0 3px hsl(var(--primary)),
-      var(--shadow-mystical);
+    @apply flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white shadow-xs;
   }
 
   .attribute-gem.strength {
-    background: linear-gradient(135deg, hsl(var(--ruby)), hsl(0, 60%, 40%));
+    @apply bg-gradient-to-r from-ruby to-ruby/80 shadow-ruby;
   }
   .attribute-gem.dexterity {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--emerald)),
-      hsl(140, 50%, 30%)
-    );
+    @apply bg-gradient-to-r from-emerald to-emerald/80 shadow-emerald;
+  }
+  .attribute-gem.constitution {
+    @apply bg-gradient-to-r from-ancient-gold to-ancient-bronze shadow-ancient-gold;
   }
   .attribute-gem.intelligence {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--mystical-blue)),
-      hsl(220, 60%, 35%)
-    );
+    @apply bg-gradient-to-r from-mystical-blue to-mystical-blue/80 shadow-mystical-blue;
   }
   .attribute-gem.wisdom {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--amethyst)),
-      hsl(270, 40%, 40%)
-    );
+    @apply bg-gradient-to-r from-amethyst to-amethyst/80 shadow-amethyst;
   }
   .attribute-gem.charisma {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--ancient-gold)),
-      hsl(var(--ancient-bronze))
-    );
+    @apply bg-gradient-to-r from-ancient-gold to-ancient-bronze shadow-ancient-gold;
   }
 
   .rarity-legendary {
