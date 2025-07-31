@@ -8,7 +8,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      "rounded-lg border-2 border-border bg-card bg-gradient-to-br from-card to-card/80 text-card-foreground shadow-xs shadow-muted-foreground/50",
       className,
     )}
     {...props}
@@ -94,7 +94,7 @@ export function MultiSectionCard<T>({
   sectionItemComponent,
 }: MultiSectionCardProps<T>) {
   return (
-    <Card className="parchment-card">
+    <Card className="">
       <CardContent className="flex flex-col gap-4 pt-6">
         {sections.map(sectionItemComponent)}
       </CardContent>
@@ -124,7 +124,7 @@ interface BlockCardProps {
 
 export function BlockCard({ title, icon, children }: BlockCardProps) {
   return (
-    <Card className="parchment-card">
+    <Card className="">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           {icon}

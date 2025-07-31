@@ -10,7 +10,7 @@ export function SavingThrows() {
   const character = useCharacterContext();
 
   return (
-    <Card className="parchment-card">
+    <Card className="">
       <CardHeader>
         <CardTitle className="font-uncial text-xl text-primary">
           Saving Throws

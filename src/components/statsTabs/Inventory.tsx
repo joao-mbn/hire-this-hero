@@ -31,7 +31,7 @@ export function Inventory() {
       {Object.entries(inventoryItemTypeToDisplay).map(
         ([itemType, { icon, title, items }]) => (
           <div key={itemType}>
-            <Card className="parchment-card">
+            <Card className="">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   {icon}

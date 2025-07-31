@@ -13,7 +13,7 @@ export function Header() {
   const character = useCharacterContext();
 
   return (
-    <Card className="parchment-card mb-6 flex flex-col items-center gap-6 p-6 lg:flex-row lg:items-start">
+    <Card className="mb-6 flex flex-col items-center gap-6 p-6 lg:flex-row lg:items-start">
       <Avatar />
 
       <div className="flex-1 text-center lg:text-left">

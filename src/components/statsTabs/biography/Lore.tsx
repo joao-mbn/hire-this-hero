@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 export function Lore() {
   const character = useCharacterContext();
   return (
-    <Card className="parchment-card">
+    <Card className="">
       <CardHeader>
         <CardTitle className="font-uncial text-xl text-primary">Lore</CardTitle>
       </CardHeader>

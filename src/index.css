@@ -49,12 +49,34 @@
   --font-cinzel: "Cinzel", serif;
   --font-quintessential: "Quintessential", cursive;
   --font-uncial: "Uncial Antiqua", cursive;
-  --font-medieval: "MedievalSharp", cursive;
 
   --radius: 0.75rem;
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-gradient-flow: gradient-flow 1.5s ease-in-out infinite;
+  --animate-floating: floating 3s ease-in-out infinite;
+
+  @keyframes gradient-flow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }
 
 @layer base {
@@ -64,27 +86,6 @@
 }
 
 @layer components {
-  .parchment-card {
-    @apply rounded-lg border-2 border-border bg-gradient-to-br from-card to-card/80;
-
-    box-shadow: var(--shadow-parchment);
-  }
-
-  .skill-bar {
-    @apply relative h-3 overflow-hidden rounded-full bg-muted;
-  }
-
-  .skill-bar-fill {
-    @apply relative h-full rounded-full transition-all duration-1000 ease-out;
-    background: var(--gradient-gold);
-    background-size: 20px 20px;
-    animation: shimmer 2s infinite linear;
-  }
-
-  .mystical-glow {
-    filter: drop-shadow(var(--glow-gold));
-  }
-
   .attribute-gem {
     @apply flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white shadow-xs;
   }
@@ -138,44 +139,6 @@
   }
 
   .maxed-out {
-    @apply bg-gradient-to-r from-green-500 to-cyan-500;
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -20px 0;
-    }
-    100% {
-      background-position: 20px 0;
-    }
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .floating {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .gradient-flow {
-    @apply bg-[length:200%_100%];
-    animation: gradient-flow 1.5s ease-in-out infinite;
-  }
-
-  @keyframes gradient-flow {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+    @apply animate-gradient-flow bg-gradient-to-r from-green-500 to-cyan-500 bg-[length:200%_100%];
   }
 }
