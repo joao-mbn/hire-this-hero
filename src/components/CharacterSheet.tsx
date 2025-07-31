@@ -23,7 +23,7 @@ export const CharacterSheet = () => {
         style={{ backgroundColor: "hsl(var(--sheet-background))" }}
       >
         <Header />
-        <StatsTabs character={character} />
+        <StatsTabs />
       </div>
     </CharacterContext.Provider>
   );

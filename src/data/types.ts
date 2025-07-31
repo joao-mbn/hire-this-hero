@@ -24,6 +24,7 @@ export type AttributeShortName = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
 export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 export type MoralStandingType = "ideals" | "bonds" | "flaws";
 export type Recovery = "LR" | "SR";
+export type FeatureOrigin = "profession" | "others";
 
 export interface UnderusageDebuff {
   active: boolean;
@@ -51,6 +52,26 @@ export interface Spell {
   duration: string;
   icon: string;
   components: string[];
+}
+
+export interface Feature {
+  name: string;
+  description: string;
+  effects: string[];
+  icon: string;
+  prerequisites: {
+    name: string;
+    level: number;
+  }[];
+  level: number;
+  maxLevel: number;
+  levelsDescriptions: string[];
+  locked: boolean;
+  treeData?: {
+    x: number;
+    y: number;
+  };
+  origin: FeatureOrigin;
 }
 
 export interface Language {
@@ -215,6 +236,7 @@ export interface Character {
   equipmentProficiencies: string[];
   skills: Skill[];
   spells: Spell[];
+  features: Feature[];
   biography: Biography;
   attributes: Record<AttributeKey, Attribute>;
   savingThrows: SavingThrow[];

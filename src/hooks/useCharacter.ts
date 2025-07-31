@@ -7,6 +7,7 @@ import type {
   Character,
   Difficulty,
   Experience,
+  FeatureOrigin,
   Rarity,
   Recovery,
   SavingThrow,
@@ -102,6 +103,16 @@ export function useCharacter() {
           spells: data.spells.map((spell) => ({
             ...spell,
             recovery: spell.recovery as Recovery,
+          })),
+          features: data.features.map((feature) => ({
+            ...feature,
+            level: feature.level ?? 0,
+            maxLevel: feature.maxLevel ?? 0,
+            levelsDescriptions: feature.levelsDescriptions ?? [],
+            prerequisites: feature.prerequisites ?? [],
+            description: feature.description ?? "",
+            effects: feature.effects ?? [],
+            origin: feature.origin as FeatureOrigin,
           })),
           skillTree: {
             ...data.skillTree,

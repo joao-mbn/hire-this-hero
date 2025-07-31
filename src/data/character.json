@@ -143,7 +143,7 @@
         "The more I have to do, the more I'm likely to procrastinate"
       ]
     },
-    "lore": "To me, writing code is not only a income source or a means to solve problems, but an exertion of my will to create, and to contemplate the beauty an idea in its most reduced form."
+    "lore": "To me, writing code is not only a income source or a means to solve problems, but an exertion of my will to create, and to contemplate the beauty in representing an idea in its most reduced form."
   },
   "skills": [
     {
@@ -314,15 +314,115 @@
   ],
   "features": [
     {
+      "name": "Renaissance Man",
+      "description": "You have dedicated yourself a great deal into learning from a wide range of disciplines, sacrificing depth in favor of breadth. You acquired knowledge that is both useful in daily situations, as well as transformative of your world view. Most importantly, you've learned how to learn, and to do it by yourself.",
+      "effects": [
+        "Languages: You've gained understanding about the English, French and German languages, as well as improved knowledge of language structures, grammar and philology.",
+        "Chemistry: You have a graduation level knowledge of chemistry, in special analytical chemistry. Due to lack of use, this knowledge is latent.",
+        "Chemical Engineering: You have a graduation level knowledge of chemical engineering, processes calculus, thermodynamics, kinetics, processes and so on. You have specialized knowledge in solvent extraction and the rare earth elements separation. Due to lack of use, this knowledge is latent.",
+        "Investing and Accounting: You have had the opportunity to invest successfully in a wide class of assets, and assessing their quality, therewith learning the fundamentals of value investing, and how to read financial statements, and how companies operate from the shareholder's perspective. By having to set up a company yourself and do its accounting, you've learned the basics of bookkeeping, invoice issuing, worker's pay, tax declaration and more.",
+        "Geography and History: Your enthusiasm for learning about different cultures of different places at different times, has granted you an above average understanding about heritage and current geopolitics."
+      ],
+      "icon": "🎨",
+      "prerequisites": [],
+      "locked": false,
+      "treeData": { "x": 0, "y": 0 },
+      "origin": "others"
+    },
+    {
       "name": "Caffeine Reservoir",
       "description": "You have drunk so much Coffee that your body has adapted to its effects, and even learned use it to power up its working, to the point that you've gained the ability to use this black brew to fuel your spells. You have a Coffee Reservoir from which you can drink throughout the day and is restored after a good night of sleep. Drinking too much before going to sleep will harm your sleep quality.",
       "effects": [
-        "You gain a Reservoir of Coffee equal to \"2 + @constitution_bonus + @level_bonus\" Mugs of Coffee per day",
-        "You gain a level bonus to your Coffee Reservoir at levels 3, 7, 11, 15 and 19",
+        "You gain a Caffeine Reservoir, that allows you to drink \"2 + @constitution_bonus + @level_bonus\" Mugs of Coffee per day",
+        "You gain 1 point of @level_bonus to your Coffee Reservoir at levels 3, 7, 11, 15 and 19",
         "Drinking Coffee within 6 hours of a Long Rest will make it count as a Short Rest",
         "Your Coffee Reservoir is fully restored at a Long Rest"
       ],
-      "icon": "☕"
+      "icon": "☕",
+      "prerequisites": [],
+      "level": 0,
+      "maxLevel": 0,
+      "locked": false,
+      "treeData": { "x": 0, "y": 0 },
+      "origin": "profession"
+    },
+    {
+      "name": "Programming Fundamentals",
+      "icon": "💻",
+      "prerequisites": [],
+      "level": 4,
+      "maxLevel": 4,
+      "levelsDescriptions": [
+        "You learn a programming Language of your choice, between: Python, JavaScript, Java or C.\n\nYou learn the basics of programming, including variables, data types, control flow",
+        "You learn the basics of I/O. You learn how a debugger and an IDE of your choice.",
+        "You learn about basic algorithms and data structures; as well as memory and time complexity, and simple optimization strategies.",
+        "You learn the basics of object-oriented programming and functional programming."
+      ],
+      "locked": false,
+      "treeData": { "x": 0, "y": 0 },
+      "origin": "profession"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "description": "",
+      "icon": "🕸️",
+      "prerequisites": [{ "name": "Programming Fundamentals", "level": 3 }],
+      "level": 6,
+      "maxLevel": 6,
+      "levelsDescriptions": [
+        "You learn the basics of how the web works at a conceptual level.",
+        "You learn the basics of HTML and CSS, for building a static website.",
+        "You learn the basics of JavaScript, for building a interactive website.",
+        "You learn about JS libraries and basic use of the package system.",
+        "You learn how to debug using the DevTools of your browser.",
+        "You learn how to make simple API calls and display content dynamically."
+      ],
+      "locked": false,
+      "treeData": { "x": 0, "y": 0 },
+      "origin": "profession"
+    },
+    {
+      "name": "Cloud Engineering Fundamentals",
+      "description": "Learn the techniques of how to setup, manage the different cloud resources, at a basic level for a Cloud Provider of your choice.",
+      "icon": "☁️",
+      "prerequisites": [{ "name": "Programming Fundamentals", "level": 3 }],
+      "level": 6,
+      "maxLevel": 14,
+      "levelsDescriptions": [
+        "You learn the systems, resources and services of a Cloud Provider of your choice, between: AWS, Azure or GCP.",
+        "You learn how to setup and manage the basics of Serverless Functions",
+        "You learn how to setup and manage the basics of Apps",
+        "You learn how to setup and manage the basics of File Storages",
+        "You learn how to setup and manage the basics of Databases",
+        "You learn how to setup and manage the basics of IAM, Secret Manager and RBAC",
+        "You learn how to setup and manage the basics of API Gateways",
+        "You learn how to setup and manage the basics of Containers and Orchestrators",
+        "You learn how to setup and manage the basics of Virtual Machines",
+        "You learn how to setup and manage the basics of Networking",
+        "You learn how to setup and manage the basics of Monitoring and Logging",
+        "You learn how to setup and manage the basics of CI/CD Pipelines",
+        "You learn how to setup and manage the basics of Security",
+        "You learn how to setup and manage the basics of Cost Management"
+      ],
+      "locked": false,
+      "treeData": { "x": 0, "y": 0 },
+      "origin": "profession"
+    },
+    {
+      "name": "Advanced DevOps",
+      "description": "Learn the techniques of how to manage large scale applications reliably, using observability, containerization, orchestration and infrastructure management.",
+      "icon": "🧑‍🔧",
+      "prerequisites": [{ "name": "Cloud Engineering", "level": 1 }],
+      "level": 0,
+      "maxLevel": 3,
+      "levelsDescriptions": [
+        "You learn techniques of containerization, how to setup Docker Compose and how to deploy Containers.",
+        "You learn techniques of orchestration, how to setup Kubernetes and how to deploy Pods.",
+        "You learn how to setup your infrastructure as code using Terraform."
+      ],
+      "locked": true,
+      "treeData": { "x": 0, "y": 0 },
+      "origin": "profession"
     }
   ],
   "savingThrows": {

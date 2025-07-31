@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 interface TooltipContentEffectDescriptionProps {
   results: React.ReactNode;
   description?: string;
@@ -22,13 +24,13 @@ export function TooltipContentResultDescription({
   );
 }
 
-interface EffectsProps {
+interface EffectsProps extends React.HTMLAttributes<HTMLUListElement> {
   effects: string[];
 }
 
-export function Effects({ effects }: EffectsProps) {
+export function Effects({ effects, ...props }: EffectsProps) {
   return (
-    <ul className="text-sm text-accent">
+    <ul {...props} className={cn("text-sm text-accent", props.className)}>
       {effects.map((effect, index) => (
         <li key={index} className="flex items-start gap-2">
           <span>•</span>

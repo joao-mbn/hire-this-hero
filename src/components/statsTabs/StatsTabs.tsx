@@ -1,28 +1,23 @@
-import type { Character } from "@/data/types";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Biography } from "./biography/Biography";
 import { Details } from "./details/Details";
+import { Features } from "./features/Features";
 import { Inventory } from "./Inventory";
 import { Quests } from "./quests/Quests";
-import { SkillTree } from "./SkillTree";
 import { Spells } from "./spells/Spells";
 
-interface StatsTabsProps {
-  character: Character;
-}
-
-export function StatsTabs({ character }: StatsTabsProps) {
+export function StatsTabs() {
   return (
     <Tabs defaultValue="details" className="space-y-6">
-      <TabsList className="grid w-full grid-cols-4 bg-card/50 md:grid-cols-5 lg:grid-cols-6">
+      <TabsList className="grid w-full grid-cols-3 bg-card/50 lg:grid-cols-6">
         <TabsTrigger value="details" className="">
           Details
         </TabsTrigger>
         <TabsTrigger value="inventory" className="">
           Inventory
         </TabsTrigger>
-        <TabsTrigger value="skills" className="">
-          Skills
+        <TabsTrigger value="features" className="">
+          Features
         </TabsTrigger>
         <TabsTrigger value="spells" className="">
           Spells
@@ -43,8 +38,8 @@ export function StatsTabs({ character }: StatsTabsProps) {
         <Inventory />
       </TabsContent>
 
-      <TabsContent value="skills">
-        <SkillTree skillTree={character.skillTree} />
+      <TabsContent value="features">
+        <Features />
       </TabsContent>
 
       <TabsContent value="spells">
