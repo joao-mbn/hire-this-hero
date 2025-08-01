@@ -4,7 +4,7 @@ import {
   Effects,
   TooltipContentResultDescription,
 } from "../TooltipContentResultDescription";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../base/";
 
 export function Race() {
   const character = useCharacterContext();

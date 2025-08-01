@@ -1,22 +1,18 @@
+import { BlockCard } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
 import type { Quest } from "@/data/types";
 import { difficultyColor } from "@/lib/utils";
 import { Scroll, Trophy } from "lucide-react";
 import { Effects } from "../../TooltipContentResultDescription";
-import { Badge } from "../../ui/badge";
-import { BlockCard, CardContent } from "../../ui/card";
-import { Progress } from "../../ui/progress";
+import { Badge, CardContent, Progress } from "../../base/";
 
 export function CurrentQuestBlock() {
   const character = useCharacterContext();
   const { questLog } = character;
 
   return (
-    <BlockCard
-      title="Current Quests"
-      icon={<Scroll className="h-5 w-5 text-primary" />}
-    >
+    <BlockCard title="Current Quests" icon={<Scroll />}>
       <CardContent className="space-y-6">
         {questLog.inProgress.map((quest, idx) => (
           <QuestCard quest={quest} key={idx}>
@@ -43,10 +39,7 @@ export function CompletedQuestBlock() {
   const { questLog } = character;
 
   return (
-    <BlockCard
-      title="Completed Quests"
-      icon={<Trophy className="h-5 w-5 text-primary" />}
-    >
+    <BlockCard title="Completed Quests" icon={<Trophy />}>
       <CardContent className="space-y-6">
         {questLog.completed.map((quest, idx) => (
           <QuestCard quest={quest} key={idx}>

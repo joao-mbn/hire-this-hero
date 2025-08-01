@@ -1,5 +1,5 @@
 import { CharacterSheet } from "./components/CharacterSheet";
-import { TooltipProvider } from "./components/ui/tooltip";
+import { TooltipProvider } from "./components/base/";
 
 function App() {
   return (

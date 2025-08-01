@@ -1,27 +1,25 @@
-import { BrokenSkull } from "@/components/icons/BrokenSkull";
-import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
-import { Progress, ProgressIndicator } from "@/components/ui/progress";
 import {
+  BlockCard,
+  Progress,
+  ProgressIndicator,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/base/";
+import { BrokenSkull } from "@/components/icons/BrokenSkull";
+import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { CefrLevelToDescription } from "@/data/maps";
 import type { Language } from "@/data/types";
 import { cn, LANGUAGE_DEBUFF_REGRESS, MAX_LANGUAGE_LEVEL } from "@/lib/utils";
-import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { MessagesSquare } from "lucide-react";
+import { CardContent } from "../../base/";
 
 export function Languages() {
   const character = useCharacterContext();
 
   return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="font-uncial text-xl text-primary">
-          Languages
-        </CardTitle>
-      </CardHeader>
+    <BlockCard title="Languages" icon={<MessagesSquare />}>
       <CardContent>
         {character.languages
           .sort((a, b) => b.level - a.level)
@@ -47,7 +45,7 @@ export function Languages() {
             </div>
           ))}
       </CardContent>
-    </Card>
+    </BlockCard>
   );
 }
 

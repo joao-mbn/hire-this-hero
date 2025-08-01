@@ -1,19 +1,16 @@
+import { BlockCard } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { RarityToName } from "@/data/maps";
 import { rarityColor } from "@/lib/utils";
 import { Award } from "lucide-react";
-import { Badge } from "../../ui/badge";
-import { BlockCard, CardContent } from "../../ui/card";
+import { Badge, CardContent } from "../../base/";
 
 export function Achievements() {
   const character = useCharacterContext();
   const { achievements } = character;
 
   return (
-    <BlockCard
-      title="Achievements"
-      icon={<Award className="h-5 w-5 text-primary" />}
-    >
+    <BlockCard title="Achievements" icon={<Award />}>
       <CardContent className="grid grid-cols-2 gap-6">
         {achievements.map((achievement, idx) => (
           <div key={idx} className="rounded border border-border p-4">

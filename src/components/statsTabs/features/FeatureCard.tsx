@@ -1,14 +1,9 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/base/";
 import type { Feature } from "@/data/types";
 import { cn } from "@/lib/utils";
 import { Lock } from "lucide-react";
 import { Effects } from "../../TooltipContentResultDescription";
-import { Badge } from "../../ui/badge";
-import { Progress, ProgressIndicator } from "../../ui/progress";
+import { Badge, Progress, ProgressIndicator } from "../../base/";
 
 interface FeatureCardProps {
   feature: Feature;

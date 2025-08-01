@@ -1,18 +1,16 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { BookMarked } from "lucide-react";
+import { BlockCard, CardContent } from "../../base/";
 
 export function Lore() {
   const character = useCharacterContext();
   return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="font-uncial text-xl text-primary">Lore</CardTitle>
-      </CardHeader>
+    <BlockCard title="Lore" icon={<BookMarked />}>
       <CardContent>
         <p className="whitespace-pre-wrap text-muted-foreground">
           {character.biography.lore}
         </p>
       </CardContent>
-    </Card>
+    </BlockCard>
   );
 }

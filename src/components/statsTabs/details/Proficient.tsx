@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../../base/";
 
 interface ProficientProps {
   proficient: boolean;

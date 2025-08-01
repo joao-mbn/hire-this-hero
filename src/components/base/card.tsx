@@ -20,11 +20,7 @@ const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
-  />
+  <div ref={ref} className={cn("flex flex-col", className)} {...props} />
 ));
 CardHeader.displayName = "CardHeader";
 
@@ -35,7 +31,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-2xl leading-none font-semibold tracking-tight",
+      "fill-primary p-6 font-quintessential text-2xl leading-none font-semibold tracking-tight text-primary",
       className,
     )}
     {...props}
@@ -83,55 +79,3 @@ export {
   CardHeader,
   CardTitle,
 };
-
-interface MultiSectionCardProps<T> {
-  sections: T[];
-  sectionItemComponent: (section: T, index: number) => React.ReactNode;
-}
-
-export function MultiSectionCard<T>({
-  sections,
-  sectionItemComponent,
-}: MultiSectionCardProps<T>) {
-  return (
-    <Card className="">
-      <CardContent className="flex flex-col gap-4 pt-6">
-        {sections.map(sectionItemComponent)}
-      </CardContent>
-    </Card>
-  );
-}
-
-interface SectionItemProps {
-  title: string;
-  children: React.ReactNode;
-}
-
-export function SectionItem({ title, children }: SectionItemProps) {
-  return (
-    <div className="flex flex-col gap-3 border-border/30 not-last:border-b not-last:pb-6">
-      <span className="font-uncial text-xl text-primary">{title}</span>
-      {children}
-    </div>
-  );
-}
-
-interface BlockCardProps {
-  title: string;
-  icon?: React.ReactNode;
-  children: React.ReactNode;
-}
-
-export function BlockCard({ title, icon, children }: BlockCardProps) {
-  return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          {icon}
-          {title}
-        </CardTitle>
-      </CardHeader>
-      {children}
-    </Card>
-  );
-}

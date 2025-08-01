@@ -1,16 +1,12 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { Eye } from "lucide-react";
+import { BlockCard, CardContent } from "../../base/";
 
 export function Appearance() {
   const character = useCharacterContext();
 
   return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="font-uncial text-xl text-primary">
-          Appearance
-        </CardTitle>
-      </CardHeader>
+    <BlockCard title="Appearance" icon={<Eye />}>
       <CardContent className="grid grid-cols-2 gap-2">
         {Object.entries(character.biography.appearance).map(([key, value]) => (
           <div key={key} className="flex gap-1">
@@ -21,6 +17,6 @@ export function Appearance() {
           </div>
         ))}
       </CardContent>
-    </Card>
+    </BlockCard>
   );
 }

@@ -5,9 +5,13 @@ import {
   Effects,
   TooltipContentResultDescription,
 } from "../TooltipContentResultDescription";
-import { Badge } from "../ui/badge";
-import { Progress } from "../ui/progress";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import {
+  Badge,
+  Progress,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../base/";
 
 export function Level() {
   const character = useCharacterContext();

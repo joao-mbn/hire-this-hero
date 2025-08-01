@@ -1,6 +1,17 @@
-import { Badge } from "@/components/ui/badge";
-import { MultiSectionCard, SectionItem } from "@/components/ui/card";
+import {
+  Badge,
+  MultiSectionCard,
+  SectionItem,
+  type SectionItemProps,
+} from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
+import {
+  Backpack,
+  ShieldCheck,
+  ShieldMinus,
+  ShieldPlus,
+  Sword,
+} from "lucide-react";
 import { Attributes } from "./Attributes";
 import { Languages } from "./Languages";
 import { SavingThrows } from "./SavingThrows";
@@ -9,13 +20,25 @@ import { Skills } from "./Skills";
 export function Details() {
   const character = useCharacterContext();
   const conditions = [
-    { title: "Immunities", value: character.immunities },
-    { title: "Resistances", value: character.resistances },
-    { title: "Weaknesses", value: character.weaknesses },
+    { title: "Immunities", value: character.immunities, icon: <ShieldCheck /> },
+    {
+      title: "Resistances",
+      value: character.resistances,
+      icon: <ShieldPlus />,
+    },
+    { title: "Weaknesses", value: character.weaknesses, icon: <ShieldMinus /> },
   ];
   const equipmentProficiencies = [
-    { title: "Weapons", value: character.weaponProficiencies },
-    { title: "Equipments", value: character.equipmentProficiencies },
+    {
+      title: "Weapons",
+      value: character.weaponProficiencies,
+      icon: <Sword />,
+    },
+    {
+      title: "Equipments",
+      value: character.equipmentProficiencies,
+      icon: <Backpack />,
+    },
   ];
 
   return (
@@ -31,13 +54,23 @@ export function Details() {
           <MultiSectionCard
             sections={conditions}
             sectionItemComponent={(section, i) => (
-              <DetailsSectionItem section={section} key={i} />
+              <DetailsSectionItem
+                title={section.title}
+                value={section.value}
+                icon={section.icon}
+                key={i}
+              />
             )}
           />
           <MultiSectionCard
             sections={equipmentProficiencies}
             sectionItemComponent={(section, i) => (
-              <DetailsSectionItem section={section} key={i} />
+              <DetailsSectionItem
+                title={section.title}
+                value={section.value}
+                icon={section.icon}
+                key={i}
+              />
             )}
           />
         </div>
@@ -46,15 +79,15 @@ export function Details() {
   );
 }
 
-interface DetailsSectionItemProps {
-  section: { title: string; value: string[] };
+interface DetailsSectionItemProps extends Omit<SectionItemProps, "children"> {
+  value: string[];
 }
 
-function DetailsSectionItem({ section }: DetailsSectionItemProps) {
+function DetailsSectionItem({ title, value, icon }: DetailsSectionItemProps) {
   return (
-    <SectionItem title={section.title}>
+    <SectionItem title={title} icon={icon}>
       <div className="flex flex-wrap gap-2">
-        {section.value.map((item, index) => (
+        {value.map((item, index) => (
           <Badge key={index} variant="outline">
             {item}
           </Badge>

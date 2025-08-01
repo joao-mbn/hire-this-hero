@@ -4,8 +4,7 @@ import {
   Effects,
   TooltipContentResultDescription,
 } from "../TooltipContentResultDescription";
-import { Badge } from "../ui/badge";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Badge, Tooltip, TooltipContent, TooltipTrigger } from "../base/";
 
 export function Profession() {
   const character = useCharacterContext();

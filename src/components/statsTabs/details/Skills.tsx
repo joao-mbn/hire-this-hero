@@ -1,21 +1,21 @@
 import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
-import { Badge } from "@/components/ui/badge";
+import { Badge, BlockCard } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeKeyToName, AttributeKeyToShortName } from "@/data/maps";
-import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
+import { Wrench } from "lucide-react";
+import {
+  CardContent,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../../base/";
 import { Proficient } from "./Proficient";
 
 export function Skills() {
   const character = useCharacterContext();
 
   return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="font-uncial text-xl text-primary">
-          Skills
-        </CardTitle>
-      </CardHeader>
+    <BlockCard title="Skills" icon={<Wrench />}>
       <CardContent>
         {character.skills
           .sort((a, b) => a.name.localeCompare(b.name))
@@ -76,6 +76,6 @@ export function Skills() {
             </div>
           ))}
       </CardContent>
-    </Card>
+    </BlockCard>
   );
 }

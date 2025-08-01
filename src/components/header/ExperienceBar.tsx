@@ -1,4 +1,4 @@
-import { Progress, ProgressIndicator } from "@/components/ui/progress";
+import { Progress, ProgressIndicator } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 
 export function ExperienceBar() {

@@ -1,8 +1,15 @@
-import { Badge } from "@/components/ui/badge";
+import { Badge, MultiSectionCard, SectionItem } from "@/components/base/";
+import { Pray } from "@/components/icons/Pray";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { MoralStandingTypeToName } from "@/data/maps";
 import type { MoralStandingType } from "@/data/types";
-import { MultiSectionCard, SectionItem } from "../../ui/card";
+import {
+  Compass,
+  HeartCrack,
+  HeartHandshake,
+  HeartPulse,
+  Star,
+} from "lucide-react";
 import { Appearance } from "./Appearance";
 import { Lore } from "./Lore";
 
@@ -23,21 +30,24 @@ export function Biography() {
                 key: "alignment",
                 title: `Alignment: ${character.biography.alignment.type}`,
                 value: character.biography.alignment.description,
+                icon: <Compass />,
               },
               {
                 key: "faith",
                 title: `Faith: ${character.biography.faith.name}`,
                 value: character.biography.faith.description,
+                icon: <Pray svgProps={{ className: "h-6 w-6" }} />,
               },
               {
                 key: "personalityTraits",
                 title: "Personality Traits",
                 value: character.biography.personalityTraits,
+                icon: <HeartPulse />,
               },
             ] as const
           }
-          sectionItemComponent={({ key, title, value }) => (
-            <SectionItem title={title} key={key}>
+          sectionItemComponent={({ key, title, value, icon }) => (
+            <SectionItem title={title} key={key} icon={icon}>
               {key === "personalityTraits" ? (
                 <div className="flex flex-wrap gap-2">
                   {value.map((trait) => (
@@ -58,6 +68,13 @@ export function Biography() {
             <SectionItem
               title={MoralStandingTypeToName[standingType as MoralStandingType]}
               key={standingType}
+              icon={
+                {
+                  bonds: <HeartHandshake />,
+                  flaws: <HeartCrack />,
+                  ideals: <Star />,
+                }[standingType]
+              }
             >
               <ul className="list-disc pl-4 text-muted-foreground">
                 {standings.map((standing) => (

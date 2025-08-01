@@ -1,5 +1,5 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { Card } from "../ui/card";
+import { Card } from "../base/";
 import { Avatar } from "./Avatar";
 import { Contacts } from "./Contacts";
 import { ExperienceBar } from "./ExperienceBar";

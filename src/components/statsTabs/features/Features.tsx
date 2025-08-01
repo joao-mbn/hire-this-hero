@@ -1,6 +1,7 @@
+import { BlockCard } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { BriefcaseBusiness, Star } from "lucide-react";
-import { BlockCard, CardContent } from "../../ui/card";
+import { CardContent } from "../../base/";
 import { FeatureCard } from "./FeatureCard";
 
 export function Features() {
@@ -9,10 +10,7 @@ export function Features() {
 
   return (
     <div className="grid grid-cols-1 gap-6">
-      <BlockCard
-        title="Profession Features"
-        icon={<BriefcaseBusiness className="h-5 w-5 text-primary" />}
-      >
+      <BlockCard title="Profession Features" icon={<BriefcaseBusiness />}>
         <CardContent className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {features
             .filter((feature) => feature.origin === "profession")
@@ -22,10 +20,7 @@ export function Features() {
         </CardContent>
       </BlockCard>
 
-      <BlockCard
-        title="Other Features"
-        icon={<Star className="h-5 w-5 text-primary" />}
-      >
+      <BlockCard title="Other Features" icon={<Star />}>
         <CardContent className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {features
             .filter((feature) => feature.origin === "others")

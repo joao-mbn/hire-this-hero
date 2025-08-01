@@ -1,25 +1,22 @@
-import { BlockCard, CardContent } from "@/components/ui/card";
+import { BlockCard, CardContent } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { RecoveryToName } from "@/data/maps";
 import { Sparkles } from "lucide-react";
 import { Effects } from "../../TooltipContentResultDescription";
-import { Badge } from "../../ui/badge";
 import {
+  Badge,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../ui/tooltip";
+} from "../../base/";
 
 export function Spells() {
   const character = useCharacterContext();
   const { spells } = character;
 
   return (
-    <BlockCard
-      title="Spells"
-      icon={<Sparkles className="h-5 w-5 text-primary" />}
-    >
+    <BlockCard title="Spells" icon={<Sparkles />}>
       <CardContent className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {spells.map((spell, i) => (
           <div className="rounded border border-border p-4" key={i}>

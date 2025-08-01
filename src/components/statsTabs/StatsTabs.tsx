@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../base/";
 import { Biography } from "./biography/Biography";
 import { Details } from "./details/Details";
 import { Features } from "./features/Features";

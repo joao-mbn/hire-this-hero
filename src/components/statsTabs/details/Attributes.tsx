@@ -3,44 +3,35 @@ import {
   TooltipContentResultDescription,
 } from "@/components/TooltipContentResultDescription";
 import {
+  BlockCard,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeOrder } from "@/data/maps";
 import type { Attribute, AttributeKey } from "@/data/types";
 import { cn } from "@/lib/utils";
-import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { Dumbbell } from "lucide-react";
+import { CardContent } from "../../base/";
 
 export function Attributes() {
   const character = useCharacterContext();
 
   return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="font-uncial text-xl text-primary">
-          Attributes
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-6">
-          {Object.entries(character.attributes)
-            .sort(
-              (a, b) =>
-                AttributeOrder.indexOf(a[0] as AttributeKey) -
-                AttributeOrder.indexOf(b[0] as AttributeKey),
-            )
-            .map(([key, value]) => (
-              <AttributeGem
-                value={value}
-                type={key as AttributeKey}
-                key={key}
-              />
-            ))}
-        </div>
+    <BlockCard title="Attributes" icon={<Dumbbell />}>
+      <CardContent className="grid grid-cols-2 gap-6 md:grid-cols-6">
+        {Object.entries(character.attributes)
+          .sort(
+            (a, b) =>
+              AttributeOrder.indexOf(a[0] as AttributeKey) -
+              AttributeOrder.indexOf(b[0] as AttributeKey),
+          )
+          .map(([key, value]) => (
+            <AttributeGem value={value} type={key as AttributeKey} key={key} />
+          ))}
       </CardContent>
-    </Card>
+    </BlockCard>
   );
 }
 

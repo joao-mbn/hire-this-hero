@@ -4,9 +4,14 @@ import type { Item, ItemType } from "@/data/types";
 import { cn, rarityColor } from "@/lib/utils";
 import { Shield, Sword } from "lucide-react";
 import { Effects } from "../TooltipContentResultDescription";
-import { Badge } from "../ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import {
+  Badge,
+  BlockCard,
+  CardContent,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../base/";
 
 export function Inventory() {
   const character = useCharacterContext();
@@ -15,12 +20,12 @@ export function Inventory() {
     { icon: React.ReactNode; title: string; items: Item[] }
   > = {
     weapons: {
-      icon: <Sword className="h-5 w-5 text-primary" />,
+      icon: <Sword />,
       title: ItemTypeToName["weapons"],
       items: character.inventory.weapons,
     },
     equipments: {
-      icon: <Shield className="h-5 w-5 text-primary" />,
+      icon: <Shield />,
       title: ItemTypeToName["equipments"],
       items: character.inventory.equipments,
     },
@@ -31,19 +36,13 @@ export function Inventory() {
       {Object.entries(inventoryItemTypeToDisplay).map(
         ([itemType, { icon, title, items }]) => (
           <div key={itemType}>
-            <Card className="">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  {icon}
-                  {title}
-                </CardTitle>
-              </CardHeader>
+            <BlockCard title={title} icon={icon}>
               <CardContent className="space-y-4">
                 {items.map((item) => (
                   <InventoryItem item={item} key={item.name} />
                 ))}
               </CardContent>
-            </Card>
+            </BlockCard>
           </div>
         ),
       )}

@@ -1,21 +1,21 @@
 import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
-import { Badge } from "@/components/ui/badge";
+import { Badge, BlockCard } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeKeyToName, AttributeOrder } from "@/data/maps";
-import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
+import { ShieldCheck } from "lucide-react";
+import {
+  CardContent,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../../base/";
 import { Proficient } from "./Proficient";
 
 export function SavingThrows() {
   const character = useCharacterContext();
 
   return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="font-uncial text-xl text-primary">
-          Saving Throws
-        </CardTitle>
-      </CardHeader>
+    <BlockCard title="Saving Throws" icon={<ShieldCheck />}>
       <CardContent>
         {character.savingThrows
           .sort(
@@ -68,6 +68,6 @@ export function SavingThrows() {
             </div>
           ))}
       </CardContent>
-    </Card>
+    </BlockCard>
   );
 }
