@@ -2,9 +2,11 @@ import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Fragment } from "react/jsx-runtime";
 import {
   Effects,
+  Tooltip,
+  TooltipContent,
   TooltipContentResultDescription,
-} from "../TooltipContentResultDescription";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../base/";
+  TooltipTrigger,
+} from "../base/";
 
 export function Race() {
   const character = useCharacterContext();

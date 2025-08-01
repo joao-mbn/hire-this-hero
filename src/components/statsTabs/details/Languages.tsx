@@ -1,13 +1,14 @@
 import {
   BlockCard,
+  Description,
   Progress,
   ProgressIndicator,
   Tooltip,
   TooltipContent,
+  TooltipContentResultDescription,
   TooltipTrigger,
 } from "@/components/base/";
 import { BrokenSkull } from "@/components/icons/BrokenSkull";
-import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { CefrLevelToDescription } from "@/data/maps";
 import type { Language } from "@/data/types";
@@ -157,9 +158,10 @@ function UnderusageDebuffTooltip({ language }: UnderusageDebuffTooltipProps) {
       <TooltipContent>
         <div className="max-w-xs">
           <p className="mb-2 font-semibold">Underusage debuff:</p>
-          <p className="mt-2 text-sm whitespace-pre-line text-muted-foreground">
-            {language.underusageDebuff.description}
-          </p>
+          <Description
+            description={language.underusageDebuff.description}
+            withoutDivider
+          />
         </div>
       </TooltipContent>
     </Tooltip>

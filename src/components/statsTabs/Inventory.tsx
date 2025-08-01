@@ -3,11 +3,12 @@ import { ItemTypeToName, RarityToName } from "@/data/maps";
 import type { Item, ItemType } from "@/data/types";
 import { cn, rarityColor } from "@/lib/utils";
 import { Backpack, Shield, Sword } from "lucide-react";
-import { Effects } from "../TooltipContentResultDescription";
 import {
   Badge,
   BlockCard,
   CardContent,
+  Description,
+  Effects,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -79,8 +80,6 @@ const InventoryItem = ({ item }: InventoryItemProps) => (
       </Badge>
     </div>
     <Effects effects={item.stats} />
-    <p className="border-t border-border/30 pt-2 text-sm whitespace-pre-line">
-      {item.description}
-    </p>
+    <Description description={item.description} />
   </div>
 );

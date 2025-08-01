@@ -1,10 +1,13 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Shield } from "lucide-react";
 import {
+  Badge,
   Effects,
+  Tooltip,
+  TooltipContent,
   TooltipContentResultDescription,
-} from "../TooltipContentResultDescription";
-import { Badge, Tooltip, TooltipContent, TooltipTrigger } from "../base/";
+  TooltipTrigger,
+} from "../base/";
 
 export function Subclass() {
   const character = useCharacterContext();

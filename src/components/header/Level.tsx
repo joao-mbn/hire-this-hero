@@ -2,14 +2,12 @@ import { useCharacterContext } from "@/contexts/CharacterContext";
 import { MAX_LEVEL } from "@/lib/utils";
 import { Ruler } from "lucide-react";
 import {
-  Effects,
-  TooltipContentResultDescription,
-} from "../TooltipContentResultDescription";
-import {
   Badge,
+  Effects,
   Progress,
   Tooltip,
   TooltipContent,
+  TooltipContentResultDescription,
   TooltipTrigger,
 } from "../base/";
 

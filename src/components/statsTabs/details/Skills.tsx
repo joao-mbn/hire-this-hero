@@ -1,5 +1,8 @@
-import { TooltipContentResultDescription } from "@/components/TooltipContentResultDescription";
-import { Badge, BlockCard } from "@/components/base/";
+import {
+  Badge,
+  BlockCard,
+  TooltipContentResultDescription,
+} from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeKeyToName, AttributeKeyToShortName } from "@/data/maps";
 import { Wrench } from "lucide-react";

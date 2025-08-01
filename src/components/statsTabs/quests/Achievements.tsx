@@ -1,4 +1,4 @@
-import { BlockCard } from "@/components/base/";
+import { BlockCard, Description } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { RarityToName } from "@/data/maps";
 import { rarityColor } from "@/lib/utils";
@@ -22,12 +22,14 @@ export function Achievements() {
               >
                 {RarityToName[achievement.difficulty]}
               </Badge>
-              <p className="mb-2 text-sm text-muted-foreground">
-                {achievement.description}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Earned: {achievement.dateEarned}
-              </p>
+              <Description
+                description={achievement.description}
+                withoutDivider
+              />
+              <Description
+                description={`Earned: ${achievement.dateEarned}`}
+                withoutDivider
+              />
             </div>
           </div>
         ))}

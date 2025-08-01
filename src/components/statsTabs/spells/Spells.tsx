@@ -1,10 +1,10 @@
-import { BlockCard, CardContent } from "@/components/base/";
+import { BlockCard, CardContent, Description } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { RecoveryToName } from "@/data/maps";
 import { Sparkles } from "lucide-react";
-import { Effects } from "../../TooltipContentResultDescription";
 import {
   Badge,
+  Effects,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -54,9 +54,7 @@ export function Spells() {
               </p>
             </div>
 
-            <p className="mt-2 border-t pt-2 text-sm whitespace-pre-line text-muted-foreground">
-              {spell.description}
-            </p>
+            <Description description={spell.description} />
           </div>
         ))}
       </CardContent>

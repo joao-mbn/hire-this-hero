@@ -1,11 +1,10 @@
-import { BlockCard } from "@/components/base/";
+import { BlockCard, Description } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
 import type { Quest } from "@/data/types";
 import { difficultyColor } from "@/lib/utils";
 import { Scroll, Trophy } from "lucide-react";
-import { Effects } from "../../TooltipContentResultDescription";
-import { Badge, CardContent, Progress } from "../../base/";
+import { Badge, CardContent, Effects, Progress } from "../../base/";
 
 export function CurrentQuestBlock() {
   const character = useCharacterContext();
@@ -75,9 +74,7 @@ function QuestCard({ quest, children: completionDetails }: QuestCardProps) {
         <Effects effects={quest.rewards} />
       </div>
       {completionDetails}
-      <p className="mt-2 border-t pt-2 text-sm whitespace-pre-line text-muted-foreground">
-        {quest.description}
-      </p>
+      <Description description={quest.description} />
     </div>
   );
 }

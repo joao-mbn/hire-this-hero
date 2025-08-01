@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Description } from ".";
 
 interface TooltipContentEffectDescriptionProps {
   results: React.ReactNode;
@@ -15,11 +16,7 @@ export function TooltipContentResultDescription({
     <div className="max-w-xs">
       <p className="mb-2 font-semibold">{title}:</p>
       {results}
-      {description && (
-        <p className="mt-2 border-t pt-2 text-sm whitespace-pre-line text-muted-foreground">
-          {description}
-        </p>
-      )}
+      <Description description={description} />
     </div>
   );
 }

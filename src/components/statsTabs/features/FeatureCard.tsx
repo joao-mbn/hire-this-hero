@@ -1,9 +1,13 @@
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/base/";
+import {
+  Description,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/base/";
 import type { Feature } from "@/data/types";
 import { cn } from "@/lib/utils";
 import { Lock } from "lucide-react";
-import { Effects } from "../../TooltipContentResultDescription";
-import { Badge, Progress, ProgressIndicator } from "../../base/";
+import { Badge, Effects, Progress, ProgressIndicator } from "../../base/";
 
 interface FeatureCardProps {
   feature: Feature;
@@ -106,11 +110,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
           </div>
         )}
 
-        {feature.description && (
-          <p className="mt-2 border-t pt-2 text-sm whitespace-pre-line text-muted-foreground">
-            {feature.description}
-          </p>
-        )}
+        <Description description={feature.description} />
       </div>
     </div>
   );

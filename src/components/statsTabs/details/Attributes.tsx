@@ -1,11 +1,9 @@
 import {
-  Effects,
-  TooltipContentResultDescription,
-} from "@/components/TooltipContentResultDescription";
-import {
   BlockCard,
+  Effects,
   Tooltip,
   TooltipContent,
+  TooltipContentResultDescription,
   TooltipTrigger,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
