@@ -2,7 +2,7 @@ import { useCharacterContext } from "@/contexts/CharacterContext";
 import { ItemTypeToName, RarityToName } from "@/data/maps";
 import type { Item, ItemType } from "@/data/types";
 import { cn, rarityColor } from "@/lib/utils";
-import { Shield, Sword } from "lucide-react";
+import { Backpack, Shield, Sword } from "lucide-react";
 import { Effects } from "../TooltipContentResultDescription";
 import {
   Badge,
@@ -25,7 +25,7 @@ export function Inventory() {
       items: character.inventory.weapons,
     },
     equipments: {
-      icon: <Shield />,
+      icon: <Backpack />,
       title: ItemTypeToName["equipments"],
       items: character.inventory.equipments,
     },
