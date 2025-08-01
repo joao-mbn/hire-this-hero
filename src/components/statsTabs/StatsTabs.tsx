@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../base/";
 import { Biography } from "./biography/Biography";
 import { Details } from "./details/Details";
 import { Features } from "./features/Features";
-import { Inventory } from "./Inventory";
+import { Inventory } from "./inventory/Inventory";
 import { Quests } from "./quests/Quests";
 import { Spells } from "./spells/Spells";
 

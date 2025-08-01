@@ -2,10 +2,11 @@ import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Shield } from "lucide-react";
 import {
   Badge,
-  Effects,
+  Description,
+  List,
   Tooltip,
   TooltipContent,
-  TooltipContentResultDescription,
+  TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
 
@@ -21,11 +22,9 @@ export function Subclass() {
         </Badge>
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentResultDescription
-          results={<Effects effects={character.profession.subclass.effects} />}
-          description={character.profession.subclass.description}
-          title="Effects"
-        />
+        <TooltipContentHeader title="Effects" />
+        <List items={character.profession.subclass.effects} />
+        <Description description={character.profession.subclass.description} />
       </TooltipContent>
     </Tooltip>
   );

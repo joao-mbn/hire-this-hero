@@ -1,7 +1,8 @@
 import {
   Badge,
   BlockCard,
-  TooltipContentResultDescription,
+  Description,
+  TooltipContentHeader,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeKeyToName, AttributeOrder } from "@/data/maps";
@@ -49,23 +50,21 @@ export function SavingThrows() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <TooltipContentResultDescription
-                    results={
-                      <div className="flex justify-between gap-2">
-                        <span className="text-muted-foreground">
-                          Bonus:{" "}
-                          {savingThrow.bonus >= 0
-                            ? `+${savingThrow.bonus}`
-                            : savingThrow.bonus}
-                        </span>
-                        {savingThrow.proficient && (
-                          <Badge variant="default">Proficient</Badge>
-                        )}
-                      </div>
-                    }
+                  <TooltipContentHeader
                     title={AttributeKeyToName[savingThrow.attribute]}
-                    description={savingThrow.description}
                   />
+                  <div className="flex justify-between gap-2">
+                    <span className="text-muted-foreground">
+                      Bonus:{" "}
+                      {savingThrow.bonus >= 0
+                        ? `+${savingThrow.bonus}`
+                        : savingThrow.bonus}
+                    </span>
+                    {savingThrow.proficient && (
+                      <Badge variant="default">Proficient</Badge>
+                    )}
+                  </div>
+                  <Description description={savingThrow.description} />
                 </TooltipContent>
               </Tooltip>
             </div>

@@ -5,7 +5,7 @@ import {
   ProgressIndicator,
   Tooltip,
   TooltipContent,
-  TooltipContentResultDescription,
+  TooltipContentHeader,
   TooltipTrigger,
 } from "@/components/base/";
 import { BrokenSkull } from "@/components/icons/BrokenSkull";
@@ -106,27 +106,25 @@ interface LanguageContentProps {
 function LanguageContent({ language }: LanguageContentProps) {
   return (
     <TooltipContent>
-      <TooltipContentResultDescription
-        results={
-          <div className="flex w-xs flex-col gap-1 pb-2">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-muted-foreground">
-                Level: {language.level}/{MAX_LANGUAGE_LEVEL}
-                {language.cefrLevel && language.cefrLevel === "Native"
-                  ? ` • Native`
-                  : ` • CEFR: ${language.cefrLevel}`}
-              </span>
-              {language.underusageDebuff?.active && (
-                <BrokenSkull
-                  svgProps={{ className: "h-4 w-4 ml-auto" }}
-                  pathsProps={[{ className: "fill-muted-foreground" }]}
-                />
-              )}
-            </div>
-            <LanguageLevelProgress className="min-w-48" language={language} />
-          </div>
-        }
-        title={language.name}
+      <TooltipContentHeader title={language.name} />
+      <div className="flex w-xs flex-col gap-1 pb-2">
+        <div className="flex items-center gap-2">
+          <span className="font-semibold text-muted-foreground">
+            Level: {language.level}/{MAX_LANGUAGE_LEVEL}
+            {language.cefrLevel && language.cefrLevel === "Native"
+              ? ` • Native`
+              : ` • CEFR: ${language.cefrLevel}`}
+          </span>
+          {language.underusageDebuff?.active && (
+            <BrokenSkull
+              svgProps={{ className: "h-4 w-4 ml-auto" }}
+              pathsProps={[{ className: "fill-muted-foreground" }]}
+            />
+          )}
+        </div>
+        <LanguageLevelProgress className="min-w-48" language={language} />
+      </div>
+      <Description
         description={
           language.cefrLevel
             ? `${CefrLevelToDescription[language.cefrLevel]}` +

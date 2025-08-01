@@ -10,10 +10,10 @@ export function Appearance() {
       <CardContent className="grid grid-cols-2 gap-2">
         {Object.entries(character.biography.appearance).map(([key, value]) => (
           <div key={key} className="flex gap-1">
-            <span className="text-sm text-muted-foreground">
+            <span className="text-muted-foreground">
               {key[0].toUpperCase() + key.slice(1)}:
             </span>
-            <span className="text-sm text-foreground">{value}</span>
+            <span className="text-foreground">{value}</span>
           </div>
         ))}
       </CardContent>

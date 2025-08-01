@@ -7,7 +7,7 @@ import {
 import type { Feature } from "@/data/types";
 import { cn } from "@/lib/utils";
 import { Lock } from "lucide-react";
-import { Badge, Effects, Progress, ProgressIndicator } from "../../base/";
+import { Badge, List, Progress, ProgressIndicator } from "../../base/";
 
 interface FeatureCardProps {
   feature: Feature;
@@ -83,13 +83,13 @@ export function FeatureCard({ feature }: FeatureCardProps) {
               />
             </Progress>
             <div>
-              <Effects
-                effects={feature.levelsDescriptions
+              <List
+                items={feature.levelsDescriptions
                   .filter((_, i) => i < feature.level)
                   .map((description, i) => `Level ${i + 1}: ${description}`)}
               />
-              <Effects
-                effects={feature.levelsDescriptions
+              <List
+                items={feature.levelsDescriptions
                   .filter((_, i) => i >= feature.level)
                   .map(
                     (description, i) =>
@@ -106,7 +106,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
         {feature.effects.length > 0 && (
           <div className="mt-2">
             <p className="font-semibold">Effects:</p>
-            <Effects effects={feature.effects} />
+            <List items={feature.effects} />
           </div>
         )}
 

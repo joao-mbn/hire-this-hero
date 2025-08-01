@@ -1,10 +1,11 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Fragment } from "react/jsx-runtime";
 import {
-  Effects,
+  Description,
+  List,
   Tooltip,
   TooltipContent,
-  TooltipContentResultDescription,
+  TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
 
@@ -18,11 +19,9 @@ export function Race() {
           <Tooltip delayDuration={0}>
             <TooltipTrigger>{value.primary}</TooltipTrigger>
             <TooltipContent>
-              <TooltipContentResultDescription
-                results={<Effects effects={value.effects} />}
-                description={value.description}
-                title="Effects"
-              />
+              <TooltipContentHeader title="Effects" />
+              <List items={value.effects} />
+              <Description description={value.description} />
             </TooltipContent>
           </Tooltip>
           {index < Object.entries(character.race).length - 1 && (

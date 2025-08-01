@@ -4,7 +4,7 @@ import { RecoveryToName } from "@/data/maps";
 import { Sparkles } from "lucide-react";
 import {
   Badge,
-  Effects,
+  List,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -40,12 +40,12 @@ export function Spells() {
 
             <div className="mt-2 flex flex-col">
               <p className="font-semibold">Effects:</p>
-              <Effects effects={spell.effects} />
+              <List items={spell.effects} />
             </div>
 
             <div className="mt-2">
               <p className="font-semibold">Components:</p>
-              <Effects effects={spell.components} />
+              <List items={spell.components} />
             </div>
 
             <div className="mt-2">

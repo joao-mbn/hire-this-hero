@@ -1,7 +1,8 @@
 import {
   Badge,
   BlockCard,
-  TooltipContentResultDescription,
+  Description,
+  TooltipContentHeader,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeKeyToName, AttributeKeyToShortName } from "@/data/maps";
@@ -44,36 +45,32 @@ export function Skills() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <TooltipContentResultDescription
-                    results={
-                      <div className="flex justify-between gap-2">
-                        <span className="text-muted-foreground">
-                          Bonus:{" "}
-                          {skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}
-                        </span>
-                        <div className="flex gap-2">
-                          <Badge variant="default">
-                            {AttributeKeyToName[skill.attribute]}
+                  <TooltipContentHeader title={skill.name} />
+                  <div className="flex justify-between gap-2">
+                    <span className="text-muted-foreground">
+                      Bonus:{" "}
+                      {skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}
+                    </span>
+                    <div className="flex gap-2">
+                      <Badge variant="default">
+                        {AttributeKeyToName[skill.attribute]}
+                      </Badge>
+                      {skill.proficient && (
+                        <Badge variant="default">Proficient</Badge>
+                      )}
+                      {Object.entries(skill.otherBonusSources || {})
+                        ?.filter(([, bonus]) => bonus !== 0)
+                        .map(([source, bonus]) => (
+                          <Badge
+                            variant={bonus >= 0 ? "default" : "destructive"}
+                            key={source}
+                          >
+                            {source}
                           </Badge>
-                          {skill.proficient && (
-                            <Badge variant="default">Proficient</Badge>
-                          )}
-                          {Object.entries(skill.otherBonusSources || {})
-                            ?.filter(([, bonus]) => bonus !== 0)
-                            .map(([source, bonus]) => (
-                              <Badge
-                                variant={bonus >= 0 ? "default" : "destructive"}
-                                key={source}
-                              >
-                                {source}
-                              </Badge>
-                            ))}
-                        </div>
-                      </div>
-                    }
-                    title={skill.name}
-                    description={skill.description}
-                  />
+                        ))}
+                    </div>
+                  </div>
+                  <Description description={skill.description} />
                 </TooltipContent>
               </Tooltip>
             </div>

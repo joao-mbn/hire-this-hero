@@ -1,18 +1,18 @@
-import { useCharacterContext } from "@/contexts/CharacterContext";
-import { ItemTypeToName, RarityToName } from "@/data/maps";
-import type { Item, ItemType } from "@/data/types";
-import { cn, rarityColor } from "@/lib/utils";
-import { Backpack, Shield, Sword } from "lucide-react";
 import {
   Badge,
   BlockCard,
   CardContent,
   Description,
-  Effects,
+  List,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "../base/";
+} from "@/components/base";
+import { useCharacterContext } from "@/contexts/CharacterContext";
+import { ItemTypeToName, RarityToName } from "@/data/maps";
+import type { Item, ItemType } from "@/data/types";
+import { cn, rarityColor } from "@/lib/utils";
+import { Backpack, Shield, Sword } from "lucide-react";
 
 export function Inventory() {
   const character = useCharacterContext();
@@ -79,7 +79,7 @@ const InventoryItem = ({ item }: InventoryItemProps) => (
         {RarityToName[item.rarity]}
       </Badge>
     </div>
-    <Effects effects={item.stats} />
+    <List items={item.stats} />
     <Description description={item.description} />
   </div>
 );

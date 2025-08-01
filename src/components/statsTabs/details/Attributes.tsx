@@ -1,9 +1,10 @@
 import {
   BlockCard,
-  Effects,
+  Description,
+  List,
   Tooltip,
   TooltipContent,
-  TooltipContentResultDescription,
+  TooltipContentHeader,
   TooltipTrigger,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
@@ -59,15 +60,13 @@ function AttributeGem({ value, type }: AttributeGemProps) {
         </div>
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentResultDescription
-          results={
-            <Effects
-              effects={Object.entries(value.composition).map(
-                ([key, value]) => `${key}: +${value}`,
-              )}
-            />
-          }
-          title={value.label}
+        <TooltipContentHeader title={value.label} />
+        <List
+          items={Object.entries(value.composition).map(
+            ([key, value]) => `${key}: +${value}`,
+          )}
+        />
+        <Description
           description={`Attribute Bonus: ${value.bonus >= 0 ? `+${value.bonus}` : value.bonus}`}
         />
       </TooltipContent>

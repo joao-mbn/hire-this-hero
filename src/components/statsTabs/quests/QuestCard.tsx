@@ -4,7 +4,7 @@ import { DifficultyToName } from "@/data/maps";
 import type { Quest } from "@/data/types";
 import { difficultyColor } from "@/lib/utils";
 import { Scroll, Trophy } from "lucide-react";
-import { Badge, CardContent, Effects, Progress } from "../../base/";
+import { Badge, CardContent, List, Progress } from "../../base/";
 
 export function CurrentQuestBlock() {
   const character = useCharacterContext();
@@ -71,7 +71,7 @@ function QuestCard({ quest, children: completionDetails }: QuestCardProps) {
       </div>
       <div className="mt-2 flex flex-col">
         <p className="font-semibold">Rewards:</p>
-        <Effects effects={quest.rewards} />
+        <List items={quest.rewards} />
       </div>
       {completionDetails}
       <Description description={quest.description} />
