@@ -1,4 +1,11 @@
-import { BlockCard, CardContent, Description } from "@/components/base/";
+import {
+  CardContent,
+  Container,
+  ContainerItem,
+  ContainerItemHeader,
+  ContainerItemSection,
+  Description,
+} from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { RecoveryToName } from "@/data/maps";
 import { Sparkles } from "lucide-react";
@@ -16,13 +23,11 @@ export function Spells() {
   const { spells } = character;
 
   return (
-    <BlockCard title="Spells" icon={<Sparkles />}>
-      <CardContent className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <Container title="Spells" icon={<Sparkles />}>
+      <CardContent className="grid grid-cols-1 gap-6">
         {spells.map((spell, i) => (
-          <div className="rounded border border-border p-4" key={i}>
-            <div className="flex items-center gap-2">
-              <div className="text-xl">{spell.icon || "✨"}</div>
-              <span className="text-xl font-bold">{spell.name}</span>
+          <ContainerItem key={i}>
+            <ContainerItemHeader title={spell.name} icon={spell.icon || "✨"}>
               <Badge className="ml-auto" variant="default">
                 Charges: {spell.charges.current}/{spell.charges.max}
               </Badge>
@@ -36,28 +41,22 @@ export function Spells() {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-            </div>
+            </ContainerItemHeader>
 
-            <div className="mt-2 flex flex-col">
-              <p className="font-semibold">Effects:</p>
+            <ContainerItemSection title="Effects">
               <List items={spell.effects} />
-            </div>
+            </ContainerItemSection>
 
-            <div className="mt-2">
-              <p className="font-semibold">Components:</p>
+            <ContainerItemSection title="Components">
               <List items={spell.components} />
-            </div>
+            </ContainerItemSection>
 
-            <div className="mt-2">
-              <p className="font-semibold">
-                Duration: <span className="font-normal">{spell.duration}</span>
-              </p>
-            </div>
+            <ContainerItemSection title={`Duration: ${spell.duration}`} />
 
             <Description description={spell.description} />
-          </div>
+          </ContainerItem>
         ))}
       </CardContent>
-    </BlockCard>
+    </Container>
   );
 }

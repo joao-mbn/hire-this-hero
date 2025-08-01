@@ -1,6 +1,6 @@
 export * from "./badge";
-export * from "./blockCard";
 export * from "./card";
+export * from "./container";
 export * from "./description";
 export * from "./list";
 export * from "./multiSectionBlockCard";

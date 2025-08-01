@@ -1,12 +1,12 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { HeartPulse } from "lucide-react";
-import { Badge, BlockCard, CardContent } from "../../base/";
+import { Badge, CardContent, Container } from "../../base/";
 
 export function Personality() {
   const character = useCharacterContext();
 
   return (
-    <BlockCard title="Personality Traits" icon={<HeartPulse />}>
+    <Container title="Personality Traits" icon={<HeartPulse />}>
       <CardContent>
         <div className="flex flex-wrap gap-2">
           {character.biography.personalityTraits.map((trait) => (
@@ -16,6 +16,6 @@ export function Personality() {
           ))}
         </div>
       </CardContent>
-    </BlockCard>
+    </Container>
   );
 }

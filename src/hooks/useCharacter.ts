@@ -12,7 +12,6 @@ import type {
   Recovery,
   SavingThrow,
   Skill,
-  SkillCategory,
 } from "@/data/types";
 import { getExperience } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -114,13 +113,6 @@ export function useCharacter() {
             effects: feature.effects ?? [],
             origin: feature.origin as FeatureOrigin,
           })),
-          skillTree: {
-            ...data.skillTree,
-            nodes: data.skillTree.nodes.map((node) => ({
-              ...node,
-              category: node.category as SkillCategory,
-            })),
-          },
           inventory: {
             ...data.inventory,
             weapons: data.inventory.weapons.map((weapon) => ({

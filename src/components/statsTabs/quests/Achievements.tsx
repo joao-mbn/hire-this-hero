@@ -1,4 +1,4 @@
-import { BlockCard, Description } from "@/components/base/";
+import { Container, Description } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { RarityToName } from "@/data/maps";
 import { rarityColor } from "@/lib/utils";
@@ -10,7 +10,7 @@ export function Achievements() {
   const { achievements } = character;
 
   return (
-    <BlockCard title="Achievements" icon={<Award />}>
+    <Container title="Achievements" icon={<Award />}>
       <CardContent className="grid grid-cols-2 gap-6">
         {achievements.map((achievement, idx) => (
           <div key={idx} className="rounded border border-border p-4">
@@ -34,6 +34,6 @@ export function Achievements() {
           </div>
         ))}
       </CardContent>
-    </BlockCard>
+    </Container>
   );
 }

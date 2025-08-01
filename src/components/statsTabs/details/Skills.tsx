@@ -1,6 +1,6 @@
 import {
   Badge,
-  BlockCard,
+  Container,
   Description,
   TooltipContentHeader,
 } from "@/components/base/";
@@ -19,7 +19,7 @@ export function Skills() {
   const character = useCharacterContext();
 
   return (
-    <BlockCard title="Skills" icon={<Wrench />}>
+    <Container title="Skills" icon={<Wrench />}>
       <CardContent>
         {character.skills
           .sort((a, b) => a.name.localeCompare(b.name))
@@ -76,6 +76,6 @@ export function Skills() {
             </div>
           ))}
       </CardContent>
-    </BlockCard>
+    </Container>
   );
 }

@@ -1,5 +1,5 @@
 import {
-  BlockCard,
+  Container,
   Description,
   Progress,
   ProgressIndicator,
@@ -20,7 +20,7 @@ export function Languages() {
   const character = useCharacterContext();
 
   return (
-    <BlockCard title="Languages" icon={<MessagesSquare />}>
+    <Container title="Languages" icon={<MessagesSquare />}>
       <CardContent>
         {character.languages
           .sort((a, b) => b.level - a.level)
@@ -46,7 +46,7 @@ export function Languages() {
             </div>
           ))}
       </CardContent>
-    </BlockCard>
+    </Container>
   );
 }
 

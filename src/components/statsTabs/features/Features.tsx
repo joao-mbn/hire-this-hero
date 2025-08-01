@@ -1,4 +1,4 @@
-import { BlockCard } from "@/components/base/";
+import { Container } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { BriefcaseBusiness, Star } from "lucide-react";
 import { CardContent } from "../../base/";
@@ -10,25 +10,25 @@ export function Features() {
 
   return (
     <div className="grid grid-cols-1 gap-6">
-      <BlockCard title="Profession Features" icon={<BriefcaseBusiness />}>
-        <CardContent className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <Container title="Profession Features" icon={<BriefcaseBusiness />}>
+        <CardContent className="grid grid-cols-1 gap-6">
           {features
             .filter((feature) => feature.origin === "profession")
             .map((feature, i) => (
               <FeatureCard feature={feature} key={i} />
             ))}
         </CardContent>
-      </BlockCard>
+      </Container>
 
-      <BlockCard title="Other Features" icon={<Star />}>
-        <CardContent className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <Container title="Other Features" icon={<Star />}>
+        <CardContent className="grid grid-cols-1 gap-6">
           {features
             .filter((feature) => feature.origin === "others")
             .map((feature, i) => (
               <FeatureCard feature={feature} key={i} />
             ))}
         </CardContent>
-      </BlockCard>
+      </Container>
     </div>
   );
 }

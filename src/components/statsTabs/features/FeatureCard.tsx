@@ -1,4 +1,7 @@
 import {
+  ContainerItem,
+  ContainerItemHeader,
+  ContainerItemSection,
   Description,
   Tooltip,
   TooltipContent,
@@ -15,61 +18,49 @@ interface FeatureCardProps {
 
 export function FeatureCard({ feature }: FeatureCardProps) {
   return (
-    <div
-      className={cn(
-        "rounded border border-border p-4",
-        feature.locked && "pointer-events-none",
-      )}
-    >
-      <div className="flex items-center gap-2">
-        <div
-          className={cn(
-            "flex items-center gap-2",
-            feature.locked && "opacity-70 grayscale",
-          )}
-        >
-          <div className="text-xl">{feature.icon || "💼"}</div>
-          <span className="text-xl font-bold">{feature.name}</span>
-        </div>
+    <ContainerItem className={cn(feature.locked && "pointer-events-none")}>
+      <ContainerItemHeader
+        title={feature.name}
+        icon={feature.icon || "💼"}
+        titleClassName={cn(feature.locked && "opacity-70 grayscale")}
+      >
         {feature.locked && (
           <Tooltip>
             <TooltipTrigger asChild>
-              <Lock className="pointer-events-auto ml-auto h-4 w-4 text-muted-foreground" />
+              <Lock className="pointer-events-auto ml-auto h-5 w-5 text-primary" />
             </TooltipTrigger>
             <TooltipContent>
-              <div className="max-w-xs">
-                <p className="pb-2 font-semibold">Feature Locked</p>
-                <p className="text-sm text-muted-foreground">
-                  This feature is not yet available. Check the prerequisites to
-                  unlock it.
-                </p>
-              </div>
+              <p className="pb-2 font-semibold">Feature Locked</p>
+              <Description
+                withoutDivider
+                className="text-sm"
+                description="This feature is not yet available. Check the prerequisites to unlock it."
+              />
             </TooltipContent>
           </Tooltip>
         )}
-      </div>
+      </ContainerItemHeader>
 
       <div className={cn(feature.locked && "opacity-70 grayscale")}>
         {feature.prerequisites.length > 0 ? (
-          <div className="mt-2">
-            <p className="font-semibold">Prerequisites:</p>
+          <ContainerItemSection title="Prerequisites">
             <div className="mt-1 flex flex-wrap gap-1">
               {feature.prerequisites.map((prereq, idx) => (
-                <Badge key={idx} variant="default" className="text-xs">
+                <Badge key={idx} variant="default">
                   {prereq.name} {prereq.level > 0 && `(Level ${prereq.level})`}
                 </Badge>
               ))}
             </div>
-          </div>
+          </ContainerItemSection>
         ) : (
-          <span className="mt-2 block font-semibold">Prerequisites: None</span>
+          <ContainerItemSection title="Prerequisites: None" />
         )}
 
         {feature.maxLevel > 0 && feature.levelsDescriptions.length > 0 ? (
-          <div className="mt-2 flex flex-col gap-2">
-            <span className="font-semibold">
-              Level: {feature.level}/{feature.maxLevel}
-            </span>
+          <ContainerItemSection
+            title={`Level: ${feature.level}/${feature.maxLevel}`}
+            className="flex flex-col gap-2"
+          >
             <Progress className="h-2 max-w-96">
               <ProgressIndicator
                 className={cn(
@@ -98,20 +89,19 @@ export function FeatureCard({ feature }: FeatureCardProps) {
                 className={cn(!feature.locked && "opacity-70 grayscale")}
               />
             </div>
-          </div>
+          </ContainerItemSection>
         ) : (
-          <span className="mt-2 block font-semibold">Level: N/A</span>
+          <ContainerItemSection title="Level: N/A" />
         )}
 
         {feature.effects.length > 0 && (
-          <div className="mt-2">
-            <p className="font-semibold">Effects:</p>
+          <ContainerItemSection title="Effects">
             <List items={feature.effects} />
-          </div>
+          </ContainerItemSection>
         )}
 
         <Description description={feature.description} />
       </div>
-    </div>
+    </ContainerItem>
   );
 }

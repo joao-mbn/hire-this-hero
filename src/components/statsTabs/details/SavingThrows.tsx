@@ -1,6 +1,6 @@
 import {
   Badge,
-  BlockCard,
+  Container,
   Description,
   TooltipContentHeader,
 } from "@/components/base/";
@@ -19,7 +19,7 @@ export function SavingThrows() {
   const character = useCharacterContext();
 
   return (
-    <BlockCard title="Saving Throws" icon={<ShieldCheck />}>
+    <Container title="Saving Throws" icon={<ShieldCheck />}>
       <CardContent>
         {character.savingThrows
           .sort(
@@ -70,6 +70,6 @@ export function SavingThrows() {
             </div>
           ))}
       </CardContent>
-    </BlockCard>
+    </Container>
   );
 }

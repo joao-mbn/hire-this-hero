@@ -1,7 +1,10 @@
 import {
   Badge,
-  BlockCard,
   CardContent,
+  Container,
+  ContainerItem,
+  ContainerItemHeader,
+  ContainerItemSection,
   Description,
   List,
   Tooltip,
@@ -37,13 +40,13 @@ export function Inventory() {
       {Object.entries(inventoryItemTypeToDisplay).map(
         ([itemType, { icon, title, items }]) => (
           <div key={itemType}>
-            <BlockCard title={title} icon={icon}>
+            <Container title={title} icon={icon}>
               <CardContent className="space-y-4">
                 {items.map((item) => (
                   <InventoryItem item={item} key={item.name} />
                 ))}
               </CardContent>
-            </BlockCard>
+            </Container>
           </div>
         ),
       )}
@@ -56,11 +59,10 @@ interface InventoryItemProps {
 }
 
 const InventoryItem = ({ item }: InventoryItemProps) => (
-  <div className="flex flex-col gap-2 rounded border border-border p-3">
-    <div className="flex justify-between">
-      <h4 className="font-semibold">{item.name}</h4>
+  <ContainerItem>
+    <ContainerItemHeader title={item.name} icon={item.icon || "💼"}>
       <Tooltip>
-        <TooltipTrigger>
+        <TooltipTrigger className="ml-auto">
           <Shield
             className={cn(
               "h-5 w-5 text-primary",
@@ -72,14 +74,20 @@ const InventoryItem = ({ item }: InventoryItemProps) => (
           {item.equipped ? "Equipped" : "Unequipped"}
         </TooltipContent>
       </Tooltip>
-    </div>
-    <div className="flex gap-1">
-      <Badge variant="default">{item.subtype}</Badge>
-      <Badge className={`text-xs ${rarityColor(item.rarity)} text-white`}>
-        {RarityToName[item.rarity]}
-      </Badge>
-    </div>
-    <List items={item.stats} />
+    </ContainerItemHeader>
+
+    <ContainerItemSection title={""}>
+      <div className="flex flex-wrap gap-1">
+        <Badge variant="default">{item.subtype}</Badge>
+        <Badge className={`${rarityColor(item.rarity)} text-white`}>
+          {RarityToName[item.rarity]}
+        </Badge>
+      </div>
+    </ContainerItemSection>
+
+    <ContainerItemSection title="Stats">
+      <List items={item.stats} />
+    </ContainerItemSection>
     <Description description={item.description} />
-  </div>
+  </ContainerItem>
 );

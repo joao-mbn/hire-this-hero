@@ -1,5 +1,5 @@
 import {
-  BlockCard,
+  Container,
   Description,
   List,
   Tooltip,
@@ -18,7 +18,7 @@ export function Attributes() {
   const character = useCharacterContext();
 
   return (
-    <BlockCard title="Attributes" icon={<Dumbbell />}>
+    <Container title="Attributes" icon={<Dumbbell />}>
       <CardContent className="grid grid-cols-2 gap-6 md:grid-cols-6">
         {Object.entries(character.attributes)
           .sort(
@@ -30,7 +30,7 @@ export function Attributes() {
             <AttributeGem value={value} type={key as AttributeKey} key={key} />
           ))}
       </CardContent>
-    </BlockCard>
+    </Container>
   );
 }
 

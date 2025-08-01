@@ -91,29 +91,7 @@ export interface Item {
   stats: string[];
   equipped: boolean;
   rarity: Rarity;
-}
-
-export interface SkillConnection {
-  from: string;
-  to: string;
-}
-
-export interface SkillNode {
-  id: string;
-  name: string;
-  description: string;
-  level: number;
-  maxLevel: number;
-  unlocked: boolean;
-  prerequisites: string[];
-  x: number;
-  y: number;
-  category: SkillCategory;
-}
-
-export interface SkillTree {
-  nodes: SkillNode[];
-  connections: SkillConnection[];
+  icon: string;
 }
 
 export type Race = Record<
@@ -182,14 +160,8 @@ export interface Appearance {
   weight: string;
 }
 export interface Biography {
-  alignment: {
-    type: string;
-    description: string;
-  };
-  faith: {
-    name: string;
-    description: string;
-  };
+  alignment: { type: string; description: string };
+  faith: { name: string; description: string };
   personalityTraits: string[];
   moralStandings: Record<MoralStandingType, string[]>;
   lore: string;
@@ -240,15 +212,8 @@ export interface Character {
   biography: Biography;
   attributes: Record<AttributeKey, Attribute>;
   savingThrows: SavingThrow[];
-  health: {
-    max: number;
-    current: number;
-  };
-  skillTree: SkillTree;
+  health: { max: number; current: number };
   inventory: Inventory;
   achievements: Achievement[];
-  questLog: {
-    completed: CompletedQuest[];
-    inProgress: InProgressQuest[];
-  };
+  questLog: { completed: CompletedQuest[]; inProgress: InProgressQuest[] };
 }
