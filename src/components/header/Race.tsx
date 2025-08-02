@@ -17,7 +17,9 @@ export function Race() {
       {Object.entries(character.race).map(([key, value], index) => (
         <Fragment key={key}>
           <Tooltip>
-            <TooltipTrigger>{value.primary}</TooltipTrigger>
+            <TooltipTrigger>
+              <span className="cursor-pointer">{value.primary}</span>
+            </TooltipTrigger>
             <TooltipContent>
               <TooltipContentHeader title="Effects" />
               <List items={value.effects} />

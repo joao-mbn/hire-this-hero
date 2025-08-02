@@ -43,7 +43,7 @@ function AttributeGem({ value, type }: AttributeGemProps) {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <div className="flex flex-col items-center gap-2 font-cinzel">
+        <div className="flex cursor-pointer flex-col items-center gap-2 font-cinzel">
           <div className="mb-2 flex translate-x-2 items-end">
             <div className={cn("attribute-gem", type)}>{value.total}</div>
             <div

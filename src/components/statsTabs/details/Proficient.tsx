@@ -11,7 +11,7 @@ export function Proficient({ proficient }: ProficientProps) {
       <TooltipTrigger asChild>
         <div
           className={cn(
-            "h-3 w-3 rounded-full border-2 border-amber-400",
+            "h-3 w-3 cursor-pointer rounded-full border-2 border-amber-400",
             proficient ? "bg-amber-400" : "bg-transparent",
           )}
         />

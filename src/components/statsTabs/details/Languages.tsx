@@ -29,7 +29,7 @@ export function Languages() {
             <CardLine key={index}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-1 items-center gap-3">
+                  <div className="flex flex-1 cursor-pointer items-center gap-3">
                     <span className="min-w-24 text-foreground">
                       {language.name}
                     </span>
@@ -137,7 +137,9 @@ function UnderusageDebuffTooltip({ language }: UnderusageDebuffTooltipProps) {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <UnderusageDebuffIcon />
+        <div className="cursor-pointer">
+          <UnderusageDebuffIcon />
+        </div>
       </TooltipTrigger>
       <TooltipContent>
         <TooltipContentHeader title="Underusage debuff" />

@@ -30,7 +30,7 @@ export function Skills() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-1 items-center justify-between">
+                  <div className="flex flex-1 cursor-pointer items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="min-w-10 text-xs">
                         {AttributeKeyToShortName[skill.attribute]}
