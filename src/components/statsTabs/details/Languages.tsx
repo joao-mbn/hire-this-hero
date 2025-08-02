@@ -8,6 +8,7 @@ import {
   TooltipContentHeader,
   TooltipTrigger,
 } from "@/components/base/";
+import { CardLine } from "@/components/base/cardLine";
 import { BrokenSkull } from "@/components/icons/BrokenSkull";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { CefrLevelToDescription } from "@/data/maps";
@@ -25,10 +26,7 @@ export function Languages() {
         {character.languages
           .sort((a, b) => b.level - a.level)
           .map((language, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 border-border/30 px-3 pt-2 text-muted-foreground not-last:border-b not-last:pb-2"
-            >
+            <CardLine key={index}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div className="flex flex-1 items-center gap-3">
@@ -39,11 +37,11 @@ export function Languages() {
                   </div>
                 </TooltipTrigger>
 
-                <LanguageContent language={language} />
+                <LanguageTooltipContent language={language} />
               </Tooltip>
 
               <UnderusageDebuffTooltip language={language} />
-            </div>
+            </CardLine>
           ))}
       </CardContent>
     </Container>
@@ -103,27 +101,18 @@ interface LanguageContentProps {
   language: Language;
 }
 
-function LanguageContent({ language }: LanguageContentProps) {
+function LanguageTooltipContent({ language }: LanguageContentProps) {
   return (
-    <TooltipContent>
+    <TooltipContent className="min-w-md">
       <TooltipContentHeader title={language.name} />
-      <div className="flex w-xs flex-col gap-1 pb-2">
-        <div className="flex items-center gap-2">
-          <span className="font-semibold text-muted-foreground">
-            Level: {language.level}/{MAX_LANGUAGE_LEVEL}
-            {language.cefrLevel && language.cefrLevel === "Native"
-              ? ` • Native`
-              : ` • CEFR: ${language.cefrLevel}`}
-          </span>
-          {language.underusageDebuff?.active && (
-            <BrokenSkull
-              svgProps={{ className: "h-4 w-4 ml-auto" }}
-              pathsProps={[{ className: "fill-muted-foreground" }]}
-            />
-          )}
-        </div>
-        <LanguageLevelProgress className="min-w-48" language={language} />
+      <div className="flex items-center justify-between gap-2 pb-2">
+        <Description
+          description={`Level: ${language.level}/${MAX_LANGUAGE_LEVEL} ${language.cefrLevel === "Native" ? "• Native" : `• CEFR: ${language.cefrLevel}`}`}
+          withoutDivider
+        />
+        {language.underusageDebuff?.active && <UnderusageDebuffIcon />}
       </div>
+      <LanguageLevelProgress language={language} />
       <Description
         description={
           language.cefrLevel
@@ -148,20 +137,24 @@ function UnderusageDebuffTooltip({ language }: UnderusageDebuffTooltipProps) {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <BrokenSkull
-          svgProps={{ className: "h-4 w-4" }}
-          pathsProps={[{ className: "fill-muted-foreground" }]}
-        />
+        <UnderusageDebuffIcon />
       </TooltipTrigger>
       <TooltipContent>
-        <div className="max-w-xs">
-          <p className="mb-2 font-semibold">Underusage debuff:</p>
-          <Description
-            description={language.underusageDebuff.description}
-            withoutDivider
-          />
-        </div>
+        <TooltipContentHeader title="Underusage debuff" />
+        <Description
+          description={language.underusageDebuff.description}
+          withoutDivider
+        />
       </TooltipContent>
     </Tooltip>
+  );
+}
+
+function UnderusageDebuffIcon() {
+  return (
+    <BrokenSkull
+      svgProps={{ className: "h-4 w-4" }}
+      pathsProps={[{ className: "fill-destructive" }]}
+    />
   );
 }

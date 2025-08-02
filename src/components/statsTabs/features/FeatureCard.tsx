@@ -5,6 +5,7 @@ import {
   Description,
   Tooltip,
   TooltipContent,
+  TooltipContentHeader,
   TooltipTrigger,
 } from "@/components/base/";
 import type { Feature } from "@/data/types";
@@ -22,7 +23,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
       <ContainerItemHeader
         title={feature.name}
         icon={feature.icon || "💼"}
-        titleClassName={cn(feature.locked && "opacity-70 grayscale")}
+        titleContainerClassName={cn(feature.locked && "opacity-70 grayscale")}
       >
         {feature.locked && (
           <Tooltip>
@@ -30,10 +31,9 @@ export function FeatureCard({ feature }: FeatureCardProps) {
               <Lock className="pointer-events-auto ml-auto h-5 w-5 text-primary" />
             </TooltipTrigger>
             <TooltipContent>
-              <p className="pb-2 font-semibold">Feature Locked</p>
+              <TooltipContentHeader title="Feature Locked" />
               <Description
                 withoutDivider
-                className="text-sm"
                 description="This feature is not yet available. Check the prerequisites to unlock it."
               />
             </TooltipContent>
@@ -46,7 +46,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
           <ContainerItemSection title="Prerequisites">
             <div className="mt-1 flex flex-wrap gap-1">
               {feature.prerequisites.map((prereq, idx) => (
-                <Badge key={idx} variant="default">
+                <Badge key={idx} variant="outline">
                   {prereq.name} {prereq.level > 0 && `(Level ${prereq.level})`}
                 </Badge>
               ))}

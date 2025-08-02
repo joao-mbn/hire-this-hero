@@ -39,7 +39,7 @@ interface ContainerItemTitleProps {
   icon?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
-  titleClassName?: string;
+  titleContainerClassName?: string;
 }
 
 export function ContainerItemHeader({
@@ -47,17 +47,27 @@ export function ContainerItemHeader({
   icon,
   children,
   className,
-  titleClassName,
+  titleContainerClassName,
 }: ContainerItemTitleProps) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <div className={cn("flex items-center gap-2", titleClassName)}>
+      <div className={cn("flex items-center gap-2", titleContainerClassName)}>
         <div className="text-xl">{icon}</div>
-        <h4 className="text-xl font-bold">{title}</h4>
+        <ContainerItemTitle title={title} />
       </div>
       {children}
     </div>
   );
+}
+
+export function ContainerItemTitle({
+  title,
+  className,
+}: {
+  title: string;
+  className?: string;
+}) {
+  return <h4 className={cn("text-xl font-bold", className)}>{title}</h4>;
 }
 
 interface ContainerItemSectionProps {

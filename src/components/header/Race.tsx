@@ -16,7 +16,7 @@ export function Race() {
     <div className="mb-2 text-xl text-muted-foreground lg:text-left">
       {Object.entries(character.race).map(([key, value], index) => (
         <Fragment key={key}>
-          <Tooltip delayDuration={0}>
+          <Tooltip>
             <TooltipTrigger>{value.primary}</TooltipTrigger>
             <TooltipContent>
               <TooltipContentHeader title="Effects" />

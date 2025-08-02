@@ -58,36 +58,38 @@ interface InventoryItemProps {
   item: Item;
 }
 
-const InventoryItem = ({ item }: InventoryItemProps) => (
-  <ContainerItem>
-    <ContainerItemHeader title={item.name} icon={item.icon || "💼"}>
-      <Tooltip>
-        <TooltipTrigger className="ml-auto">
-          <Shield
-            className={cn(
-              "h-5 w-5 text-primary",
-              item.equipped && "fill-primary",
-            )}
-          />
-        </TooltipTrigger>
-        <TooltipContent>
-          {item.equipped ? "Equipped" : "Unequipped"}
-        </TooltipContent>
-      </Tooltip>
-    </ContainerItemHeader>
+function InventoryItem({ item }: InventoryItemProps) {
+  return (
+    <ContainerItem>
+      <ContainerItemHeader title={item.name} icon={item.icon || "💼"}>
+        <Tooltip>
+          <TooltipTrigger className="ml-auto">
+            <Shield
+              className={cn(
+                "h-5 w-5 text-primary",
+                item.equipped && "fill-primary",
+              )}
+            />
+          </TooltipTrigger>
+          <TooltipContent>
+            {item.equipped ? "Equipped" : "Unequipped"}
+          </TooltipContent>
+        </Tooltip>
+      </ContainerItemHeader>
 
-    <ContainerItemSection title={""}>
-      <div className="flex flex-wrap gap-1">
-        <Badge variant="default">{item.subtype}</Badge>
-        <Badge className={`${rarityColor(item.rarity)} text-white`}>
-          {RarityToName[item.rarity]}
-        </Badge>
-      </div>
-    </ContainerItemSection>
+      <ContainerItemSection title={""}>
+        <div className="flex flex-wrap gap-2">
+          <Badge variant="outline">{item.subtype}</Badge>
+          <Badge className={`${rarityColor(item.rarity)} text-white`}>
+            {RarityToName[item.rarity]}
+          </Badge>
+        </div>
+      </ContainerItemSection>
 
-    <ContainerItemSection title="Stats">
-      <List items={item.stats} />
-    </ContainerItemSection>
-    <Description description={item.description} />
-  </ContainerItem>
-);
+      <ContainerItemSection title="Stats">
+        <List items={item.stats} />
+      </ContainerItemSection>
+      <Description description={item.description} />
+    </ContainerItem>
+  );
+}

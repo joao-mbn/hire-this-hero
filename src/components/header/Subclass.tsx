@@ -16,7 +16,7 @@ export function Subclass() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <Badge variant="default" className="font-cinzel">
+        <Badge variant="default" className="font-cinzel" hover>
           <Shield className="mr-1 h-3 w-3" />
           {character.profession.subclass.name}
         </Badge>

@@ -4,6 +4,7 @@ import {
   Description,
   TooltipContentHeader,
 } from "@/components/base/";
+import { CardLine } from "@/components/base/cardLine";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeKeyToName, AttributeOrder } from "@/data/maps";
 import { ShieldCheck } from "lucide-react";
@@ -28,10 +29,7 @@ export function SavingThrows() {
               AttributeOrder.indexOf(b.attribute),
           )
           .map((savingThrow, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 border-border/30 px-3 pt-2 text-muted-foreground not-last:border-b not-last:pb-2"
-            >
+            <CardLine key={index}>
               <Proficient proficient={savingThrow.proficient} />
 
               <Tooltip>
@@ -54,12 +52,10 @@ export function SavingThrows() {
                     title={AttributeKeyToName[savingThrow.attribute]}
                   />
                   <div className="flex justify-between gap-2">
-                    <span className="text-muted-foreground">
-                      Bonus:{" "}
-                      {savingThrow.bonus >= 0
-                        ? `+${savingThrow.bonus}`
-                        : savingThrow.bonus}
-                    </span>
+                    <Description
+                      description={`Bonus: ${savingThrow.bonus >= 0 ? `+${savingThrow.bonus}` : savingThrow.bonus}`}
+                      withoutDivider
+                    />
                     {savingThrow.proficient && (
                       <Badge variant="default">Proficient</Badge>
                     )}
@@ -67,7 +63,7 @@ export function SavingThrows() {
                   <Description description={savingThrow.description} />
                 </TooltipContent>
               </Tooltip>
-            </div>
+            </CardLine>
           ))}
       </CardContent>
     </Container>

@@ -17,7 +17,7 @@ export const TooltipContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={cn(
-      "z-50 max-w-xs overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md",
+      "z-50 max-w-md overflow-hidden rounded-md border-2 border-border bg-card px-3 py-3 text-base text-foreground shadow-lg shadow-muted-foreground/50",
       className,
     )}
     {...props}
@@ -25,6 +25,12 @@ export const TooltipContent = React.forwardRef<
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export function TooltipContentHeader({ title }: { title: string }) {
-  return <p className="mb-2 font-semibold">{title}</p>;
+export function TooltipContentHeader({
+  title,
+  className,
+}: {
+  title: string;
+  className?: string;
+}) {
+  return <p className={cn("mb-2 font-semibold", className)}>{title}</p>;
 }

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Divider } from "./divider";
 
 interface DescriptionProps {
   description?: string;
@@ -14,14 +15,16 @@ export function Description({
   if (!description) return null;
 
   return (
-    <p
-      className={cn(
-        "mt-2 text-base whitespace-pre-line text-muted-foreground",
-        !withoutDivider && "border-t border-border/30 pt-2",
-        className,
-      )}
-    >
-      {description}
-    </p>
+    <>
+      {!withoutDivider && <Divider />}
+      <p
+        className={cn(
+          "text-base whitespace-pre-line text-muted-foreground",
+          className,
+        )}
+      >
+        {description}
+      </p>
+    </>
   );
 }

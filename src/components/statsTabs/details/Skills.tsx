@@ -4,6 +4,7 @@ import {
   Description,
   TooltipContentHeader,
 } from "@/components/base/";
+import { CardLine } from "@/components/base/cardLine";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeKeyToName, AttributeKeyToShortName } from "@/data/maps";
 import { Wrench } from "lucide-react";
@@ -24,10 +25,7 @@ export function Skills() {
         {character.skills
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((skill, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 border-border/30 px-3 pt-2 text-muted-foreground not-last:border-b not-last:pb-2"
-            >
+            <CardLine key={index}>
               <Proficient proficient={skill.proficient} />
 
               <Tooltip>
@@ -47,22 +45,22 @@ export function Skills() {
                 <TooltipContent>
                   <TooltipContentHeader title={skill.name} />
                   <div className="flex justify-between gap-2">
-                    <span className="text-muted-foreground">
-                      Bonus:{" "}
-                      {skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}
-                    </span>
+                    <Description
+                      description={`Bonus: ${skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}`}
+                      withoutDivider
+                    />
                     <div className="flex gap-2">
-                      <Badge variant="default">
+                      <Badge variant="outline">
                         {AttributeKeyToName[skill.attribute]}
                       </Badge>
                       {skill.proficient && (
-                        <Badge variant="default">Proficient</Badge>
+                        <Badge variant="outline">Proficient</Badge>
                       )}
                       {Object.entries(skill.otherBonusSources || {})
                         ?.filter(([, bonus]) => bonus !== 0)
                         .map(([source, bonus]) => (
                           <Badge
-                            variant={bonus >= 0 ? "default" : "destructive"}
+                            variant={bonus >= 0 ? "outline" : "destructive"}
                             key={source}
                           >
                             {source}
@@ -73,7 +71,7 @@ export function Skills() {
                   <Description description={skill.description} />
                 </TooltipContent>
               </Tooltip>
-            </div>
+            </CardLine>
           ))}
       </CardContent>
     </Container>

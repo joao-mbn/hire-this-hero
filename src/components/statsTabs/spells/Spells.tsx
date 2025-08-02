@@ -28,13 +28,15 @@ export function Spells() {
         {spells.map((spell, i) => (
           <ContainerItem key={i}>
             <ContainerItemHeader title={spell.name} icon={spell.icon || "✨"}>
-              <Badge className="ml-auto" variant="default">
+              <Badge className="ml-auto" variant="outline">
                 Charges: {spell.charges.current}/{spell.charges.max}
               </Badge>
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Badge variant="default">{spell.recovery}</Badge>
+                    <Badge variant="default" hover>
+                      {spell.recovery}
+                    </Badge>
                   </TooltipTrigger>
                   <TooltipContent>
                     Recovers all charges at a {RecoveryToName[spell.recovery]}

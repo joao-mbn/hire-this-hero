@@ -11,6 +11,7 @@ import {
   TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
+import { Divider } from "../base/divider";
 
 export function Level() {
   const character = useCharacterContext();
@@ -18,32 +19,29 @@ export function Level() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <Badge variant="default" className="font-cinzel">
+        <Badge variant="default" className="font-cinzel" hover>
           <Ruler className="mr-1 h-3 w-3" />
           Level {character.experience.level}
         </Badge>
       </TooltipTrigger>
       <TooltipContent>
         <TooltipContentHeader title="Experience" />
-        <div className="flex flex-col gap-2">
-          <div className="flex flex-col gap-1 border-b pb-2">
-            <span className="font-semibold text-muted-foreground">
-              Level {character.experience.level}/{MAX_LEVEL} •{" "}
-              {character.experience.yearsOfExperience} years of experience •{" "}
-              {character.experience.percentageToNextLevel}% to next level
-            </span>
-            <Progress
-              className="h-2"
-              value={character.experience.percentageToNextLevel}
-            />
-          </div>
-          <List
-            items={[
-              `Proficiency bonus: +${character.experience.proficiencyBonus}`,
-              `Attribute Leveling: You get 2 attribute points to spend at levels ${character.experience.attributeLeveling.join(", ")}`,
-            ]}
-          />
-        </div>
+        <Description
+          withoutDivider
+          className="font-semibold"
+          description={`Level ${character.experience.level}/${MAX_LEVEL} • ${character.experience.yearsOfExperience} years of experience • ${character.experience.percentageToNextLevel}% to next level`}
+        />
+        <Progress
+          className="h-2"
+          value={character.experience.percentageToNextLevel}
+        />
+        <Divider />
+        <List
+          items={[
+            `Proficiency bonus: +${character.experience.proficiencyBonus}`,
+            `Attribute Leveling: You get 2 attribute points to spend at levels ${character.experience.attributeLeveling.join(", ")}`,
+          ]}
+        />
         <Description description={character.experience.description} />
       </TooltipContent>
     </Tooltip>
