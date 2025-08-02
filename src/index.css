@@ -141,4 +141,8 @@
   .maxed-out {
     @apply animate-gradient-flow bg-gradient-to-r from-green-500 to-cyan-500 bg-[length:200%_100%];
   }
+
+  .title-badge-icon {
+    @apply mr-1 h-3 w-3;
+  }
 }
