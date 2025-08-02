@@ -32,5 +32,5 @@ export function TooltipContentHeader({
   title: string;
   className?: string;
 }) {
-  return <p className={cn("mb-2 font-semibold", className)}>{title}</p>;
+  return <p className={cn("mb-2 text-lg font-semibold", className)}>{title}</p>;
 }
