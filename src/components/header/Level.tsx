@@ -21,7 +21,7 @@ export function Level() {
       <TooltipTrigger>
         <TitleBadge
           title={`Level ${character.experience.level}`}
-          icon={<Ruler className="title-badge-icon" />}
+          Icon={Ruler}
         />
       </TooltipTrigger>
       <TooltipContent>

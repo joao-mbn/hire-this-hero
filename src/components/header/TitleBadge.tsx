@@ -2,14 +2,14 @@ import { Badge } from "../base";
 
 export function TitleBadge({
   title,
-  icon,
+  Icon,
 }: {
   title: string;
-  icon: React.ReactNode;
+  Icon: React.ComponentType<{ className?: string }>;
 }) {
   return (
     <Badge variant="default" className="font-cinzel" hover>
-      {icon}
+      <Icon className="mr-1 h-3 w-3" />
       <span className="translate-y-[0.5px]">{title}</span>
     </Badge>
   );

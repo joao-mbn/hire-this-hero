@@ -16,10 +16,7 @@ export function Subclass() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <TitleBadge
-          title={character.profession.subclass.name}
-          icon={<Layers className="title-badge-icon" />}
-        />
+        <TitleBadge title={character.profession.subclass.name} Icon={Layers} />
       </TooltipTrigger>
       <TooltipContent>
         <TooltipContentHeader title="Effects" />

@@ -1,5 +1,5 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { Shield } from "lucide-react";
+import { Terminal } from "lucide-react";
 import {
   Description,
   List,
@@ -16,10 +16,7 @@ export function Profession() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <TitleBadge
-          title={character.profession.name}
-          icon={<Shield className="title-badge-icon" />}
-        />
+        <TitleBadge title={character.profession.name} Icon={Terminal} />
       </TooltipTrigger>
       <TooltipContent>
         <TooltipContentHeader title="Effects" />
