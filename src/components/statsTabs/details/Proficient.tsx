@@ -1,5 +1,10 @@
 import { cn } from "@/lib/utils";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../../base/";
+import {
+  Description,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../../base/";
 
 interface ProficientProps {
   proficient: boolean;
@@ -17,7 +22,10 @@ export function Proficient({ proficient }: ProficientProps) {
         />
       </TooltipTrigger>
       <TooltipContent>
-        {proficient ? "Proficient" : "Not Proficient"}
+        <Description
+          withoutDivider
+          description={proficient ? "Proficient" : "Not Proficient"}
+        />
       </TooltipContent>
     </Tooltip>
   );

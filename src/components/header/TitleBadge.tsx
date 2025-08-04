@@ -8,8 +8,8 @@ export function TitleBadge({
   Icon: React.ComponentType<{ className?: string }>;
 }) {
   return (
-    <Badge variant="default" className="font-cinzel" hover>
-      <Icon className="mr-1 h-3 w-3" />
+    <Badge variant="default" hover>
+      <Icon className="mr-2 h-4 w-4 stroke-[2.5]" />
       <span className="translate-y-[0.5px]">{title}</span>
     </Badge>
   );

@@ -20,10 +20,8 @@
   --color-destructive: hsl(0 70% 50%);
   --color-destructive-foreground: hsl(35 25% 92%);
 
-  --font-sans: "Quintessential", cursive;
-  --font-serif: "Quintessential", cursive;
+  --font-serif: "Cardo", serif;
   --font-cinzel: "Cinzel", serif;
-  --font-quintessential: "Quintessential", cursive;
   --font-uncial: "Uncial Antiqua", cursive;
 
   --radius: 0.75rem;

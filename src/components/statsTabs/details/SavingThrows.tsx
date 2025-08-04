@@ -57,7 +57,7 @@ export function SavingThrows() {
                       withoutDivider
                     />
                     {savingThrow.proficient && (
-                      <Badge variant="default">Proficient</Badge>
+                      <Badge variant="outline">Proficient</Badge>
                     )}
                   </div>
                   <Description description={savingThrow.description} />

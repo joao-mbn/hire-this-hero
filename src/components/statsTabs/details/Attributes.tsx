@@ -48,7 +48,7 @@ function AttributeGemDisplay({ value, type }: AttributeGemProps) {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <div className="flex cursor-pointer flex-col items-center gap-2 font-cinzel">
+        <div className="flex cursor-pointer flex-col items-center gap-2 font-cinzel uppercase">
           <div className="mb-2 flex translate-x-2 items-end">
             <AttributeGem type={type}>{value.total}</AttributeGem>
             <AttributeGem

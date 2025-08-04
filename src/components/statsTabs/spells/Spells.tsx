@@ -39,7 +39,10 @@ export function Spells() {
                     </Badge>
                   </TooltipTrigger>
                   <TooltipContent>
-                    Recovers all charges at a {RecoveryToName[spell.recovery]}
+                    <Description
+                      withoutDivider
+                      description={`Recovers all charges at a ${RecoveryToName[spell.recovery]}`}
+                    />
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>

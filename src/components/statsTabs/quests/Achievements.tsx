@@ -22,7 +22,9 @@ export function Achievements() {
             className="flex flex-col items-center text-center"
           >
             <div className="text-4xl">{achievement.icon}</div>
-            <ContainerItemTitle title={achievement.name} />
+            <div className="w-full overflow-hidden">
+              <ContainerItemTitle title={achievement.name} className="w-full" />
+            </div>
             <Badge
               variant={`difficulty-${achievement.difficulty}`}
               className="my-2"

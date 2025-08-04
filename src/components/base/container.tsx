@@ -1,5 +1,13 @@
+import { useIsTruncated } from "@/hooks/useIsTruncated";
 import { cn } from "@/lib/utils";
 import { Card, CardHeader, CardTitle } from "./card";
+import { Description } from "./description";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./tooltip";
 
 interface ContainerProps {
   title: string;
@@ -51,7 +59,12 @@ export function ContainerItemHeader({
 }: ContainerItemTitleProps) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <div className={cn("flex items-center gap-2", titleContainerClassName)}>
+      <div
+        className={cn(
+          "flex items-center gap-2 overflow-hidden",
+          titleContainerClassName,
+        )}
+      >
         <div className="text-xl">{icon}</div>
         <ContainerItemTitle title={title} />
       </div>
@@ -67,7 +80,31 @@ export function ContainerItemTitle({
   title: string;
   className?: string;
 }) {
-  return <h4 className={cn("text-xl font-bold", className)}>{title}</h4>;
+  const { elementRef, isTruncated } = useIsTruncated<HTMLHeadingElement>();
+
+  const titleElement = (
+    <h4
+      ref={elementRef}
+      className={cn("truncate font-cinzel text-xl font-semibold", className)}
+    >
+      {title}
+    </h4>
+  );
+
+  if (!isTruncated) {
+    return titleElement;
+  }
+
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>{titleElement}</TooltipTrigger>
+        <TooltipContent>
+          <Description description={title} withoutDivider />
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
 }
 
 interface ContainerItemSectionProps {
@@ -83,7 +120,7 @@ export function ContainerItemSection({
 }: ContainerItemSectionProps) {
   return (
     <div className={cn("mt-2", className)}>
-      <p className="font-semibold">{title}</p>
+      <p className="font-semibold text-foreground">{title}</p>
       {children}
     </div>
   );

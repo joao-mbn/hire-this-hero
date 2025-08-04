@@ -72,7 +72,10 @@ function InventoryItem({ item }: InventoryItemProps) {
             />
           </TooltipTrigger>
           <TooltipContent>
-            {item.equipped ? "Equipped" : "Unequipped"}
+            <Description
+              withoutDivider
+              description={item.equipped ? "Equipped" : "Unequipped"}
+            />
           </TooltipContent>
         </Tooltip>
       </ContainerItemHeader>

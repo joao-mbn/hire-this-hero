@@ -27,7 +27,7 @@ export interface SectionItemProps {
 export function SectionItem({ title, icon, children }: SectionItemProps) {
   return (
     <div className="flex flex-col gap-3 border-border/30 not-last:border-b not-last:pb-6">
-      <CardTitle className="flex items-center gap-2 p-0">
+      <CardTitle className="flex gap-2 p-0">
         {icon}
         {title}
       </CardTitle>
