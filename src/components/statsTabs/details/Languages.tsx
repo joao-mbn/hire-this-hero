@@ -73,7 +73,7 @@ function LanguageLevelProgress({
       <ProgressIndicator
         className={cn(
           "h-full",
-          language.level === MAX_LANGUAGE_LEVEL && "gradient-flow maxed-out",
+          language.level === MAX_LANGUAGE_LEVEL && "maxed-out",
         )}
         style={{ width: `${levelBarWidth}%` }}
       />
@@ -87,8 +87,8 @@ function LanguageLevelProgress({
                 45deg,
                 transparent,
                 transparent 2px,
-                rgb(239 68 68) 2px,
-                rgb(239 68 68) 4px
+                var(--color-destructive) 2px,
+                var(--color-destructive) 4px
               )`,
           }}
         />

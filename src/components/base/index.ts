@@ -1,3 +1,4 @@
+export * from "./attributeGem";
 export * from "./badge";
 export * from "./card";
 export * from "./container";

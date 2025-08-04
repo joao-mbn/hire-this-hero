@@ -126,7 +126,7 @@ export function useCharacter() {
           },
           achievements: data.achievements.map((achievement) => ({
             ...achievement,
-            difficulty: achievement.difficulty as Rarity,
+            difficulty: achievement.difficulty as Difficulty,
           })),
           questLog: {
             completed: data.questLog.completed.map((quest) => ({

@@ -8,7 +8,6 @@ import {
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
 import type { Quest } from "@/data/types";
-import { difficultyColor } from "@/lib/utils";
 import { Scroll, Trophy } from "lucide-react";
 import { Badge, CardContent, List, Progress } from "../../base/";
 
@@ -64,9 +63,7 @@ function QuestCard({ quest, children: completionDetails }: QuestCardProps) {
   return (
     <ContainerItem>
       <ContainerItemHeader title={quest.name} icon={quest.icon || "🏆"}>
-        <Badge
-          className={`${difficultyColor(quest.difficulty)} ml-auto text-white`}
-        >
+        <Badge variant={`difficulty-${quest.difficulty}`} className="ml-auto">
           {DifficultyToName[quest.difficulty]}
         </Badge>
       </ContainerItemHeader>

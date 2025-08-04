@@ -3,19 +3,28 @@ import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-sm font-semibold transition-colors",
+  "inline-flex items-center rounded-full border-0 px-2.5 py-0.5 text-sm font-semibold transition-colors text-white",
   {
     variants: {
       variant: {
-        default: "border-transparent bg-primary text-primary-foreground",
-        secondary: "border-transparent bg-secondary text-secondary-foreground",
-        destructive:
-          "border-transparent bg-destructive text-destructive-foreground",
-        outline: "text-foreground",
+        default: "bg-primary text-primary-foreground",
+        secondary: "bg-secondary text-secondary-foreground",
+        destructive: "bg-destructive text-destructive-foreground",
+        outline: "text-foreground border border-foreground",
+        "rarity-common": "rarity-common",
+        "rarity-uncommon": "rarity-uncommon",
+        "rarity-rare": "rarity-rare",
+        "rarity-epic": "rarity-epic",
+        "rarity-legendary": "rarity-legendary",
+        "difficulty-easy": "rarity-common",
+        "difficulty-medium": "rarity-uncommon",
+        "difficulty-hard": "rarity-rare",
+        "difficulty-expert": "rarity-epic",
+        "difficulty-impossible": "rarity-legendary",
       },
       hover: {
-        true: "",
-        false: "",
+        true: "cursor-pointer",
+        false: "cursor-default",
       },
     },
     defaultVariants: {
@@ -26,25 +35,23 @@ const badgeVariants = cva(
       {
         variant: ["default", "destructive", "outline", "secondary"],
         hover: true,
-        className:
-          "cursor-pointer hover:bg-primary/80 hover:text-primary-foreground/80",
+        className: "hover:bg-primary/80 hover:text-primary-foreground/80",
       },
       {
         variant: "outline",
         hover: true,
-        className: "cursor-pointer hover:bg-muted/80 hover:text-foreground/80",
+        className: "hover:bg-muted/80 hover:text-foreground/80",
       },
       {
         variant: "secondary",
         hover: true,
-        className:
-          "cursor-pointer hover:bg-secondary/80 hover:text-secondary-foreground/80",
+        className: "hover:bg-secondary/80 hover:text-secondary-foreground/80",
       },
       {
         variant: "destructive",
         hover: true,
         className:
-          "cursor-pointer hover:bg-destructive/80 hover:text-destructive-foreground/80",
+          "hover:bg-destructive/80 hover:text-destructive-foreground/80",
       },
     ],
   },

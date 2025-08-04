@@ -65,8 +65,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
               <ProgressIndicator
                 className={cn(
                   "h-full",
-                  feature.level === feature.maxLevel &&
-                    "gradient-flow maxed-out",
+                  feature.level === feature.maxLevel && "maxed-out",
                 )}
                 style={{
                   width: `${(feature.level / feature.maxLevel) * 100}%`,

@@ -1,4 +1,5 @@
 import {
+  AttributeGem,
   Container,
   Description,
   List,
@@ -10,7 +11,7 @@ import {
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeOrder } from "@/data/maps";
 import type { Attribute, AttributeKey } from "@/data/types";
-import { cn } from "@/lib/utils";
+
 import { Dumbbell } from "lucide-react";
 import { CardContent } from "../../base/";
 
@@ -27,7 +28,11 @@ export function Attributes() {
               AttributeOrder.indexOf(b[0] as AttributeKey),
           )
           .map(([key, value]) => (
-            <AttributeGem value={value} type={key as AttributeKey} key={key} />
+            <AttributeGemDisplay
+              value={value}
+              type={key as AttributeKey}
+              key={key}
+            />
           ))}
       </CardContent>
     </Container>
@@ -39,22 +44,20 @@ interface AttributeGemProps {
   type: AttributeKey;
 }
 
-function AttributeGem({ value, type }: AttributeGemProps) {
+function AttributeGemDisplay({ value, type }: AttributeGemProps) {
   return (
     <Tooltip>
       <TooltipTrigger>
         <div className="flex cursor-pointer flex-col items-center gap-2 font-cinzel">
           <div className="mb-2 flex translate-x-2 items-end">
-            <div className={cn("attribute-gem", type)}>{value.total}</div>
-            <div
-              className={cn(
-                "attribute-gem",
-                type,
-                "h-6 w-6 -translate-x-4 translate-y-2 text-sm shadow-md",
-              )}
+            <AttributeGem type={type}>{value.total}</AttributeGem>
+            <AttributeGem
+              type={type}
+              size="small"
+              className="-translate-x-4 translate-y-2"
             >
               {value.bonus >= 0 ? `+${value.bonus}` : value.bonus}
-            </div>
+            </AttributeGem>
           </div>
           <p className="text-sm font-bold">{value.shortLabel}</p>
         </div>

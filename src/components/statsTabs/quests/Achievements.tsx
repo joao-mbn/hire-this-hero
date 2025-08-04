@@ -5,8 +5,7 @@ import {
   Description,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { RarityToName } from "@/data/maps";
-import { rarityColor } from "@/lib/utils";
+import { DifficultyToName } from "@/data/maps";
 import { Award } from "lucide-react";
 import { Badge, CardContent } from "../../base/";
 
@@ -25,9 +24,10 @@ export function Achievements() {
             <div className="text-4xl">{achievement.icon}</div>
             <ContainerItemTitle title={achievement.name} />
             <Badge
-              className={`my-2 ${rarityColor(achievement.difficulty)} text-white`}
+              variant={`difficulty-${achievement.difficulty}`}
+              className="my-2"
             >
-              {RarityToName[achievement.difficulty]}
+              {DifficultyToName[achievement.difficulty]}
             </Badge>
             <Description description={achievement.description} withoutDivider />
             <Description

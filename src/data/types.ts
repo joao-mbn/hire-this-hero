@@ -1,5 +1,5 @@
 export type Rarity = "common" | "uncommon" | "rare" | "epic" | "legendary";
-export type Difficulty = "easy" | "medium" | "hard" | "expert";
+export type Difficulty = "easy" | "medium" | "hard" | "expert" | "impossible";
 export type ItemType = "weapons" | "equipments";
 export type SkillCategory =
   | "foundation"
@@ -172,7 +172,7 @@ export interface Achievement {
   name: string;
   description: string;
   icon: string;
-  difficulty: Rarity;
+  difficulty: Difficulty;
   dateEarned: string;
 }
 

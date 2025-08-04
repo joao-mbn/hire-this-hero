@@ -82,6 +82,7 @@ export const DifficultyToName: Record<Difficulty, string> = {
   medium: "Medium",
   hard: "Hard",
   expert: "Expert",
+  impossible: "Impossible",
 };
 
 export const RecoveryToName: Record<Recovery, string> = {
