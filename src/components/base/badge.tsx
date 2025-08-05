@@ -7,7 +7,7 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-old-gold-600 text-old-gold-50",
+        default: "bg-old-gold-700 text-old-gold-50",
         destructive: "bg-red-700 text-red-200",
         outline: "text-old-gold-950 border border-old-gold-950",
         "rarity-common": "rarity-common",
@@ -34,7 +34,7 @@ const badgeVariants = cva(
       {
         variant: "default",
         hover: true,
-        className: "hover:bg-old-gold-600/80 hover:text-old-gold-50/80",
+        className: "hover:bg-old-gold-700/80 hover:text-old-gold-50/80",
       },
     ],
   },
