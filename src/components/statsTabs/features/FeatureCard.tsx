@@ -28,7 +28,7 @@ export function FeatureCard({ feature }: FeatureCardProps) {
         {feature.locked && (
           <Tooltip>
             <TooltipTrigger asChild>
-              <Lock className="pointer-events-auto ml-auto h-5 w-5 text-primary" />
+              <Lock className="pointer-events-auto ml-auto h-5 w-5 text-old-gold-600" />
             </TooltipTrigger>
             <TooltipContent>
               <TooltipContentHeader title="Feature Locked" />

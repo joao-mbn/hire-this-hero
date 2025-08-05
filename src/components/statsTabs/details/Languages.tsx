@@ -30,7 +30,7 @@ export function Languages() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div className="flex flex-1 cursor-pointer items-center gap-3">
-                    <span className="min-w-24 text-foreground">
+                    <span className="min-w-24 text-old-gold-950">
                       {language.name}
                     </span>
                     <LanguageLevelProgress language={language} />
@@ -87,8 +87,8 @@ function LanguageLevelProgress({
                 45deg,
                 transparent,
                 transparent 2px,
-                var(--color-destructive) 2px,
-                var(--color-destructive) 4px
+                var(--color-red-700) 2px,
+                var(--color-red-700) 4px
               )`,
           }}
         />
@@ -156,7 +156,7 @@ function UnderusageDebuffIcon() {
   return (
     <BrokenSkull
       svgProps={{ className: "h-4 w-4" }}
-      pathsProps={[{ className: "fill-destructive" }]}
+      pathsProps={[{ className: "fill-red-700" }]}
     />
   );
 }

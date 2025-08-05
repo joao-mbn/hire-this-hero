@@ -7,10 +7,9 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground",
-        secondary: "bg-secondary text-secondary-foreground",
-        destructive: "bg-destructive text-destructive-foreground",
-        outline: "text-foreground border border-foreground",
+        default: "bg-old-gold-600 text-old-gold-50",
+        destructive: "bg-red-700 text-red-200",
+        outline: "text-old-gold-950 border border-old-gold-950",
         "rarity-common": "rarity-common",
         "rarity-uncommon": "rarity-uncommon",
         "rarity-rare": "rarity-rare",
@@ -33,25 +32,9 @@ const badgeVariants = cva(
     },
     compoundVariants: [
       {
-        variant: ["default", "destructive", "outline", "secondary"],
+        variant: "default",
         hover: true,
-        className: "hover:bg-primary/80 hover:text-primary-foreground/80",
-      },
-      {
-        variant: "outline",
-        hover: true,
-        className: "hover:bg-muted/80 hover:text-foreground/80",
-      },
-      {
-        variant: "secondary",
-        hover: true,
-        className: "hover:bg-secondary/80 hover:text-secondary-foreground/80",
-      },
-      {
-        variant: "destructive",
-        hover: true,
-        className:
-          "hover:bg-destructive/80 hover:text-destructive-foreground/80",
+        className: "hover:bg-old-gold-600/80 hover:text-old-gold-50/80",
       },
     ],
   },

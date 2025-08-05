@@ -19,7 +19,7 @@ export function Description({
       {!withoutDivider && <Divider />}
       <p
         className={cn(
-          "font-serif text-base whitespace-pre-line text-muted-foreground",
+          "font-serif text-base whitespace-pre-line text-old-gold-800",
           className,
         )}
       >

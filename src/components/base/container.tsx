@@ -36,7 +36,7 @@ interface ContainerItemProps {
 
 export function ContainerItem({ children, className }: ContainerItemProps) {
   return (
-    <div className={cn("rounded border border-border p-4", className)}>
+    <div className={cn("rounded border border-old-gold-300 p-4", className)}>
       {children}
     </div>
   );
@@ -120,7 +120,7 @@ export function ContainerItemSection({
 }: ContainerItemSectionProps) {
   return (
     <div className={cn("mt-2", className)}>
-      <p className="font-semibold text-foreground">{title}</p>
+      <p className="font-semibold text-old-gold-950">{title}</p>
       {children}
     </div>
   );

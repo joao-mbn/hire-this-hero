@@ -22,7 +22,7 @@ export function MoralStandings() {
             }[standingType]
           }
         >
-          <List items={standings} className="text-base text-muted-foreground" />
+          <List items={standings} className="text-base text-old-gold-700" />
         </SectionItem>
       )}
     />

@@ -35,7 +35,7 @@ export function Skills() {
                       <span className="min-w-10 text-xs">
                         {AttributeKeyToShortName[skill.attribute]}
                       </span>
-                      <span className="text-foreground">{skill.name}</span>
+                      <span className="text-old-gold-950">{skill.name}</span>
                     </div>
                     <span className="text-sm">
                       {skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}
@@ -46,10 +46,11 @@ export function Skills() {
                   <TooltipContentHeader title={skill.name} />
                   <div className="flex justify-between gap-2">
                     <Description
+                      className="min-w-20"
                       description={`Bonus: ${skill.bonus >= 0 ? `+${skill.bonus}` : skill.bonus}`}
                       withoutDivider
                     />
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap justify-end gap-2">
                       <Badge variant="outline">
                         {AttributeKeyToName[skill.attribute]}
                       </Badge>

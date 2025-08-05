@@ -17,7 +17,7 @@ export function Header() {
       <Avatar />
 
       <div className="flex-1 text-center lg:text-left">
-        <h1 className="mb-2 font-uncial text-4xl text-primary lg:text-5xl">
+        <h1 className="mb-2 font-uncial text-4xl text-old-gold-600 lg:text-5xl">
           {character.name}
         </h1>
         <Race />

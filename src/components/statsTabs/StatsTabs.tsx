@@ -48,7 +48,7 @@ const tabConfigs: TabConfig[] = [
 export function StatsTabs() {
   return (
     <Tabs defaultValue="details" className="space-y-6">
-      <TabsList className="grid w-full grid-cols-6 bg-card/50">
+      <TabsList className="bg-background/50 grid w-full grid-cols-6">
         {tabConfigs.map(({ value, label, Icon }) => (
           <TabsTrigger
             key={value}

@@ -18,7 +18,7 @@ export const CharacterSheet = () => {
 
   return (
     <CharacterContext.Provider value={character}>
-      <div className="mx-auto my-6 max-w-7xl rounded-lg border border-border bg-sheet-background p-6 font-serif shadow-2xl">
+      <div className="mx-auto my-6 max-w-7xl rounded-lg border border-old-gold-300 bg-old-gold-50 p-6 shadow-2xl">
         <Header />
         <StatsTabs />
       </div>

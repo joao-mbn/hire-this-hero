@@ -66,7 +66,7 @@ function InventoryItem({ item }: InventoryItemProps) {
           <TooltipTrigger className="ml-auto">
             <Shield
               className={cn(
-                "h-5 w-5 cursor-pointer text-primary",
+                "h-5 w-5 cursor-pointer text-old-gold-600",
                 item.equipped && "fill-primary",
               )}
             />

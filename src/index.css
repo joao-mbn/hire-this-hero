@@ -1,24 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: hsl(25 35% 18%);
-  --color-sheet-background: hsl(35 25% 92%);
-  --color-foreground: hsl(25 30% 15%);
-  --color-card: hsl(35 35% 88%);
-  --color-card-foreground: hsl(25 30% 15%);
-  --color-popover: hsl(35 35% 88%);
-  --color-popover-foreground: hsl(25 30% 15%);
-  --color-border: hsl(25 25% 60%);
-  --color-primary: hsl(45 85% 35%);
-  --color-primary-foreground: hsl(35 25% 92%);
-  --color-secondary: hsl(25 40% 65%);
-  --color-secondary-foreground: hsl(25 30% 15%);
-  --color-muted: hsl(35 20% 75%);
-  --color-muted-foreground: hsl(25 25% 45%);
-  --color-accent: hsl(220 70% 45%);
-  --color-accent-foreground: hsl(35 25% 92%);
-  --color-destructive: hsl(0 70% 50%);
-  --color-destructive-foreground: hsl(35 25% 92%);
+  --color-old-gold-50: #fcfaee;
+  --color-old-gold-100: #f5f0d0;
+  --color-old-gold-200: #ebe09c;
+  --color-old-gold-300: #e0cb69;
+  --color-old-gold-400: #dabb4e;
+  --color-old-gold-500: #cf9d31;
+  --color-old-gold-600: #b77d28;
+  --color-old-gold-700: #995e24;
+  --color-old-gold-800: #7d4a23;
+  --color-old-gold-900: #673e20;
+  --color-old-gold-950: #3a200e;
 
   --font-serif: "Cardo", serif;
   --font-cinzel: "Cinzel", serif;
@@ -71,7 +64,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply bg-old-gold-100 font-serif text-old-gold-950;
   }
 }
 
