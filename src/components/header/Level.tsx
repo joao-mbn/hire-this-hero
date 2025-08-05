@@ -1,17 +1,16 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { MAX_LEVEL } from "@/lib/utils";
-import { Ruler } from "lucide-react";
 import {
   Description,
   List,
   Progress,
+  SemiCircularProgress,
   Tooltip,
   TooltipContent,
   TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
 import { Divider } from "../base/divider";
-import { TitleBadge } from "./TitleBadge";
 
 export function Level() {
   const character = useCharacterContext();
@@ -19,9 +18,11 @@ export function Level() {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <TitleBadge
-          title={`Level ${character.experience.level}`}
-          Icon={Ruler}
+        <SemiCircularProgress
+          progress={character.experience.percentageToNextLevel}
+          color="stroke-old-gold-500"
+          backgroundColor="stroke-old-gold-500/30"
+          rotation={90}
         />
       </TooltipTrigger>
       <TooltipContent>

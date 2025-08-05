@@ -1,22 +1,33 @@
-import { Progress, ProgressIndicator } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
+import {
+  Description,
+  SemiCircularProgress,
+  Tooltip,
+  TooltipContent,
+  TooltipContentHeader,
+  TooltipTrigger,
+} from "../base/";
 
 export function HealthBar() {
   const character = useCharacterContext();
 
-  const healthPercentage =
-    (character.health.current / character.health.max) * 100;
-
   return (
-    <Progress className="h-6 max-w-64">
-      <ProgressIndicator
-        className="h-full bg-red-500"
-        style={{ width: `${healthPercentage}%` }}
-      >
-        <span className="p-2 font-bold text-white">
-          HP: {character.health.current}/{character.health.max}
-        </span>
-      </ProgressIndicator>
-    </Progress>
+    <Tooltip>
+      <TooltipTrigger>
+        <SemiCircularProgress
+          progress={(character.health.current / character.health.max) * 100}
+          color="stroke-red-500"
+          backgroundColor="stroke-red-500/30"
+          rotation={-90}
+        />
+      </TooltipTrigger>
+      <TooltipContent>
+        <TooltipContentHeader title="Health" />
+
+        <Description
+          description={`HP: ${character.health.current}/${character.health.max}`}
+        />
+      </TooltipContent>
+    </Tooltip>
   );
 }
