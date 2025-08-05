@@ -13,7 +13,7 @@ export function Race() {
   const character = useCharacterContext();
 
   return (
-    <div className="mb-2 text-xl text-old-gold-700 lg:text-left">
+    <div className="mb-2 text-center text-xl text-old-gold-700 lg:text-left">
       {Object.entries(character.race).map(([key, value], index) => (
         <Fragment key={key}>
           <Tooltip>

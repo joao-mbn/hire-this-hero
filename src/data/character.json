@@ -273,7 +273,7 @@
         "@int_proficiency * 2 on Intelligence Skill checks and Saving Throws",
         "Perception checks are made with disadvantage",
         "@int_modifier * 2 on Intelligence modifier on attacks",
-        "At the end of the spell, you must make a Wisdom Saving Throw (DC 13) or suffer one level of exhaustion. If over the course of week you fail the Saving Throw 3 times, you gain the Burnout debuff."
+        "At the end of the spell, you must succeed on a Wisdom Saving Throw (DC 13) or suffer one level of exhaustion. If over the course of week you fail the Saving Throw 3 times, you gain the Burnout debuff."
       ],
       "duration": "6 hours"
     },
@@ -502,7 +502,7 @@
     }
   },
   "health": {
-    "max": 58,
+    "max": 55,
     "current": 58
   },
   "inventory": {

@@ -6,5 +6,6 @@ export * from "./description";
 export * from "./list";
 export * from "./multiSectionBlockCard";
 export * from "./progress";
+export * from "./SemiCircularProgress";
 export * from "./tabs";
 export * from "./tooltip";
