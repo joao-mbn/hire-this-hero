@@ -19,6 +19,7 @@ export function HealthBar() {
           color="stroke-red-500"
           backgroundColor="stroke-red-500/30"
           rotation={-90}
+          className="cursor-pointer"
         />
       </TooltipTrigger>
       <TooltipContent>

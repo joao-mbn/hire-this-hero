@@ -23,6 +23,7 @@ export function Level() {
           color="stroke-old-gold-500"
           backgroundColor="stroke-old-gold-500/30"
           rotation={90}
+          className="cursor-pointer"
         />
       </TooltipTrigger>
       <TooltipContent>

@@ -11,6 +11,7 @@ interface SemiCircularProgressProps {
   };
   strokeWidth?: number;
   rotation?: number; // degrees
+  className?: string;
 }
 
 export function SemiCircularProgress({
@@ -20,6 +21,7 @@ export function SemiCircularProgress({
   size = { width: 280, height: 140, radius: 120 },
   strokeWidth = 12,
   rotation = 0,
+  className,
 }: SemiCircularProgressProps) {
   // Calculate the stroke-dasharray for the progress
   const circumference = Math.PI * size.radius;
@@ -32,6 +34,7 @@ export function SemiCircularProgress({
       height={size.height}
       viewBox={`0 0 ${size.width} ${size.height}`}
       style={{ transform: `rotate(${rotation}deg)` }}
+      className={className}
     >
       {/* Background semi-circle */}
       <path

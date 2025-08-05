@@ -27,7 +27,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "items-center justify-center rounded-sm px-3 py-2 font-cinzel text-base font-semibold text-old-gold-700 transition-all hover:cursor-pointer hover:bg-old-gold-100 hover:text-old-gold-950 data-[state=active]:bg-old-gold-200 data-[state=active]:text-old-gold-950",
+      "items-center justify-center rounded-sm px-3 py-2 font-cinzel text-base font-semibold text-old-gold-700 transition-all duration-300 hover:cursor-pointer hover:bg-old-gold-100 hover:text-old-gold-950 data-[state=active]:bg-old-gold-200 data-[state=active]:text-old-gold-950",
       className,
     )}
     {...props}
@@ -41,7 +41,10 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    className={cn("mt-2", className)}
+    className={cn(
+      "mt-2 duration-1000 data-[state=active]:animate-slide-in-right data-[state=inactive]:animate-slide-out-left",
+      className,
+    )}
     {...props}
   />
 ));

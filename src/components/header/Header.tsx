@@ -17,15 +17,13 @@ export function Header() {
         <div className="absolute top-[18.75%] -left-[98.75px]">
           <HealthBar />
         </div>
-
         <Avatar />
-
         <div className="absolute top-[18.75%] -right-[98.75px]">
           <Level />
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-4">
+      <div className="z-20 flex flex-1 flex-col gap-4">
         <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-between">
           <h1 className="font-uncial text-4xl text-old-gold-600 lg:text-5xl">
             {character.name}
