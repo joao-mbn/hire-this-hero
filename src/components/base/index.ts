@@ -7,6 +7,7 @@ export * from "./list";
 export * from "./multiSectionBlockCard";
 export * from "./progress";
 export * from "./RoyalBorder";
+export * from "./RoyalDivider";
 export * from "./SemiCircularProgress";
 export * from "./tabs";
 export * from "./tooltip";
