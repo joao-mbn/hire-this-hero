@@ -10,7 +10,7 @@ export function RoyalDivider({ className = "" }: RoyalDividerProps) {
   return (
     <div
       className={cn(
-        "mt-4 mb-10 flex h-8 items-center justify-between",
+        "mt-6 mb-10 flex h-8 items-center justify-between lg:mt-4",
         className,
       )}
     >

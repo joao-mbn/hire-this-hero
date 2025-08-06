@@ -18,7 +18,7 @@ export function Contacts() {
             key={iconName}
             className="text-old-gold-700 transition-colors hover:text-old-gold-600"
           >
-            <Icon className="h-5 w-5" />
+            <Icon className="h-5 w-5 lg:h-6 lg:w-6" />
           </a>
         );
       })}

@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <div className="mb-6">
-      <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start">
+      <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:gap-8">
         <div className="relative m-4">
           <div className="absolute top-[18.75%] -left-[98.75px]">
             <HealthBar />
@@ -25,8 +25,8 @@ export function Header() {
         </div>
 
         <div className="z-20 flex flex-1 flex-col gap-4">
-          <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <h1 className="font-uncial text-4xl text-red-800 lg:text-5xl">
+          <div className="flex flex-col items-center gap-4 lg:mr-8 lg:flex-row lg:justify-between">
+            <h1 className="bg-gradient-to-tr from-red-600 to-red-800 bg-clip-text font-uncial text-4xl/11 text-transparent lg:text-5xl/16">
               {character.name}
             </h1>
             <Contacts />
