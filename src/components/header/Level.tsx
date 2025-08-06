@@ -20,8 +20,16 @@ export function Level() {
       <TooltipTrigger>
         <SemiCircularProgress
           progress={character.experience.percentageToNextLevel}
-          color="stroke-old-gold-500"
           backgroundColor="stroke-old-gold-500/30"
+          gradient={{
+            stops: [
+              { offset: "0%", color: "var(--color-old-gold-400)" },
+              { offset: "25%", color: "var(--color-old-gold-500)" },
+              { offset: "50%", color: "var(--color-old-gold-400)" },
+              { offset: "75%", color: "var(--color-old-gold-500)" },
+              { offset: "100%", color: "var(--color-old-gold-400)" },
+            ],
+          }}
           rotation={90}
           className="cursor-pointer"
         />
