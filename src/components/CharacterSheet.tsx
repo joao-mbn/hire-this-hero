@@ -1,5 +1,6 @@
 import { CharacterContext } from "@/contexts/CharacterContext";
 import { useCharacter } from "@/hooks/useCharacter";
+import { RoyalBorder } from "./base";
 import { Header } from "./header/Header";
 import { Loading } from "./Loading";
 import { NoCharacterData } from "./NoCharacterData";
@@ -18,10 +19,10 @@ export const CharacterSheet = () => {
 
   return (
     <CharacterContext.Provider value={character}>
-      <div className="mx-auto my-6 max-w-7xl rounded-lg border border-old-gold-300 bg-old-gold-50 p-6 shadow-2xl">
+      <RoyalBorder className="mx-auto my-6 max-w-7xl bg-old-gold-50 shadow-2xl">
         <Header />
         <StatsTabs />
-      </div>
+      </RoyalBorder>
     </CharacterContext.Provider>
   );
 };

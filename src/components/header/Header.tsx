@@ -25,7 +25,7 @@ export function Header() {
 
       <div className="z-20 flex flex-1 flex-col gap-4">
         <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-between">
-          <h1 className="font-uncial text-4xl text-old-gold-600 lg:text-5xl">
+          <h1 className="font-uncial text-4xl text-red-800 lg:text-5xl">
             {character.name}
           </h1>
           <Contacts />
