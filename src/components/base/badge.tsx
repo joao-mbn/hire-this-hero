@@ -9,7 +9,7 @@ const badgeVariants = cva(
       variant: {
         default: "bg-old-gold-700 text-old-gold-50",
         destructive: "bg-red-700 text-red-200",
-        outline: "text-old-gold-950 border border-old-gold-950",
+        outline: "text-old-gold-800 border border-old-gold-800",
         "rarity-common": "rarity-common",
         "rarity-uncommon": "rarity-uncommon",
         "rarity-rare": "rarity-rare",
