@@ -502,8 +502,8 @@
     }
   },
   "health": {
-    "max": 55,
-    "current": 58
+    "max": 58,
+    "current": 55
   },
   "inventory": {
     "weapons": [
