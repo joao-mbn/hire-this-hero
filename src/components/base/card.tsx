@@ -4,13 +4,18 @@ import * as React from "react";
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className, style, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "bg-background shadow-muted-foreground/50 rounded-lg border-2 border-old-gold-300 text-old-gold-950 shadow-xs",
+      "bg-background shadow-muted-foreground/50 rounded-none border text-old-gold-950 shadow-xs",
       className,
     )}
+    style={{
+      borderImage:
+        "linear-gradient(45deg, var(--color-old-gold-400), var(--color-old-gold-600)) 1",
+      ...(style || {}),
+    }}
     {...props}
   />
 ));
