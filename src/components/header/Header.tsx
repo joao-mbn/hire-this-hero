@@ -26,7 +26,7 @@ export function Header() {
 
         <div className="z-20 flex flex-1 flex-col gap-4">
           <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
-            <h1 className="bg-gradient-to-tr from-red-600 to-red-800 bg-clip-text font-uncial text-4xl/11 text-transparent lg:text-5xl/16">
+            <h1 className="bg-gradient-to-tr from-red-600 to-red-800 bg-clip-text text-center font-uncial text-4xl/11 text-transparent lg:text-left lg:text-5xl/16">
               {character.name}
             </h1>
             <Contacts />
