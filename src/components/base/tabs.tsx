@@ -42,7 +42,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "mt-2 duration-1000 data-[state=active]:animate-slide-in-right data-[state=inactive]:animate-slide-out-left",
+      "duration-1000 data-[state=active]:animate-slide-in-right data-[state=inactive]:animate-slide-out-left",
       className,
     )}
     {...props}

@@ -125,3 +125,23 @@ export function ContainerItemSection({
     </div>
   );
 }
+
+interface ContainerItemDividerProps {
+  className?: string;
+}
+
+export function ContainerItemDivider({ className }: ContainerItemDividerProps) {
+  return (
+    <div className={cn("mt-2 flex h-3 items-center justify-center", className)}>
+      <div className="mx-4 h-0.5 flex-1 bg-gradient-to-r from-old-gold-600 from-30% to-old-gold-400 to-70%" />
+      <svg
+        viewBox="-9.5 -2 18 18"
+        className="h-4 w-4 fill-none stroke-old-gold-400 stroke-2"
+        aria-hidden
+      >
+        <rect className="h-2.5 w-2.5 rotate-45" />
+      </svg>
+      <div className="mx-4 h-0.5 flex-1 bg-gradient-to-r from-old-gold-400 from-30% to-old-gold-600 to-70%" />
+    </div>
+  );
+}
