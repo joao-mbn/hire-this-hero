@@ -63,7 +63,7 @@ export function RoyalBorder({ children, className = "" }: RoyalBorderProps) {
             </div>
           ))}
 
-          <div className={cn("relative p-6")}>{children}</div>
+          <div className={cn("relative p-6 lg:p-10")}>{children}</div>
         </div>
       </div>
     </div>
