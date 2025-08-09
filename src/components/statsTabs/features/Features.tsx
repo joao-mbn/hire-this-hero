@@ -11,21 +11,29 @@ export function Features() {
   return (
     <div className="grid grid-cols-1 gap-6">
       <Container title="Profession Features" icon={<BriefcaseBusiness />}>
-        <CardContent className="grid grid-cols-1 gap-6">
+        <CardContent className="space-y-4">
           {features
             .filter((feature) => feature.origin === "profession")
-            .map((feature, i) => (
-              <FeatureCard feature={feature} key={i} />
+            .map((feature, i, arr) => (
+              <FeatureCard
+                feature={feature}
+                key={i}
+                isLast={i === arr.length - 1}
+              />
             ))}
         </CardContent>
       </Container>
 
       <Container title="Other Features" icon={<Star />}>
-        <CardContent className="grid grid-cols-1 gap-6">
+        <CardContent className="space-y-4">
           {features
             .filter((feature) => feature.origin === "others")
-            .map((feature, i) => (
-              <FeatureCard feature={feature} key={i} />
+            .map((feature, i, arr) => (
+              <FeatureCard
+                feature={feature}
+                key={i}
+                isLast={i === arr.length - 1}
+              />
             ))}
         </CardContent>
       </Container>

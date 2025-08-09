@@ -3,6 +3,7 @@ import {
   CardContent,
   Container,
   ContainerItem,
+  ContainerItemDivider,
   ContainerItemHeader,
   ContainerItemSection,
   Description,
@@ -42,8 +43,12 @@ export function Inventory() {
           <div key={itemType}>
             <Container title={title} icon={icon}>
               <CardContent className="space-y-4">
-                {items.map((item) => (
-                  <InventoryItem item={item} key={item.name} />
+                {items.map((item, index) => (
+                  <InventoryItem
+                    item={item}
+                    key={item.name}
+                    isLast={index === items.length - 1}
+                  />
                 ))}
               </CardContent>
             </Container>
@@ -56,43 +61,48 @@ export function Inventory() {
 
 interface InventoryItemProps {
   item: Item;
+  isLast?: boolean;
 }
 
-function InventoryItem({ item }: InventoryItemProps) {
+function InventoryItem({ item, isLast = false }: InventoryItemProps) {
   return (
-    <ContainerItem>
-      <ContainerItemHeader title={item.name} icon={item.icon || "💼"}>
-        <Tooltip>
-          <TooltipTrigger className="ml-auto">
-            <Shield
-              className={cn(
-                "h-5 w-5 cursor-pointer text-old-gold-600",
-                item.equipped && "fill-primary",
-              )}
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <Description
-              withoutDivider
-              description={item.equipped ? "Equipped" : "Unequipped"}
-            />
-          </TooltipContent>
-        </Tooltip>
-      </ContainerItemHeader>
+    <ContainerItem className="rounded-none border-0 p-0">
+      <div className="px-4">
+        <ContainerItemHeader title={item.name} icon={item.icon || "💼"}>
+          <Tooltip>
+            <TooltipTrigger className="ml-auto">
+              <Shield
+                className={cn(
+                  "h-5 w-5 cursor-pointer text-old-gold-600",
+                  item.equipped && "fill-primary",
+                )}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <Description
+                withoutDivider
+                description={item.equipped ? "Equipped" : "Unequipped"}
+              />
+            </TooltipContent>
+          </Tooltip>
+        </ContainerItemHeader>
 
-      <ContainerItemSection title={""}>
-        <div className="flex flex-wrap gap-2">
-          <Badge variant="outline">{item.subtype}</Badge>
-          <Badge className={`${rarityColor(item.rarity)} text-white`}>
-            {RarityToName[item.rarity]}
-          </Badge>
-        </div>
-      </ContainerItemSection>
+        <ContainerItemSection title={""}>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="outline">{item.subtype}</Badge>
+            <Badge className={`${rarityColor(item.rarity)} text-white`}>
+              {RarityToName[item.rarity]}
+            </Badge>
+          </div>
+        </ContainerItemSection>
 
-      <ContainerItemSection title="Stats">
-        <List items={item.stats} />
-      </ContainerItemSection>
-      <Description description={item.description} />
+        <ContainerItemSection title="Stats">
+          <List items={item.stats} />
+        </ContainerItemSection>
+        <Description description={item.description} />
+      </div>
+
+      {!isLast && <ContainerItemDivider />}
     </ContainerItem>
   );
 }

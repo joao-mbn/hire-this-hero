@@ -1,6 +1,7 @@
 import {
   Container,
   ContainerItem,
+  ContainerItemDivider,
   ContainerItemHeader,
   ContainerItemSection,
   Description,
@@ -17,9 +18,13 @@ export function CurrentQuestBlock() {
 
   return (
     <Container title="Current Quests" icon={<Scroll />}>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4">
         {questLog.inProgress.map((quest, idx) => (
-          <QuestCard quest={quest} key={idx}>
+          <QuestCard
+            quest={quest}
+            key={idx}
+            isLast={idx === questLog.inProgress.length - 1}
+          >
             <ContainerItemSection title={`Progress: ${quest.progress}%`}>
               <Progress value={quest.progress} className="mt-2 h-2" />
               <Description
@@ -41,9 +46,13 @@ export function CompletedQuestBlock() {
 
   return (
     <Container title="Completed Quests" icon={<Trophy />}>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4">
         {questLog.completed.map((quest, idx) => (
-          <QuestCard quest={quest} key={idx}>
+          <QuestCard
+            quest={quest}
+            key={idx}
+            isLast={idx === questLog.completed.length - 1}
+          >
             <ContainerItemSection
               title={`Completed: ${quest.completionDate.toLocaleDateString()}`}
             />
@@ -57,21 +66,29 @@ export function CompletedQuestBlock() {
 interface QuestCardProps {
   quest: Quest;
   children: React.ReactNode;
+  isLast?: boolean;
 }
 
-function QuestCard({ quest, children: completionDetails }: QuestCardProps) {
+function QuestCard({
+  quest,
+  children: completionDetails,
+  isLast = false,
+}: QuestCardProps) {
   return (
-    <ContainerItem>
-      <ContainerItemHeader title={quest.name} icon={quest.icon || "🏆"}>
-        <Badge variant={`difficulty-${quest.difficulty}`} className="ml-auto">
-          {DifficultyToName[quest.difficulty]}
-        </Badge>
-      </ContainerItemHeader>
-      <ContainerItemSection title="Rewards">
-        <List items={quest.rewards} />
-      </ContainerItemSection>
-      {completionDetails}
-      <Description description={quest.description} />
+    <ContainerItem className="rounded-none border-0 p-0">
+      <div className="px-4">
+        <ContainerItemHeader title={quest.name} icon={quest.icon || "🏆"}>
+          <Badge variant={`difficulty-${quest.difficulty}`} className="ml-auto">
+            {DifficultyToName[quest.difficulty]}
+          </Badge>
+        </ContainerItemHeader>
+        <ContainerItemSection title="Rewards">
+          <List items={quest.rewards} />
+        </ContainerItemSection>
+        {completionDetails}
+        <Description description={quest.description} />
+      </div>
+      {!isLast && <ContainerItemDivider />}
     </ContainerItem>
   );
 }

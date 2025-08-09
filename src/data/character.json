@@ -622,9 +622,29 @@
         "rewards": ["100 XP"],
         "completionDate": "2022-01-05",
         "icon": "🐞"
+      },
+      {
+        "name": "Bug Slayer",
+        "difficulty": "easy",
+        "description": "Earned recognition for resolving issues and bugs swiftly during internship",
+        "rewards": ["100 XP"],
+        "completionDate": "2022-01-05",
+        "icon": "🐞"
       }
     ],
     "inProgress": [
+      {
+        "name": "Express Entry",
+        "difficulty": "expert",
+        "description": "Immigration to Canada via the Express Entry system. Had to surpass a mountain of paperwork, tests, validations, and interviews. Learned the French language from scratch to CEFR C1 level in order to qualify through the Francophone rounds of invitations.\n\nWith COPR in hand, I just need to collect the rewards at the Canadian border.",
+        "rewards": [
+          "Full access to the Canadian Server",
+          "Canadian Permanent Residency"
+        ],
+        "progress": 99,
+        "estimatedCompletion": "2025-10-05",
+        "icon": "🇨🇦"
+      },
       {
         "name": "Express Entry",
         "difficulty": "expert",
