@@ -1,6 +1,7 @@
 import {
   Container,
   ContainerItem,
+  ContainerItemDivider,
   ContainerItemTitle,
   Description,
 } from "@/components/base/";
@@ -15,28 +16,46 @@ export function Achievements() {
 
   return (
     <Container title="Achievements" icon={<Award />}>
-      <CardContent className="grid grid-cols-2 gap-6">
+      <CardContent className="grid grid-cols-[minmax(0,1fr)_2px_minmax(0,1fr)] p-0">
         {achievements.map((achievement, idx) => (
-          <ContainerItem
-            key={idx}
-            className="flex flex-col items-center text-center"
-          >
-            <div className="text-4xl">{achievement.icon}</div>
-            <div className="w-full overflow-hidden">
-              <ContainerItemTitle title={achievement.name} className="w-full" />
-            </div>
-            <Badge
-              variant={`difficulty-${achievement.difficulty}`}
-              className="my-2"
+          <>
+            <ContainerItem
+              key={`a-${idx}`}
+              className="flex flex-col items-center rounded-none border-0 text-center"
             >
-              {DifficultyToName[achievement.difficulty]}
-            </Badge>
-            <Description description={achievement.description} withoutDivider />
-            <Description
-              description={`Earned: ${achievement.dateEarned}`}
-              withoutDivider
-            />
-          </ContainerItem>
+              <div className="text-4xl">{achievement.icon}</div>
+              <div className="w-full overflow-hidden">
+                <ContainerItemTitle
+                  title={achievement.name}
+                  className="w-full"
+                />
+              </div>
+              <Badge
+                variant={`difficulty-${achievement.difficulty}`}
+                className="my-2"
+              >
+                {DifficultyToName[achievement.difficulty]}
+              </Badge>
+              <Description
+                description={achievement.description}
+                withoutDivider
+              />
+              <Description
+                description={`Earned: ${achievement.dateEarned}`}
+                withoutDivider
+              />
+            </ContainerItem>
+
+            {idx % 2 === 0 && idx < achievements.length - 1 && (
+              <div className="h-[calc(100%-2rem)] w-0.5 translate-y-4 bg-gradient-to-b from-old-gold-400 via-old-gold-600 to-old-gold-400" />
+            )}
+
+            {idx % 2 === 1 && idx < achievements.length - 1 && (
+              <div className="col-span-3 w-full px-4">
+                <ContainerItemDivider className="mt-0" />
+              </div>
+            )}
+          </>
         ))}
       </CardContent>
     </Container>
