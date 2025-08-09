@@ -32,11 +32,19 @@ export function Container({ title, icon, children }: ContainerProps) {
 interface ContainerItemProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export function ContainerItem({ children, className }: ContainerItemProps) {
+export function ContainerItem({
+  children,
+  className,
+  style,
+}: ContainerItemProps) {
   return (
-    <div className={cn("rounded border border-old-gold-300 p-4", className)}>
+    <div
+      className={cn("rounded border border-old-gold-300 p-4", className)}
+      style={style}
+    >
       {children}
     </div>
   );

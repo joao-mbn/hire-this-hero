@@ -15,14 +15,14 @@ export function RoyalDivider({ className = "" }: RoyalDividerProps) {
       )}
     >
       <SmallDiamondKnot className="text-old-gold-600" />
-      <div className="mx-4 h-0.5 flex-1 bg-gradient-to-r from-old-gold-600 from-30% to-old-gold-400 to-70% lg:h-1" />
+      <div className="mx-4 h-0.5 flex-1 bg-gradient-to-r from-old-gold-600 from-30% to-old-gold-400 to-70%" />
       <DiamondDivider
         svgProps={{
           className:
-            "mx-8 w-20 lg:w-32 fill-old-gold-400 rotate-90 stroke-old-gold-400 stroke-[800]",
+            "mx-8 w-20 fill-old-gold-400 rotate-90 stroke-old-gold-400 stroke-[800]",
         }}
       />
-      <div className="mx-4 h-0.5 flex-1 bg-gradient-to-r from-old-gold-400 from-30% to-old-gold-600 to-70% lg:h-1" />
+      <div className="mx-4 h-0.5 flex-1 bg-gradient-to-r from-old-gold-400 from-30% to-old-gold-600 to-70%" />
       <SmallDiamondKnot className="text-old-gold-600" />
     </div>
   );
