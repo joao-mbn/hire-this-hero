@@ -76,18 +76,16 @@ function QuestCard({
 }: QuestCardProps) {
   return (
     <ContainerItem className="rounded-none border-0 p-0">
-      <div className="px-4">
-        <ContainerItemHeader title={quest.name} icon={quest.icon || "🏆"}>
-          <Badge variant={`difficulty-${quest.difficulty}`} className="ml-auto">
-            {DifficultyToName[quest.difficulty]}
-          </Badge>
-        </ContainerItemHeader>
-        <ContainerItemSection title="Rewards">
-          <List items={quest.rewards} />
-        </ContainerItemSection>
-        {completionDetails}
-        <Description description={quest.description} />
-      </div>
+      <ContainerItemHeader title={quest.name} icon={quest.icon || "🏆"}>
+        <Badge variant={`difficulty-${quest.difficulty}`} className="ml-auto">
+          {DifficultyToName[quest.difficulty]}
+        </Badge>
+      </ContainerItemHeader>
+      <ContainerItemSection title="Rewards">
+        <List items={quest.rewards} />
+      </ContainerItemSection>
+      {completionDetails}
+      <Description description={quest.description} />
       {!isLast && <ContainerItemDivider />}
     </ContainerItem>
   );
