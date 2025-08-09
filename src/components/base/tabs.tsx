@@ -12,9 +12,13 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "bg-background shadow-muted-foreground/50 inline-flex items-center justify-center overflow-hidden rounded-lg border-2 border-old-gold-300 shadow-xs",
+      "bg-background inline-flex items-center justify-center rounded-none border shadow-xs",
       className,
     )}
+    style={{
+      borderImage:
+        "linear-gradient(45deg, var(--color-old-gold-400), var(--color-old-gold-600)) 1",
+    }}
     {...props}
   />
 ));
@@ -27,7 +31,9 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "items-center justify-center rounded-sm px-3 py-2 font-cinzel text-base font-semibold text-old-gold-700 transition-all duration-300 hover:cursor-pointer hover:bg-old-gold-100 hover:text-old-gold-950 data-[state=active]:bg-old-gold-200 data-[state=active]:text-old-gold-950",
+      "items-center justify-center rounded-none px-4 py-2 font-cinzel text-base font-semibold text-old-gold-700 transition-colors duration-300",
+      "hover:cursor-pointer hover:bg-gradient-to-b hover:from-old-gold-50 hover:to-old-gold-100 hover:text-old-gold-900",
+      "data-[state=active]:bg-gradient-to-b data-[state=active]:from-old-gold-100 data-[state=active]:to-old-gold-200 data-[state=active]:text-old-gold-900",
       className,
     )}
     {...props}
