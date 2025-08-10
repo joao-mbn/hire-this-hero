@@ -8,6 +8,7 @@ import {
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
 import { Award } from "lucide-react";
+import { Fragment } from "react/jsx-runtime";
 import { Badge, CardContent } from "../../base/";
 
 export function Achievements() {
@@ -18,12 +19,9 @@ export function Achievements() {
     <Container title="Achievements" icon={<Award />}>
       <CardContent className="grid grid-cols-[minmax(0,1fr)_2px_minmax(0,1fr)] p-0">
         {achievements.map((achievement, idx) => (
-          <>
-            <ContainerItem
-              key={`a-${idx}`}
-              className="flex flex-col items-center rounded-none border-0 text-center"
-            >
-              <div className="text-4xl">{achievement.icon}</div>
+          <Fragment key={`a-${idx}`}>
+            <ContainerItem className="flex flex-col items-center rounded-none border-0 text-center">
+              <div className="font-emoji text-4xl">{achievement.icon}</div>
               <div className="w-full overflow-hidden">
                 <ContainerItemTitle
                   title={achievement.name}
@@ -55,7 +53,7 @@ export function Achievements() {
                 <ContainerItemDivider className="mt-0" />
               </div>
             )}
-          </>
+          </Fragment>
         ))}
       </CardContent>
     </Container>

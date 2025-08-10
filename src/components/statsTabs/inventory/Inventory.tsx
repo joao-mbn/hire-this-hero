@@ -73,7 +73,7 @@ function InventoryItem({ item, isLast = false }: InventoryItemProps) {
             <Shield
               className={cn(
                 "h-5 w-5 cursor-pointer text-old-gold-600",
-                item.equipped && "fill-primary",
+                item.equipped && "fill-old-gold-600",
               )}
             />
           </TooltipTrigger>

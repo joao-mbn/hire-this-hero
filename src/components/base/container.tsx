@@ -73,7 +73,7 @@ export function ContainerItemHeader({
           titleContainerClassName,
         )}
       >
-        <div className="text-xl">{icon}</div>
+        <div className="font-emoji text-xl">{icon}</div>
         <ContainerItemTitle title={title} />
       </div>
       {children}

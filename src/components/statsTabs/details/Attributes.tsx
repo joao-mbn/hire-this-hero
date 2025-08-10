@@ -11,15 +11,14 @@ import {
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { AttributeOrder } from "@/data/maps";
 import type { Attribute, AttributeKey } from "@/data/types";
-
-import { Dumbbell } from "lucide-react";
+import { BicepsFlexed } from "lucide-react";
 import { CardContent } from "../../base/";
 
 export function Attributes() {
   const character = useCharacterContext();
 
   return (
-    <Container title="Attributes" icon={<Dumbbell />}>
+    <Container title="Attributes" icon={<BicepsFlexed />}>
       <CardContent className="grid grid-cols-2 gap-6 md:grid-cols-6">
         {Object.entries(character.attributes)
           .sort(

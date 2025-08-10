@@ -16,6 +16,7 @@
   --font-serif: "Cardo", serif;
   --font-cinzel: "Cinzel", serif;
   --font-uncial: "Uncial Antiqua", cursive;
+  --font-emoji: "Noto Emoji", sans-serif;
 
   --radius: 0.75rem;
   --radius-lg: var(--radius);

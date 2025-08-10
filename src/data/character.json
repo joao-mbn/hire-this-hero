@@ -527,7 +527,7 @@
         "stats": ["+10 Coding Speed", "+1 Bonus in Perception Skill"],
         "description": "A light portable screen, handy for a nomadic Software Engineer. Increases Perception and reduces the chance of getting lost in tabs.",
         "equipped": true,
-        "icon": "🖥️"
+        "icon": "📺"
       }
     ],
     "equipments": [
@@ -635,7 +635,7 @@
         ],
         "progress": 99,
         "estimatedCompletion": "2025-10-05",
-        "icon": "🇨🇦"
+        "icon": "🍁"
       }
     ]
   },
