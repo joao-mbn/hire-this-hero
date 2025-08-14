@@ -2,6 +2,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { X } from "lucide-react";
 
 export const Drawer = DialogPrimitive.Root;
 
@@ -16,7 +17,7 @@ export function DrawerOverlay(
   return (
     <DialogPrimitive.Overlay
       className={cn(
-        "fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-fade-in",
+        "fixed inset-0 z-50 bg-black/60 data-[state=closed]:animate-fade-out data-[state=open]:animate-fade-in",
         className,
       )}
       {...rest}
@@ -33,14 +34,13 @@ export function DrawerContent(
       <DrawerOverlay />
       <DialogPrimitive.Content
         className={cn(
-          "fixed inset-y-0 right-0 z-50 flex h-full w-full max-w-[28rem] flex-col bg-old-gold-50",
-          "shadow-muted-foreground/50 border-2 border-old-gold-300 shadow-xl",
-          "data-[state=closed]:animate-slide-out-left data-[state=open]:animate-slide-in-right",
+          "fixed inset-y-0 right-0 z-50 flex h-full w-full flex-col bg-old-gold-50 lg:max-w-[32rem]",
+          "data-[state=open]:animate-slide-in-right",
           className,
         )}
         style={{
           borderImage:
-            "linear-gradient(45deg, var(--color-old-gold-400), var(--color-old-gold-600)) 1",
+            "linear-gradient(45deg, var(--color-old-gold-400), var(--color-old-gold-600)) 1 / 3px",
         }}
         {...rest}
       >
@@ -51,12 +51,18 @@ export function DrawerContent(
 }
 
 export function DrawerHeader(props: React.HTMLAttributes<HTMLDivElement>) {
-  const { className, ...rest } = props;
+  const { className, children, ...rest } = props;
   return (
     <div
-      className={cn("flex items-start justify-between gap-4 p-6", className)}
+      className={cn("flex items-center justify-between gap-4 p-6", className)}
       {...rest}
-    />
+    >
+      {children}
+      <DialogPrimitive.Close className="h-6 w-6 cursor-pointer text-old-gold-600 transition-all hover:text-old-gold-800">
+        <X className="h-6 w-6" />
+        <span className="sr-only">Close</span>
+      </DialogPrimitive.Close>
+    </div>
   );
 }
 
@@ -78,6 +84,6 @@ export function DrawerTitle(
 export function DrawerBody(props: React.HTMLAttributes<HTMLDivElement>) {
   const { className, ...rest } = props;
   return (
-    <div className={cn("flex-1 overflow-auto p-6 pt-0", className)} {...rest} />
+    <div className={cn("m-6 mt-0 flex-1 overflow-auto", className)} {...rest} />
   );
 }
