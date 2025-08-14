@@ -1,6 +1,7 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Terminal } from "lucide-react";
 import {
+  ContainerItemDivider,
   ContentHeader,
   Description,
   Drawer,
@@ -11,26 +12,29 @@ import {
   DrawerTrigger,
   List,
 } from "../base/";
-import { Divider } from "../base/divider";
 import { TitleBadge } from "./TitleBadge";
 
 export function Profession() {
   const character = useCharacterContext();
 
+  const professionName = character.profession.name;
+  const subclassName = character.profession.subclass.name;
+  const combinedTitle = `${professionName} • ${subclassName}`;
+
   return (
     <Drawer>
       <DrawerTrigger>
-        <TitleBadge title={character.profession.name} Icon={Terminal} />
+        <TitleBadge title={combinedTitle} Icon={Terminal} />
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>{character.profession.name}</DrawerTitle>
+          <DrawerTitle>Class</DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
-          <ContentHeader title="Effects" />
+          <ContentHeader title="Main Class" />
           <List items={character.profession.effects} />
           <Description description={character.profession.description} />
-          <Divider />
+          <ContainerItemDivider className="my-4" />
           <ContentHeader title="Subclass" />
           <List items={character.profession.subclass.effects} />
           <Description

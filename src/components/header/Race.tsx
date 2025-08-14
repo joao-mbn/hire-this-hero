@@ -1,36 +1,53 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
+import { RaceSpecifierToName } from "@/data/maps";
+import type { RaceSpecifier } from "@/data/types";
+import { Globe } from "lucide-react";
 import { Fragment } from "react/jsx-runtime";
 import {
+  ContainerItemDivider,
   ContentHeader,
   Description,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
   List,
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
 } from "../base/";
+import { TitleBadge } from "./TitleBadge";
 
 export function Race() {
   const character = useCharacterContext();
 
+  const raceNames = Object.entries(character.race)
+    .map(([, value]) => value.primary)
+    .join(" • ");
+
   return (
-    <div className="mb-2 text-center text-xl text-old-gold-700 lg:text-left">
-      {Object.entries(character.race).map(([key, value], index) => (
-        <Fragment key={key}>
-          <Tooltip>
-            <TooltipTrigger>
-              <span className="cursor-pointer">{value.primary}</span>
-            </TooltipTrigger>
-            <TooltipContent>
-              <ContentHeader title="Effects" />
+    <Drawer>
+      <DrawerTrigger>
+        <TitleBadge title={raceNames} Icon={Globe} />
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Racial Traits</DrawerTitle>
+        </DrawerHeader>
+        <DrawerBody>
+          {Object.entries(character.race).map(([key, value], index) => (
+            <Fragment key={key}>
+              <ContentHeader
+                title={`${RaceSpecifierToName[key as RaceSpecifier]}: ${value.primary}`}
+              />
               <List items={value.effects} />
               <Description description={value.description} />
-            </TooltipContent>
-          </Tooltip>
-          {index < Object.entries(character.race).length - 1 && (
-            <span className="mx-2">•</span>
-          )}
-        </Fragment>
-      ))}
-    </div>
+              {index < Object.entries(character.race).length - 1 && (
+                <ContainerItemDivider className="my-4" />
+              )}
+            </Fragment>
+          ))}
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
   );
 }

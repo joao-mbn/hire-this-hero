@@ -34,7 +34,7 @@ export function DrawerContent(
       <DrawerOverlay />
       <DialogPrimitive.Content
         className={cn(
-          "fixed inset-y-0 right-0 z-50 flex h-full w-full flex-col bg-old-gold-50 lg:max-w-[32rem]",
+          "fixed inset-y-0 right-0 z-50 flex h-full w-full flex-col bg-old-gold-50 lg:max-w-[40rem]",
           "data-[state=open]:animate-slide-in-right",
           className,
         )}

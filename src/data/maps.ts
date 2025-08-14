@@ -6,6 +6,7 @@ import type {
   Difficulty,
   ItemType,
   MoralStandingType,
+  RaceSpecifier,
   Rarity,
   Recovery,
 } from "./types";
@@ -88,4 +89,10 @@ export const DifficultyToName: Record<Difficulty, string> = {
 export const RecoveryToName: Record<Recovery, string> = {
   LR: "Long Rest",
   SR: "Short Rest",
+};
+
+export const RaceSpecifierToName: Record<RaceSpecifier, string> = {
+  species: "Species",
+  ethnicity: "Ethnicity",
+  archetype: "Archetype",
 };

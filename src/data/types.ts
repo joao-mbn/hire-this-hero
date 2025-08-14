@@ -25,6 +25,7 @@ export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 export type MoralStandingType = "ideals" | "bonds" | "flaws";
 export type Recovery = "LR" | "SR";
 export type FeatureOrigin = "profession" | "others";
+export type RaceSpecifier = "species" | "ethnicity" | "archetype";
 
 export interface UnderusageDebuff {
   active: boolean;
@@ -95,12 +96,8 @@ export interface Item {
 }
 
 export type Race = Record<
-  string,
-  {
-    primary: string;
-    effects: string[];
-    description: string;
-  }
+  RaceSpecifier,
+  { primary: string; effects: string[]; description: string }
 >;
 
 export interface Background {
