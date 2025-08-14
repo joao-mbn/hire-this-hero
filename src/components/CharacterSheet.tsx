@@ -19,7 +19,7 @@ export const CharacterSheet = () => {
 
   return (
     <CharacterContext.Provider value={character}>
-      <RoyalBorder className="mx-auto my-6 max-w-7xl bg-old-gold-50 shadow-2xl">
+      <RoyalBorder className="mx-auto max-w-7xl bg-old-gold-50 shadow-2xl lg:my-6">
         <Header />
         <StatsTabs />
       </RoyalBorder>
