@@ -3,10 +3,10 @@ import {
   ContainerItemDivider,
   ContainerItemHeader,
   ContainerItemSection,
+  ContentHeader,
   Description,
   Tooltip,
   TooltipContent,
-  TooltipContentHeader,
   TooltipTrigger,
 } from "@/components/base/";
 import type { Feature } from "@/data/types";
@@ -38,7 +38,7 @@ export function FeatureCard({ feature, isLast = false }: FeatureCardProps) {
               <Lock className="pointer-events-auto ml-auto h-5 w-5 text-old-gold-600" />
             </TooltipTrigger>
             <TooltipContent>
-              <TooltipContentHeader title="Feature Locked" />
+              <ContentHeader title="Feature Locked" />
               <Description
                 withoutDivider
                 description="This feature is not yet available. Check the prerequisites to unlock it."

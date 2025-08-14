@@ -1,8 +1,8 @@
 import {
   Badge,
   Container,
+  ContentHeader,
   Description,
-  TooltipContentHeader,
 } from "@/components/base/";
 import { CardLine } from "@/components/base/cardLine";
 import { useCharacterContext } from "@/contexts/CharacterContext";
@@ -48,7 +48,7 @@ export function SavingThrows() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <TooltipContentHeader
+                  <ContentHeader
                     title={AttributeKeyToName[savingThrow.attribute]}
                   />
                   <div className="flex justify-between gap-2">

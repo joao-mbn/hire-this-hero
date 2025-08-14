@@ -1,8 +1,8 @@
 import {
   Badge,
   Container,
+  ContentHeader,
   Description,
-  TooltipContentHeader,
 } from "@/components/base/";
 import { CardLine } from "@/components/base/cardLine";
 import { useCharacterContext } from "@/contexts/CharacterContext";
@@ -43,7 +43,7 @@ export function Skills() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <TooltipContentHeader title={skill.name} />
+                  <ContentHeader title={skill.name} />
                   <div className="flex justify-between gap-2">
                     <Description
                       className="min-w-20"

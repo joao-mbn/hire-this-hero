@@ -1,28 +1,43 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Terminal } from "lucide-react";
 import {
+  ContentHeader,
   Description,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
   List,
-  Tooltip,
-  TooltipContent,
-  TooltipContentHeader,
-  TooltipTrigger,
 } from "../base/";
+import { Divider } from "../base/divider";
 import { TitleBadge } from "./TitleBadge";
 
 export function Profession() {
   const character = useCharacterContext();
 
   return (
-    <Tooltip>
-      <TooltipTrigger>
+    <Drawer>
+      <DrawerTrigger>
         <TitleBadge title={character.profession.name} Icon={Terminal} />
-      </TooltipTrigger>
-      <TooltipContent>
-        <TooltipContentHeader title="Effects" />
-        <List items={character.profession.effects} />
-        <Description description={character.profession.description} />
-      </TooltipContent>
-    </Tooltip>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>{character.profession.name}</DrawerTitle>
+        </DrawerHeader>
+        <DrawerBody>
+          <ContentHeader title="Effects" />
+          <List items={character.profession.effects} />
+          <Description description={character.profession.description} />
+          <Divider />
+          <ContentHeader title="Subclass" />
+          <List items={character.profession.subclass.effects} />
+          <Description
+            description={character.profession.subclass.description}
+          />
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
   );
 }

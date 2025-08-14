@@ -1,11 +1,11 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Fragment } from "react/jsx-runtime";
 import {
+  ContentHeader,
   Description,
   List,
   Tooltip,
   TooltipContent,
-  TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
 
@@ -21,7 +21,7 @@ export function Race() {
               <span className="cursor-pointer">{value.primary}</span>
             </TooltipTrigger>
             <TooltipContent>
-              <TooltipContentHeader title="Effects" />
+              <ContentHeader title="Effects" />
               <List items={value.effects} />
               <Description description={value.description} />
             </TooltipContent>

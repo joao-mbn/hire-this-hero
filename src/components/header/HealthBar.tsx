@@ -1,10 +1,10 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import {
+  ContentHeader,
   Description,
   SemiCircularProgress,
   Tooltip,
   TooltipContent,
-  TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
 
@@ -31,7 +31,7 @@ export function HealthBar() {
         />
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentHeader title="Health" />
+        <ContentHeader title="Health" />
 
         <Description
           description={`HP: ${character.health.current}/${character.health.max}`}

@@ -1,11 +1,11 @@
 import {
   AttributeGem,
   Container,
+  ContentHeader,
   Description,
   List,
   Tooltip,
   TooltipContent,
-  TooltipContentHeader,
   TooltipTrigger,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
@@ -62,7 +62,7 @@ function AttributeGemDisplay({ value, type }: AttributeGemProps) {
         </div>
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentHeader title={value.label} />
+        <ContentHeader title={value.label} />
         <List
           items={Object.entries(value.composition).map(
             ([key, value]) => `${key}: +${value}`,

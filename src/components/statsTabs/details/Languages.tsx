@@ -1,11 +1,11 @@
 import {
   Container,
+  ContentHeader,
   Description,
   Progress,
   ProgressIndicator,
   Tooltip,
   TooltipContent,
-  TooltipContentHeader,
   TooltipTrigger,
 } from "@/components/base/";
 import { CardLine } from "@/components/base/cardLine";
@@ -104,7 +104,7 @@ interface LanguageContentProps {
 function LanguageTooltipContent({ language }: LanguageContentProps) {
   return (
     <TooltipContent className="min-w-md">
-      <TooltipContentHeader title={language.name} />
+      <ContentHeader title={language.name} />
       <div className="flex items-center justify-between gap-2 pb-2">
         <Description
           description={`Level: ${language.level}/${MAX_LANGUAGE_LEVEL} ${language.cefrLevel === "Native" ? "• Native" : `• CEFR: ${language.cefrLevel}`}`}
@@ -142,7 +142,7 @@ function UnderusageDebuffTooltip({ language }: UnderusageDebuffTooltipProps) {
         </div>
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentHeader title="Underusage debuff" />
+        <ContentHeader title="Underusage debuff" />
         <Description
           description={language.underusageDebuff.description}
           withoutDivider

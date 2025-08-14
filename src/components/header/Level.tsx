@@ -1,13 +1,13 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { MAX_LEVEL } from "@/lib/utils";
 import {
+  ContentHeader,
   Description,
   List,
   Progress,
   SemiCircularProgress,
   Tooltip,
   TooltipContent,
-  TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
 import { Divider } from "../base/divider";
@@ -35,7 +35,7 @@ export function Level() {
         />
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentHeader title="Experience" />
+        <ContentHeader title="Experience" />
         <Description
           withoutDivider
           className="font-semibold"

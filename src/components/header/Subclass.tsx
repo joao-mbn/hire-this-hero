@@ -1,11 +1,11 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Layers } from "lucide-react";
 import {
+  ContentHeader,
   Description,
   List,
   Tooltip,
   TooltipContent,
-  TooltipContentHeader,
   TooltipTrigger,
 } from "../base/";
 import { TitleBadge } from "./TitleBadge";
@@ -19,7 +19,7 @@ export function Subclass() {
         <TitleBadge title={character.profession.subclass.name} Icon={Layers} />
       </TooltipTrigger>
       <TooltipContent>
-        <TooltipContentHeader title="Effects" />
+        <ContentHeader title="Effects" />
         <List items={character.profession.subclass.effects} />
         <Description description={character.profession.subclass.description} />
       </TooltipContent>

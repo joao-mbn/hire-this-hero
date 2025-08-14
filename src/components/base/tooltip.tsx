@@ -24,17 +24,3 @@ export const TooltipContent = React.forwardRef<
   />
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
-
-export function TooltipContentHeader({
-  title,
-  className,
-}: {
-  title: string;
-  className?: string;
-}) {
-  return (
-    <p className={cn("mb-2 font-cinzel text-lg font-semibold", className)}>
-      {title}
-    </p>
-  );
-}
