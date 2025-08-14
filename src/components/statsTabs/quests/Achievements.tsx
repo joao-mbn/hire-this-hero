@@ -1,9 +1,9 @@
 import {
   Container,
   ContainerItem,
-  ContainerItemDivider,
   ContainerItemTitle,
   Description,
+  Divider,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
@@ -50,7 +50,7 @@ export function Achievements() {
 
             {idx % 2 === 1 && idx < achievements.length - 1 && (
               <div className="col-span-3 w-full px-4">
-                <ContainerItemDivider className="mt-0" />
+                <Divider variant="medium" className="mt-0" />
               </div>
             )}
           </Fragment>

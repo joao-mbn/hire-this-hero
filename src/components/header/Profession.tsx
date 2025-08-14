@@ -1,9 +1,9 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Terminal } from "lucide-react";
 import {
-  ContainerItemDivider,
   ContentHeader,
   Description,
+  Divider,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -34,7 +34,7 @@ export function Profession() {
           <ContentHeader title="Main Class" />
           <List items={character.profession.effects} />
           <Description description={character.profession.description} />
-          <ContainerItemDivider className="my-4" />
+          <Divider variant="medium" className="my-4" />
           <ContentHeader title="Subclass" />
           <List items={character.profession.subclass.effects} />
           <Description

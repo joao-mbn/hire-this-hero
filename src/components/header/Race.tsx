@@ -4,9 +4,9 @@ import type { RaceSpecifier } from "@/data/types";
 import { Globe } from "lucide-react";
 import { Fragment } from "react/jsx-runtime";
 import {
-  ContainerItemDivider,
   ContentHeader,
   Description,
+  Divider,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -42,7 +42,7 @@ export function Race() {
               <List items={value.effects} />
               <Description description={value.description} />
               {index < Object.entries(character.race).length - 1 && (
-                <ContainerItemDivider className="my-4" />
+                <Divider variant="medium" className="my-4" />
               )}
             </Fragment>
           ))}

@@ -1,5 +1,5 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { RoyalDivider } from "../base/";
+import { Divider } from "../base";
 import { Avatar } from "./Avatar";
 import { Contacts } from "./Contacts";
 import { HealthBar } from "./HealthBar";
@@ -37,7 +37,7 @@ export function Header() {
         </div>
       </div>
 
-      <RoyalDivider />
+      <Divider variant="big" />
     </div>
   );
 }

@@ -2,10 +2,10 @@ import {
   CardContent,
   Container,
   ContainerItem,
-  ContainerItemDivider,
   ContainerItemHeader,
   ContainerItemSection,
   Description,
+  Divider,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { RecoveryToName } from "@/data/maps";
@@ -60,7 +60,7 @@ export function Spells() {
             <ContainerItemSection title={`Duration: ${spell.duration}`} />
 
             <Description description={spell.description} />
-            {i !== spells.length - 1 && <ContainerItemDivider />}
+            {i !== spells.length - 1 && <Divider variant="medium" />}
           </ContainerItem>
         ))}
       </CardContent>

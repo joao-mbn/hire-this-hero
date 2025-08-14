@@ -1,10 +1,10 @@
 import {
   Container,
   ContainerItem,
-  ContainerItemDivider,
   ContainerItemHeader,
   ContainerItemSection,
   Description,
+  Divider,
 } from "@/components/base/";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
@@ -86,7 +86,7 @@ function QuestCard({
       </ContainerItemSection>
       {completionDetails}
       <Description description={quest.description} />
-      {!isLast && <ContainerItemDivider />}
+      {!isLast && <Divider variant="medium" />}
     </ContainerItem>
   );
 }

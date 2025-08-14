@@ -3,10 +3,10 @@ import {
   CardContent,
   Container,
   ContainerItem,
-  ContainerItemDivider,
   ContainerItemHeader,
   ContainerItemSection,
   Description,
+  Divider,
   List,
   Tooltip,
   TooltipContent,
@@ -100,7 +100,7 @@ function InventoryItem({ item, isLast = false }: InventoryItemProps) {
       </ContainerItemSection>
       <Description description={item.description} />
 
-      {!isLast && <ContainerItemDivider />}
+      {!isLast && <Divider variant="medium" />}
     </ContainerItem>
   );
 }

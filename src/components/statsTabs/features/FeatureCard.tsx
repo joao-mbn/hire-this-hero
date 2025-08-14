@@ -1,10 +1,10 @@
 import {
   ContainerItem,
-  ContainerItemDivider,
   ContainerItemHeader,
   ContainerItemSection,
   ContentHeader,
   Description,
+  Divider,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -109,7 +109,7 @@ export function FeatureCard({ feature, isLast = false }: FeatureCardProps) {
         <Description description={feature.description} />
       </div>
 
-      {!isLast && <ContainerItemDivider />}
+      {!isLast && <Divider variant="medium" />}
     </ContainerItem>
   );
 }
