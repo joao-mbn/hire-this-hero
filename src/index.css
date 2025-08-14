@@ -101,6 +101,10 @@
   body {
     @apply bg-old-gold-100 font-serif text-old-gold-950;
   }
+
+  * {
+    scrollbar-color: var(--color-old-gold-400) var(--color-old-gold-50);
+  }
 }
 
 @layer components {
