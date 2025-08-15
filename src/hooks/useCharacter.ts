@@ -132,12 +132,14 @@ export function useCharacter() {
             completed: data.questLog.completed.map((quest) => ({
               ...quest,
               difficulty: quest.difficulty as Difficulty,
+              startDate: new Date(quest.startDate),
               completionDate: new Date(quest.completionDate),
               rewards: quest.rewards ?? [],
             })),
             inProgress: data.questLog.inProgress.map((quest) => ({
               ...quest,
               difficulty: quest.difficulty as Difficulty,
+              startDate: new Date(quest.startDate),
               estimatedCompletion: new Date(quest.estimatedCompletion),
             })),
           },

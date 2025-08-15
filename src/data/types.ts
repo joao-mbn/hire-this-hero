@@ -179,7 +179,7 @@ export interface Quest {
   description: string;
   rewards: string[];
   icon: string;
-  startDate?: Date;
+  startDate: Date;
   place?: string;
 }
 

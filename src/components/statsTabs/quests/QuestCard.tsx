@@ -15,6 +15,7 @@ import { CardLine } from "@/components/base/cardLine";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
 import type { CompletedQuest, InProgressQuest } from "@/data/types";
+import { yyyyMMMDate } from "@/lib/utils";
 import { Scroll, Trophy } from "lucide-react";
 import { Badge, CardContent } from "../../base/";
 
@@ -26,7 +27,15 @@ export function CurrentQuestBlock() {
     <Container title="Current Quests" icon={<Scroll />}>
       <CardContent className="space-y-2">
         {questLog.inProgress.map((quest, idx) => (
-          <QuestLineItem quest={quest} key={idx} />
+          <QuestLineItem quest={quest} key={idx}>
+            <ContentHeader title={`Progress: ${quest.progress}%`} />
+            <Progress value={quest.progress} className="mb-1 h-2" />
+            <Description
+              withoutDivider
+              className="text-sm"
+              description={`Estimated Completion: ${yyyyMMMDate(quest.estimatedCompletion)}`}
+            />
+          </QuestLineItem>
         ))}
       </CardContent>
     </Container>
@@ -41,7 +50,13 @@ export function CompletedQuestBlock() {
     <Container title="Completed Quests" icon={<Trophy />}>
       <CardContent className="space-y-2">
         {questLog.completed.map((quest, idx) => (
-          <QuestLineItem quest={quest} key={idx} />
+          <QuestLineItem quest={quest} key={idx}>
+            <ContentHeader title="Duration" />
+            <Description
+              withoutDivider
+              description={`${yyyyMMMDate(quest.startDate)} - ${yyyyMMMDate(quest.completionDate)}`}
+            />
+          </QuestLineItem>
         ))}
       </CardContent>
     </Container>
@@ -50,9 +65,10 @@ export function CompletedQuestBlock() {
 
 interface QuestLineItemProps {
   quest: CompletedQuest | InProgressQuest;
+  children?: React.ReactNode;
 }
 
-function QuestLineItem({ quest }: QuestLineItemProps) {
+function QuestLineItem({ quest, children }: QuestLineItemProps) {
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -84,6 +100,9 @@ function QuestLineItem({ quest }: QuestLineItemProps) {
         </DrawerHeader>
         <DrawerBody>
           <div className="space-y-6">
+            <ContentHeader title="Rewards" />
+            <List items={quest.rewards} />
+
             {"place" in quest && quest.place && (
               <>
                 <ContentHeader title="Location" />
@@ -91,28 +110,7 @@ function QuestLineItem({ quest }: QuestLineItemProps) {
               </>
             )}
 
-            <ContentHeader title="Rewards" />
-            <List items={quest.rewards} />
-
-            {"progress" in quest ? (
-              <div>
-                <ContentHeader title={`Progress: ${quest.progress}%`} />
-                <Progress value={quest.progress} className="h-2" />
-                <Description
-                  withoutDivider
-                  className="text-sm"
-                  description={`Estimated Completion: ${quest.estimatedCompletion.toLocaleDateString()}`}
-                />
-              </div>
-            ) : (
-              <div>
-                <ContentHeader title="Completed" />
-                <Description
-                  withoutDivider
-                  description={quest.completionDate.toLocaleDateString()}
-                />
-              </div>
-            )}
+            {children}
 
             <Description description={quest.description} />
           </div>

@@ -71,3 +71,10 @@ export function getExperience(
     attributeLeveling,
   };
 }
+
+export function yyyyMMMDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+  });
+}

@@ -617,58 +617,106 @@
   "questLog": {
     "completed": [
       {
-        "name": "Software Engineer @Suger",
+        "name": "SWE @Suger",
         "place": "Suger (San Francisco, United States - Remote)",
-        "description": "Software Engineer (Oct. 2024-Jul. 2025)\n● Planned and delivered features end-to-end: task planning, APIs and UIs, database changes, cloud connections, tests and documentation.\n● Built and incremented reusable API integrations for Salesforce, HubSpot, NetSuite, Quickbooks, among others, so integrations were easier to build and customize.\n● Ran ten technical interviews: made and reviewed interview projects, interviewed candidates, wrote evaluations and participated in the hiring decision.\n● Onboarded and mentored three engineers: discussed and clarified tasks and bugs, paired on code and reviewed pull requests to help them start contributing faster. Worked leading these engineers on the development of larger features from design to deployment.\nMain technologies: Typescript, Vue, Javascript, HTML, Tailwind CSS, CSS, Jest, Playwright, Golang, Postgres, AWS.",
-        "completionDate": "2025-07-01",
+        "description": "Planned and delivered features end-to-end: task planning, APIs and UIs, database changes, cloud connections, tests and documentation.\n\nBuilt and incremented reusable API integrations for Salesforce, HubSpot, NetSuite, Quickbooks, among others, so integrations were easier to build and customize.\n\nRan ten technical interviews: made and reviewed interview projects, interviewed candidates, wrote evaluations and participated in the hiring decision.\n\nOnboarded and mentored three engineers: discussed and clarified tasks and bugs, paired on code and reviewed pull requests to help them start contributing faster. Worked leading these engineers on the development of larger features from design to deployment.",
+        "completionDate": "2025/07",
+        "startDate": "2024/10",
         "icon": "🍩",
-        "difficulty": "impossible"
+        "difficulty": "impossible",
+        "rewards": [
+          "Proficiency in: Typescript, Vue, Javascript, HTML, Tailwind CSS, CSS, Jest, Playwright, Golang, Postgres, AWS",
+          "Experience with: Salesforce, HubSpot, NetSuite, Quickbooks integrations",
+          "Leadership skills: Technical interviewing, mentoring, team management"
+        ]
       },
       {
-        "name": "Full Stack Developer - Level IV @Radix",
+        "name": "SWE IV @Radix",
         "place": "Radix Engineering and Software (Rio de Janeiro, Brazil - Remote)",
-        "description": "Full Stack Developer - Level IV (Sep. 2024-Oct. 2024)\n● Optimized performance and usability of a Dashboard displaying industrial data with multiple charts containing hundreds of thousands of points each and a Web GL 3D view, using strategies like caching and lazy loading to bring memory consumption to a third of its value; request splitting and geometry filters to reduce request duration up to 95%; and pre-fetching to reduce feature loading from more than 10s to a fraction of a second.\nMain technologies: Typescript, Next JS, React, Javascript, Tailwind CSS, CSS, HTML, GraphQL, ThreeJS.",
-        "completionDate": "2024-10-01",
-        "icon": "🏗️",
-        "difficulty": "medium"
+        "description": "Optimized performance and usability of a Dashboard displaying industrial data with multiple charts containing hundreds of thousands of points each and a Web GL 3D view, using strategies like caching and lazy loading to bring memory consumption to a third of its value; request splitting and geometry filters to reduce request duration up to 95%; and pre-fetching to reduce feature loading from more than 10s to a fraction of a second.",
+        "completionDate": "2024/10",
+        "startDate": "2024/09",
+        "icon": "🎄",
+        "difficulty": "medium",
+        "rewards": [
+          "Proficiency in: Typescript, Next JS, React, Javascript, Tailwind CSS, CSS, HTML, GraphQL, ThreeJS",
+          "Performance optimization: Memory management, caching strategies, request optimization"
+        ]
       },
       {
-        "name": "Full Stack Developer - Level III @Radix",
-        "place": "Radix Engineering and Software (Rio de Janeiro, Brazil - Remote)",
-        "description": "Full Stack Developer - Level III (Aug. 2023-Sep. 2024)\n● Led the implementation of a new interactive 3D visualization of an oil refinery plant for increased data contextualization, having left stakeholders impressed by the MVP and wanting to expand its features.\n● Led a team of four developers, providing tailored feedback to enhance performance, aiding in comprehension of requirements and their implications, fostering improved questioning, workflow organization, and continuous testing. Helped team members to achieve an estimated 50% to 100% increase in productivity, measured by reduced time for delivering user stories.\nMain technologies: Typescript, React, Javascript, Tailwind CSS, CSS, HTML, ThreeJS, C#, .NET, MS SQL.",
-        "completionDate": "2024-09-01",
-        "icon": "🔧",
-        "difficulty": "medium"
+        "name": "React Extract",
+        "description": "A VS Code extension for refactoring React components, with over 25 Github Stars on the repo, 2800 downloads and a 5/5 review grade on the VS Code Marketplace, praised by the community for fixing a problem that larger and more popular extensions could not.",
+        "startDate": "2024/02",
+        "completionDate": "2024/07",
+        "icon": "💥",
+        "difficulty": "medium",
+        "rewards": [
+          "Proficiency in: Javascript, Typescript, React, VS Code API, Typescript API, Mocha",
+          "Experience in: Extension Development"
+        ]
       },
       {
-        "name": "Full Stack Developer - Level II @Radix",
+        "name": "SWE III @Radix",
         "place": "Radix Engineering and Software (Rio de Janeiro, Brazil - Remote)",
-        "description": "Full Stack Developer - Level II (Aug. 2022-Aug. 2023)\n● Reduced deployment time by 80% by creating deployment pipelines, reducing it from 20 minutes to 4 minutes on average on multiple on-premises virtual machines, thus enabling faster testing cycles and eliminating deployment errors.\n● Saved an estimated amount of 200 hours in development time by reimplementing an Excel-like spreadsheet solution with a more feature-rich and compatible library.\n● Consistently delivered user stories within 40% to 70% of allocated timeframes.\nMain technologies: Typescript, React, Javascript, CSS, HTML, Redux, C#, .NET, MS SQL, Azure DevOps.",
-        "completionDate": "2023-08-01",
-        "icon": "⚙️",
-        "difficulty": "medium"
+        "description": "Led the implementation of a new interactive 3D visualization of an oil refinery plant for increased data contextualization, having left stakeholders impressed by the MVP and wanting to expand its features.\n\nLed a team of four developers, providing tailored feedback to enhance performance, aiding in comprehension of requirements and their implications, fostering improved questioning, workflow organization, and continuous testing. Helped team members to achieve an estimated 50% to 100% increase in productivity, measured by reduced time for delivering user stories.",
+        "startDate": "2023/08",
+        "completionDate": "2024/09",
+        "icon": "🌳",
+        "difficulty": "medium",
+        "rewards": [
+          "Proficiency in: Typescript, React, Javascript, Tailwind CSS, CSS, HTML, ThreeJS, C#, .NET, MS SQL",
+          "Team leadership skills"
+        ]
       },
       {
-        "name": "Software Development Intern @Radix",
+        "name": "SWE II @Radix",
         "place": "Radix Engineering and Software (Rio de Janeiro, Brazil - Remote)",
-        "description": "Software Development Intern (May 2021-Aug. 2022)\n● Learned an entire stack of web development technologies from scratch, earning recognition for fixing bugs swiftly.\nMain technologies: Typescript, Angular, Javascript, CSS, SCSS, HTML, RxJS, C#, .NET, MS SQL, Postgres.",
-        "completionDate": "2022-08-01",
-        "icon": "🎯",
-        "difficulty": "hard"
+        "description": "Reduced deployment time by 80% by creating deployment pipelines, reducing it from 20 minutes to 4 minutes on average on multiple on-premises virtual machines, thus enabling faster testing cycles and eliminating deployment errors.\n\nSaved an estimated amount of 200 hours in development time by reimplementing an Excel-like spreadsheet solution with a more feature-rich and compatible library.\n\nConsistently delivered user stories within 40% to 70% of allocated timeframes.",
+        "startDate": "2022/08",
+        "completionDate": "2023/08",
+        "icon": "🪴",
+        "difficulty": "medium",
+        "rewards": [
+          "Access to the Full Stack subclass",
+          "Proficiency in: Typescript, React, Javascript, CSS, HTML, Redux, C#, .NET, MS SQL, Azure DevOps"
+        ]
+      },
+      {
+        "name": "SWE Intern @Radix",
+        "place": "Radix Engineering and Software (Rio de Janeiro, Brazil - Remote)",
+        "description": "Learned an entire stack of web development technologies from scratch, earning recognition for fixing bugs swiftly.",
+        "startDate": "2021/05",
+        "completionDate": "2022/08",
+        "icon": "🌱",
+        "difficulty": "hard",
+        "rewards": [
+          "Access to the Software Engineer class",
+          "Proficiency in: Typescript, Angular, Javascript, CSS, SCSS, HTML, RxJS, C#, .NET, MS SQL, Postgres"
+        ]
       },
       {
         "name": "Programmer Alchemist",
         "description": "Founded a minor Programming Guild inside the Alchemist Artificers' Guild, to teach fellow alchemists the basics of programming for their craft experiments, using the Python rune set.",
-        "completionDate": "2022-09-22",
-        "icon": "📈",
-        "difficulty": "easy"
+        "startDate": "2021/03",
+        "completionDate": "2021/08",
+        "icon": "🧙",
+        "difficulty": "easy",
+        "rewards": [
+          "Proficiency in: Python",
+          "Experience in: Content Creation and Teaching"
+        ]
       },
       {
-        "name": "Job Change Quest: The Mad Alchemist",
-        "description": "Cleared all undergraduate level dungeons of the Alchemist Artificers' Guild, including but not limited to: Calculus, Physics, Thermodynamics, Kinetics, Fluid Mechanics, Heat and Mass Transfer, Separation Processes. \n\nBonus points for clearing 1/3 of the dungeons during the COVID-19 patch, that brought global Constitution and Wisdom debuffs to all players. \n\nBonus points for defeating the Thesis Final Boss without taking any hit.",
-        "completionDate": "2022-09-22",
-        "icon": "🎓",
-        "rewards": ["BSc in Chemical Engineering"],
+        "name": "BSc in Chemical Engineering",
+        "description": "Cleared all undergraduate level dungeons of the Alchemist Artificers' Guild, including but not limited to: Calculus, Physics, Thermodynamics, Kinetics, Fluid Mechanics, Heat and Mass Transfer, Separation Processes. \n\nBonus points for clearing 1/3 of the dungeons during the COVID-19 patch, that brought global Constitution and Wisdom debuffs to all players, and for defeating the Thesis Final Boss without taking any hit.",
+        "startDate": "2017/03",
+        "completionDate": "2022/09",
+        "icon": "🤪",
+        "rewards": [
+          "BSc in Chemical Engineering",
+          "Unlocked path to become any of the Artificer or Wizard classes",
+          "Proficiency in: Python, Process Optimization, Scientific Computing"
+        ],
         "difficulty": "expert"
       }
     ],
@@ -676,13 +724,14 @@
       {
         "name": "Express Entry",
         "difficulty": "hard",
-        "description": "Immigration to Canada via the Express Entry system. Had to surpass a mountain of paperwork, tests, validations, and interviews. Learned the French language from scratch to CEFR C1 level in order to qualify through the Francophone rounds of invitations.\n\nWith COPR in hand, I just need to collect the rewards at the Canadian border.",
+        "description": "Immigration to Canada via the Express Entry system. Had to surpass a mountain of paperwork, tests, validations, and interviews. Learned the French language from scratch to CEFR C1 level in order to qualify through the Francophone rounds of invitations.\n\nWith COPR (Confirmation of Permanent Residence) in hand, I just need to collect the rewards at the Canadian border.",
         "rewards": [
           "Full access to the Canadian Server",
           "Canadian Permanent Residency"
         ],
         "progress": 99,
-        "estimatedCompletion": "2025-10-05",
+        "estimatedCompletion": "2025/10",
+        "startDate": "2023/11",
         "icon": "🍁"
       }
     ]
