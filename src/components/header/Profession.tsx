@@ -31,11 +31,11 @@ export function Profession() {
           <DrawerTitle>Class</DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
-          <ContentHeader title="Main Class" />
+          <ContentHeader title={`Main Class: ${professionName}`} />
           <List items={character.profession.effects} />
           <Description description={character.profession.description} />
           <Divider variant="medium" className="my-4" />
-          <ContentHeader title="Subclass" />
+          <ContentHeader title={`Subclass: ${subclassName}`} />
           <List items={character.profession.subclass.effects} />
           <Description
             description={character.profession.subclass.description}
