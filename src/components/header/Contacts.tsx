@@ -1,11 +1,17 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { getIcon } from "@/lib/utils";
+import { cn, getIcon } from "@/lib/utils";
 
-export function Contacts() {
+interface ContactsProps {
+  className?: string;
+}
+
+export function Contacts({ className }: ContactsProps) {
   const character = useCharacterContext();
 
   return (
-    <div className="flex justify-center gap-4 lg:justify-start">
+    <div
+      className={cn("flex justify-center gap-4 lg:justify-start", className)}
+    >
       {Object.values(character.contact).map(({ iconName, link }) => {
         if (!iconName || !link) return null;
 

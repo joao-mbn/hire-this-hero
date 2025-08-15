@@ -192,6 +192,7 @@ export interface InProgressQuest extends Quest {
 
 export interface Character {
   name: string;
+  nickname: string;
   race: Race;
   experience: Experience;
   class: Class;

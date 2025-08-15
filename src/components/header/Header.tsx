@@ -24,11 +24,16 @@ export function Header() {
         </div>
 
         <div className="z-20 flex flex-1 flex-col gap-4">
-          <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
-            <h1 className="bg-gradient-to-tr from-red-600 to-red-800 bg-clip-text text-center font-uncial text-4xl/11 text-transparent lg:text-left lg:text-5xl/16">
-              {character.name}
-            </h1>
-            <Contacts />
+          <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div className="flex flex-col items-center gap-2 lg:items-start">
+              <h1 className="bg-gradient-to-tr from-red-600 to-red-800 bg-clip-text font-uncial text-4xl/11 text-transparent lg:text-left lg:text-5xl/16">
+                {character.name}
+              </h1>
+              <h2 className="bg-gradient-to-tr from-red-700 to-red-900 bg-clip-text font-uncial text-xl text-transparent lg:text-left lg:text-2xl">
+                {character.nickname}
+              </h2>
+            </div>
+            <Contacts className="lg:translate-y-5" />
           </div>
           <div className="mb-2 flex flex-col items-center gap-2 lg:items-start">
             <Race />
