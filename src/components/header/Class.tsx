@@ -11,14 +11,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
   List,
-} from "../base/";
+} from "../base";
 import { TitleBadge } from "./TitleBadge";
 
-export function Profession() {
+export function Class() {
   const character = useCharacterContext();
 
-  const professionName = character.profession.name;
-  const subclassName = character.profession.subclass.name;
+  const professionName = character.class.name;
+  const subclassName = character.class.subclass.name;
   const combinedTitle = `${professionName} • ${subclassName}`;
 
   return (
@@ -32,14 +32,12 @@ export function Profession() {
         </DrawerHeader>
         <DrawerBody>
           <ContentHeader title={`Main Class: ${professionName}`} />
-          <List items={character.profession.effects} />
-          <Description description={character.profession.description} />
+          <List items={character.class.effects} />
+          <Description description={character.class.description} />
           <Divider variant="medium" className="my-4" />
           <ContentHeader title={`Subclass: ${subclassName}`} />
-          <List items={character.profession.subclass.effects} />
-          <Description
-            description={character.profession.subclass.description}
-          />
+          <List items={character.class.subclass.effects} />
+          <Description description={character.class.subclass.description} />
         </DrawerBody>
       </DrawerContent>
     </Drawer>

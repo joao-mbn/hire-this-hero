@@ -140,6 +140,8 @@ export function useCharacter() {
               estimatedCompletion: new Date(quest.estimatedCompletion),
             })),
           },
+          class:
+            data.mainClass /* cannot use "class" as key because it's a reserved word */,
         };
         setCharacter(character);
       })

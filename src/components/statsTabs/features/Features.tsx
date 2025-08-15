@@ -10,10 +10,10 @@ export function Features() {
 
   return (
     <div className="grid grid-cols-1 gap-6">
-      <Container title="Profession Features" icon={<BriefcaseBusiness />}>
+      <Container title="Class Features" icon={<BriefcaseBusiness />}>
         <CardContent className="space-y-4">
           {features
-            .filter((feature) => feature.origin === "profession")
+            .filter((feature) => feature.origin === "class")
             .map((feature, i, arr) => (
               <FeatureCard
                 feature={feature}

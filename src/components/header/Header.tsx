@@ -1,10 +1,10 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { Divider } from "../base";
 import { Avatar } from "./Avatar";
+import { Class } from "./Class";
 import { Contacts } from "./Contacts";
 import { HealthBar } from "./HealthBar";
 import { Level } from "./Level";
-import { Profession } from "./Profession";
 import { Race } from "./Race";
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
           </div>
           <div className="mb-2 flex flex-col items-center gap-2 lg:items-start">
             <Race />
-            <Profession />
+            <Class />
           </div>
         </div>
       </div>

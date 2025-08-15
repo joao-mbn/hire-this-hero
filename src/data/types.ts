@@ -24,7 +24,7 @@ export type AttributeShortName = "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA";
 export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 export type MoralStandingType = "ideals" | "bonds" | "flaws";
 export type Recovery = "LR" | "SR";
-export type FeatureOrigin = "profession" | "others";
+export type FeatureOrigin = "class" | "others";
 export type RaceSpecifier = "species" | "ethnicity" | "archetype";
 
 export interface UnderusageDebuff {
@@ -112,7 +112,7 @@ export type Contact = Record<
   { label: string; link: string; iconName: string }
 >;
 
-export interface Profession {
+export interface Class {
   name: string;
   description: string;
   effects: string[];
@@ -194,7 +194,7 @@ export interface Character {
   name: string;
   race: Race;
   experience: Experience;
-  profession: Profession;
+  class: Class;
   contact: Contact;
   portrait: string;
   languages: Language[];
