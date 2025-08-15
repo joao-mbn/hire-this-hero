@@ -1,16 +1,22 @@
 import {
   Container,
-  ContainerItem,
-  ContainerItemHeader,
-  ContainerItemSection,
+  ContentHeader,
   Description,
-  Divider,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+  List,
+  Progress,
 } from "@/components/base/";
+import { CardLine } from "@/components/base/cardLine";
 import { useCharacterContext } from "@/contexts/CharacterContext";
 import { DifficultyToName } from "@/data/maps";
-import type { Quest } from "@/data/types";
+import type { CompletedQuest, InProgressQuest } from "@/data/types";
 import { Scroll, Trophy } from "lucide-react";
-import { Badge, CardContent, List, Progress } from "../../base/";
+import { Badge, CardContent } from "../../base/";
 
 export function CurrentQuestBlock() {
   const character = useCharacterContext();
@@ -18,22 +24,9 @@ export function CurrentQuestBlock() {
 
   return (
     <Container title="Current Quests" icon={<Scroll />}>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-2">
         {questLog.inProgress.map((quest, idx) => (
-          <QuestCard
-            quest={quest}
-            key={idx}
-            isLast={idx === questLog.inProgress.length - 1}
-          >
-            <ContainerItemSection title={`Progress: ${quest.progress}%`}>
-              <Progress value={quest.progress} className="mt-2 h-2" />
-              <Description
-                className="mt-0 text-sm"
-                withoutDivider
-                description={`Est. Completion: ${quest.estimatedCompletion.toLocaleDateString()}`}
-              />
-            </ContainerItemSection>
-          </QuestCard>
+          <QuestLineItem quest={quest} key={idx} />
         ))}
       </CardContent>
     </Container>
@@ -46,47 +39,79 @@ export function CompletedQuestBlock() {
 
   return (
     <Container title="Completed Quests" icon={<Trophy />}>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-2">
         {questLog.completed.map((quest, idx) => (
-          <QuestCard
-            quest={quest}
-            key={idx}
-            isLast={idx === questLog.completed.length - 1}
-          >
-            <ContainerItemSection
-              title={`Completed: ${quest.completionDate.toLocaleDateString()}`}
-            />
-          </QuestCard>
+          <QuestLineItem quest={quest} key={idx} />
         ))}
       </CardContent>
     </Container>
   );
 }
 
-interface QuestCardProps {
-  quest: Quest;
-  children: React.ReactNode;
-  isLast?: boolean;
+interface QuestLineItemProps {
+  quest: CompletedQuest | InProgressQuest;
 }
 
-function QuestCard({
-  quest,
-  children: completionDetails,
-  isLast = false,
-}: QuestCardProps) {
+function QuestLineItem({ quest }: QuestLineItemProps) {
   return (
-    <ContainerItem className="rounded-none border-0 p-0">
-      <ContainerItemHeader title={quest.name} icon={quest.icon || "🏆"}>
-        <Badge variant={`difficulty-${quest.difficulty}`} className="ml-auto">
-          {DifficultyToName[quest.difficulty]}
-        </Badge>
-      </ContainerItemHeader>
-      <ContainerItemSection title="Rewards">
-        <List items={quest.rewards} />
-      </ContainerItemSection>
-      {completionDetails}
-      <Description description={quest.description} />
-      {!isLast && <Divider variant="medium" />}
-    </ContainerItem>
+    <Drawer>
+      <DrawerTrigger asChild>
+        <CardLine className="cursor-pointer text-old-gold-950">
+          <span className="font-emoji text-lg">{quest.icon || "🏆"}</span>
+          <span>{quest.name}</span>
+          <Badge
+            variant={`difficulty-${quest.difficulty}`}
+            className="ml-auto text-xs"
+          >
+            {DifficultyToName[quest.difficulty]}
+          </Badge>
+        </CardLine>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <div className="flex w-full items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="font-emoji text-2xl">{quest.icon || "🏆"}</span>
+              <DrawerTitle>{quest.name}</DrawerTitle>
+            </div>
+            <Badge
+              variant={`difficulty-${quest.difficulty}`}
+              className="text-sm"
+            >
+              {DifficultyToName[quest.difficulty]}
+            </Badge>
+          </div>
+        </DrawerHeader>
+        <DrawerBody>
+          <div className="space-y-6">
+            <ContentHeader title="Rewards" />
+            <List items={quest.rewards} />
+
+            {"progress" in quest ? (
+              <div>
+                <ContentHeader title={`Progress: ${quest.progress}%`} />
+                <Progress value={quest.progress} className="h-2" />
+                <Description
+                  withoutDivider
+                  className="text-sm"
+                  description={`Estimated Completion: ${quest.estimatedCompletion.toLocaleDateString()}`}
+                />
+              </div>
+            ) : (
+              <div>
+                <ContentHeader title="Completed" />
+                <Description
+                  withoutDivider
+                  className="text-sm"
+                  description={quest.completionDate.toLocaleDateString()}
+                />
+              </div>
+            )}
+
+            <Description description={quest.description} />
+          </div>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
   );
 }
