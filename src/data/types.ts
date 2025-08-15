@@ -179,6 +179,8 @@ export interface Quest {
   description: string;
   rewards: string[];
   icon: string;
+  startDate?: Date;
+  place?: string;
 }
 
 export interface CompletedQuest extends Quest {

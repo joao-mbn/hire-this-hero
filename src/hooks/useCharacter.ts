@@ -133,6 +133,7 @@ export function useCharacter() {
               ...quest,
               difficulty: quest.difficulty as Difficulty,
               completionDate: new Date(quest.completionDate),
+              rewards: quest.rewards ?? [],
             })),
             inProgress: data.questLog.inProgress.map((quest) => ({
               ...quest,

@@ -84,6 +84,13 @@ function QuestLineItem({ quest }: QuestLineItemProps) {
         </DrawerHeader>
         <DrawerBody>
           <div className="space-y-6">
+            {"place" in quest && quest.place && (
+              <>
+                <ContentHeader title="Location" />
+                <Description withoutDivider description={quest.place} />
+              </>
+            )}
+
             <ContentHeader title="Rewards" />
             <List items={quest.rewards} />
 
@@ -102,7 +109,6 @@ function QuestLineItem({ quest }: QuestLineItemProps) {
                 <ContentHeader title="Completed" />
                 <Description
                   withoutDivider
-                  className="text-sm"
                   description={quest.completionDate.toLocaleDateString()}
                 />
               </div>
