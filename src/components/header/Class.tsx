@@ -1,5 +1,5 @@
 import { useCharacterContext } from "@/contexts/CharacterContext";
-import { Terminal } from "lucide-react";
+import { BriefcaseBusinessIcon } from "lucide-react";
 import {
   ContentHeader,
   Description,
@@ -24,7 +24,7 @@ export function Class() {
   return (
     <Drawer>
       <DrawerTrigger>
-        <TitleBadge title={combinedTitle} Icon={Terminal} />
+        <TitleBadge title={combinedTitle} Icon={BriefcaseBusinessIcon} />
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>

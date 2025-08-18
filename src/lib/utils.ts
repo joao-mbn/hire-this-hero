@@ -40,16 +40,7 @@ export function getExperience(
   const decimalYearsOfExperience =
     (new Date().getTime() - new Date(campaignStartDate).getTime()) / oneYear;
 
-  /**
-   * The function below was parameterized to yield integer levels at these points:
-   * YOE | Level
-   * 0   | 1
-   * 5   | 10
-   * 10  | 15
-   * 20  | 20
-   */
-  const level =
-    29 + (1 - 29) / (1 + Math.pow(decimalYearsOfExperience / 10, 1.078003));
+  const level = levelFitEquation(decimalYearsOfExperience);
 
   const fullLevels = Math.min(MAX_LEVEL, Math.floor(level));
   const percentageToNextLevel =
@@ -70,6 +61,22 @@ export function getExperience(
     proficiencyBonus: proficiencyBonus[fullLevels - 1],
     attributeLeveling,
   };
+}
+
+/**
+ * R² = 0.9996
+ * The function below was parameterized to yield integer levels at these points:
+ * YOE (x) | Level (y)
+ * 0       | 1
+ * 4       | 10
+ * 10      | 15
+ * 20      | 18
+ * 30      | 20
+ */
+export function levelFitEquation(x: number) {
+  return (
+    25.37934 + (0.9963703 - 25.37934) / (1 + Math.pow(x / 7.310844, 0.874025))
+  );
 }
 
 export function yyyyMMMDate(date: Date) {
