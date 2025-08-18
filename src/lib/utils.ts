@@ -53,7 +53,7 @@ export function getExperience(
 
   const fullLevels = Math.min(MAX_LEVEL, Math.floor(level));
   const percentageToNextLevel =
-    fullLevels === MAX_LEVEL ? 100 : Math.round((level - fullLevels) * 100);
+    fullLevels === MAX_LEVEL ? 100 : Math.floor((level - fullLevels) * 100);
 
   const description =
     Object.entries(experienceDescriptions)
