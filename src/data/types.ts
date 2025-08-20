@@ -68,10 +68,6 @@ export interface Feature {
   maxLevel: number;
   levelsDescriptions: string[];
   locked: boolean;
-  treeData?: {
-    x: number;
-    y: number;
-  };
   origin: FeatureOrigin;
 }
 

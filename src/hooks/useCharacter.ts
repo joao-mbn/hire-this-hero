@@ -106,7 +106,7 @@ export function useCharacter() {
           features: data.features.map((feature) => ({
             ...feature,
             level: feature.level ?? 0,
-            maxLevel: feature.maxLevel ?? 0,
+            maxLevel: feature.levelsDescriptions?.length ?? 0,
             levelsDescriptions: feature.levelsDescriptions ?? [],
             prerequisites: feature.prerequisites ?? [],
             description: feature.description ?? "",

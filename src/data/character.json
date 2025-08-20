@@ -328,7 +328,6 @@
       "icon": "🎨",
       "prerequisites": [],
       "locked": false,
-      "treeData": { "x": 0, "y": 0 },
       "origin": "others"
     },
     {
@@ -342,58 +341,64 @@
       ],
       "icon": "☕",
       "prerequisites": [],
-      "level": 0,
-      "maxLevel": 0,
       "locked": false,
-      "treeData": { "x": 0, "y": 0 },
       "origin": "class"
     },
     {
       "name": "Programming Fundamentals",
-      "icon": "💻",
+      "description": "You learn the very basics of programming, to be able to read and write the simplest of programs.",
+      "icon": "🐣",
       "prerequisites": [],
       "level": 4,
-      "maxLevel": 4,
       "levelsDescriptions": [
-        "You learn a programming Language of your choice, between: Python, JavaScript, Java or C.\n\nYou learn the basics of programming, including variables, data types, control flow",
-        "You learn the basics of I/O. You learn how a debugger and an IDE of your choice.",
-        "You learn about basic algorithms and data structures; as well as memory and time complexity, and simple optimization strategies.",
-        "You learn the basics of object-oriented programming and functional programming."
+        "You learn a programming Language of your choice. You learn the basics of programming language, including variables, data types, control flow",
+        "You learn the basics of I/O. You learn a debugger and an IDE of your choice",
+        "You learn about basic algorithms and data structures; as well as memory and time complexity, and simple optimization strategies",
+        "You learn the basics of object-oriented programming and functional programming"
       ],
       "locked": false,
-      "treeData": { "x": 0, "y": 0 },
       "origin": "class"
     },
     {
       "name": "Web Development Fundamentals",
-      "description": "",
-      "icon": "🕸️",
+      "description": "You learn how to build a basic web site, add some interactivity to it and connect with external systems.",
+      "icon": "🐤",
       "prerequisites": [{ "name": "Programming Fundamentals", "level": 3 }],
       "level": 6,
-      "maxLevel": 6,
       "levelsDescriptions": [
-        "You learn the basics of how the web works at a conceptual level.",
-        "You learn the basics of HTML and CSS, for building a static website.",
-        "You learn the basics of JavaScript, for building a interactive website.",
-        "You learn about JS libraries and basic use of the package system.",
-        "You learn how to debug using the DevTools of your browser.",
-        "You learn how to make simple API calls and display content dynamically."
+        "You learn the basics of how the web works at a conceptual level",
+        "You learn the basics of HTML and CSS, for building a static website",
+        "You learn the basics of JavaScript, for building a interactive website",
+        "You learn about JS libraries and basic use of the package system",
+        "You learn how to debug using the DevTools of your browser",
+        "You learn how to make simple API calls and display content dynamically"
       ],
       "locked": false,
-      "treeData": { "x": 0, "y": 0 },
+      "origin": "class"
+    },
+    {
+      "name": "Version Control Fundamentals",
+      "description": "You learn the techniques of how to setup a simple version control system, using Git.",
+      "icon": "🤖",
+      "prerequisites": [{ "name": "Programming Fundamentals", "level": 3 }],
+      "level": 2,
+      "levelsDescriptions": [
+        "You learn how to setup version control in a repository using the manager and GUI of your choice",
+        "You learn how to fork, clone, pull, push, commit, and merge branches using Git"
+      ],
+      "locked": false,
       "origin": "class"
     },
     {
       "name": "Cloud Engineering Fundamentals",
-      "description": "Learn the techniques of how to setup, manage the different cloud resources, at a basic level for a Cloud Provider of your choice.",
-      "icon": "☁️",
+      "description": "You learn the techniques of how to setup, manage the different cloud resources, at a basic level for a Cloud Provider of your choice.",
+      "icon": "🦅",
       "prerequisites": [{ "name": "Programming Fundamentals", "level": 3 }],
       "level": 6,
-      "maxLevel": 14,
       "levelsDescriptions": [
-        "You learn the systems, resources and services of a Cloud Provider of your choice, between: AWS, Azure or GCP.",
+        "You learn the purpose of the main resources and services of a Cloud Provider of your choice",
         "You learn how to setup and manage the basics of Serverless Functions",
-        "You learn how to setup and manage the basics of Apps",
+        "You learn how to setup and manage the basics of Web Apps",
         "You learn how to setup and manage the basics of File Storages",
         "You learn how to setup and manage the basics of Databases",
         "You learn how to setup and manage the basics of IAM, Secret Manager and RBAC",
@@ -402,28 +407,166 @@
         "You learn how to setup and manage the basics of Virtual Machines",
         "You learn how to setup and manage the basics of Networking",
         "You learn how to setup and manage the basics of Monitoring and Logging",
-        "You learn how to setup and manage the basics of CI/CD Pipelines",
         "You learn how to setup and manage the basics of Security",
         "You learn how to setup and manage the basics of Cost Management"
       ],
       "locked": false,
-      "treeData": { "x": 0, "y": 0 },
       "origin": "class"
     },
     {
-      "name": "Advanced DevOps",
-      "description": "Learn the techniques of how to manage large scale applications reliably, using observability, containerization, orchestration and infrastructure management.",
-      "icon": "🧑‍🔧",
-      "prerequisites": [{ "name": "Cloud Engineering", "level": 1 }],
-      "level": 0,
-      "maxLevel": 3,
-      "levelsDescriptions": [
-        "You learn techniques of containerization, how to setup Docker Compose and how to deploy Containers.",
-        "You learn techniques of orchestration, how to setup Kubernetes and how to deploy Pods.",
-        "You learn how to setup your infrastructure as code using Terraform."
+      "name": "Front-end Web Development",
+      "description": "You learn the techniques of how to build a front-end of a web application, using modern tooling, frameworks, and Typescript.",
+      "icon": "🐓",
+      "prerequisites": [
+        { "name": "Web Development Fundamentals", "level": 6 },
+        { "name": "Programming Fundamentals", "level": 4 }
       ],
-      "locked": true,
-      "treeData": { "x": 0, "y": 0 },
+      "level": 7,
+      "levelsDescriptions": [
+        "You learn the basics of how to setup a modern web application, using a modern framework of your choice",
+        "You increase your proficiency in modern Javascript features, including: Promises, Async/Await, and modern Browser APIs",
+        "You gain proficiency in Typescript",
+        "You learn how to write unit and integration tests, using a testing framework of your choice",
+        "You gain proficiency in a tooling kit of your choice, including: bundling, linting, testing, and more",
+        "You learn a CSS framework of your choice",
+        "You gain proficiency in a set of packages of your choice, to solve common web development challenges: state management, data fetching, routing, form handling, and more"
+      ],
+      "locked": false,
+      "origin": "class"
+    },
+    {
+      "name": "Back-end Web Development",
+      "description": "You learn the techniques of how to build a back-end of a web application, using modern tooling, frameworks and with Typescript.",
+      "icon": "🦤",
+      "prerequisites": [
+        { "name": "Web Development Fundamentals", "level": 6 },
+        { "name": "Programming Fundamentals", "level": 4 }
+      ],
+      "level": 11,
+      "levelsDescriptions": [
+        "You learn a back-end language of your choice",
+        "You learn how to setup a restful API using a framework of your choice with basic routing",
+        "You learn how to setup basic middleware",
+        "You learn how to interact with a database using a ORM of your choice",
+        "You learn how to write basic SELECT queries with the SQL language of your choice",
+        "You learn how to perform basic mutations with INSERT, UPDATE and DELETE statements using the SQL language of your choice",
+        "You learn how to perform simple DATABASE, SCHEMA, TABLE, COLUMN, INDEX and CONSTRAINT mutations",
+        "You learn how to setup a basic database connection",
+        "You learn how to setup an ORM",
+        "You learn how to write Views, Procedures, Triggers and Functions",
+        "You learn how to write more complex queries and mutations with CTEs and MERGE statements"
+      ],
+      "locked": false,
+      "origin": "class"
+    },
+    {
+      "name": "Full Stack Web Development",
+      "description": "You learn how to make sense of a full web application by learning how they interact with each other.",
+      "icon": "🦆",
+      "prerequisites": [
+        { "name": "Web Development Fundamentals", "level": 6 },
+        { "name": "Back-end Web Development", "level": 2 },
+        { "name": "Cloud Engineering Fundamentals", "level": 1 }
+      ],
+      "level": 2,
+      "locked": false,
+      "levelsDescriptions": [
+        "You learn how to debug an application end-to-end following the trail on the front-end, back-end, database and cloud resources",
+        "You gain proficiency in Node.js and its ecosystem"
+      ],
+      "origin": "class",
+      "treeData": { "x": 0, "y": 0 }
+    },
+    {
+      "name": "Web Application Security Fundamentals",
+      "description": "You learn how some common exploits work and the usage of basic tools to secure your web application.",
+      "icon": "🔒",
+      "prerequisites": [
+        { "name": "Front-end Web Development", "level": 7 },
+        { "name": "Back-end Web Development", "level": 11 }
+      ],
+      "level": 3,
+      "levelsDescriptions": [
+        "You learn about common web application vulnerabilities, like XSS, CSRF, SQL Injection, and OWASP Top 10.",
+        "You learn about Authentication and Authorization, and how to implement them to secure your web application with OAuth2.",
+        "You learn common middleware and gateways to secure your web server"
+      ],
+      "locked": false,
+      "origin": "class"
+    },
+    {
+      "name": "DevOps Fundamentals",
+      "description": "You learn the techniques of how to manage applications for reliable, observable and debuggable production applications.",
+      "icon": "🧑‍🔧",
+      "prerequisites": [
+        { "name": "Cloud Engineering Fundamentals", "level": 1 }
+      ],
+      "level": 3,
+      "levelsDescriptions": [
+        "You learn most fundamental Linux commands and gain proficiency in bash scripting",
+        "You learn YAML",
+        "You learn how to setup a CI/CD pipeline using the deployment platform of your choice",
+        "You learn techniques of containerization, how to setup Docker Compose and how to deploy Containers",
+        "You learn techniques of orchestration, how to setup Kubernetes and how to deploy Pods",
+        "You learn how to setup your infrastructure as code with the IaC language of your choice."
+      ],
+      "locked": false,
+      "origin": "class"
+    },
+    {
+      "name": "Advanced Front-end Web Development",
+      "description": "You learn optimization techniques for web applications' front-ends and best practices.",
+      "icon": "🦚",
+      "prerequisites": [{ "name": "Front-end Web Development", "level": 7 }],
+      "level": 6,
+      "levelsDescriptions": [
+        "You learn data display optimizations: virtualization, pagination, and infinite loading",
+        "You learn data fetching optimizations: caching, prefetching, and lazy loading",
+        "You learn bundle reduction techniques: tree shaking, code splitting, component lazy loading, dynamic imports. You learn a bundle analyzer of your choice",
+        "You learn rendering concepts: SSR, SSG / ISR and Hydration. You learn how to use the Devtools Lighthouse to improve SEO",
+        "You gain proficiency in building accessible web applications and tooling to do so",
+        "You learn a end-to-end testing framework of your choice",
+        "You learn how to use Web Assembly (WASM) for running computationally intensive tasks in the browser",
+        "You learn how to use Web Socket for real-time communication"
+      ],
+      "locked": false,
+      "origin": "class"
+    },
+    {
+      "name": "Advanced Back-end Web Development",
+      "description": "You learn optimization techniques for web applications' back-ends and best practices and services for more complex applications.",
+      "icon": "🦃",
+      "prerequisites": [{ "name": "Back-end Web Development", "level": 11 }],
+      "level": 5,
+      "levelsDescriptions": [
+        "You learn how to setup SQL transactions",
+        "You learn how to analyze queries and optimize related bottlenecks, e.g. N+1 queries, bad or inexistent indexes, inefficient joins, and more",
+        "You gain proficiency in GraphQL",
+        "You gain proficiency in a NoSQL key-value database of your choice",
+        "You gain proficiency in a NoSQL document database of your choice",
+        "You learn how to setup a basic caching layer",
+        "You learn how to setup DB migrations with the tool of your choice",
+        "You learn how to setup a message broker of your choice"
+      ],
+      "locked": false,
+      "origin": "class"
+    },
+    {
+      "name": "Scalable Systems",
+      "description": "You learn how to scale your applications to handle more users and data.",
+      "icon": "🦕",
+      "prerequisites": [
+        { "name": "Advanced Back-end Web Development", "level": 6 }
+      ],
+      "level": 0,
+      "levelsDescriptions": [
+        "You learn how to setup a basic load balancer",
+        "You learn how to setup a basic database horizontal scaling",
+        "You learn how to setup a basic stateless webserver with a session cache layer",
+        "You learn how to setup a basic horizontal scaling for webservers",
+        "You learn how to setup a CDN for static assets"
+      ],
+      "locked": false,
       "origin": "class"
     }
   ],
