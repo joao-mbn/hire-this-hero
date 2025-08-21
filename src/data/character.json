@@ -33,7 +33,7 @@
   },
   "birthDate": "1997-02-17",
   "experience": {
-    "campaignStartDate": "2021-05-10",
+    "campaignStartDate": "2020-09-01",
     "experienceDescriptions": {
       "1": "A fledgling Code Initiate, you have just begun your journey into the arcane arts of programming. You still need guidance in all but the simplest of rituals, but your potential is boundless.",
       "5": "An Acolyte of the arcane arts of programming. You have the autonomy operate on others' rituals mostly unguided, but you still lack the ability to concoct your own. You excel best as a cog in the machine.",
@@ -558,8 +558,9 @@
       "prerequisites": [
         { "name": "Advanced Back-end Web Development", "level": 6 }
       ],
-      "level": 0,
+      "level": 1,
       "levelsDescriptions": [
+        "You learn at a conceptual level how to scale your applications",
         "You learn how to setup a basic load balancer",
         "You learn how to setup a basic database horizontal scaling",
         "You learn how to setup a basic stateless webserver with a session cache layer",
@@ -716,46 +717,85 @@
   },
   "achievements": [
     {
-      "name": "Performance Optimizer",
-      "description": "Reduced app memory consumption from 1.6GB to 150MB and request durations by 95%",
-      "icon": "⚡",
-      "difficulty": "impossible",
-      "dateEarned": "2024-10-15"
-    },
-    {
-      "name": "Deployment Master",
-      "description": "Reduced deployment time by 80% from 20 minutes to 4 minutes",
-      "icon": "🚀",
-      "difficulty": "expert",
-      "dateEarned": "2023-08-15"
+      "name": "Code Grinder",
+      "icon": "🐮",
+      "events": [
+        {
+          "description": "You have completed 5000 hours of coding.",
+          "dateEarned": "2025-04-14",
+          "difficulty": "medium"
+        },
+        {
+          "description": "You have completed 1000 hours of coding.",
+          "dateEarned": "2022-03-23",
+          "difficulty": "easy"
+        }
+      ]
     },
     {
       "name": "Team Leader",
-      "description": "Led team of four developers to 50-100% productivity increase",
-      "icon": "👥",
-      "difficulty": "hard",
-      "dateEarned": "2024-09-01"
+      "icon": "🦁",
+      "events": [
+        {
+          "description": "You have onboarded, mentored and led new engineers. Planning features, organizing them into tasks and distributing to the new hires, being accountable for the speed and quality of the results.",
+          "dateEarned": "2025-06-30",
+          "difficulty": "hard"
+        },
+        {
+          "description": "You have led a team of junior and mid-level developers. Accountable for end-to-end delivery of features and maintenance of the codebase, including discussing and designing features with clients, planning and distributing tasks and bugs, building, testing, reviewing and deploying code.",
+          "dateEarned": "2024-07-15",
+          "difficulty": "hard"
+        }
+      ]
     },
     {
-      "name": "Cost Saver",
-      "description": "Saved USD 10,000 by reimplementing Excel-like spreadsheet solution",
-      "icon": "💰",
-      "difficulty": "expert",
-      "dateEarned": "2023-06-20"
+      "name": "HR Friend",
+      "icon": "🐶",
+      "events": [
+        {
+          "description": "You have assisted in the hiring process by writing and reviewing tests, conducting technical interviews and assisting HR in the hiring decision.",
+          "dateEarned": "2025-05-30",
+          "difficulty": "medium"
+        }
+      ]
     },
     {
-      "name": "Fast Learner",
-      "description": "Completed internship 6 months early, bypassing entry-level position",
-      "icon": "📚",
-      "difficulty": "medium",
-      "dateEarned": "2022-08-01"
+      "name": "OS Contributor",
+      "icon": "🐺",
+      "events": [
+        {
+          "description": "You have created your own open source project, used by the community: VS Code extension - React Extract.",
+          "dateEarned": "2024-06-30",
+          "difficulty": "medium"
+        },
+        {
+          "description": "You have contributed to a large open source project: DefinitelyTyped - @types/hot-formula-parser",
+          "dateEarned": "2023-11-07",
+          "difficulty": "easy"
+        }
+      ]
     },
     {
-      "name": "Bug Slayer",
-      "description": "Earned recognition for resolving issues and bugs swiftly during internship",
-      "icon": "⚔️",
-      "difficulty": "easy",
-      "dateEarned": "2022-06-01"
+      "name": "Founder",
+      "icon": "🪨",
+      "events": [
+        {
+          "description": "You have founded an organization that helped people. for_code is an organization that has helped hundreds of Chemical Engineering students and students of related fields, teaching them much in-demand skills, not covered by the regular curriculum.",
+          "dateEarned": "2021-08-01",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "name": "Prized Researcher",
+      "icon": "🧪",
+      "events": [
+        {
+          "description": "You have created an algorithm that earned you a research award: A Cost Minimization Optimization Algorithm for the Solvent Extraction Separation of Rare Earth Elements.",
+          "dateEarned": "2021-08-01",
+          "difficulty": "medium"
+        }
+      ]
     }
   ],
   "questLog": {
@@ -806,10 +846,10 @@
         "startDate": "2023/08",
         "completionDate": "2024/09",
         "icon": "🌳",
-        "difficulty": "medium",
+        "difficulty": "hard",
         "rewards": [
           "Proficiency in: Typescript, React, Javascript, Tailwind CSS, CSS, HTML, ThreeJS, C#, .NET, MS SQL",
-          "Team leadership skills"
+          "Leadership skills: Discussing requirements with clients, managing the product and the team"
         ]
       },
       {
@@ -840,7 +880,7 @@
       },
       {
         "name": "Programmer Alchemist",
-        "description": "Founded a minor Programming Guild inside the Alchemist Artificers' Guild, to teach fellow alumni the basics of programming for their craft experiments, using the Python rune set.",
+        "description": "Founded a minor Programming Guild inside the Chemical Engineering Guild building, in the Federal University of Rio de Janeiro, called \"for_code\", to teach fellow acolytes the basics of programming.\n\nThe guild was founded with the intention to fill the gap of programming knowledge in the Chemical Engineering and related courses, that were not being taught in the university, despite being highly required by the industry and research institutions.\n\nOver the years, the guild has helped hundreds of students to learn practical knowledge, with a hands-on approach, focused on the application of the knowledge in problems of the chemical industry, often teaming with research projects and professors.",
         "startDate": "2021/03",
         "completionDate": "2021/08",
         "icon": "🧙",
@@ -848,6 +888,18 @@
         "rewards": [
           "Proficiency in: Python",
           "Experience in: Content Creation and Teaching"
+        ]
+      },
+      {
+        "name": "Undergraduate Researcher",
+        "description": "Created an algorithm for rare-earth elements separation process optimization which more than halved experimental time effort, found optimal conditions one-fifth of the cost of previous ones, and reduced project complexity through variables importance ranking and elimination.",
+        "startDate": "2020/08",
+        "completionDate": "2021/04",
+        "icon": "🎓",
+        "difficulty": "medium",
+        "rewards": [
+          "Proficiency in: Python",
+          "Experience in: Scientific Computing, Scientific Method, Statistics, Chemical Process Simulation and Optimization"
         ]
       },
       {

@@ -126,7 +126,11 @@ export function useCharacter() {
           },
           achievements: data.achievements.map((achievement) => ({
             ...achievement,
-            difficulty: achievement.difficulty as Difficulty,
+            events: achievement.events.map((event) => ({
+              ...event,
+              difficulty: event.difficulty as Difficulty,
+              dateEarned: new Date(event.dateEarned),
+            })),
           })),
           questLog: {
             completed: data.questLog.completed.map((quest) => ({

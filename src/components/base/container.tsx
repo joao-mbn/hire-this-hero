@@ -1,5 +1,6 @@
 import { useIsTruncated } from "@/hooks/useIsTruncated";
 import { cn } from "@/lib/utils";
+import { forwardRef } from "react";
 import { Card, CardHeader, CardTitle } from "./card";
 import { Description } from "./description";
 import {
@@ -35,20 +36,19 @@ interface ContainerItemProps {
   style?: React.CSSProperties;
 }
 
-export function ContainerItem({
-  children,
-  className,
-  style,
-}: ContainerItemProps) {
-  return (
+export const ContainerItem = forwardRef<HTMLDivElement, ContainerItemProps>(
+  ({ children, className, style }, ref) => (
     <div
+      ref={ref}
       className={cn("rounded border border-old-gold-300 p-4", className)}
       style={style}
     >
       {children}
     </div>
-  );
-}
+  ),
+);
+
+ContainerItem.displayName = "ContainerItem";
 
 interface ContainerItemTitleProps {
   title: string;

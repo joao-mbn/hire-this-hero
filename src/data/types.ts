@@ -163,10 +163,12 @@ export interface Biography {
 
 export interface Achievement {
   name: string;
-  description: string;
   icon: string;
-  difficulty: Difficulty;
-  dateEarned: string;
+  events: {
+    description: string;
+    dateEarned: Date;
+    difficulty: Difficulty;
+  }[];
 }
 
 export interface Quest {
