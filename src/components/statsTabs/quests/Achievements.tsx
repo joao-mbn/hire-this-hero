@@ -49,10 +49,9 @@ export function Achievements() {
 
 interface AchievementCardProps {
   achievement: Achievement;
-  children?: React.ReactNode;
 }
 
-function AchievementCard({ achievement, children }: AchievementCardProps) {
+function AchievementCard({ achievement }: AchievementCardProps) {
   return (
     <Drawer>
       <DrawerTrigger>
