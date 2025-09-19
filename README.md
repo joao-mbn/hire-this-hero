@@ -2,7 +2,7 @@
 
 An interactive, RPG-themed online curriculum vitae (CV) that transforms your professional profile into a D&D-style character sheet. Built with React, TypeScript, and Tailwind CSS, this project gamifies career achievements, skills, and experiences using classic RPG metaphors, constructed as one would for a RPG character.
 
-## 📋 Current Status
+## Current Status
 
 > ⚠️ **This is an ongoing project** - not yet deployed or fully tested
 
@@ -38,24 +38,19 @@ pnpm dev
 
 4. Open your browser and navigate to `http://localhost:5173`
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
-├── components/             # React components
-│   ├── base/               # Reusable UI components
-│   ├── header/             # Character header components
-│   ├── statsTabs/          # Main content sections
-│   └── CharacterSheet.tsx  # Main character sheet component
-├── contexts/               # React context providers
-├── data/                   # Character data and types
-│   ├── character.json      # Main character data file
-│   └── types.ts            # TypeScript type definitions
-├── hooks/                  # Custom React hooks
-└── lib/                    # Utility functions
+|-- assets/      # Images and other static files
+├── components/  # React components
+├── contexts/    # React context providers
+├── data/        # Character data and types
+├── hooks/       # Custom React hooks
+└── lib/         # Utility functions
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: React 19 + TypeScript
 - **Build Tool**: Vite
