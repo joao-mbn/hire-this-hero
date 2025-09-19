@@ -42,7 +42,7 @@ pnpm dev
 
 ```
 src/
-|-- assets/      # Images and other static files
+├── assets/      # Images and other static files
 ├── components/  # React components
 ├── contexts/    # React context providers
 ├── data/        # Character data and types
