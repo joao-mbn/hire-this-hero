@@ -1,69 +1,65 @@
-# React + TypeScript + Vite
+# Hire This Hero
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, RPG-themed online curriculum vitae (CV) that transforms your professional profile into a D&D-style character sheet. Built with React, TypeScript, and Tailwind CSS, this project gamifies career achievements, skills, and experiences using classic RPG metaphors, constructed as one would for a RPG character.
 
-Currently, two official plugins are available:
+## 📋 Current Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> ⚠️ **This is an ongoing project** - not yet deployed or fully tested
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+- Node.js (this project was built using Node.js v24)
+  - some of the packages like Vite will require a specific Node version to work properly.
+- pnpm (recommended)
+  - `npm` or `yarn` should without issues, make to delete `pnpm-workspace.yaml` and `pnpm-lock.yaml` if you decide to not go with `pnpm`
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+1. Clone the repository:
+
+```bash
+git clone https://github.com/joao-mbn/hire-this-hero
+cd hire-this-hero
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+pnpm i
 ```
+
+3. Start the development server:
+
+```bash
+pnpm dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/             # React components
+│   ├── base/               # Reusable UI components
+│   ├── header/             # Character header components
+│   ├── statsTabs/          # Main content sections
+│   └── CharacterSheet.tsx  # Main character sheet component
+├── contexts/               # React context providers
+├── data/                   # Character data and types
+│   ├── character.json      # Main character data file
+│   └── types.ts            # TypeScript type definitions
+├── hooks/                  # Custom React hooks
+└── lib/                    # Utility functions
+```
+
+## 🛠️ Tech Stack
+
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI primitives
+- **Package Manager**: pnpm
+- **Code Quality**: ESLint, Prettier
